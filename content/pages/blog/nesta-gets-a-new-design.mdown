@@ -1,0 +1,54 @@
+Date: 21 June 2010
+Summary: Before today I'd never been completely satisifed with the look of a freshly installed Nesta site. It wasn't bad, but it was a bit rough and ready and the typography wasn't that hot. The old default style is still [available as a theme](http://github.com/gma/nesta-theme-original) but moving forward Nesta has got a new look!
+Atom id: tag:effectif.com,2010-06-21:/nesta/nesta-gets-a-new-design
+
+# Nesta gets a new design
+
+Nesta's theme support landed on the master branch last week. Theme support freed me up to update the default look and feel without risk of annoying existing users who liked Nesta just the way it was.
+
+## What does it look like?
+
+You're looking at it.
+
+## What's changed?
+
+I'm a bit of a typography geek, and one of the things I've always wanted Nesta to provide was a simple design with good typography; I just hadn't gotten around to writing the CSS. I've spent today combining [well established rules for setting type size][hierarchy] (from Mark Boulton) with a clever technique to maintain [vertical rhythm][rhythm] (courtesy of Richard Rutter).
+
+[hierarchy]: http://www.markboulton.co.uk/journal/comments/five-simple-steps-to-better-typography-part-4
+[rhythm]: http://24ways.org/2006/compose-to-a-vertical-rhythm
+
+All this cleverness is wrapped up in some re-usable [Sass code](http://github.com/gma/nesta/blob/master/views/master.sass) (think "programmable CSS") that takes care of the gory details. Nesta's default stylesheet would make a good starting point for styling up your own site (or, of course, you can just ignore it and knock up [your own design](/nesta/design)). 
+
+**Disclaimer:** I've only just finished this new layout and haven't had a chance to test it on any browsers other than Safari 5, Chrome 5 and Firefox 3.6, so if that could be a problem for your audience test it before you deploy. Bug reports with screenshots will be acted on sharpish!
+
+## Updating your site with the new look
+
+If you've already got a Nesta site the easiest way to update is just to merge the latest changes from the master branch:
+
+    $ git pull
+
+If you've made any changes to files that have been modified on the master branch you may need to resolve some merge conflicts.
+
+Nesta now requires Haml 3 (there are some clever Sass mixins that automatically adjust colours for you), so you'll also need to re-run `bundler` to update your dependencies:
+
+    $ bundle install
+
+If you've been writing your own Sass there's a possibility that Sass 3 will print some deprecation warnings, as the format has changed slightly. You can upgrade your files using `sass-convert`, like so:
+
+    $ sass-convert --in-place --from sass2 local/views/local.sass
+
+That's it; you're done. Fire up a local web server and have a look round your site.
+
+If you want to personalise it a little there are couple of easy changes you could make:
+
+1. **Tweak the colours:** Try changing the value of `$tint` in `views/master.sass`. Most of the colors are automatically derived from this shade, so the entire site will be updated accordingly.
+2. **Change the typeface:** I've gone for Helvetica with this update but the design would work just as well with a [different font stack](http://24ways.org/2007/increase-your-font-stacks-with-font-matrix). You would just need to update the references to Helvetica in `views/master.sass`.
+
+## Re-installing the old theme
+
+If for some reason you'd rather keep things looking as they were, you can re-install the old theme:
+
+    $ ./scripts/theme install git://github.com/gma/nesta-theme-original.git
+    Enabling original theme in config/config.yml
+
+Commit any changes, [deploy it](/nesta/deployment) and you're done!
