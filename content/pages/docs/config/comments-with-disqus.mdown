@@ -1,1 +1,37 @@
-# Todo
+Categories: docs/config
+Summary: Comments are easily added to a Nesta site through Disqus.
+
+# Adding comments with Disqus
+
+Comments are easily added to a Nesta site through [Disqus][disqus], a
+third party "comments platform". Comments are added to your web pages
+with a small snippet of JavaScript code. You moderate the comments by
+logging into your Disqus account.
+
+Disqus is supported out of the box in Nesta. Once you've created a
+Disqus account and added your web site to it, all you need to do is to
+tell Nesta what your site's Disqus key is (which Disqus refer to as your
+"short name").
+
+## Configuring config.yml
+
+Open the `config/config.yml` file in a text editor and search for
+`disqus_short_name`. Uncomment it, and set your site's short name. It
+will look something like this:
+
+    disqus_short_name: mysite
+
+## Adding the comments to a page
+
+Whether or not comments are shown on a page is controlled by the Haml
+template that is responsible for rendering the page. Nesta comes with a
+template that will add the Disqus HTML and JavaScript, and some themes
+call it by default.
+
+If the theme or templates that you're using don't include comments you
+can insert the relevant code by adding a line like this in your
+template:
+
+    = haml :coments, :layout => false
+
+[disqus]: http://disqus.com
