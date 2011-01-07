@@ -14,11 +14,13 @@ We're going to abandon that approach and move all your content into a new projec
     $ gem install nesta
     $ nesta new mysite.com --git
     $ ls mysite.com
-    TODO: show output of ls
+    Gemfile		config/		config.ru	content/
 
 That's it; you've got a new web site in the mysite.com folder that's awaiting your content and design changes. Because we specified the --git option the project is already under version control.
 
-We'll use bundler to install all Nesta's dependencies.
+Note that if you're going to deploy your site to Heroku that you might want to pass the `--heroku` switch too, which adds a useful Rake task and adds the `heroku` gem to your bundle.
+
+Now we can use bundler to install all Nesta's dependencies.
 
     $ cd mysite.com
     $ bundle
