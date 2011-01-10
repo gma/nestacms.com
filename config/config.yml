@@ -1,8 +1,8 @@
 # Title and subheading for your site. Used on the home page and in page
 # titles.
 #
-title: "My Site"
-subtitle: "(change this text in config/config.yml)"
+title: "Nesta CMS"
+subtitle: "A lightweight Ruby CMS. Made with Sinatra."
 
 # If you want to set the descrition or keywords meta tags on your site's
 # home page, do it here.
@@ -32,7 +32,7 @@ subtitle: "(change this text in config/config.yml)"
 # site's short name here. A comment form will automatically be added to
 # the bottom of your pages.
 #
-# disqus_short_name: mysite
+disqus_short_name: nestacms
 
 # cache
 #     Set it to true if you'd like Nesta to cache your pages in ./public.
@@ -58,7 +58,7 @@ content: content
 #     scroll down a bit to set it in production even if you're not deploying
 #     to your own server.
 #
-# google_analytics_code: "UA-???????-?"
+google_analytics_code: "UA-4055128-8"
 
 # Overriding "cache" and "content" in production is recommended if you're
 # deploying Nesta to your own server (but see the deployment documentation
