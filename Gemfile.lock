@@ -1,0 +1,29 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.3)
+    builder (3.0.0)
+    haml (3.0.25)
+    maruku (0.6.0)
+      syntax (>= 1.0.0)
+    nesta (0.9.3)
+      RedCloth (~> 4.2)
+      builder (~> 3.0)
+      haml (~> 3.0)
+      maruku (>= 0.6.0)
+      shotgun (>= 0.8)
+      sinatra (= 1.1.2)
+    rack (1.2.1)
+    shotgun (0.8)
+      rack (>= 1.0)
+    sinatra (1.1.2)
+      rack (~> 1.1)
+      tilt (~> 1.2)
+    syntax (1.0.0)
+    tilt (1.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nesta (= 0.9.3)
