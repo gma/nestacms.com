@@ -1,0 +1,50 @@
+Categories: docs/creating-content
+Summary: You can create a web page by making a new Markdown, Textile or Haml file in the `content/pages` folder.
+
+# Making web pages
+
+Here's an example of the Markdown for a simple page:
+
+    # British Breakfasts
+
+    This is a page about breakfast.
+    
+    Common choices for a tasty breakfast:
+    
+    - *English:* Bacon (chunky), eggs (fried), beans...
+    - *Scottish:* Lorne sausage, potato scones, haggis...
+    
+    ## English breakfasts
+    
+    The traditional English breakfast (or "fry up")...
+
+Let's break this example down a bit:
+
+ - Every web page should have a main heading. In Markdown you can create
+   the heading tag by starting the line with a `#` character (equivalent
+   to an h1 tag in HTML).
+ - The heading is followed by two paragraphs and a bulleted list.
+ - Finally there's a second level heading (equivalent to an h2 tag) and
+   another paragraph.
+
+See the [markdown cheat sheet](markdown-cheat-sheet) for a more in depth
+look at how you can format your text.
+
+### Choosing a URL
+
+The page's URL will be created from the name of the file; if you save
+the page to a file called `apple-pie.mdown` inside the
+`content/pages/pudding/` directory, it will be served from
+`http://mysite.com/pudding/apple-pie`.
+
+If your page needs more than one word in the URL we recommend that you
+separate those words with hyphens. Some people prefer underscores, but
+hyphens have two clear advantages:
+
+ 1. Underscores can be confused with spaces when viewed in underlined
+    hyperlinks.
+ 2. Underscores may lose some of the SEO benefit of user friendly URLs;
+    search engines often see a hyphen as a word separator and an
+    underscore as part of the word. I'm fairly sure that there's not a
+    lot of demand on the net for "apple_pie".
+

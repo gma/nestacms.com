@@ -1,24 +1,30 @@
 Date: 6 January 2011
-Summary: If you're running an existing site on Nesta, you should upgrade to the gem. Trust me, it's simpler, faster and more easily extended. It's also easy to do. This post contains all the commands you need...
+Summary: If you're running an existing site on Nesta, you should upgrade to the gem. It's simpler, faster and more easily extended. It's also easy to do. This post contains all the commands you need...
 
 # Upgrading to the Nesta gem
 
-If you're running an existing site on Nesta, you should upgrade to the gem. Trust me, it's simpler, faster and more easily extended. It's also easy to do.
+If you're running an existing site on Nesta, you should upgrade to the
+gem. It's simpler, faster and more easily extended. It's also easy to
+do.
 
 ## Make a new project
 
-The old development model involved forking the project, editing the code and then deploying it. This is simple on the face of it, but it does leave far more code lying around in your current directory than you might like.
+The old development model involved forking the project, editing the code
+and then deploying it. This is simple on the face of it, but it does
+leave far more code lying around in your current directory than you
+might like.
 
-We're going to abandon that approach and move all your content into a new project. The new model looks something like this:
+We're going to abandon that approach and move all your content into a
+new project. The new model looks something like this:
 
     $ gem install nesta
     $ nesta new mysite.com --git
     $ ls mysite.com
     Gemfile		config/		config.ru	content/
 
-That's it; you've got a new web site in the mysite.com folder that's awaiting your content and design changes. Because we specified the --git option the project is already under version control.
-
-Note that if you're going to deploy your site to Heroku that you might want to pass the `--heroku` switch too, which adds a useful Rake task and adds the `heroku` gem to your bundle.
+That's it; you've got a new web site in the mysite.com folder that's
+awaiting your content and design changes. Because we specified the
+`--git` option the project is already under version control.
 
 Now we can use bundler to install all Nesta's dependencies.
 
@@ -27,41 +33,51 @@ Now we can use bundler to install all Nesta's dependencies.
 
 ## Copying the configuration
 
-You need the same config.yml file that you had before, so let's copy it straight into the new project:
+You need the same config.yml file that you had before, so let's copy it
+straight into the new project:
 
     $ cp path/to/old/project/config/config.yml config/
 
 ## Importing your content
 
-The content folder hasn't changed either, so you can just copy it over too:
+The content folder hasn't changed either, so you can just copy it over
+too:
 
-    $ cp -r path/to/old/project/content/* content
+    $ cp -r path/to/old/project/content/* content/
 
 Test it in the browser at this point to see if it starts up properly:
 
     $ shotgun config.ru
 
-Visit http://localhost:9393 to check that it's working.
+Visit [http://localhost:9393](http://localhost:9393) to check that it's
+working.
 
 ## Migrating your local changes
 
-Prior to the gem, design changes that were "local" to your site were all added to files inside the ./local folder. We don't need that folder any more; your modifications have been moved into the top level of your project's directory.
+Prior to the gem, design changes that were "local" to your site were all
+added to files inside the ./local folder. We don't need that folder any
+more; your modifications have been moved into the top level of your
+project's directory.
 
-Run this command to move any local changes over:
+Run this command to copy over your "local" changes:
 
-    $ cp path/to/old/project/local/{app.rb,public,views} .
-    TODO: test command
+    $ cp -r path/to/old/project/local/{app.rb,public,views} .
 
-You may want to fix any URLs in your CSS at this point, if you have referred to any images that have "local" in their path.
+You may want to fix any URLs in your CSS at this point, if you have
+referred to any images that have "local" in their path.
 
 ## Installing themes
 
-Themes are unchanged in the new version, but the command to install them has been renamed. Re-install your theme (if you're using one) with:
+Themes are unchanged in the new version, but the command to install them
+has been renamed. Re-install your theme (if you're using one) with:
 
     $ nesta theme:install <repository-url>
 
 ## Wrapping up
 
-That's it, you're done. Please [let us know](mailto:nesta@librelist.com) how you got on.
+That's it, you should be done. It would be a good idea to scan the
+CHANGES file to familiarise yourself with what else has changed.
 
 Once you're happy with your site all you need to do is to re-deploy it.
+
+Please [let us know](mailto:nesta@librelist.com) how you got on.

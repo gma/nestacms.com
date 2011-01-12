@@ -1,0 +1,114 @@
+Description: Instructions on publishing new articles to your Nesta web site using the Git version control system.
+Summary: This article will show you how to store the contents of your [Nesta](/nesta "Nesta - The SEO CMS") web site in a local [Git](/git "Version Control with Git") repository, and publish changes by running a single git command. It's not relevant if you're deploying to Heroku.
+
+# Publishing Articles with Git
+
+This article will show you how to store the contents of your
+Nesta web site in a local [Git][git] repository, and publish changes by
+running a single git command.
+
+[git]: http://git-scm.com
+
+This page isn't relevant if you're deploying to Heroku as Heroku
+requires that you check your content into the same repository as your
+copy of Nesta (see the [Heroku deployment docs][heroku-docs]).
+
+[heroku-docs]: /docs/deployment/heroku
+
+If you're deploying to your own server and keep your pages in a Git
+repository, then I definitely recommend working through what follows.
+Committing and pushing your changes publishes them immediately on your
+site, which leads to a smooth workflow.
+
+We'll setup two repositories; one on your local computer (so you can
+preview your changes locally before making them live) and one on your
+server.
+
+## Creating a local repository
+
+We'll make the local one first and copy any existing content into it. I
+like to keep mine inside my local copy of the nesta source code and to
+call it `content`. If you're going to do the same you should add
+"content" to the `.gitignore` file so that you needn't worry about
+accidentally checking your articles into your local copy of the Nesta
+code.
+
+On your workstation, create a `content` directory inside your `nesta`
+directory:
+
+    $ cd nesta
+    $ mkdir -p content/pages content/attachments
+    $ echo content >> .gitignore
+    $ cd content
+    $ git init
+
+If you already have any article or category pages copy them into these
+new directories now. Then add them to your git repository.
+
+    $ git add .
+    $ git commit -m "First commit."
+
+## Creating a remote repository
+
+Now we can login to the server and create the remote repository:
+
+    $ ssh your.web.server
+    $ mkdir -p git/content.git
+    $ cd git/content.git
+    $ git --bare init
+
+Back on your workstation, you can tell your local repository about your
+remote repository and then push all your content onto your server (this
+gives you a handy backup repository, should you accidentally lose your
+local repository in some kind of freak accident):
+
+    $ cd nesta/content
+    $ git remote add server ssh://your.web.server/home/user/git/content.git
+
+Adjust the path in the above command accordingly – I like to store my
+Git repositories in my home directory, but you can put this repository
+anywhere you like.
+
+## Publishing via the remote repository
+
+You've probably noticed that Nesta doesn't know anything about your
+remote Git repository yet, so it won't be able to serve any of your web
+pages.
+
+We're going to write a git hook that will copy a fresh set of pages from
+your remote repository to `/var/apps/nesta/shared/content` (the default
+location for an application that is [deployed with Vlad][vlad]). It will
+also remove any cached `.html` files in your `public` directory. Create
+a file called `hooks/post-receive` script in your remote repository and
+add the contents of this script to it:
+
+[vlad]: http://effectif.com/articles/deploying-sinatra-with-vlad "Deploying Sinatra"
+
+    #!/bin/sh
+
+    NESTA="/var/apps/nesta"
+    SHARED="$NESTA/shared"
+    rm -rf "$SHARED/content.old" "$SHARED/content.new"
+    git archive --format=tar --prefix=content.new/ HEAD | \
+        (cd $SHARED && tar xf -)
+    mv "$SHARED/content" "$SHARED/content.old"
+    mv "$SHARED/content.new" "$SHARED/content"
+    find "$NESTA/current/public" \
+        \( -name \*.html -or -name \*.xml \) -exec rm {} \;
+
+You may need to adjust the path in the `NESTA` variable to suit your
+setup.
+
+You'll also need to make it executable:
+
+    $ chmod +x git/content.git/hooks/post-receive
+
+Now (back on our workstation) we can try publishing a new page:
+
+    $ echo "# Test page" > pages/test.mdown
+    $ git add pages/test.mdown
+    $ git commit -m "Added test page."
+    $ git push server master
+
+If everything has gone according to plan you should be able to see your
+new page at http://your.web.server/test.

@@ -1,0 +1,21 @@
+Categories: docs/config
+Summary: Atom feeds support the specification of contact details for the person/organisation that is responsible for the articles in the feed.
+
+# Configuring the Atom feed
+
+The Atom feed is automatically enabled, and all articles that you
+publish will be included in it.
+
+Atom feeds support the specification of contact details for the
+person/organisation that is responsible for the articles in the feed.
+You can set your name contact details by setting the `author` details.
+The text is commented out by default; just uncomment it and enter your
+own information. Note that `name`, `uri` and `email` should be intended
+two characters:
+
+    author:
+      name: Your Name
+      uri: http://yourhomepage.com
+      email: you@yourdomain.com
+
+

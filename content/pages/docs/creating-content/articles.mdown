@@ -1,1 +1,47 @@
-# Todo
+Categories: docs/creating-content
+Summary: An article or blog post is nothing special; it's just a web page that was published at a given time.
+Read more: Find out how to set the date
+
+# Making articles/blog posts
+
+There's really nothing special about a blog post. They're just web pages
+that are published on a certain date. They might also be written on a
+similar topic to other articles on our blog.
+
+Imagine for a moment that we're writing a blog post for a site in which
+we often discuss food and travel. We can easily convert our web page
+into a blog post:
+
+    Date: 6 October 2009
+    Categories: food, travel
+
+    # Breakfast in Europe
+
+    This is a page about breakfast.
+
+    ...
+
+The top two lines don't appear on the page directly, but they tell Nesta
+how you'd like it to treat your page.
+
+The `Date:` line is pretty straightforward; it defines the date that
+your post was published. The date is displayed on the page. It is also
+used when identifying the latest articles that should appear on your
+site's home page, and choosing articles to include in your site's Atom
+feed.
+
+`Categories:` refers to other pages that collate information on topics
+related to this post. In the example above we're referring to pages
+stored in `content/pages/food.mdown` and `content/pages/travel.mdown`. A
+link to this post will automatically be included at the bottom of both
+of those pages. Category pages are a great way to [structure a web
+site][structure].
+
+[structure]: http://www.wordtracker.com/academy/website-structure
+
+See the [metadata reference](metadata-reference) for more details on
+`Date` and `Categories`, or to find out what else you can do with
+Nesta's metadata fields. When writing posts of more than a paragraph or
+two in length you should definitely check out the `Read more` and
+`Summary` options.
+

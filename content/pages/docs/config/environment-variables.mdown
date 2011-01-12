@@ -1,0 +1,64 @@
+Categories: docs/config
+Summary: It sometimes doesn't make sense to commit the `config.yml` file for your project into your version control system. Typically, you'd only want to avoid doing this if others will be using your site as a template for their own sites, or if you extend Nesta in a manner that requires you to enter private data into `config.yml`.
+Read more: If that describes you, read on
+
+# Using environment variables
+
+It sometimes doesn't make sense to commit the `config.yml` file for your
+project into your version control system. Typically, you'd only want to
+avoid doing this if others will be using your site as a template for
+their own sites, or if you extend Nesta in a manner that requires you to
+enter private data into `config.yml`.
+
+If Nesta detects any Nesta related environment variables it will ignore
+the `config.yml` file completely. You might want to keep a `config.yml`
+file around for convenience when developing your site locally, and just
+make sure that you don't check it into your respository.
+
+## Variable naming convention
+
+Each config setting in `config.yml` has a corresponding variable name,
+and it's quite easy to work out what each one will be called. Just take
+the name of the config setting, convert it to uppercase, and stick
+`NESTA_` on the front.
+
+For example:
+
+    NESTA_TITLE
+    NESTA_THEME
+
+A few variables are nested in the Yaml file; separate the components of
+their names with a double underscore, like this:
+
+    NESTA_AUTHOR__NAME
+    NESTA_AUTHOR__URI
+    NESTA_AUTHOR__EMAIL
+
+## Setting environment variables on Heroku
+
+If you want to deploy your site to Heroku, you can just check in the
+`config.yml` and deploy your site. If you'd prefer to use the
+environment variables you'll probably benefit from the `heroku:config`
+Rake task that Nesta will add to a new site if you create it with the
+`--heroku` switch. It will deal with running `heroku config` for you,
+for each setting that it finds in your `config.yml` file.
+
+If you created your site without the `--heroku` switch, just make a new
+one and steal the rake task:
+
+    $ nesta new dummy --heroku
+    $ cat dummy/Rakefile
+
+The alert reader may now be thinking "Hang on! If I need a `config.yml`
+file to set the environment variables, won't that mean I'll have to
+check it in?" Just remove it from your repo, tell git to ignore it, and
+then copy it back into place:
+
+    $ cp config/config.yml /tmp
+    $ git rm -f config/config.yml
+    $ echo config/config.yml >> .gitignore
+    $ git commit -a -m "Removed config.yml from repository."
+    $ mv /tmp/config.yml config/
+
+Now when you run `rake heroku:config` your local config file will be
+used to configure the environment variables on Heroku.

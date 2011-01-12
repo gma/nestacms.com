@@ -1,0 +1,13 @@
+Summary: Once you've designed your site and written your first page of content you want to get it out there for all the world to see!
+Read more: Find out how to roll your site out
+
+# Deployment
+
+Once you've designed your site and written your first page of content
+you want to get it out there for all the world to see.
+
+Nesta will run on any web server that supports
+[Sinatra](http://www.sinatrarb.com/ "Sinatra"). This gives you plenty of
+choice, but you don't even need your own web server. We're going to look
+at how to deploy Nesta on [Heroku](http://heroku.com/ "Heroku | Ruby
+Cloud Platform as a Service"), or on your own server or slice.

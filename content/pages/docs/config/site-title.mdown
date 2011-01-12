@@ -1,0 +1,12 @@
+Categories: docs/config
+Summary: Near the top of the config file you'll find `title` and `subtitle`. In most themes they are used to set the &lt;title&gt; tag, and control the heading...
+
+# The title and strapline
+
+Near the top of the config file you'll find `title` and `subtitle`. In
+some themes they are used to set the &lt;title&gt; tag, and control the
+heading.
+
+If your theme or design doesn't use the title/subtitle settings you may
+still want to configure them as they're used when generating Nesta's
+Atom feed.

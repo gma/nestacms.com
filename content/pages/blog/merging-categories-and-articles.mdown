@@ -5,38 +5,71 @@ Atom id: tag:effectif.com,2009-09-15:/nesta/merging-categories-and-articles
 
 # Merging categories and articles
 
-When I first started writing [Nesta](/nesta) I wanted a CMS that would allow me to:
+When I first started writing Nesta I wanted a CMS that would allow me
+to:
 
  1. Write articles that would be published in an XML feed, and
- 2. Collect my articles on topic specific category pages that would introduce each topic and link to relevant articles (see my [Ruby on Rails](/ruby-on-rails) page for an example).
+ 2. Collect my articles on topic specific category pages that would
+    introduce each topic and link to relevant articles (see my [Ruby on
+    Rails](/ruby-on-rails) page for an example).
 
-Articles and categories are a great way to organise a blog; they're user friendly and [search engines love them](http://www.wordtracker.com/academy/website-structure "Website Structure"). So nothing's changed there; I still want articles and categories. However, I've been using Nesta on e-commerce sites recently and have been finding that Nesta, as a general purpose CMS, didn't quite cut it.
+Articles and categories are a great way to organise a blog; they're user
+friendly and [search engines love
+them](http://www.wordtracker.com/academy/website-structure "Website
+Structure"). So nothing's changed there; I still want articles and
+categories. However, I've been using Nesta on e-commerce sites recently
+and have been finding that Nesta, as a general purpose CMS, didn't quite
+cut it.
 
-**Update:** The work described below was originally carried out on a separate unification branch. As of 7 October 2009 the changes described below have been merged into the main code base.
+**Update:** The work described below was originally carried out on a
+separate unification branch. As of 7 October 2009 the changes described
+below have been merged into the main code base.
 
 ## The problem
 
 I made a list of the things that I thought were holding Nesta back:
 
- * To make a simple web page (e.g. a /contact page) I had to put a `contact.mdown` file in the categories folder. It's not a category page, so this didn't feel quite right.
- * You couldn't host a page at an arbitrary URL; /foo and /articles/foo were supported, while /foo/bar or /foo/bar/baz weren't.
- * A category page could collect links to articles, but not to other category pages. This prevented me from building up a hierarchy of topics and limited Nesta's flexibility.
- * There was no way to control which category pages appeared in the menu. It hadn't been a problem on my blog (I don't have many categories), but for larger sites it doesn't scale. You need to be able to choose what goes in the menu.
- * There shouldn't be any need to specify the "Parent" metadata (it's used to setup the navigation links at the top of each page). If we're going to choose our own URLs then we can work out the parent automatically (e.g. /nesta is clearly the parent of /nesta/faq).
+ * To make a simple web page (e.g. a /contact page) I had to put a
+   `contact.mdown` file in the categories folder. It's not a category
+   page, so this didn't feel quite right.
+ * You couldn't host a page at an arbitrary URL; /foo and /articles/foo
+   were supported, while /foo/bar or /foo/bar/baz weren't.
+ * A category page could collect links to articles, but not to other
+   category pages. This prevented me from building up a hierarchy of
+   topics and limited Nesta's flexibility.
+ * There was no way to control which category pages appeared in the
+   menu. It hadn't been a problem on my blog (I don't have many
+   categories), but for larger sites it doesn't scale. You need to be
+   able to choose what goes in the menu.
+ * There shouldn't be any need to specify the "Parent" metadata (it's
+   used to setup the navigation links at the top of each page). If we're
+   going to choose our own URLs then we can work out the parent
+   automatically (e.g. /blog is clearly the parent of /blog/stuff).
 
 ## The solution
 
-After mulling it over for a while I concluded that the only thing that makes articles different from any other page is that I want them to appear in my atom feed. I've also noticed that only the pages that appear in the feed need a date.
+After mulling it over for a while I concluded that the only thing that
+makes articles different from any other page is that I want them to
+appear in my atom feed. I've also noticed that only the pages that
+appear in the feed need a date.
 
- * **Assumption 1:** Articles are just web pages that are published on a specific date.
+ * **Assumption 1:** Articles are just web pages that are published on a
+   specific date.
 
-If articles are just pages, what's the difference between a category page and a generic web page? A page only becomes a category page when you've got other pages with related content, and declare them to belong to that category.
+If articles are just pages, what's the difference between a category
+page and a generic web page? A page only becomes a category page when
+you've got other pages with related content, and declare them to belong
+to that category.
 
  * **Assumption 2:** Any web page can become a category page.
 
-If you've ever browsed the Nesta code you might have noticed that an `Article` and a `Category` were slightly different beasts, and yet we've just concluded that they're both just web pages with different metadata. Whoops -- that's a design flaw.
+If you've ever browsed the Nesta code you might have noticed that an
+`Article` and a `Category` were slightly different beasts, and yet we've
+just concluded that they're both just web pages with different metadata.
+Whoops -- that's a design flaw.
 
-I've refactored Nesta, merging the `Article` and `Category` model classes into a new `Page` class. You can see it (and try it) in the [unification branch](http://github.com/gma/nesta/tree/unification).
+I've refactored Nesta, merging the `Article` and `Category` model
+classes into a new `Page` class.
 
 A typical content folder might now look like this:
 
@@ -59,49 +92,24 @@ A typical content folder might now look like this:
       +---- foo.png
       +---- bar.png
 
-Note that `categories/` and `articles/` have been replaced with `pages/`, and that there's nothing special about the new `pages/articles/` directory; I just want to serve some pages with /articles in the URL. You could serve `things.mdown` from /cabbages/things if you like; just rename the directory. You can create URLs like /foo/bar/baz simply by nesting directories.
+Note that `categories/` and `articles/` have been replaced with
+`pages/`, and that there's nothing special about the new
+`pages/articles/` directory; I just want to serve some pages with
+/articles in the URL. You could serve `things.mdown` from
+/cabbages/things if you like; just rename the directory. You can create
+URLs like /foo/bar/baz simply by nesting directories.
 
-This seems like the way forward to me. I'm planning on waiting a couple of weeks to give people a chance to try it out and give me some feedback, before merging the unification branch into master.
+This seems like the way forward to me. I'm planning on waiting a couple
+of weeks to give people a chance to try it out and give me some
+feedback, before merging the unification branch into master.
 
-As an added bonus the code is now **simpler**, runs **faster**, and uses **fewer resources**.
+As an added bonus the code is now **simpler**, runs **faster**, and uses
+**fewer resources**.
 
 ## Trying it out
 
-If you're not already running a copy of Nesta you can check out a fresh copy and get started straight away with the new unification branch (you'll need to install the relevant dependencies first -- see the "Quick Start" section on the [main page](/nesta)):
+*Update (11 Jan 2011):* Since this article was written Nesta has evolved
+significantly, and the instructions in this section are no longer valid.
 
-    $ git clone git://github.com/gma/nesta.git
-    $ cd nesta
-    $ git checkout -b unification origin/unification
-    $ cp config/config.yml.sample config/config.yml
-    $ rake setup:sample_content
-    $ shotgun config.ru  # point your browser at http://localhost:9393
-
-If you're already running Nesta you can get yourself a local copy of the unification branch like this:
-
-    $ git fetch origin unification
-    $ git checkout -b unification origin/unification
-
-If you've got some existing content then we'll need to shuffle it around a bit. I've written a [migration script](http://github.com/gma/nesta/blob/unification/scripts/unification-migration) to do it for you. Run it from within your Nesta directory:
-
-    $ ./scripts/unification-migration
-
-The script automates the following:
-
- 1. Makes a menu file (`<content>/menu.txt`) from your old category pages.
- 1. Moves `<content>/categories/*` to `<content>/pages`.
- 1. Moves `<content>/articles/*` to `<content>/pages`.
- 1. Removes "Parent: ..." metadata declarations, which are no longer used.
-
-If your content is stored in a git repository the script will stage the changes for you, but will leave the task of committing the changes to you.
-
-If you like the new layout of the content directory you can try merging the new Nesta code into your own site. If, for example, you had your own design changes stored in a branch called `mysite` you could merge the two together like this:
-
-    $ cd nesta
-    $ git checkout mysite
-    $ git merge unification
-    # Review the changes, resolve any conflicts...
-    $ git commit -m "Merged the unification branch."
-
-After resolving any conflicts that might occur (I only had one when I updated effectif.com which I fixed by removing the `category.haml` file -- `page.haml` has replaced it) you should find that your site looks just as it did before, but that it's suddenly a whole lot more flexible...
-
-I'd love to know how you get on. You can get in touch [via Twitter](http://twitter.com/nestacms) or [on GitHub](https://github.com/gma). Or just drop me an email at [graham@effectif.com](mailto:graham@effectif.com).
+If you'd like to try Nesta, see the [quick start](/docs/quick-start)
+instructions.

@@ -1,0 +1,10 @@
+Summary: Out of the box Nesta has a clean, simple look. You'll probably want to change it, and Nesta makes it easy. This page tells you how to go about it.
+
+# Changing the design
+
+Out of the box Nesta has a clean simple look, but for many sites you're
+going to need to change it. There are two approaches that you can take:
+
+ 1. Install a different theme.
+ 2. Implement your own design, either from scratch or based on the
+    default templates.

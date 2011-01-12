@@ -1,0 +1,36 @@
+Summary: How to create a new web page, set the page title and headings, add attachments -- it's all here. We also cover how what makes a blog post different to a normal page, how to organise pages in categories and explain how your site's Atom feed works.
+
+# Writing content
+
+Creating a new page is easy:
+
+ 1. Open a new file in your editor.
+ 2. Enter some text (formatted as Markdown, Textile or Haml).
+ 3. Save the file in the `content/pages/` directory with a `.mdown`,
+    `.textile` or `.haml` extension.
+
+There's slightly more to it than that, so let's look at some examples.
+
+## Adding attachments
+
+Attachments are stored in the `attachments` sub directory of your
+`content` directory. You can then refer to them in your web pages via
+URLs beginning with `/attachments`. For example:
+
+    Download my [superb eBook](/attachments/my-ebook.pdf).
+
+    Here's a great picture:
+    
+    <img src="/attachments/my-image.png" alt="Great picture"/>
+
+You'll no doubt have noticed that this example includes an image with an
+HTML tag. That's the nice thing about Markdown; if it doesn't support
+what you need you can drop into HTML to say what you really mean. I find
+that it's rarely necessary, but it's nice to be able to fall back on
+HTML if the need arises.
+
+Of course, there's nothing to stop you from putting your images into
+Nesta's `public` directory (any file that you drop into `public` will be
+served automatically). The only reason that the `content/attachments`
+directory exists is that it allows you to keep your text and images
+together inside the `content` folder.

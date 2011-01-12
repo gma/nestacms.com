@@ -1,0 +1,55 @@
+Categories: docs/design
+Summary: If you'd like to base the design of your site on an existing theme, but need to modify the HTML or CSS slightly, this page will explain how to do it.
+
+# Overriding the default templates
+
+When Nesta serves a web page or CSS file, it will look for templates
+inside a `views` folder in your project. If it can't find the templates
+it needs in there, it'll have a look in the `views` folder inside the
+currently configured theme, and failing that it'll fall back on the
+default templates in the gem.
+
+All you need to do to tweak the defaults slightly is to copy the
+template that you want to change into your project, and edit it.
+
+You can have a look inside the default `views` folder with this command:
+
+    $ ls $(gem environment gemdir)/gems/nesta*/views
+
+Then you could copy one of those templates into your project, like this:
+
+    $ cd mysite.com
+    $ mkdir -p views
+    $ cp path/to/nesta-gem/views/sidebar.html views/
+
+You can also copy Sass files around in just the same way:
+
+    $ cp path/to/nesta-gem/views/master.sass views/
+
+Fire up your site with `shotgun config.ru`, and you'll be able to see
+your changes in action.
+
+There's just one gotcha. If the template you're redefining is rendered
+with a layout (i.e. it's a top level template such as `page.haml`) then
+Sinatra will expect to find the layout in the same directory as the
+template itself. In these cases you'll also need to copy `layout.haml`
+into `views`:
+
+    $ cp path/to/nesta-gem/views/layout.haml views/
+
+If you're only overriding templates that are rendered from within
+another template (Rails calls them "partials") then you won't need a
+local copy of the `layout.haml` file. You can easily identify which
+templates are which by searching the Nesta code for "= haml", and
+checking whether they're called with `:layout => false`.
+
+## Overriding themes
+
+As mentioned above, when Nesta tries to render a template it begins by
+looking in the `views` directory within your project, then (if a theme
+is in use) it checks the theme's `views` directory, and finally the
+`views` in the Nesta gem.
+
+This means that you can override a theme just easily as you can override
+the defaults, by grabbing a theme's templates and copying them into
+`views`.

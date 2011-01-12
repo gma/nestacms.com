@@ -1,1 +1,33 @@
-# Todo
+Categories: docs/config
+Summary: Google's free analytics software is a great way to keep track of how many people are using your web site, and it's very easy to configure. You just add the "web property ID" that Google give you when you sign up to the config file...
+
+# Google Analytics
+
+Google's free [analytics software][analytics] is a great way to keep
+track of how many people are using your web site, and it's very easy to
+configure. You just add the "web property ID" that Google give you when
+you sign up to the config file.
+
+## Configuring config.yml
+
+Open the `config/config.yml` file in a text editor and search for
+`google_analytics_code`. Uncomment it, and set it to your site's web
+property ID. The web property ID usually starts with "UA", and will look
+something like this:
+
+    google_analytics_code: UA-1234567-8
+
+## Adding Google's JavaScript to the page
+
+Whether or not Google Analyics is enabled for your site is controlled by
+the Haml template that is responsible for rendering the page. Nesta
+comes with a theme that adds Google's HTML and JavaScript, and many
+other themes also call it by default.
+
+If the theme or templates that you're using don't include comments you
+can insert the relevant code by adding a line like this in your
+layout template:
+
+    = haml :analytics, :layout => false
+
+[analytics]: http://www.google.com/analytics

@@ -1,0 +1,42 @@
+# Working with menus
+
+Menus are optional; not all themes will necessarily use a menu, and you
+don't have to fill it in if you don't want to. Having said that, if you
+do, you'll need to know what to do.
+
+## The file format
+
+Open the `content-demo/menu.txt` file and compare what you can see to
+the menu that's visible in the browser.
+
+You'll notice that each line in the file refers to the path to one of
+the files in the `pages` directory, with the file extension removed.
+You'll also notice that a menu item can have nested menu items beneath
+it, and that each sub level is indented by two spaces.
+
+So you could have a `menu.txt` file that looked like this:
+
+    blog
+    docs
+      marking-up-pages
+        examples/using-markdown
+        examples/using-textile
+        examples/using-haml
+        adding-attachments
+      menu-editing
+      publishing-a-feed
+    support
+      faq
+      knowledge-base
+    about
+    signup
+
+## What gets displayed?
+
+The entire menu doesn't necessarily have to be displayed on the page at
+once. Nesta's `Menu` class has methods for displaying just parts of the
+menu tree; you'll be able to choose which menu items are displayed on
+each page (or even display more than one menu, each generated from the
+same tree).
+
+TODO: explain how to use `Nesta::Menu`

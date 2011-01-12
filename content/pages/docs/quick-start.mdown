@@ -1,0 +1,71 @@
+# Quick start
+
+Nesta is written in Ruby, and you'll need a copy of Ruby installed in
+order to use it. Ruby comes pre-installed on Apple Macs and is available
+for Linux. It's easy to install, but if you'd like a bit of extra help
+have a read through our article on [Installing Nesta with RVM][with-rvm].
+
+These instructions work fine on Mac and Linux. If you're on Windows
+you'll need to substitute `shotgun` for `rackup` (`shotgun` won't run on
+Windows).
+
+When making a website with Nesta you start by getting it running on your
+own computer, before deploying it to your web server (or the cloud) when
+it's ready. So let's get started...
+
+## Installation
+
+Begin by using the `gem` command to install Nesta and [Bundler][bundler]
+(don't type the `$` characters; they represent your command prompt):
+
+    $ gem install bundler
+    $ gem install nesta
+
+Create a new folder to contain your new website (in this example the
+folder will be called `mysite.com`, but you can call it anything you
+like):
+
+    $ nesta new mysite.com
+
+If you intend to use git to version your changes, add the `--git`
+switch:
+
+    $ nesta new mysite.com --git
+
+You now have a web site, without any pages on it. That's no fun -- we
+need something to read!
+
+## The demo site
+
+To give you a feel for how Nesta works, you need some content. Download
+the demo content:
+
+        $ cd mysite.com
+        $ nesta demo:content
+
+The demo will be installed in the `content-demo` folder.
+
+## Browse your new website
+
+Fire up your web server...
+
+    $ shotgun config.ru
+    
+...and have a look at your new site:
+[http://localhost:9393/](http://localhost:9393/).
+
+## Now what?
+
+You can experiment by editing the files in the `content-demo/pages`
+folder, but when you're ready to make your own site you should add your
+pages in the `content` folder (you'll also need to edit the
+`config/config.yml` file to tell Nesta that it should be looking in
+`content`, rather than `content-demo`).
+
+Why not:
+
+ - [Install a theme](docs/config/theme)
+ - [Deploy your site](/docs/deployment) with Heroku (takes 5 minutes)
+
+[with-rvm]: /docs/running-nesta-with-rvm
+[bundler]: http://gembundler.com

@@ -1,0 +1,7 @@
+Summary: Nesta reads a few configuration settings from the `config/config.yml` file (or optionally -- if you don't want to check `config.yml` file in to version control -- from environment variables). You can use the configuration to set your site's title and strap line, setup Google Analytics, and other similar site wide settings.
+
+# Configuration
+
+Nesta reads its configuration from the `config/config.yml` file. A
+default configuration file is created automatically when you generate
+your web site with the `nesta new` command.

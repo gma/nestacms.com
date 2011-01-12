@@ -1,1 +1,89 @@
-# Todo
+Categories: docs/deployment
+Summary: Though Heroku is awesome, it isn't for everybody. You get more flexibility if you deploy Nesta to your own web server.
+
+# Deploying with Vlad
+
+Though Heroku is awesome, it isn't for everybody. You get more
+flexibility if you deploy Nesta to your own web server. For example, you
+can install themes as submodules (allowing you to pull in the author's
+latest changes), or run multiple applications using different
+technologies on the same domain.
+
+## Getting Nesta running
+
+Nesta works just like any other Sinatra application and can be setup
+with a range of web servers. I'm a fan of both [Phusion
+Passenger][passenger] and [Unicorn][unicorn] running behind Nginx, but
+you can use Apache just as easily.
+
+[passenger]: http://www.modrails.com/install.html
+[unicorn]: http://unicorn.bogomips.org/
+
+I'm not going to go into details on setting up a production Ruby web
+stack here, as there's every chance that you already know what you're
+doing. If you don't, you get stuck, and you can't use Heroku for some
+reason, please get in touch on the [mailing list][list].
+
+[list]: mailto:nesta@librelist.com
+
+Once your stack is up and running you need to push your site to your
+server. I favour Vlad over Capistrano, but you can do it any way you
+like. My article on [deploying Sinatra with Vlad][vlad] may come in
+handy.
+
+[vlad]: http://effectif.com/articles/deploying-sinatra-with-vlad
+
+## Configuring Nesta
+
+There are a couple of tweaks to `config/config.yml` that you might
+benefit from. They're not the default settings simply because they don't
+work on Heroku.
+
+If you enable caching in production then a `.html` file is written
+inside the `public` directory whenever a page is requested. Your web
+server (e.g. Nginx) is then able to bypass Nesta completely on
+subsequent requests, which is very fast. Turn caching on in production
+(whilst leaving it off in development) by adding this to the bottom of
+`config.yml`:
+
+    cache: false  # the default, used in development
+    
+    production:
+      cache: true
+
+## Installing themes as Git submodules
+
+Installing themes as submodules makes it very easy to keep your chosen
+theme up to date with the author's latest changes.
+
+Using a Git submodule is only slightly more involved than committing the
+theme to your local repository. Instead of `nesta theme:install`, type
+this:
+  
+    $ git submodule add <url> themes/theme-name
+    $ git submodule update --init
+    $ nesta theme:enable theme-name  # updates config.yml
+    $ git add config/config.yml themes/theme-name
+    $ git commit -m "Switched to the theme-name theme."
+
+When you deploy your code you need to run `git submodule update` to
+ensure that the latest version of your theme is deployed (if you're
+deploying with Vlad this will be taken care of automatically).
+
+In order to update your theme `cd` into the theme's directory, pull in
+the latest changes, and then commit the updated submodule to your main
+repository:
+
+    $ cd themes/theme-name
+    $ git pull
+    $ cd -
+    $ git add themes/theme-name
+    $ git commit -m "Updated the theme-name theme."
+
+Sadly Git submodules aren't an option if you're deploying to Heroku, as
+Heroku doesn't support them. Some people also find submodules fiddly to
+maintain, and Gerhard Lazu has suggested [giternal][giternal] as a
+suitable replacement. I've not had a chance to try giternal yet, but
+wonder if it'll also work on Heroku...
+
+[giternal]: http://www.rubyinside.com/giternal-easy-git-external-dependency-management-1322.html "Easy Git External Dependency Management with Giternal"

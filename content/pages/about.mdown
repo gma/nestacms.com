@@ -1,1 +1,15 @@
-# Todo
+# About
+
+Nesta is a lightweight Content Management System, written in Ruby using
+the Sinatra web framework. Nesta has the simplicity of a static
+site generator, but (being a fully fledged [Rack application][rack])
+allows you to serve dynamic content on demand.
+
+Content is stored on disk in plain text files. There is no database.
+Edit your content in a text editor and keep it under version control
+(most people use git, but any version control system will do fine).
+
+[Implementing the design](/docs/design) for your site is easy, but Nesta
+also has a small selection of [themes](/themes) to choose from.
+
+[rack]: http://rack.rubyforge.org

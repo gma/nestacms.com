@@ -1,0 +1,26 @@
+Categories: about
+
+# Credits
+
+Nesta (and this web site) was designed and written by [Graham
+Ashton][gma], with help from a team of users who have been submitting
+great feedback and submitting patches.
+
+## Patches submitted by...
+
+ - Matt Yoho -- HTTP caching support
+ - Wynn Netherland -- public metadata
+ - Mika Tuupola -- textile support
+ - Glenn Gillen -- publishing articles in the future
+
+[gma]: http://effectif.com
+
+## Docs and articles from...
+
+Er, nobody (yet). But I bet you can find some documentation on this site
+that needs sprucing up, or have a great idea for an article on what you
+can do with Nesta. Why not [fork this web site][fork] on GitHub, improve
+it, and send me ([gma][gma]) a pull request?
+
+[fork]: http://github.com/gma/nestacms.com
+[gma]: http://github.com/gma

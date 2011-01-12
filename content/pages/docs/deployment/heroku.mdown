@@ -1,1 +1,81 @@
-# Todo
+Categories: docs/deployment
+Summary: Heroku is a **free service** for hosting Ruby web applications. Running Nesta on Heroku is easy.
+
+# Running on Heroku
+
+Deploying Nesta to Heroku used to be a bit of a chore but these days it
+works out of the box. If you haven't already done so, [signup for 
+Heroku][heroku-signup] and install the `heroku` gem.
+
+[heroku-signup]: http://api.heroku.com/signup
+
+Before you can deploy your site you need to get it running properly on
+your own computer. You'll also need to check it into a Git repository.
+
+When you generate a new Nesta site you can tell Nesta that you want to
+manage it with Git, and/or deploy it to Heroku, by adding the `--git`
+and `--heroku` switches:
+
+    $ nesta new mysite.com --git --heroku
+
+The `--git` switch just creates a new repository for you, and commits
+the freshly created site. The `--heroku` switch adds a `heroku:config`
+rake task that you may find useful (read more about [configuring Nesta
+with environment variables](/docs/config/environment-variables)).
+
+You'll need to store your content in a `content`
+directory directly inside the top level Nesta directory (which is the
+default) and check it into the same repository as your copy of Nesta. If
+you've not already written any content create a test article now and add
+it to your Git repository:
+
+    $ cd mysite.com
+    $ mkdir -p content/pages
+    $ cat > content/pages/test.mdown
+    Date: 16 June 2010
+    
+    # Demo article
+    
+    Woohoo!
+    ^D  # <- press Ctrl-D
+
+    $ git add content
+    $ git commit -m "Added an article."
+
+Start the server up locally (run `shotgun config.ru`) and make sure you
+can browse to `http://localhost:9393/`. You should be able to see your
+content.
+
+There's no need to push these changes up to GitHub -- we're going to cut
+out the middle man and push your repo directly to Heroku.
+
+Make sure that you fill in `config/config.yml` properly (the most
+important thing is to ensure that caching is off, as we can't write to
+Heroku's file system).
+
+    $ heroku create --stack bamboo-mri-1.9.2
+    $ rake heroku:config
+    $ git push heroku master
+
+Check whether your deployment worked by visiting your special Heroku URL
+(which you can find in the output of the `heroku info` command). See the
+Heroku documentation for instructions on how to [change this
+URL][renaming-apps] to something more suitable. To run Nesta on your own
+domain you just need to configure the [Heroku DNS addon][zerigo].
+
+[renaming-apps]: http://docs.heroku.com/renaming-apps
+[zerigo]: http://docs.heroku.com/zerigo "Heroku | Zerigo DNS add-on"
+
+That's it, you're done! You're now running a free CMS, on a free hosting
+platform, and are free to make any changes that you like. Drop an email
+to the [mailing list](mailto:nesta@librelist.com) and let us know how it
+went...
+
+**Note:** You may have noticed from the above commands that we're
+running Nesta on Heroku's Ruby 1.9.2 stack. You can also run it on the
+`bamboo-ree-1.8.7` or `bamboo-ree-1.9.1` stacks if you'd prefer (though
+I can't think of a particularly good reason to do so).
+
+The experienced Heroku users amongst you may be wondering whether Nesta
+enables any HTTP compliant caching on Heroku. The answer is "not yet",
+but it's [in&nbsp;hand](http://github.com/gma/nesta/issues/9).

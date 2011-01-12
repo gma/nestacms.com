@@ -1,0 +1,82 @@
+Categories: docs/design
+Summary: If you need to implement your own design from scratch this is the page for you. But the short version is; Nesta is made with Sinatra, so if you know how to edit HTML and CSS in, you know how to do it with Nesta.
+
+# Creating a custom design
+
+Because Nesta is built with the [Sinatra web framework][sinatra],
+everything that you need to know to customise the design of your Nesta
+site is actually pure Sinatra.
+
+Before I send you off to the Sinatra documentation, we need to point out
+a couple of things.
+
+ 1. All the template formats supported by Sinatra are supported by
+    Nesta, including Haml, Erb, Erubis, Liquid, Sass, Scss and Less. You
+    can even write your JavaScript in CoffeeScript if you like, and
+    Nesta will render it for you. See Sinatra's [template
+    docs][template-docs] for the full list.
+ 2. In order to get Nesta to render anything other than Haml or Sass,
+    you'll need to explicitly tell Sinatra that you want to use it. You
+    can do that by creating an `app.rb` file and adding a Sinatra route
+    that handles the kind of template that you want to serve (see
+    below).
+
+## Adding your own routes
+
+You can get Nesta to respond to any kind of request, in any way you
+like, by writing Sinatra routes and adding them to an `app.rb` file in
+your project's top level folder.
+
+Here's an example that I've pieced together from the Sinatra docs:
+
+    $ cd mysite.com
+    $ cat app.rb
+    module Nesta
+      class App
+        get '/js/application.js' do
+          coffee :application
+        end
+
+        get '/' do
+          erb :index
+        end
+      end
+    end
+
+In this example, requests to `/js/application.js` will be rendered from
+the Coffee Script file in `views/application.coffee`, and the home page
+will be rendered from `views/index.erb`. All other requests will be
+passed through to the default routes that are specified in the `app.rb`
+file in the Nesta gem.
+
+Note that all the `get` blocks are inside the `Nesta::App` class
+definition (this bit is important; if you leave it out then your routes
+won't be found.
+
+You can also copy routes from the `app.rb` file inside the Nesta gem
+into your own `app.rb` file, and tweak them slightly.  Nesta will then
+use the route that it finds in your `app.rb` file in preference. This
+might be a useful thing to do if you'd rather edit your HTML using Erb,
+or switch to the Scss format for your CSS; you could just replace the
+calls to `haml` and `sass` to `erb` and `scss`.
+
+## The default route
+
+A default route is code that will respond to all requests that don't
+have their own specific route. You specify them with an asterisk
+(referred to as "splat" and "wildcard" in Sinatra's [routing
+docs][route-docs]), like this:
+
+    get '*' do
+      # stuff
+    end
+
+Sinatra will use the first route that matches. This means that if you
+add a default route like this to your `app.rb` file, you will also need
+to copy any of Nesta's default routes that you need into your `app.rb`
+file. Make sure that the default route is at the bottom, or it'll gobble
+up every request.
+
+[sinatra]: http://www.sinatrarb.com
+[template-docs]: http://www.sinatrarb.com/intro.html#Views%20/%20Templates
+[route-docs]: http://www.sinatrarb.com/intro.html#Routes

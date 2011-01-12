@@ -1,0 +1,9 @@
+docs
+  docs/quick-start
+  docs/creating-content
+  docs/design
+  docs/config
+  docs/deployment
+blog
+support
+about

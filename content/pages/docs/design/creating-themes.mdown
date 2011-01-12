@@ -1,0 +1,123 @@
+Summary: Everything you need to know to design and release your own Nesta themes.
+
+# Creating Themes
+
+To make a simple theme for Nesta you only need to write some Haml and
+Sass (or Scss), and drop the files into the right directory.
+
+## Making a simple theme
+
+Let's make a new theme, based on Nesta's default template. We can use
+the `scripts/theme` script to save us a bit of typing. It will create an
+empty `app.rb` file, a `README` file, and a couple of empty directories:
+
+    $ nesta theme:create mytheme
+    $ ls themes/mytheme
+    README.md     app.rb    public/   views/
+
+For the purposes of this example, let's give ourselves a head start by
+basing our work on the Slate theme.
+
+    $ nesta theme:install git://github.com/gma/nesta-theme-slate.git
+    $ cp themes/slate/views/* themes/mytheme/views/
+
+Now open `themes/mytheme/views/master.sass` in your editor and find the
+code that sets the background color of the `h2` tag (as I write it's on
+lines 160-161, but it may shift about a bit as `master.sass` gets
+updated):
+
+    h2
+      background: $background-tint - #111
+      background: rgba($background-tint - #222, 0.4) url(/slate/images/lines.png) repeat
+
+You'll see that the background is set twice; first to a solid background
+color, and then again to a combination of a translucent colour and the
+`lines.png` file (the second rule will be ignored by browsers that don't
+support `rgba` alpha transparency). Change the background rules to this:
+
+    h2
+      $h2-tint: #8AE32A
+      background: $h2-tint + #204
+      background: rgba($h2-tint, 0.5) url(/mytheme/images/lines.png) repeat
+
+Have a quick look through master.sass for other references to `/slate`
+and change them to `/mytheme` (there should be at least one).
+
+Now enable the theme:
+
+    $ nesta theme:enable mytheme
+
+To see if it worked, start a local copy of Nesta and check your local
+site in your browser:
+
+    $ shotgun config.ru
+
+The background colour on headings should have changed to green. It
+should look something like this:
+
+<img src="/attachments/modified-theme-headings.png" alt="Screenshot of a green heading"/>
+
+You can override any of the default Haml templates the same way. See the
+documentation on [changing the design](/docs/design), paying attention
+to the section on "Overriding the default templates".
+
+## Including images or JavaScript in your theme
+
+If you have any static files (i.e. "assets") to include in your theme
+it's a good idea to store them in the theme's `public` folder. We tell
+Nesta how to find these assets by configuring the `Rack::Static`
+middleware -- uncomment this code in the generated `app.rb` file:
+
+    module Nesta
+      class App
+        use Rack::Static, :urls => ["/mytheme"], :root => "themes/mytheme/public"
+      end
+    end
+
+If we didn't specify the theme name as a prefix then `Rack::Static` will
+try and serve all your users' assets from the theme's `public` folder.
+This could be fairly bad news for your users if they've dropped a bunch
+of content into the top level `public` directory.
+
+Due to the way the `Rack::Static` middleware works this extra prefix
+does mean that we need to **create an extra directory** named after the
+theme inside `public`, or Nesta won't be able to find your assets.
+
+Here's an example:
+
+    $ ls themes/mytheme/public/mytheme/images/
+    delicious.png	  digg.png   feed-icon.png   reddit.png
+
+## Defining routes
+
+You can add routes (such as `get "/"`) to a theme just by defining them
+in your theme's `app.rb` file. Put them inside the `Nesta::App` class,
+like this:
+
+    module Nesta
+      class App
+        helpers do
+        end
+  
+        get "/some/path" do
+          set_common_variables
+          # do stuff
+        end
+      end
+    end
+
+Before you distribute your theme, it's a good idea to copy the routes in
+the main `app.rb` file into your theme's `app.rb` file. This will ensure
+that any variables or routes that your theme depends on are available in
+future, even if Nesta's default routes get (significantly) updated. Just
+drop them inside the Nesta::App class in the theme's `app.rb` file.
+
+## Summary
+
+That's pretty much it; you now know how to make themes for Nesta!
+
+Please do contribute awesome designs back to the community by creating a
+public repo containing your theme on GitHub. Announce them on the
+[mailing list](mailto:nesta@librelist.com) too. I'm planning on putting
+together a themes section, with screenshots and links to the best
+themes. We need some more good themes first though, so get to it!

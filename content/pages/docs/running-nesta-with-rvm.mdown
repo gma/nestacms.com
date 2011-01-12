@@ -1,1 +1,156 @@
-# Todo
+Description: Find out how to install Nesta on a Mac or Linux computer with rvm (the Ruby Version Manager).
+Summary: One of the most pleasant things about Nesta is that you get to preview your articles or web design on a site running on your own computer, before you make your changes live on the Internet. Of course, this means that you need to install Nesta on your own computer. When writing the [Quick Start instructions](/nesta#quick_start) we assumed that we were talking to Ruby developers who would be familiar with installing Ruby apps, but recently Nesta has been attracting some attention from people who don't use Ruby on a regular basis.\n\nIf you're such a person, and you're having trouble getting Nesta running on your computer, these installation instructions are for you.
+
+# Installing Nesta with RVM
+
+One of the most pleasant things about Nesta is that you get to preview
+your articles or web design on a site running on your own computer,
+before you make your changes live on the Internet. Of course, this
+means that you need to install Nesta on your own computer.
+
+When writing the [Quick Start instructions](quick-start) we assumed that
+we were talking to Ruby developers who would be familiar with installing
+Ruby apps, but recently Nesta has been attracting some attention from
+people who don't use Ruby on a regular basis. If you're such a person,
+and you're having trouble getting Nesta running on your computer, these
+installation instructions are for you.
+
+We're going to take things slowly in this article, and will only be
+making one assumption; that your computer already has a version of
+[Ruby](http://www.ruby-lang.org/) installed.
+
+To test whether Ruby is installed, try typing this in a new terminal
+window (the `$` character represents the terminal's prompt and shouldn't
+be typed):
+
+    $ ruby -e 'puts "hello"'
+
+You should see the word "hello" printed on a line of it's own.
+
+If Ruby isn't already installed you'll see an error message that claims
+that `ruby` wasn't found. This is easily fixed &ndash; head over to the
+[Ruby downloads](http://www.ruby-lang.org/en/downloads/) page and
+download Ruby for your operating system. Follow the Ruby installation
+instructions, and then return to this article.
+
+## Installing RVM
+
+Okay, so far so good. Now that you've got Ruby setup, we're going to
+install RVM, the Ruby Version Manager. It's a very nifty script that
+allows you to install different versions of Ruby (and Ruby code) in your
+own personal space, without affecting any other software that is already
+installed on your computer. One of the benefits of this approach is that
+it makes it very difficult for you to inadvertently break any other Ruby
+software that may already be installed on your system, which is why
+we're using it here.
+
+We'll use Ruby's `gem` command to install `rvm`. Enter the following
+into your terminal:
+
+    $ gem install rvm
+    
+You may find that your computer complains that you don't have permission
+to create some files. That's okay; either run it as the root user or
+(preferably, if you're on a Mac or are using a Linux distribution that
+has sudo configured) re-run the command with `sudo` (you may have to
+enter your own password, depending on how your computer is configured):
+
+    $ sudo gem install rvm
+
+When `rvm` has been installed it will print a message telling you that
+you need to run `rvm-install`, which will then ask you to edit the
+`~/.bashrc` and `~/.bash_profile` config files. Let's do that first.
+Type the line that starts with `cat` into the terminal, then copy and
+paste the following three lines into the terminal. When you're done,
+press RETURN to move the cursor to a new line and press Ctrl-D.
+
+    $ cat >> ~/.bashrc
+    if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+        source $HOME/.rvm/scripts/rvm
+    fi
+
+Then add the same code to the `~/.bash_profile` file (remembering to
+press Ctrl-D after you've pasted the three lines of text):
+
+    $ cat >> ~/.bash_profile
+    if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+        source $HOME/.rvm/scripts/rvm
+    fi
+
+Now we can run `rvm-install`:
+
+    $ rvm-install
+
+You'll now need to close the terminal and open a new one so that RVM's
+configuration can take effect.
+
+Now we can use RVM to install a separate version of Ruby (which will
+never clash with your system's default Ruby installation), and the
+libraries that we need to run Nesta:
+
+    $ rvm install 1.9.2    # this will take some time; put the kettle on
+    $ rvm 1.9.2 --default
+
+## Installing Git
+
+Nesta's source code is distributed using the Git version control system.
+This means that you need to install Git before you can download Nesta.
+
+Check whether you already have `git` installed by typing `which git` in
+your terminal. If you have git setup you'll see the path to the `git`
+program. If you don't, you won't see anything (as in this example
+below):
+
+    $ which git
+    $
+
+If you don't have it, head over to [http://git-scm.com/][git-scm] and
+download the latest version. Follow the installation instructions that
+come with it, then return to these instructions.
+
+[git-scm]: http://git-scm.com/
+
+## Installing Nesta
+
+Okay, that's the hard part over with. You're now ready to follow the
+instruction's in Nesta's Quick Start section, but we'll repeat them here
+for you (with some extra explanations) anyway.
+
+First off, we're going to make a new directory to keep our code in (this
+step is entirely optional; you can put it wherever you like). Then we'll
+use `git` to grab the latest version of Nesta:
+
+    $ mkdir ~/code
+    $ cd ~/code
+    $ git clone git://github.com/gma/nesta.git
+
+Nesta's dependencies can all be installed with a rather nifty dependency
+manager named [Bundler](http://gembundler.com/ "Bundler: The best way to
+manage Ruby applications"), so we'll install that and then use it to
+setup the required Ruby libraries:
+
+    $ gem install bundler
+    $ bundle install
+
+Finally, we can configure Nesta, create some sample web pages, and fire
+up the server:
+
+    $ cp config/config.yml.sample config/config.yml
+    $ bundle exec rake setup:sample_content
+    $ bundle exec shotgun config.ru
+
+At this point you should be able to visit
+[http://localhost:9393/](http://localhost:9393/) in your web browser,
+and view your new web site.
+
+That's it, you're done.
+
+If your site isn't working locally and you can't work out what's gone
+wrong, please send an email to the [mailing list](nesta@librelist.com)
+(send a blank email in order to join).
+
+If you want to get really fancy, why not [install a theme](config/theme)
+and then [deploy your new site](deployment/heroku) to the Internet with
+Heroku? It only takes about 10 minutes.
+
+Failing that, have a look through the rest of the [documentation](/docs).

@@ -4,25 +4,37 @@ Atom id: tag:effectif.com,2010-12-08:/nesta/converting-nesta-to-a-gem
 
 # Should Nesta be a gem?
 
-I just posted this question to the [Nesta mailing list](mailto:nesta@librelist.com). For those of you who aren't on the list, here's the message in full:
+I just posted this question to the [Nesta mailing
+list](mailto:nesta@librelist.com). For those of you who aren't on the
+list, here's the message in full:
 
 <hr/>
 
-I'm considering a fairly significant change to the way files are organised in Nesta, in order to convert it into a gem.
+I'm considering a fairly significant change to the way files are
+organised in Nesta, in order to convert it into a gem.
 
-When I started Nesta I wanted to be able to make a web site by cloning the repo, making the relevant changes to the code, and then putting it live. It was low on ceremony, and a gem didn't feel appropriate.
+When I started Nesta I wanted to be able to make a web site by cloning
+the repo, making the relevant changes to the code, and then putting it
+live. It was low on ceremony, and a gem didn't feel appropriate.
 
-As more people started to use it, that approach made me feel a bit guilty. Whenever I changed the default templates in ./views I was potentially causing merge conflicts for people who had just changed a few simple things in their layout. So I created the ./local folder where you can put your own changes and you'll no longer run into merge commits.
+As more people started to use it, that approach made me feel a bit
+guilty. Whenever I changed the default templates in ./views I was
+potentially causing merge conflicts for people who had just changed a
+few simple things in their layout. So I created the ./local folder where
+you can put your own changes and you'll no longer run into merge
+commits.
 
 Then along came themes.
 
-Now there are three views folders where you can find a template, and up to three different app.rb files where you can add your code. It's perfectly logical, but it's not simple.
+Now there are three views folders where you can find a template, and up
+to three different app.rb files where you can add your code. It's
+perfectly logical, but it's not simple.
 
 So here's what I'm thinking.
 
-1. Rather than clone nesta, you install a gem.
-2. Rather than putting your templates in ./local/views, you use ./views.
-3. The only thing that Nesta requires to run is a content directory.
+ 1. Rather than clone nesta, you install a gem.
+ 2. Rather than putting your templates in ./local/views, you use ./views.
+ 3. The only thing that Nesta requires to run is a content directory.
 
 Making a new site would look something like this:
 
@@ -39,13 +51,20 @@ If you want to use a theme, you'd do this:
 
     $ nesta theme install http://github.com/gma/nesta-theme-original.git
 
-If you want to override the behaviour of some of the code, you'd create an app.rb file and hack away. If you want to change the templates, create ./views and drop some files in it.
+If you want to override the behaviour of some of the code, you'd create
+an app.rb file and hack away. If you want to change the templates,
+create ./views and drop some files in it.
 
-In other words, the root of your project would become the new local, and local would go away.
+In other words, the root of your project would become the new local, and
+local would go away.
 
-There are other potential benefits from converting it to a gem (e.g. it'd be easier to get it mounted inside Rails), but in the context of how most people currently use Nesta, I think the above just about covers it.
+There are other potential benefits from converting it to a gem (e.g.
+it'd be easier to get it mounted inside Rails), but in the context of
+how most people currently use Nesta, I think the above just about covers
+it.
 
-What do you think? Would this screw you up? Can you see it causing you a problem?
+What do you think? Would this screw you up? Can you see it causing you a
+problem?
 
 Cheers,  
 Graham
