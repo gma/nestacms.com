@@ -1,0 +1,20 @@
+// %nav.breadcrumb= display_breadcrumbs
+
+#content
+  %article(role="main")
+    ~ @page.to_html(self)
+
+    %section.pages
+      = haml :summaries, :layout => false, :locals => { :pages => @page.pages }
+
+    - unless @page.articles.empty?
+      %section.articles
+        %header
+          %h1= "Articles on #{@page.heading}"
+        = haml :summaries, :layout => false, :locals => { :pages => @page.articles, :heading => :h3 }
+
+    = haml :page_meta, :layout => false, :locals => { :page => @page }
+
+  = haml :comments, :layout => false
+
+= haml :sidebar, :layout => false

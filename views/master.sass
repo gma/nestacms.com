@@ -1,0 +1,265 @@
+@import "mixins.sass"
+
+// Variables
+
+$content-width: 37em
+
+$base-color: #262626
+$background-color: #fff
+$tint: #f1f1f3
+$border-color: #99d
+$link-color: #507EA9
+$visited-link-color: darken($link-color, 15%)
+$hover-link-color: lighten($link-color, 15%)
+$active-link-color: darken($link-color, 50%)
+$nav-link-color: desaturate($link-color, 55%)
+$meta-color: #999
+
+$border-style: 1px dashed $border-color
+
+// Reset
+
+*
+  margin: 0
+  padding: 0
+
+// Typography
+
+@mixin heading-font
+  font-family: "ff-meta-web-pro-1", "ff-meta-web-pro-2", Helvetica, sans-serif
+
+@mixin body-font
+  font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", Georgia, serif
+
+@mixin text-shadow
+  text-shadow: 0 1px 2px #ccc, 1px 3px 5px #d6d6d6
+
+body
+  font-size: $base-font * 1.05
+  line-height: $vertical-rhythm
+  color: $base-color
+  @include body-font
+
+header[role=banner]
+  h1,
+  h2
+    margin: 0
+    line-height: 1.2em
+  h1
+    font-size: 327%
+    font-weight: 700
+    letter-spacing: -1px
+    @include text-shadow
+  h2
+    color: $meta-color
+    font-size: 1em
+    font-weight: 400
+
+h1, h2, h3, #sidebar
+  @include heading-font
+h1
+  font-weight: 700
+h2, h3
+  font-weight: 400
+
+h4, h5, h6
+  @include body-font
+  font-family: Georgia, serif
+h1
+  @include adjust-font-size($h1-scale, 0.6, 0.4)
+h2
+  @include adjust-font-size($h2-scale, 1.5, 0.5)
+h3
+  @include adjust-font-size($h3-scale, 1.5, 0.5)
+h4
+  @include adjust-font-size($h4-scale, 2, 0)
+
+ol,
+p,
+pre,
+ul
+  margin: 0
+  margin-bottom: $base-vertical-margin
+
+li
+  @include adjust-font-size(1, 0, 0)
+
+blockquote
+  margin: $base-vertical-margin 0
+  padding: 0 $base-vertical-margin
+  
+  font-style: italic
+  color: $base-color + #555
+  
+pre
+  padding: ($vertical-rhythm / 2) 1em
+  overflow: auto
+
+img
+  border: none
+
+// Layout
+
+article, aside, footer, header, nav, section
+  display: block
+
+div#container
+  width: 54em
+  margin: 0 auto
+  padding: 1em 1em 0 1em
+
+  nav.breadcrumb
+    margin-top: $vertical-rhythm
+    color: $meta-color
+    padding: 0.5em 0
+    
+    font-size: 0.909em
+  
+  div#content
+    position: relative
+    width: $content-width
+    float: left
+    padding: 1px 0
+
+  div#sidebar
+    width: 12em
+    margin-left: 40em
+    padding: ($base-vertical-margin * 3) 1em $base-vertical-margin 1em
+  
+  footer.branding
+    clear: both
+    color: $meta-color
+    @include adjust-font-size($base-scale)
+    p
+      width: $content-width
+      margin: 0
+      padding: 1em 0
+
+// The visuals
+
+@mixin pale-background
+  background-color: $tint
+  background-color: rgba(255, 255, 255, 0.5)
+
+a
+  border-bottom: 1px dotted $link-color
+  text-decoration: none
+  color: $link-color
+  @include transition(color 0.25s 0 ease)
+  &:visited
+    color: $visited-link-color
+    border-bottom-color: $visited-link-color
+  &:hover
+    color: $hover-link-color
+    border-bottom-color: $hover-link-color
+  &:active
+    color: $active-link-color
+    border-bottom-color: $active-link-color
+
+#sidebar
+  @include pale-background
+
+nav.categories,
+div.feed,
+article p.meta
+  a
+    color: $nav-link-color
+    border-bottom-color: $background-color
+  &:hover a
+    color: $link-color
+  a:hover
+    color: $hover-link-color
+
+article p.meta
+  a
+    @include transition(border-bottom-color 0.5s 0 ease)
+  a:hover
+    border-bottom-color: $hover-link-color
+
+article h1 a
+  border-bottom: none
+
+body
+  background: $background-color url(/images/background.png)
+  
+article
+  img
+    max-width: 100%
+    margin-bottom: $base-vertical-margin
+
+  code,
+  pre
+    @include pale-background
+    code
+      background: none
+  code
+    padding: 1px 3px
+  pre
+    border-left: $border-style
+    code
+      padding: 0
+
+  footer
+    border-top: $border-style
+    p.meta
+      @include adjust-font-size(0.909, 0.1, 1.9)
+      font-style: italic
+      color: $meta-color
+
+// Pages of content
+article[role="main"]
+  h1, h2
+    @include text-shadow
+
+  div#disqus_thread
+    img
+      max-width: none
+    ul#dsq-comments
+      margin-left: 0
+  
+// Pages/articles assigned to this page
+section.pages,
+section.articles
+  & > ol
+    margin-left: 0
+    li
+      position: relative
+      margin: $base-vertical-margin 0
+      padding: $base-vertical-margin / 2 1em
+      @include pale-background
+      list-style: none
+    article
+      ol li
+        list-style: decimal
+      ul li
+        list-style: disc
+
+  header[role=main] h1
+    @include adjust-font-size($h1-scale, 1.5, 0.5)
+  header h1
+    @include adjust-font-size($h2-scale, 1.5, 0.5)
+
+  article
+    h1
+      text-shadow: none
+    p.read_more
+      @include adjust-font-size(1, 0, 0)
+      margin-top: -$base-vertical-margin
+    footer
+      border-top: none
+
+nav.categories
+  h1
+    @include adjust-font-size(1, 2, 0)
+
+  ul.menu
+    list-style: none
+    ul
+      list-style: none
+      margin: 0 0 0 0.825em
+    & > ul
+      list-style: disc
+      @include adjust-font-size(0.909, 0, 0)
+
+div.feed
+  margin: $base-vertical-margin 0

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    - if @description
+      %meta(name="description" content=@description)
+    - if @keywords
+      %meta(name="keywords" content=@keywords)
+    %title= @title
+    <!--[if ! lte IE 6]><!-->
+    %link(href="/css/master.css" media="screen" rel="stylesheet")
+    <!--<![endif]-->
+    /[if lte IE 6]
+      %link(rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.1.1.css" media="screen, projection")
+    /[if lt IE 9]
+      %script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
+    = local_stylesheet_link_tag('local')
+    %link(href="/articles.xml" rel="alternate" type="application/atom+xml")
+    %script(type="text/javascript" src="http://use.typekit.com/nnr4wgc.js")
+    %script(type="text/javascript")
+      try{Typekit.load();}catch(e){}
+    = haml :analytics, :layout => false
+  %body
+    #container
+      = haml :header, :layout => false
+      = yield
+      = haml :footer, :layout => false
