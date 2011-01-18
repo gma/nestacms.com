@@ -1,4 +1,4 @@
-Categories: docs/creating-content
+Categories: docs/creating-content:10
 Summary: You can create a web page by making a new Markdown, Textile or Haml file in the `content/pages` folder.
 
 # Making web pages

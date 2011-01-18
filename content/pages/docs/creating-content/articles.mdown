@@ -1,4 +1,4 @@
-Categories: docs/creating-content
+Categories: docs/creating-content:8
 Summary: An article or blog post is nothing special; it's just a web page that was published at a given time.
 Read more: Find out how to set the date
 
