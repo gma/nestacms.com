@@ -1,4 +1,4 @@
-Categories: docs/config, docs/design
+Categories: docs/config:8, docs/design
 Summary: Themes are typically stored in Git repositories, and can be installed into the `themes` folder with the `nesta theme:install` command. Several themes can be installed at once, but only one will be active. The active theme is set in the `config.yml` file.
 
 # Choosing a theme

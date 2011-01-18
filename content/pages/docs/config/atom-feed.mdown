@@ -1,4 +1,4 @@
-Categories: docs/config
+Categories: docs/config:9
 Summary: Atom feeds support the specification of contact details for the person/organisation that is responsible for the articles in the feed.
 
 # Configuring the Atom feed

@@ -1,4 +1,4 @@
-Categories: docs/config
+Categories: docs/config:10
 Summary: Near the top of the config file you'll find `title` and `subtitle`. In most themes they are used to set the &lt;title&gt; tag, and control the heading...
 
 # The title and strapline
