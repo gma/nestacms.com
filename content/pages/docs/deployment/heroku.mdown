@@ -1,4 +1,4 @@
-Categories: docs/deployment
+Categories: docs/deployment:10
 Summary: Heroku is a **free service** for hosting Ruby web applications. Running Nesta on Heroku is easy.
 
 # Running on Heroku
