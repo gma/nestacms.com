@@ -78,11 +78,24 @@ Example:
 
 ## Categories
 
-Articles appear on relevant category pages. Assuming you want your
-article to appear on your Git and Ruby category pages (whose filenames
-are `git.mdown` and `ruby.mdown`), you could do this:
+Pages can be listed on relevant category pages. Assuming you want your
+page or article to appear on your Git, Ruby and Rails category pages
+(whose filenames are `git.mdown` and `ruby.mdown`), you could do this:
 
-    Categories: git, ruby
+    Categories: git, ruby, ruby/rails
+
+When multiple pages are listed in the same category they will be sorted
+by their headings, unless you also specify a priority. You set the
+priority of a page within each of its categories separately:
+
+    Categories: git:5, ruby, ruby/rails:-1
+
+When a category page is rendered the pages with the highest priority are
+listed first. The default priority is 0.
+
+Note that priorities don't have any effect when used on an article (i.e.
+a page with a date -- see below). Articles are always sorted
+chronologically, with the most recent one at the top of the page.
 
 ## Date
 
