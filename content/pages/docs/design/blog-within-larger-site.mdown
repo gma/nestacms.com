@@ -1,0 +1,126 @@
+Categories: docs/design
+Date: 13:30 1 February 2011
+Summary: We start by customising the default templates and using a different layout for blog articles. We then move the blog to the URL /blog, freeing up your site's home page for different content.
+
+# Running a blog in a larger site
+
+We start by customising the default templates and applying a different
+layout to blog articles. We then move the blog to a new URL, freeing up
+your site's home page for different content.
+
+## Copying the default templates
+
+The default theme that comes with Nesta uses HTML5 markup, and WAI-ARIA
+roles for accessibility. As such, they make a good starting point for
+anybody wanting to implement a custom design.
+
+To copy all the templates (other than those for the Atom feed and
+sitemap, which you won't need to modify), run these two commands:
+
+    $ cd mysite.com
+    $ mkdir -p views
+    $ cp $(gem environment gemdir)/gems/nesta-0.9.4/views/* ./views
+    $ rm views/feed.haml views/sitemap.haml
+
+**Note:** You'll need to substitute Nesta's current version number into
+the command.
+
+You can now edit the templates in your local `views` folder, which will
+be used instead of the templates that ship with Nesta.
+
+## Switching from Sass to Scss
+
+Some people prefer the original CSS syntax to Sass's rather neat nested
+syntax. As a result the Sass developers created the Scss format, which
+supports pure CSS (with the clever bits from Sass thrown in).
+
+If you'd rather work with Scss than Sass, you can convert the default
+`.sass` files, like so:
+
+    $ cd views
+    $ for f in *.sass; do sass-convert $f $(basename $f).scss; done
+
+You'll also need to make sure that requests for CSS files are handled by
+Sinatra's `scss` method, rather than the `sass` method. You can achieve
+this by adding a route to `app.rb`.
+
+Open (or create, if it doesn't exist) the `app.rb` file in your
+project's top level directory (e.g. `mysite.com`).  Then add the
+following code (if you find that `Nesta::App` already exists in
+`app.rb`, just add the `get` block inside it):
+
+    module Nesta
+      class App
+        get '/css/:sheet.css' do
+          content_type 'text/css', :charset => 'utf-8'
+          cache scss(params[:sheet].to_sym)
+        end
+      end
+    end
+
+## Using a different template for blog posts
+
+In the default theme the `page.haml` template is used to render every
+page on the site, but you can use a different template for some pages if
+you prefer. If you only want to allow comments on your blog articles you
+could remove the comments markup from `page.haml` and create an
+`article.haml` template (that includes the relevant markup) specifically
+for your blog posts.
+
+Start by creating a template for displaying blog posts:
+
+    $ cp views/page.haml views/article.haml
+
+Now edit `page.haml`, removing the comments template.
+
+You can use `article.haml` by by adding a line like this to the top of
+each blog article:
+
+    Template: article
+
+See the coverage of "Template" in the [metadata reference][ref] for more
+details.
+
+[ref]: /docs/creating-content/metadata-reference
+
+## Moving the blog to /blog
+
+If you'd like to list your recent blog articles at the URL /blog, rather
+than on your site's home page, all you need to do is to create a page in
+`content/pages/blog/index.haml` that contains this code:
+
+    %section.articles= article_summaries(latest_articles)
+
+It will create a `<section/>` HTML tag with a class of `articles`
+(which is only there as it's useful for applying CSS styles), and will
+then use the `article_summaries` helper method to list the latest
+articles in an `<ol/>` tag.
+
+If you haven't changed it, you can probably just copy the default
+`index.haml` template into `content/pages/blog/`:
+
+    $ mkdir -p content/pages/blog
+    $ cp content/pages/index.haml content/pages/blog/
+
+### Thoughts on blog post URLs
+
+If your site includes breadcrumb navigation to show your visitors where
+they are, it can be a good idea to make sure that your articles are
+children of the blog page. If you put them inside the
+`content/pages/blog` folder then this will work automatically.
+
+It is by no means the only way to do it though; I often place articles
+(such as this one) inside the folder containing other pages in the
+article's main category, rather than dropping content inside the `blog`
+folder (it has never felt like a particularly useful part of the URL to
+me).
+
+## Universal IE6 stylesheet
+
+Nesta's default layout includes Andy Clarke's Universal IE6 stylesheets
+to make sure that the content is available to visitors who are have to
+use IE6, while freeing developers up to use progressive CSS.
+
+If you'd rather not use it (for some bizarre reason that I'm unable to
+fathom), edit `views/layout.haml` and remove the line that references
+"universal-ie6-css".
