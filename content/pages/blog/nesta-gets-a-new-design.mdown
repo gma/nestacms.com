@@ -1,3 +1,4 @@
+Template: article
 Date: 21 June 2010
 Summary: Before today I'd never been completely satisifed with the look of a freshly installed Nesta site. It wasn't bad, but it was a bit rough and ready and the typography wasn't that hot. The old default style is still [available as a theme](http://github.com/gma/nesta-theme-original) but moving forward Nesta has got a new look!
 Atom id: tag:effectif.com,2010-06-21:/nesta/nesta-gets-a-new-design

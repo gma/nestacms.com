@@ -1,3 +1,4 @@
+Template: article
 Date: 8 December 2010
 Summary: I just posted this question to the [Nesta mailing list](mailto:nesta@librelist.com). If you use Nesta at all I'd be interested to hear your thoughts. For those of you who aren't on the list, here's the message in full...
 Atom id: tag:effectif.com,2010-12-08:/nesta/converting-nesta-to-a-gem

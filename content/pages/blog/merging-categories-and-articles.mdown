@@ -1,3 +1,4 @@
+Template: article
 Date: 15 September 2009
 Summary: My developer friendly CMS (Nesta) has just undergone some really positive refactoring. Articles and categories are a great way to organise a blog; they're user friendly and search engines love them. So nothing's changed there; I still want articles and categories. However, I've been using Nesta on e-commerce sites recently and have been finding that Nesta, as a general purpose CMS, didn't quite cut it.
 Read more: Read about the improvements
