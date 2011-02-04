@@ -1,1 +1,54 @@
-%p Nesta is the shizzle yo.
+Title: Nesta CMS
+Template: home
+
+%section.intro
+  %heading
+    %h1 Home
+  :markdown
+    Nesta is a Ruby CMS that's well suited to developers and designers.  
+    With code that is simple and easy to understand, Nesta can be extended  
+    using the full power of the [Sinatra][frank] web framework.
+
+    [frank]: http://www.sinatrarb.com
+
+%section.overview
+  %heading
+    %h1 Why use Nesta?
+  :markdown
+    Do you prefer writing and testing HTML and CSS in a text editor,
+    rather than a browser window? Are you happy writing copy in
+    [Markdown][md] or [Textile][textile]? If so, this might be for you.
+
+    There's no database to configure &ndash; everything is stored in
+    text files. You can review your changes on a local copy of your web
+    site, and copy the files to your server when you're ready to publish
+    (most people use Git).
+
+    [md]: http://effectif.com/nesta/markdown-cheat-sheet
+    [textile]: http://textism.com/tools/textile/ "Textism: Tools: Textile"
+    
+%section.features
+  %heading
+    %h1 Features
+  :markdown
+    - Suitable for any type of web site, including blogs.
+    - Semantic **HTML5**, clean **typography**.
+    - Easily **re-styled** or **extended**.
+    - **Free hosting** on Heroku.
+    - Support for Google Analytics, Atom feeds, comments (via Disqus),
+      XML sitemaps&hellip;
+
+%section.quick-start
+  %heading
+    %h1 Quick start
+  %p Insert gem and shotgun commands here.
+
+%section.doc-list.group
+  %heading
+    %h1 Documentation
+  %nav
+    - display_menu(Nesta::Menu.for_path('/docs/quick-start'), :root => '/docs/quick-start', :class => 'quick-start')
+    - display_menu(Nesta::Menu.for_path('/docs/creating-content'), :root => '/docs/creating-content', :class => 'creating-content')
+    - display_menu(Nesta::Menu.for_path('/docs/design'), :root => '/docs/design', :class => 'design')
+    - display_menu(Nesta::Menu.for_path('/docs/config'), :root => '/docs/config', :class => 'config')
+    - display_menu(Nesta::Menu.for_path('/docs/deployment'), :root => '/docs/deployment', :class => 'deployment')

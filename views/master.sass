@@ -1,19 +1,16 @@
 @import "mixins.sass"
+@import "colours.sass"
 
 // Variables
 
-$content-width: 37em
+$golden: 1.618
 
-$base-color: #262626
-$background-color: #fff
-$tint: #f1f1f3
-$border-color: #99d
-$link-color: #507EA9
-$visited-link-color: darken($link-color, 15%)
-$hover-link-color: lighten($link-color, 15%)
-$active-link-color: darken($link-color, 50%)
-$nav-link-color: desaturate($link-color, 55%)
-$meta-color: #999
+$gutter: 2.618em // from modularscale.com with 16px/798px
+$container-width: 54em
+$content-width: $container-width / $golden - ($gutter / 2)
+$sidebar-width: $container-width - $content-width - ($gutter / 2)
+
+$banner-h1-scale: 3.27
 
 $border-style: 1px dashed $border-color
 
@@ -26,13 +23,13 @@ $border-style: 1px dashed $border-color
 // Typography
 
 @mixin heading-font
-  font-family: "ff-meta-web-pro-1", "ff-meta-web-pro-2", Helvetica, sans-serif
+  font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", Georgia, serif
 
 @mixin body-font
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", Georgia, serif
 
-@mixin text-shadow
-  text-shadow: 0 1px 2px #ccc, 1px 3px 5px #d6d6d6
+@mixin text-shadow($color: #DCDBD1)
+  text-shadow: 0 2px 5px $color
 
 body
   font-size: $base-font * 1.05
@@ -46,20 +43,20 @@ header[role=banner]
     margin: 0
     line-height: 1.2em
   h1
-    font-size: 327%
+    font-size: 100% * $banner-h1-scale
     font-weight: 700
+    font-style: italic
     letter-spacing: -1px
     @include text-shadow
   h2
+    display: none
     color: $meta-color
-    font-size: 1em
+    font-size: 1em * $base-scale
     font-weight: 400
 
 h1, h2, h3, #sidebar
   @include heading-font
-h1
-  font-weight: 700
-h2, h3
+h1, h2, h3
   font-weight: 400
 
 h4, h5, h6
@@ -107,11 +104,36 @@ nav.breadcrumb
 
 // Layout
 
+div#container
+  position: relative
+
+header[role=banner]
+  hgroup
+    position: absolute
+    left: $content-width + $gutter
+    top: $vertical-rhythm / 2
+  nav.primary
+    line-height: ($banner-h1-scale * $h4-scale) + ($vertical-rhythm / 2)
+    ul
+      list-style: none
+      li
+        display: inline
+        margin-right: 1.5em
+
+        @adjust-font-size($base-scale)
+        font-weight: 700
+
+        &:last-child
+          margin-right: 0
+
+        a
+          text-decoration: none
+
 article, aside, footer, header, nav, section
   display: block
 
 div#container
-  width: 54em
+  width: $container-width
   margin: 0 auto
   padding: 1em 1em 0 1em
 
@@ -122,8 +144,8 @@ div#container
     padding: 1px 0
 
   div#sidebar
-    width: 12em
-    margin-left: 40em
+    width: $sidebar-width
+    margin-left: $content-width + $gutter
     padding: ($base-vertical-margin * 3) 1em $base-vertical-margin 1em
   
   footer.branding
@@ -131,34 +153,61 @@ div#container
     color: $meta-color
     @include adjust-font-size($base-scale)
     p
-      width: $content-width
+      width: $container-width
       margin: 0
       padding: 1em 0
 
+// Home page layout
+article.home
+  section
+    clear: both
+
+    h1
+      @include adjust-font-size($h2-scale, 1.6, 0.4)
+
+    &.intro
+      heading
+        display: none
+      p
+        @include adjust-font-size($h3-scale, 1, 1, 4/3)
+        color: $meta-color
+        text-align: center
+
+    &.overview
+      clear: both
+      float: left
+      width: $content-width
+
+    &.features
+      clear: right
+      float: right
+      width: $sidebar-width
+
+      ul
+        margin-left: 1.5em
+
+    &.doc-list
+      @include adjust-font-size($base-scale)
+      nav
+        ul
+          float: left
+          width: (($container-width / 5) - $gutter) / $base-scale
+          margin-right: $gutter
+          &:last-child
+            margin-right: 0
+
 // The visuals
 
-@mixin pale-background
-  background-color: $tint
-  background-color: rgba(255, 255, 255, 0.5)
-
 a
-  border-bottom: 1px dotted $link-color
-  text-decoration: none
   color: $link-color
   @include transition(color 0.25s 0 ease)
   &:visited
     color: $visited-link-color
-    border-bottom-color: $visited-link-color
   &:hover
     color: $hover-link-color
-    border-bottom-color: $hover-link-color
   &:active
     color: $active-link-color
-    border-bottom-color: $active-link-color
 
-#sidebar
-  @include pale-background
-  
 nav.breadcrumb    
   ul
     margin: 0
@@ -181,24 +230,6 @@ article p.meta
   a:hover
     color: $hover-link-color
 
-nav.categories,
-div.feed,
-article p.meta
-  a
-    border-bottom-color: $background-color
-
-article p.meta
-  a
-    @include transition(border-bottom-color 0.5s 0 ease)
-  a:hover
-    border-bottom-color: $hover-link-color
-
-article h1 a
-  border-bottom: none
-
-body
-  background: $background-color url(/images/background.png)
-  
 article
   img
     max-width: 100%
@@ -206,7 +237,6 @@ article
 
   code,
   pre
-    @include pale-background
     code
       background: none
   code
@@ -243,7 +273,6 @@ section.articles
       position: relative
       margin: $base-vertical-margin 0
       padding: $base-vertical-margin / 2 1em
-      @include pale-background
       list-style: none
     article
       ol li
@@ -258,13 +287,17 @@ section.articles
 
   article
     h1
+      font-weight: normal
       text-shadow: none
+      a
+        text-decoration: none
     p.read_more
       @include adjust-font-size(1, 0, 0)
       margin-top: -$base-vertical-margin
     footer
       border-top: none
 
+// Side bar
 nav.categories
   h1
     @include adjust-font-size(1, 2, 0)

@@ -14,12 +14,12 @@ $base-font: $base-scale * 1em
 $vertical-rhythm: 1.75em
 $base-vertical-margin: 1.75em
 
-@mixin adjust-font-size($scale, $top-weight: 1, $bottom-weight: 1)
+@mixin adjust-font-size($scale, $top-weight: 1, $bottom-weight: 1, $cadence: 1)
   $average-margin: $base-vertical-margin / $scale
   margin-top: $average-margin * $top-weight
   margin-bottom: $average-margin * $bottom-weight
   
-  $line-height: $vertical-rhythm / $scale
+  $line-height: $vertical-rhythm / $scale * $cadence
   @if $line-height < 1
     line-height: $line-height * 2
   @else
