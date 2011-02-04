@@ -40,8 +40,8 @@ need something to read!
 To give you a feel for how Nesta works, you need some content. Download
 the demo content:
 
-        $ cd mysite.com
-        $ nesta demo:content
+    $ cd mysite.com
+    $ nesta demo:content
 
 The demo will be installed in the `content-demo` folder.
 
@@ -64,7 +64,7 @@ pages in the `content` folder (you'll also need to edit the
 
 Why not:
 
- - [Install a theme](docs/config/theme)
+ - [Install a theme](/docs/config/theme)
  - [Deploy your site](/docs/deployment) with Heroku (takes 5 minutes)
 
 [with-rvm]: /docs/running-nesta-with-rvm

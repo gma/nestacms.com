@@ -25,7 +25,8 @@ a plugin, the mailing list is the place to ask.
 ## IRC channel
 
 There's a #nesta IRC channel on the freenode network; it's not exactly
-busy, but there's a reasonable chance that you'll find somebody in there
-who can give you a hand.
+busy, but there's a chance that you'll find somebody in there who can
+give you a hand.
 
-It certainly comes in handy for if email isn't cutting the mustard.
+It's also a good place to meet up to debug people's sites if we can't
+work it out quickly on the mailing list.

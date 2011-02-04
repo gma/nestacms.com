@@ -3,19 +3,15 @@ Summary: Themes are typically stored in Git repositories, and can be installed i
 
 # Choosing a theme
 
-Themes are typically stored in Git repositories, and can be installed
-from a git repository into the `themes` folder with the `nesta
-theme:install` command.
-
-To install a theme, find the URL of the repository (you can normally cut
-and past the URL from a box on the theme's GitHub page) and then run
-`theme:install` like this:
+Themes should be installed in the `themes` folder. They're normally
+distributed in Git repositories; find the URL of the repository (check
+the theme's GitHub page) and then run `theme:install` like this:
 
     $ nesta theme:install git://github.com/gma/nesta-theme-slate
 
-You'll need to run the command from within your web site's main
-directory. Other than that, you're done. If you want to know what's
-actually going on (though frankly, there's no need), read on...
+You'll need to run the command from within your site's top level
+directory. Other than that, you're done. If you want to know what
+the `theme:install` command actually did, read on...
 
 ## The nitty gritty details
 

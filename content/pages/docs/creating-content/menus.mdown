@@ -1,3 +1,6 @@
+Categories: docs/creating-content
+Summary: Menus are optional; not all themes will necessarily use a menu, and you don't have to fill it in if you don't want to. Having said that, if you do, you'll need to know what to do.
+
 # Working with menus
 
 Menus are optional; not all themes will necessarily use a menu, and you

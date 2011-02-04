@@ -15,8 +15,8 @@ URLs beginning with `/attachments`. For example:
 
 This example is Markdown, but you can insert an image tag in a Textile
 page too (and, of course, a Haml page). That's one of the nice things
-about Markdown and Textile; if they doesn't support what you need you
-can drop into HTML to say what you really mean. I find that it's rarely
+about Markdown and Textile; if they don't support what you need you can
+drop into HTML to say what you really mean. I find that it's rarely
 necessary, but it's nice to be able to fall back on HTML if the need
 arises.
 
