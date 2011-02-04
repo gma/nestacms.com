@@ -1,8 +1,8 @@
 # Title and subheading for your site. Used on the home page and in page
 # titles.
 #
-title: "Nesta CMS"
-subtitle: "A Ruby CMS. Made with Sinatra."
+title: "Nesta"
+subtitle: "A Ruby CMS. Built with Sinatra."
 
 # If you want to set the descrition or keywords meta tags on your site's
 # home page, do it here.
