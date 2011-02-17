@@ -48,12 +48,15 @@ Template: home
     %h1 Documentation
   %p.overview
     We recommend familiarising yourself by working through
-    %em Quick start,
-    followed by a quick skim of the
-    %em Writing content
-    and
-    %em Configuration.
-    sections.
+    %em
+      %a(href="/quick-start") Quick start
+    followed by a quick skim of
+    %em
+      %a(href="/docs/creating-content") Writing content
+    and then
+    %em
+      = succeed "." do
+        %a(href="/docs/config") Configuration
   %nav
     - display_menu(Nesta::Menu.for_path('/docs/quick-start'), :root => '/docs/quick-start', :class => 'quick-start')
     - display_menu(Nesta::Menu.for_path('/docs/creating-content'), :root => '/docs/creating-content', :class => 'creating-content')

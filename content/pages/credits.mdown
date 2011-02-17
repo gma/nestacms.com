@@ -8,6 +8,13 @@ Nesta (and this web site) was designed and written by [Graham
 Ashton][gma], with help from you (the users) who have been submitting
 patches and sending feedback.
 
+Nesta encourages (but doesn't enforce) a category-oriented approach to
+organising websites. It was taught to me by Mark Nunney while I was
+working as a freelancer at Wordtracker. Read Mark's [article on website
+structure][nunney] if you're unsure why this is a great idea.
+
+[nunney]: http://www.wordtracker.com/academy/website-structure
+
 [gma]: http://effectif.com
 
 ## Patches and bugfixes submitted by...
@@ -29,7 +36,9 @@ Drop me a line and I'll add you in (sorry).
 
 Er, just me (Graham Ashton) so far. But I bet you can find some
 documentation on this site that needs fixing or re-wording, or have a
-great idea for an article on what you can do with Nesta. Why not
+great idea for an article on what you can do with Nesta.
+
+Why not...
 
 1. [Fork this site][fork],
 2. improve it, and

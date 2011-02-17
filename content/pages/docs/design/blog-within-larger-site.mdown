@@ -122,6 +122,5 @@ Nesta's default layout includes Andy Clarke's Universal IE6 stylesheets
 to make sure that the content is available to visitors who are have to
 use IE6, while freeing developers up to use progressive CSS.
 
-If you'd rather not use it (for some bizarre reason that I'm unable to
-fathom), edit `views/layout.haml` and remove the line that references
-"universal-ie6-css".
+If you'd rather not use it, edit `views/layout.haml` and remove the line
+that references `universal-ie6-css`.
