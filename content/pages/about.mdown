@@ -10,6 +10,7 @@ Edit your content in a text editor and keep it under version control
 (most people use git, but any version control system will do fine).
 
 [Implementing the design](/docs/design) for your site is easy, but Nesta
-also has a small selection of [themes](/themes) to choose from.
+also has a small selection of [themes](/docs/config/theme) to choose
+from.
 
 [rack]: http://rack.rubyforge.org

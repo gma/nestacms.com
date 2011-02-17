@@ -17,6 +17,7 @@ docs
   docs/design
     docs/design/editing-default-templates
     docs/design/custom-designs
+    docs/config/theme
     docs/design/creating-themes
   docs/deployment
     docs/deployment/heroku

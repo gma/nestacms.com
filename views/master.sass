@@ -10,9 +10,8 @@ $gutter: 2.107em // from modularscale.com with 16px/864px
 $unit: ($container-width - ($gutter * ($columns - 1))) / $columns
 
 $content-width: 6 * ($unit + $gutter) - $gutter
-$sidebar-width: 4 * ($unit + $gutter) - $gutter
-
-$banner-h1-scale: 3.27
+$sidebar-width: 3 * ($unit + $gutter) - $gutter
+$sidebar-left: $content-width + ($unit + $gutter) + $gutter
 
 $border-style: 1px dashed $border-color
 
@@ -43,15 +42,13 @@ header[role=banner]
   h1,
   h2
     margin: 0
-    line-height: 1.2em
   h1
-    font-size: 100% * $banner-h1-scale
+    font-size: 100% * $h3-scale
     font-weight: 700
     font-style: italic
     letter-spacing: -1px
     @include text-shadow
   h2
-    display: none
     color: $meta-color
     font-size: 1em * $base-scale
     font-weight: 400
@@ -110,12 +107,13 @@ div#container
   position: relative
 
 header[role=banner]
+  position: relative
   hgroup
     position: absolute
-    left: $content-width + $gutter
-    top: $vertical-rhythm / 2
+    left: $sidebar-left
+    top: 0
   nav.primary
-    line-height: ($banner-h1-scale * $h4-scale) + ($vertical-rhythm / 2)
+    line-height: $vertical-rhythm * 3
     ul
       list-style: none
       li
@@ -147,8 +145,8 @@ div#container
 
   div#sidebar
     width: $sidebar-width
-    margin-left: $content-width + $gutter
-    padding: ($base-vertical-margin * 3) 1em $base-vertical-margin 1em
+    margin-left: $sidebar-left
+    padding: ($base-vertical-margin * 3) 0 $base-vertical-margin
   
   footer.branding
     clear: both
@@ -184,9 +182,13 @@ article.home
       clear: right
       float: right
       width: $sidebar-width
-
       ul
-        margin-left: 1.5em
+        margin-left: 0
+
+    &.overview,
+    &.features
+      em
+        color: $meta-color
 
     &.doc-list
       @include adjust-font-size($base-scale, 0, 0)
@@ -204,6 +206,8 @@ article.home
             position: absolute
             top: $vertical-rhythm * 2
             left: $doc-list-width
+          &:last-child
+            width: $doc-list-width - 0.1em
           li
             list-style: none
             ul
