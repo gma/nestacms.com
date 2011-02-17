@@ -3,12 +3,14 @@
 
 // Variables
 
-$golden: 1.618
+$columns: 10
 
-$gutter: 2.618em // from modularscale.com with 16px/798px
 $container-width: 54em
-$content-width: $container-width / $golden - ($gutter / 2)
-$sidebar-width: $container-width - $content-width - ($gutter / 2)
+$gutter: 1.5em // from modularscale.com with 16px/864px
+$unit: ($container-width - ($gutter * ($columns - 1))) / $columns
+
+$content-width: 6 * ($unit + $gutter) - $gutter
+$sidebar-width: 4 * ($unit + $gutter) - $gutter
 
 $banner-h1-scale: 3.27
 
@@ -191,10 +193,14 @@ article.home
       nav
         ul
           float: left
-          width: (($container-width / 5) - $gutter) / $base-scale
-          margin-right: $gutter
+          width: ((2 * $unit) + $gutter) / $base-scale
+          margin-right: $gutter / $base-scale
           &:last-child
             margin-right: 0
+          li
+            list-style: none
+      nav > ul > li:first-child
+        font-weight: bold
 
 // The visuals
 
