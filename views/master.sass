@@ -103,6 +103,13 @@ nav.breadcrumb
 
 // Layout
 
+.group:after
+  content: "."
+  display: block
+  height: 0
+  clear: both
+  visibility: hidden
+
 div#container
   position: relative
 
@@ -315,7 +322,7 @@ section.articles
     footer
       border-top: none
 
-// Side bar
+// Documentation menus
 nav.categories
   h1
     @include adjust-font-size(1, 2, 0)
@@ -335,6 +342,33 @@ nav.categories
           margin: 0 0 0 1.5em
           margin-top: -$vertical-rhythm
           list-style: disc
+
+p.documentation-overview
+  float: left
+  width: 3 * ($unit + $gutter) - $gutter - 0.1em
+nav.documentation
+  float: right
+  width: 6 * ($unit + $gutter) - $gutter
+  margin-bottom: 2em
+  ul
+    list-style: none
+  ul ul
+    margin: 0 0 0 1.5em
+    list-style: disc
+  & > ul
+    & > li:first-child
+      font-weight: bold
+    float: left
+    width: 3 * ($unit + $gutter) - $gutter
+    margin-left: $gutter
+    &.quick-start
+      float: none
+    &.quick-start,
+    &.creating-content,
+    &.design
+      margin-left: 0
+    &:last-child
+      width: 3 * ($unit + $gutter) - $gutter - 0.1em
 
 div.feed
   margin: $base-vertical-margin 0
