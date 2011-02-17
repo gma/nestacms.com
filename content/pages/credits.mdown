@@ -10,13 +10,20 @@ patches and sending feedback.
 
 [gma]: http://effectif.com
 
-## Patches submitted by...
+## Patches and bugfixes submitted by...
 
  - Matt Yoho -- HTTP caching support
  - Wynn Netherland -- public metadata
  - Mika Tuupola -- textile support
  - Glenn Gillen -- publishing articles in the future
+ - Barry Keenan -- setting default encoding on Heroku ([bug][bug14])
  - Your name here?
+
+If you've sent me a fix and I've not listed you, it's just because I
+made this list in a rush and haven't dug through all my email history.
+Drop me a line and I'll add you in (sorry).
+
+[bug14]: https://github.com/gma/nesta/issues#issue/14
 
 ## Docs and articles from...
 

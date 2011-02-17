@@ -69,9 +69,9 @@ it went...
 [list]: mailto:nesta@librelist.com
 
 **Note:** You may have noticed from the above commands that we're
-running Nesta on Heroku's Ruby 1.9.2 stack. You can also run it on the
-`bamboo-ree-1.8.7` or `bamboo-ree-1.9.1` stacks if you'd prefer (though
-I can't think of a particularly good reason to do so).
+running Nesta on Heroku's Ruby 1.9.2 stack. You can also run it on a 
+1.8.x stack if you'd prefer (though I can't think of a particularly good
+reason to do so).
 
 The experienced Heroku users amongst you may be wondering whether Nesta
 enables any HTTP compliant caching on Heroku. The answer is "not yet",
