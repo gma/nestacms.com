@@ -1,7 +1,7 @@
 Categories: docs/config:9
 Summary: Atom feeds support the specification of contact details for the person/organisation that is responsible for the articles in the feed.
 
-# Configuring the Atom feed
+# The Atom feed
 
 The Atom feed is automatically enabled, and all articles that you
 publish will be included in it.

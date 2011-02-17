@@ -1,7 +1,7 @@
 Categories: docs/config:7
 Summary: Google's free analytics software is a great way to keep track of how many people are using your web site, and it's very easy to configure. You just add the "web property ID" that Google give you when you sign up to the config file...
 
-# Setting up Google Analytics
+# Using Google Analytics
 
 Google's free [analytics software][analytics] is a great way to keep
 track of how many people are using your web site, and it's very easy to

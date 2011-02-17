@@ -7,10 +7,6 @@ docs
     docs/creating-content/attachments
     docs/creating-content/menus
     docs/creating-content/metadata-reference
-  docs/design
-    docs/design/editing-default-templates
-    docs/design/custom-designs
-    docs/design/creating-themes
   docs/config
     docs/config/site-title
     docs/config/atom-feed
@@ -18,6 +14,10 @@ docs
     docs/config/google-analytics
     docs/config/comments-with-disqus
     docs/config/environment-variables
+  docs/design
+    docs/design/editing-default-templates
+    docs/design/custom-designs
+    docs/design/creating-themes
   docs/deployment
     docs/deployment/heroku
     docs/deployment/server-or-vps

@@ -5,13 +5,16 @@ order to use it. Ruby comes pre-installed on Apple Macs and is available
 for Linux. It's easy to install, but if you'd like a bit of extra help
 have a read through our article on [Installing Nesta with RVM][with-rvm].
 
-These instructions work fine on Mac and Linux. If you're on Windows
-you'll need to substitute `shotgun` for `rackup` (`shotgun` won't run on
-Windows).
+These instructions have been written for people using Linux or a Mac.
+If you're using Windows you'll need to substitute `shotgun` for `rackup`
+as `shotgun` doesn't run on Windows.
 
-When making a website with Nesta you start by getting it running on your
-own computer, before deploying it to your web server (or the cloud) when
-it's ready. So let's get started...
+When setting up a typical CMS you install it on your server, then use
+your browser to login via the admin interface in order to start editing
+your content and designing your layout. Nesta is different; you get a
+copy of your site running on your own computer first, and then
+[deploy](/docs/deployment) to a web server when it's ready. So let's get
+on with installing it on your computer...
 
 ## Installation
 
@@ -37,8 +40,8 @@ need something to read!
 
 ## The demo site
 
-To give you a feel for how Nesta works, you need some content. Download
-the demo content:
+To give you a feel for how Nesta works, you need some content. Let's
+download the demo content:
 
     $ cd mysite.com
     $ nesta demo:content

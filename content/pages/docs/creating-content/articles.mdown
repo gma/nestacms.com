@@ -2,7 +2,7 @@ Categories: docs/creating-content:8
 Summary: An article or blog post is nothing special; it's just a web page that was published at a given time.
 Read more: Find out how to set the date
 
-# Making articles/blog posts
+# Writing articles
 
 There's really nothing special about a blog post. They're just web pages
 that are published on a certain date. They might also be written on a

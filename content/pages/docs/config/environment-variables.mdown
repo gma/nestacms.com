@@ -2,7 +2,7 @@ Categories: docs/config
 Summary: It sometimes doesn't make sense to commit the `config.yml` file for your project into your version control system. Typically, you'd only want to avoid doing this if others will be using your site as a template for their own sites, or if you extend Nesta in a manner that requires you to enter private data into `config.yml`.
 Read more: If that describes you, read on
 
-# Using environment variables
+# Environment variables
 
 It sometimes doesn't make sense to commit the `config.yml` file for your
 project into your version control system. Typically, you'd only want to

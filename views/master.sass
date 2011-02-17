@@ -6,7 +6,7 @@
 $columns: 10
 
 $container-width: 54em
-$gutter: 1.5em // from modularscale.com with 16px/864px
+$gutter: 2.107em // from modularscale.com with 16px/864px
 $unit: ($container-width - ($gutter * ($columns - 1))) / $columns
 
 $content-width: 6 * ($unit + $gutter) - $gutter
@@ -120,7 +120,7 @@ header[role=banner]
       list-style: none
       li
         display: inline
-        margin-right: 1.5em
+        margin-right: $gutter
 
         @adjust-font-size($base-scale)
         font-weight: 700
@@ -189,16 +189,26 @@ article.home
         margin-left: 1.5em
 
     &.doc-list
-      @include adjust-font-size($base-scale)
+      @include adjust-font-size($base-scale, 0, 0)
+      p.overview
+        float: left
+        width: (2 * $unit + $gutter) / $base-scale
       nav
+        position: relative
+        $doc-list-width: (2 * ($unit + $gutter) - $gutter) / $base-scale
         ul
           float: left
-          width: ((2 * $unit) + $gutter) / $base-scale
-          margin-right: $gutter / $base-scale
-          &:last-child
-            margin-right: 0
+          width: $doc-list-width
+          margin-left: $gutter / $base-scale
+          &.creating-content
+            position: absolute
+            top: $vertical-rhythm * 2
+            left: $doc-list-width
           li
             list-style: none
+            ul
+              float: none
+              margin-left: 0
       nav > ul > li:first-child
         font-weight: bold
 

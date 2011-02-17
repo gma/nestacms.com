@@ -1,7 +1,7 @@
 Categories: docs/config
 Summary: Comments are easily added to a Nesta site through a third party site like Disqus.
 
-# Adding comments with Disqus
+# Comments with Disqus
 
 Comments are easily added to a Nesta site through [Disqus][disqus], a
 third party "comments platform". Comments are added to your web pages
