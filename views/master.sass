@@ -236,7 +236,6 @@ nav.breadcrumb
       content: ""
 
 nav.breadcrumb,
-nav.categories,
 div.feed,
 article p.meta
   a
@@ -288,7 +287,6 @@ section.articles
     li
       position: relative
       margin: $base-vertical-margin 0
-      padding: $base-vertical-margin / 2 1em
       list-style: none
     article
       ol li
@@ -318,14 +316,21 @@ nav.categories
   h1
     @include adjust-font-size(1, 2, 0)
 
-  ul.menu
+  ul
     list-style: none
-    ul
-      list-style: none
-      margin: 0 0 0 0.825em
-    & > ul
-      list-style: disc
-      @include adjust-font-size(0.909, 0, 0)
+    &.menu
+      margin: 0
+      & > li:first-child
+        display: none
+      & > li > ul > li
+        margin: 0 0 $vertical-rhythm
+        font-weight: bold
+        & ul
+          font-weight: normal
+        & > ul
+          margin: 0 0 0 1.5em
+          margin-top: -$vertical-rhythm
+          list-style: disc
 
 div.feed
   margin: $base-vertical-margin 0
