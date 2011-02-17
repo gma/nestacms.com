@@ -1,4 +1,6 @@
 Categories: about
+Summary: Nesta (and this web site) was designed and written by [Graham Ashton][gma], with help from you (the users) who have been submitting patches and sending feedback.
+Read more: Who are all these wonderful people?
 
 # Credits
 
@@ -20,9 +22,14 @@ patches and sending feedback.
 
 Er, just me (Graham Ashton) so far. But I bet you can find some
 documentation on this site that needs fixing or re-wording, or have a
-great idea for an article on what you can do with Nesta. Why not [fork
-this site][fork], improve it, and send a pull request (to [gma on
-GitHub][gma])?
+great idea for an article on what you can do with Nesta. Why not
+
+1. [Fork this site][fork],
+2. improve it, and
+3. send a pull request (to [gma on GitHub][gma])?
+
+Then I can rewrite this section and it'll look like I've got some
+mates...
 
 [fork]: http://github.com/gma/nestacms.com
 [gma]: http://github.com/gma

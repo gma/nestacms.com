@@ -13,15 +13,12 @@ Before you can deploy your site you need to get it running properly on
 your own computer. You'll also need to check it into a Git repository.
 
 When you generate a new Nesta site you can tell Nesta that you want to
-manage it with Git, and/or deploy it to Heroku, by adding the `--git`
-and `--heroku` switches:
+manage it with Git by adding the `--git` switch:
 
-    $ nesta new mysite.com --git --heroku
+    $ nesta new mysite.com --git
 
 The `--git` switch just creates a new repository for you, and commits
-the freshly created site. The `--heroku` switch adds a `heroku:config`
-rake task that you may find useful (read more about [configuring Nesta
-with environment variables](/docs/config/environment-variables)).
+the freshly created site.
 
 You'll need to store your content in a `content`
 directory directly inside the top level Nesta directory (which is the
@@ -54,7 +51,6 @@ important thing is to ensure that caching is off, as we can't write to
 Heroku's file system).
 
     $ heroku create --stack bamboo-mri-1.9.2
-    $ rake heroku:config
     $ git push heroku master
 
 Check whether your deployment worked by visiting your special Heroku URL
@@ -66,10 +62,11 @@ domain you just need to configure the [Heroku DNS addon][zerigo].
 [renaming-apps]: http://docs.heroku.com/renaming-apps
 [zerigo]: http://docs.heroku.com/zerigo "Heroku | Zerigo DNS add-on"
 
-That's it, you're done! You're now running a free CMS, on a free hosting
-platform, and are free to make any changes that you like. Drop an email
-to the [mailing list](mailto:nesta@librelist.com) and let us know how it
-went...
+That's it, you're done. You're now running a free CMS, on a free hosting
+platform. Drop an email to the [mailing list][list] and let us know how
+it went...
+
+[list]: mailto:nesta@librelist.com
 
 **Note:** You may have noticed from the above commands that we're
 running Nesta on Heroku's Ruby 1.9.2 stack. You can also run it on the
