@@ -17,7 +17,7 @@ docs
     docs/config/comments-with-disqus
     docs/config/environment-variables
   docs/design
-    docs/config/theme
+    docs/design/theme
     docs/design/editing-default-templates
     docs/design/custom-designs
     docs/design/creating-themes
