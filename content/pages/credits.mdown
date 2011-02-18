@@ -10,8 +10,12 @@ patches and sending feedback.
 
 Nesta encourages (but doesn't enforce) a category-oriented approach to
 organising websites. It was taught to me by Mark Nunney while I was
-working as a freelancer at Wordtracker. Read Mark's [article on website
-structure][nunney] if you're unsure why this is a great idea.
+working as a freelancer at Wordtracker.
+
+Categories are a bit like tags in that they allow you to group articles
+and pages together by topic, but (when you write some introductory copy
+for each category) they're better for your visitors. Read Mark's article
+on [website structure][nunney] for an introduction.
 
 [nunney]: http://www.wordtracker.com/academy/website-structure
 
@@ -40,12 +44,12 @@ great idea for an article on what you can do with Nesta.
 
 Why not...
 
-1. [Fork this site][fork],
-2. improve it, and
-3. send a pull request (to [gma on GitHub][gma])?
+1. Fork this site ([gma/nestacms.com][repo] on GitHub),
+2. Improve it, and
+3. Send a pull request (to [gma][gma])?
 
 Then I can rewrite this section and it'll look like I've got some
 mates...
 
-[fork]: http://github.com/gma/nestacms.com
-[gma]: http://github.com/gma
+[repo]: https://github.com/gma/nestacms.com
+[gma]: https://github.com/gma
