@@ -70,7 +70,7 @@ to tell Nesta that it should be looking in `content`, rather than
 
 Why not:
 
- - [Install a theme](/docs/config/theme)
+ - [Install a theme](/docs/design/theme)
  - [Deploy your site](/docs/deployment) with Heroku
    (it takes less than 5 minutes)
 

@@ -149,7 +149,7 @@ If your site isn't working locally and you can't work out what's gone
 wrong, please send an email to the [mailing list](nesta@librelist.com)
 (send a blank email in order to join).
 
-If you want to get really fancy, why not [install a theme](config/theme)
+If you want to get really fancy, why not [install a theme](design/theme)
 and then [deploy your new site](deployment/heroku) to the Internet with
 Heroku? It only takes about 10 minutes.
 
