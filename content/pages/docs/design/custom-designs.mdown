@@ -1,4 +1,4 @@
-Categories: docs/design
+Categories: docs/design:-1
 Summary: If you need to implement your own design from scratch this is the page for you. But the short version is; Nesta is made with Sinatra, so if you know how to edit HTML and CSS in, you know how to do it with Nesta.
 
 # Creating a custom design

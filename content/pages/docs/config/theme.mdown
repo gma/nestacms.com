@@ -1,36 +1,43 @@
-Categories: docs/config:8, docs/design
+Categories: docs/design
 Summary: Themes are typically stored in Git repositories, and can be installed into the `themes` folder with the `nesta theme:install` command. Several themes can be installed at once, but only one will be active. The active theme is set in the `config.yml` file.
 
 # Choosing a theme
 
+There's a small number of themes available for Nesta, which you can find
+by [searching GitHub][search] for "nesta-theme".
+
+[search]: https://github.com/search?q=nesta-theme&type=Everything&repo=&langOverride=&start_value=1
+
 Themes should be installed in the `themes` folder. They're normally
-distributed in Git repositories; find the URL of the repository (check
-the theme's GitHub page) and then run `theme:install` like this:
+distributed in Git repositories; the easiest way to install them is to
+find the URL of the repository (check the theme's GitHub page) and then
+ask Nesta to install it for you:
 
     $ nesta theme:install git://github.com/gma/nesta-theme-slate
 
 You'll need to run the command from within your site's top level
-directory. Other than that, you're done. If you want to know what
-the `theme:install` command actually did, read on...
+directory. Other than that, you're done.
+
+## Changing between installed themes
+
+There's also a command for switching between your currently installed
+themes:
+
+    $ nesta theme:enable name-of-theme
 
 ## The nitty gritty details
 
 Several themes can be installed at once, but only one will be active.
-The current theme is set in `config.yml`.
+The current theme is saved in `config.yml`.
 
-Set the theme to the name of one of the folders inside the `themes`
-folder. In the case of the [Slate][slate] theme, the folder is called
-`themes/slate`, so you would need to put this in `config.yml` to enable
-it:
-
-[slate]: https://github.com/gma/nesta-theme-slate
+Set the theme config setting to the name of one of the folders inside
+the `themes` folder. In the case of the [Slate][slate] theme, the folder
+is called `themes/slate`, so when slate is the current theme you'll find
+this line in `config.yml`:
 
     theme: slate
 
-There's also a command that will switch the current theme between the
-currently installed themes, updating `config.yml` for you:
-
-    $ nesta theme:enable name-of-theme
-
 If you're interested in creating your own theme, see [how to create a
 theme](/docs/design/creating-themes).
+
+[slate]: https://github.com/gma/nesta-theme-slate

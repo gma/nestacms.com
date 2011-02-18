@@ -13,14 +13,13 @@ docs
   docs/config
     docs/config/site-title
     docs/config/atom-feed
-    docs/config/theme
     docs/config/google-analytics
     docs/config/comments-with-disqus
     docs/config/environment-variables
   docs/design
+    docs/config/theme
     docs/design/editing-default-templates
     docs/design/custom-designs
-    docs/config/theme
     docs/design/creating-themes
   docs/deployment
     docs/deployment/heroku

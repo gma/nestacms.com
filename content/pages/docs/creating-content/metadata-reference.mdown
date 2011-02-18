@@ -1,3 +1,4 @@
+Categories: docs/creating-content:-1
 Summary: A full list of the Nesta metadata, which allows you to organise your site into categories and convert simple web pages into blog posts.
 
 # Metadata reference
