@@ -38,7 +38,7 @@ switch:
     $ bundle
 
 If you were to start Nesta up now you'd have a working web site, without
-any content. That's no fun -- let's get someting to read.
+any content. That's no fun -- let's get something to read.
 
 ## The demo site
 
@@ -63,7 +63,7 @@ Fire up your web server...
 
 You can experiment by editing the files in the `content-demo/pages`
 folder. When you're ready to start on your own site you'll be better off
-if you leave `content-demo` folder behind and make your pages in the
+if you leave the `content-demo` folder behind and make your pages in the
 `content` folder. You'll also need to edit the `config/config.yml` file
 to tell Nesta that it should be looking in `content`, rather than
 `content-demo`.
