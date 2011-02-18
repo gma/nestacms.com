@@ -1,0 +1,13 @@
+Date: 18 February 2011
+
+# Nesta 0.9.4 released
+
+I just pushed another version of the Nesta gem, which fixes an encoding
+bug that is sometimes seen under Ruby 1.9 when running on Heroku. It was
+[reported and fixed][bug] by Barry Keenan.
+
+[bug]: https://github.com/gma/nesta/issues/closed#issue/14
+
+I've also brightened up the colours of the links in the default theme.
+
+Install it with `gem install nesta`.
