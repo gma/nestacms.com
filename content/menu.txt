@@ -1,4 +1,7 @@
 /
+blog
+about
+support
 docs
   docs/quick-start
   docs/creating-content
@@ -22,6 +25,3 @@ docs
   docs/deployment
     docs/deployment/heroku
     docs/deployment/server-or-vps
-blog
-support
-about

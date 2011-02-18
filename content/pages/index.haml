@@ -5,8 +5,8 @@ Template: home
   %heading
     %h1 Home
   :markdown
-    A Ruby CMS that has been created for *developers* and *designers*.  
-    With simple code that is easy to follow, Nesta is easily  
+    A Ruby CMS for *developers* and *designers*.  
+    With simple code that's easy to follow, Nesta is easily  
     extended using the [Sinatra][frank] web framework.
 
     [frank]: http://www.sinatrarb.com
@@ -38,10 +38,19 @@ Template: home
     - Support for Google Analytics, Atom feeds, comments (via Disqus),
       XML sitemaps&hellip;
 
-%section.quick-start
+%section.getting-started
   %heading
-    %h1 Quick start
-  %p Insert gem and shotgun commands here.
+    %h1 Getting started
+  :markdown
+        $ gem install nesta
+        $ gem install bundler
+        $ nesta new mysite.com --git
+        $ cd mysite.com
+        $ bundle
+        $ nesta demo:content
+        $ shotgun config.ru
+
+    Then go to [http://localhost:9393](http://localhost:9393)...
 
 %section.doc-list.group
   %heading
