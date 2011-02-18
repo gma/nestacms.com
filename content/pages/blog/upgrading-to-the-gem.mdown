@@ -1,5 +1,5 @@
 Template: article
-Date: 6 January 2011
+Date: 18 February 2011
 Summary: If you're running an existing site on Nesta, you should upgrade to the gem. It's simpler, faster and more easily extended. It's also easy to do. This post contains all the commands you need...
 
 # Upgrading to the Nesta gem
