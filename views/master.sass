@@ -135,6 +135,32 @@ header[role=banner]
 
         a
           text-decoration: none
+  p.links
+    position: absolute
+    top: 0.7em
+    left: $sidebar-left + 8em
+
+    margin: 0
+
+    a
+      width: 16px
+      height: 16px
+      float: left
+
+      margin-right: 8px
+
+      display: block
+      text-indent: -9999px
+      &.feed
+        background: url(/images/feed.png) no-repeat
+      &.twitter
+        background: url(/images/twitter.png) no-repeat
+      &.github
+        background: url(/images/github-icon.png) no-repeat
+
+        width: 24px
+        height: 24px
+        margin-top: -4px
 
 article, aside, footer, header, nav, section
   display: block
