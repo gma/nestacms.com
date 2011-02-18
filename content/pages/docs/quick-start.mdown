@@ -34,19 +34,21 @@ If you intend to use git to version your changes, add the `--git`
 switch:
 
     $ nesta new mysite.com --git
+    $ cd mysite.com
+    $ bundle
 
-You now have a web site, without any pages on it. That's no fun -- we
-need something to read!
+If you were to start Nesta up now you'd have a working web site, without
+any content. That's no fun -- let's get someting to read.
 
 ## The demo site
 
-To give you a feel for how Nesta works, you need some content. Let's
-download the demo content:
+Nesta comes with a small demo site that you can have a play with to get
+yourself going. It's stored in a Git repository (so you'll need git
+installed). Install it with:
 
-    $ cd mysite.com
     $ nesta demo:content
 
-The demo will be installed in the `content-demo` folder.
+The site will be downloaded into the `content-demo` folder.
 
 ## Browse your new website
 
@@ -60,15 +62,17 @@ Fire up your web server...
 ## Now what?
 
 You can experiment by editing the files in the `content-demo/pages`
-folder, but when you're ready to make your own site you should add your
-pages in the `content` folder (you'll also need to edit the
-`config/config.yml` file to tell Nesta that it should be looking in
-`content`, rather than `content-demo`).
+folder. When you're ready to start on your own site you'll be better off
+if you leave `content-demo` folder behind and make your pages in the
+`content` folder. You'll also need to edit the `config/config.yml` file
+to tell Nesta that it should be looking in `content`, rather than
+`content-demo`.
 
 Why not:
 
  - [Install a theme](/docs/config/theme)
- - [Deploy your site](/docs/deployment) with Heroku (takes 5 minutes)
+ - [Deploy your site](/docs/deployment) with Heroku
+   (it takes less than 5 minutes)
 
 [with-rvm]: /docs/running-nesta-with-rvm
 [bundler]: http://gembundler.com
