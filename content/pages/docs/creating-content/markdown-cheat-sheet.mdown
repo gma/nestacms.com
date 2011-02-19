@@ -1,0 +1,138 @@
+Categories: docs/creating-content:-10
+Keywords: markdown, markdown cheat sheet, maruku
+Description: A brief summary of the most common Markdown syntax.
+Read more: Find out how to create a web page with Markdown
+Summary: Markdown is a wonderfully simple approach to creating web pages, written by John Gruber of [Daring Fireball](http://daringfireball.net/projects/markdown/ "Daring Fireball: Markdown"). You get on with the business of writing (without any fancy code) and Markdown takes care of producing clean, web standards compliant HTML.
+
+# Markdown Cheat Sheet
+
+Markdown is a wonderfully simple approach to creating web pages, written
+by John Gruber of [Daring
+Fireball](http://daringfireball.net/projects/markdown/ "Daring Fireball:
+Markdown"). You get on with the business of writing (without any fancy
+code) and Markdown takes care of producing clean, web standards
+compliant HTML.
+
+The Daring Fireball site provides [full documentation for
+Markdown](http://daringfireball.net/projects/markdown/syntax "Daring
+Fireball: Markdown Syntax Documentation"), but the following examples
+should get you started.
+
+## Section Headings
+
+You can define headings of different levels when creating a web page.
+The most important heading (which typically only occurs once on each
+page -- at the top) is heading 1. A level 1 heading can be created with
+Markdown by typing a single '#' character at the start of a line. The
+heading at the top of this page was defined like this:
+
+    # Markdown Cheat Sheet
+
+To create a secondary heading (such as the one for this section) you
+just use two '#' characters, like so:
+
+    ## Section Headings
+
+You can use up to six '#' characters to create a level 6 heading, but
+you will probably find that you don't need to nest your headings quite
+so deeply!
+
+## Paragraphs
+
+Paragraphs are very easy; separate them with a blank line. You can write
+your paragraph on one long line, or you can wrap the lines yourself if
+you prefer.
+
+This section was marked up like so:
+
+    Paragraphs are very easy; separate them with a blank line. You can write your paragraph on one long line,
+    or you can
+    wrap the lines yourself
+    if you prefer.
+
+    This section was marked up like so:
+
+## Bold and Italics
+
+It's **very** easy to add emphasis with **bold** and *italics*:
+
+    It's **very** easy to do **bold** and *italics*:
+
+You can also use underscores if you prefer:
+
+    It's __very__ easy to do __bold__ and _italics_:
+
+## Links
+
+Create simple links by wrapping square brackets around the link text and
+round brackets around the URL:
+
+    [Nesta CMS](http://effectif.com/nesta)
+
+If you want to give your readers an extra about the link that they're
+about to follow you can set a link title:
+
+    [Nesta CMS](http://effectif.com/nesta "Nesta is a superb CMS")
+
+Titles usually appear as a tooltip when you hover over the link, and
+help search engines work out what a page is about.
+
+## Bulleted Lists
+
+Start each line with hyphen or an asterisk, followed by a space. List
+items can be nested. This text:
+
+    * Bullet 1
+    * Bullet 2
+      * Bullet 2a
+      * Bullet 2b
+    * Bullet 3
+
+…produces this list:
+
+ * Bullet 1
+ * Bullet 2
+   * Bullet 2a
+   * Bullet 2b
+ * Bullet 3
+ 
+## Numbered Lists
+
+Start each line with number and a period, then a space. This text…
+
+    1. Baked potato
+    2. Baked beans
+    3. Pepper
+    
+...produces this list:
+
+ 1. Baked potato
+ 2. Baked beans
+ 3. Pepper
+
+## Quotes
+
+If you need to cite a paragraph of somebody else's work you really ought
+to attribute it to them properly by using HTML's `<blockquote/>` tag.
+You can produce it with Markdown by adding a single '&gt;' character at
+the beginning of the line.
+
+This text:
+
+    > One thing was certain, that the white kitten had had nothing
+    > to do with it -- it was the black kitten's fault entirely. For
+    > the white kitten had been having its face washed by the old cat,
+    > for the last quarter of an hour (and bearing it pretty well,
+    > considering) so you see that it couldn't have had any hand in
+    > the mischief. <cite>Lewis Carroll, Through the Looking
+    > Glass</cite>
+
+...produces:
+
+> One thing was certain, that the white kitten had had nothing
+> to do with it&nbsp;--&nbsp;it was the black kitten's fault entirely. For
+> the white kitten had been having its face washed by the old cat,
+> for the last quarter of an hour (and bearing it pretty well,
+> considering) so you see that it couldn't have had any hand in
+> the mischief. <cite>-- Lewis Carroll, Through the Looking
+> Glass</cite>
