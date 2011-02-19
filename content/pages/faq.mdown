@@ -4,21 +4,17 @@ Read more: Read the Nesta FAQ
 
 # Frequently Asked Questions
 
-## How can I funky site like the PeepCode blog, with a different design on every page?
+## How can I make a site like the PeepCode blog, with a different design on every page?
 
 Geoffrey Grosenbach customised an earlier version of Nesta, as described
-in his excellent [write up][peepblog] on the PeepCode blog. However, you
-can do the same kind of thing with the current version.
+in his excellent [write up][peepblog] on the PeepCode blog. You can now
+do the same kind of thing with the current version of Nesta.
 
-Alternatively, if your designs only require you to serve a different
-stylesheet, it might make sense to create a new metadata field called
-'Stylesheet' at the top of your page.
-
-If your different designs have different HTML you can specify which
-template and layout to use for each page (see the Layout and Template
-sections in the [metadata reference][ref]). Make one layout or template
-(whichever makes the most sense in your case) for each design, and then
-tell Nesta to use them on your pages:
+If your different designs require changes to the HTML you can specify
+which template and layout to use for each page (see the Layout and
+Template sections in the [metadata reference][ref]). Make one layout or
+template (whichever makes the most sense in your case) for each design,
+and then tell Nesta to use them on your pages:
 
     Categories: about
     Layout: pastel-shades
@@ -26,9 +22,11 @@ tell Nesta to use them on your pages:
 
     # Your page goes here...
 
-If you can re-jig your design without changing the HTML, and just need
-to serve different CSS, you can create a new metadata key to set the
-stylesheet. Something like this should do it:
+Alternatively -- if your designs only require you to serve a different
+stylesheet -- it might make sense to create a new metadata field called
+'Stylesheet' at the top of your page.
+
+Something like this should do it:
 
     Date: 19 Feb 2011
     Stylesheet: blue-blobs-of-goo
