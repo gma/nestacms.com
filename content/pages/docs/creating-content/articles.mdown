@@ -5,8 +5,7 @@ Read more: Find out how to set the date
 # Writing articles
 
 There's really nothing special about a blog post. They're just web pages
-that are published on a certain date. They might also be written on a
-similar topic to other articles on our blog.
+that are published on a certain date.
 
 Imagine for a moment that we're writing a blog post for a site in which
 we often discuss food and travel. We can easily convert our web page
@@ -21,8 +20,8 @@ into a blog post:
 
     ...
 
-The top two lines don't appear on the page directly, but they tell Nesta
-how you'd like it to treat your page.
+The top two lines don't appear on the page, but they tell Nesta a bit 
+about the page (in other words, they're "metadata").
 
 The `Date:` line is pretty straightforward; it defines the date that
 your post was published. The date is displayed on the page. It is also
@@ -33,15 +32,11 @@ feed.
 `Categories:` refers to other pages that collate information on topics
 related to this post. In the example above we're referring to pages
 stored in `content/pages/food.mdown` and `content/pages/travel.mdown`. A
-link to this post will automatically be included at the bottom of both
-of those pages. Category pages are a great way to [structure a web
-site][structure].
+link to this post will automatically be included on the food and travel
+pages. Category pages are a great way to structure a web site; see the
+[credits](/credits) page for background info on categories.
 
-[structure]: http://www.wordtracker.com/academy/website-structure
-
-See the [metadata reference](metadata-reference) for more details on
-`Date` and `Categories`, or to find out what else you can do with
-Nesta's metadata fields. When writing posts of more than a paragraph or
-two in length you should definitely check out the `Read more` and
-`Summary` options.
-
+The [metadata reference](metadata-reference) contains full details of
+how to use the `Date` and `Categories` metadata. When writing posts of
+more than a paragraph or two in length you should also try the `Read
+more` and `Summary` options.
