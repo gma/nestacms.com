@@ -19,6 +19,7 @@ it, and that each sub level is indented by two spaces.
 
 So you could have a `menu.txt` file that looked like this:
 
+    /
     blog
     docs
       marking-up-pages
@@ -34,12 +35,46 @@ So you could have a `menu.txt` file that looked like this:
     about
     signup
 
+`/` is special and refers to the home page. All the other lines in that
+file refer to the path of one of the pages on your site, relative to the
+home page.
+
 ## What gets displayed?
 
 The entire menu doesn't necessarily have to be displayed on the page at
-once. Nesta's `Menu` class has methods for displaying just parts of the
-menu tree; you'll be able to choose which menu items are displayed on
-each page (or even display more than one menu, each generated from the
-same tree).
+once; you can pluck out a small section of the hierarchy (such as just
+the `docs` or `support` sections) and render that on the page.
 
-TODO: explain how to use `Nesta::Menu`
+The primary navigation at the top of this page, and the documentation
+menu in the sidebar were both rendered from [this menu.txt][menu.txt] file.
+
+[menu.txt]: https://github.com/gma/nestacms.com/blob/master/content/menu.txt
+
+Nesta provides you with helper methods for rendering the HTML.
+
+It's probably most easily understood by having a look at an example. The
+documentation menu in the sidebar of this page (over there on the right)
+was rendered by this snippet of Haml:
+
+    %nav.categories
+      - display_menu(Nesta::Menu.for_path('/docs'), :class => "menu", :levels => 3)
+
+The `display_menu` method expects at least one argument; a Ruby object
+that describe the menu hierarchy, as created by `Nesta::Menu.for_path`.
+
+The `display_menu` method also takes an optional hash of options. The
+keys of the hash are:
+
+- `:class` -- Sets the HTML class of the top level &lt;ul&gt; tag
+  that is generated to hold the menu items.
+- `:levels` -- Controls how deep into a nested menu structure you want
+  to go; if it's greater than one (and your `menu.txt` file contains
+  a nested hierarchy) you'll get &ltul%gt tags for your submenus of your
+  submenus. Defaults to 2.
+
+Take a look at how the [menu.txt][menu.txt] file for nestacms.com was
+used to render all the menus on the site:
+
+- The primary navigation: [header.haml](https://github.com/gma/nestacms.com/blob/master/views/header.haml)
+- Links to docs on the home page: [index.haml](https://github.com/gma/nestacms.com/blob/master/content/pages/index.haml)
+- Links to docs in the side bar: [categories.haml](https://github.com/gma/nestacms.com/blob/master/views/categories.haml)
