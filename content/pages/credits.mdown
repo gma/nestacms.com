@@ -8,18 +8,23 @@ Nesta (and this web site) was designed and written by [Graham
 Ashton][gma], with help from you (the users) who have been submitting
 patches and sending feedback.
 
+[gma]: http://effectif.com
+
 Nesta encourages (but doesn't enforce) a category-oriented approach to
-organising websites. It was taught to me by Mark Nunney while I was
-working as a freelancer at Wordtracker.
+organising websites. It was taught to me by Mark Nunney of [SEO
+site][ss] while I was working as a freelancer at Wordtracker.
+
+[ss]: http://www.seosite.co.uk/
 
 Categories are a bit like tags in that they allow you to group articles
 and pages together by topic, but (when you write some introductory copy
-for each category) they're better for your visitors. Read Mark's article
-on [website structure][nunney] for an introduction.
+for each category) they're better for your visitors. Read Mark's
+article on [website structure][nunney1] for an introduction - if you
+like the idea you should be able to use categories to [get more
+traffic][nunney2] too.
 
-[nunney]: http://www.wordtracker.com/academy/website-structure
-
-[gma]: http://effectif.com
+[nunney1]: http://www.wordtracker.com/academy/website-structure
+[nunney2]: http://www.wordtracker.com/academy/site-structure-planning-seo
 
 ## Patches and bugfixes submitted by...
 
