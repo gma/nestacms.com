@@ -1,0 +1,87 @@
+Categories: nesta
+Summary: Common (ahem) questions and answers about Nesta (or "stuff that didn't fit anywhere else"). Got a problem? Check in here…
+Read more: Read the Nesta FAQ
+
+# Frequently Asked Questions
+
+## How can I funky site like the PeepCode blog, with a different design on every page?
+
+Geoffrey Grosenbach customised an earlier version of Nesta, as described
+in his excellent [write up][peepblog] on the PeepCode blog. However, you
+can do the same kind of thing with the current version.
+
+Alternatively, if your designs only require you to serve a different
+stylesheet, it might make sense to create a new metadata field called
+'Stylesheet' at the top of your page.
+
+If your different designs have different HTML you can specify which
+template and layout to use for each page (see the Layout and Template
+sections in the [metadata reference][ref]). Make one layout or template
+(whichever makes the most sense in your case) for each design, and then
+tell Nesta to use them on your pages:
+
+    Categories: about
+    Layout: pastel-shades
+    Template: funky-chicken
+
+    # Your page goes here...
+
+If you can re-jig your design without changing the HTML, and just need
+to serve different CSS, you can create a new metadata key to set the
+stylesheet. Something like this should do it:
+
+    Date: 19 Feb 2011
+    Stylesheet: blue-blobs-of-goo
+
+    # Your blog post goes here...
+
+Then create `views/blue-blobs-of-goo.sass` and put some code like this
+in your layout file:
+
+    - if stylesheet = @page.metadata('stylesheet')
+      %link(href="/css/#{stylesheet}.css" media="screen" rel="stylesheet")
+    - else
+      %link(href="/css/master.css" media="screen" rel="stylesheet")
+
+I've not tested that, but I'm sure you get the idea...
+
+[peepblog]: http://blog.peepcode.com/tutorials/2010/about-this-blog
+[ref]: /docs/creating-content/metadata-reference
+
+## There are lots of CMS's and blog engines around&nbsp;–&nbsp;why write another?
+
+There were several reasons. In no particular order:
+
+ * I enjoyed it.
+ * I was sick of editing articles by copying and pasting text from my
+   text editor into a web browser.
+ * I was *really* sick of Mephisto's seemingly random decisions to mark
+   lots of articles as new in my Atom feed when all I'd done was fix a
+   typo in my latest article.
+ * I wanted to be able to write content that wasn't automatically
+   included in my feed (category pages never show up, and articles only
+   show up if you set their date).
+ * I wanted to be able to apply [Mark Nunney's excellent SEO
+   techniques][nunney] (see point number 10, and his article on [website
+   structure][structure]) without resorting to a big system like Drupal.
+
+[nunney]: http://www.wordtracker.com/academy/mark-nunney-seo-expert-series
+[structure]: http://www.wordtracker.com/academy/website-structure
+
+## When I update an article it isn't republished to the Atom feed. Can I force it?
+
+No, you can't. One of my main irritations with other CMS's or blog
+engines was that changes to an article could cause the article to be
+republished in my feed. This made me reluctant to fix typos or improve
+an article's text, in case I spammed people who followed my RSS feed
+with minor updates.
+
+Guaranteeing that an article would never be re-listed in the Atom feed
+was a design goal.
+
+The only time an article will re-appear in the feed is if you rename the
+file on disk (i.e. give it a new permalink). You can prevent a renamed
+article from being re-published in the Atom feed by specifying the
+article's Atom ID (setting it to the original value -- see the
+documentation on [creating pages](/articles/creating-pages-in-nesta) for
+details).
