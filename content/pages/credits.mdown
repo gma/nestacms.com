@@ -19,7 +19,7 @@ site][ss] while I was working as a freelancer at Wordtracker.
 Categories are a bit like tags in that they allow you to group articles
 and pages together by topic, but (when you write some introductory copy
 for each category) they're better for your visitors. Read Mark's
-article on [website structure][nunney1] for an introduction - if you
+article on [website structure][nunney1] for an introduction -- if you
 like the idea you should be able to use categories to [get more
 traffic][nunney2] too.
 
