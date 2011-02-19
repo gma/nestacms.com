@@ -59,8 +59,8 @@ Heroku documentation for instructions on how to [change this
 URL][renaming-apps] to something more suitable. To run Nesta on your own
 domain you just need to configure the [Heroku DNS addon][zerigo].
 
-[renaming-apps]: http://docs.heroku.com/renaming-apps
-[zerigo]: http://docs.heroku.com/zerigo "Heroku | Zerigo DNS add-on"
+[renaming-apps]: http://devcenter.heroku.com/articles/renaming-apps
+[zerigo]: http://devcenter.heroku.com/articles/zerigo
 
 That's it, you're done. You're now running a free CMS, on a free hosting
 platform. Drop an email to the [mailing list][list] and let us know how
@@ -75,4 +75,4 @@ reason to do so).
 
 The experienced Heroku users amongst you may be wondering whether Nesta
 enables any HTTP compliant caching on Heroku. The answer is "not yet",
-but it's [in&nbsp;hand](http://github.com/gma/nesta/issues/9).
+but it's [in&nbsp;hand](https://github.com/gma/nesta/issues/9).

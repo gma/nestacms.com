@@ -12,7 +12,7 @@ to:
  1. Write articles that would be published in an XML feed, and
  2. Collect my articles on topic specific category pages that would
     introduce each topic and link to relevant articles (see my [Ruby on
-    Rails](/ruby-on-rails) page for an example).
+    Rails](http://effectif.com/ruby-on-rails) page for an example).
 
 Articles and categories are a great way to organise a blog; they're user
 friendly and [search engines love

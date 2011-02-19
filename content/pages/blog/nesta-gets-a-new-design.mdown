@@ -1,6 +1,6 @@
 Template: article
 Date: 21 June 2010
-Summary: Before today I'd never been completely satisifed with the look of a freshly installed Nesta site. It wasn't bad, but it was a bit rough and ready and the typography wasn't that hot. The old default style is still [available as a theme](http://github.com/gma/nesta-theme-original) but moving forward Nesta has got a new look!
+Summary: Before today I'd never been completely satisifed with the look of a freshly installed Nesta site. It wasn't bad, but it was a bit rough and ready and the typography wasn't that hot. The old default style is still [available as a theme](https://github.com/gma/nesta-theme-original) but moving forward Nesta has got a new look!
 Atom id: tag:effectif.com,2010-06-21:/nesta/nesta-gets-a-new-design
 
 # Nesta gets a new design
@@ -34,7 +34,7 @@ gory details. Nesta's default stylesheet would make a good starting
 point for styling up your own site (or, of course, you can just ignore
 it and knock up [your own design](/docs/design)). 
 
-[sass]: http://github.com/gma/nesta/blob/master/views/mixins.sass
+[sass]: https://github.com/gma/nesta/blob/master/views/mixins.sass
 
 **Disclaimer:** I've only just finished this new layout and haven't had
 a chance to test it on any browsers other than Safari 5, Chrome 5 and

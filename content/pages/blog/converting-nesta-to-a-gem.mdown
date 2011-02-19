@@ -50,7 +50,7 @@ And away you go...
 
 If you want to use a theme, you'd do this:
 
-    $ nesta theme install http://github.com/gma/nesta-theme-original.git
+    $ nesta theme install https://github.com/gma/nesta-theme-original.git
 
 If you want to override the behaviour of some of the code, you'd create
 an app.rb file and hack away. If you want to change the templates,
