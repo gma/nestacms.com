@@ -24,8 +24,8 @@ the Haml template that is responsible for rendering the page. Nesta
 comes with a theme that adds Google's HTML and JavaScript, and many
 other themes also call it by default.
 
-If the theme or templates that you're using don't include comments you
-can insert the relevant code by adding a line like this in your
+If the theme or templates that you're using don't include the JavaScript
+you can insert the relevant code by adding a line like this in your
 layout template:
 
     = haml :analytics, :layout => false
