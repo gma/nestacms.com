@@ -33,32 +33,3 @@ their names with a double underscore, like this:
     NESTA_AUTHOR__NAME
     NESTA_AUTHOR__URI
     NESTA_AUTHOR__EMAIL
-
-## Setting environment variables on Heroku
-
-If you want to deploy your site to Heroku, you can just check in the
-`config.yml` and deploy your site. If you'd prefer to use the
-environment variables you'll probably benefit from the `heroku:config`
-Rake task that Nesta will add to a new site if you create it with the
-`--heroku` switch. It will deal with running `heroku config` for you,
-for each setting that it finds in your `config.yml` file.
-
-If you created your site without the `--heroku` switch, just make a new
-one and steal the rake task:
-
-    $ nesta new dummy --heroku
-    $ cat dummy/Rakefile
-
-The alert reader may now be thinking "Hang on! If I need a `config.yml`
-file to set the environment variables, won't that mean I'll have to
-check it in?" Just remove it from your repo, tell git to ignore it, and
-then copy it back into place:
-
-    $ cp config/config.yml /tmp
-    $ git rm -f config/config.yml
-    $ echo config/config.yml >> .gitignore
-    $ git commit -a -m "Removed config.yml from repository."
-    $ mv /tmp/config.yml config/
-
-Now when you run `rake heroku:config` your local config file will be
-used to configure the environment variables on Heroku.
