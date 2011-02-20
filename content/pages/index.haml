@@ -52,6 +52,18 @@ Template: home
 
     Then go to [http://localhost:9393](http://localhost:9393)...
 
+%section.articles
+  %heading
+    %h1 Recent articles
+  %ol
+    - latest_articles(3).each do |article|
+      %li
+        %article
+          %header
+            %h1
+              %a(href="#{article.abspath}")= article.heading
+          = haml :page_meta, :layout => false, :locals => { :page => article }
+
 %section.doc-list.group
   %heading
     %h1 Documentation

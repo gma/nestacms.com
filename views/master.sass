@@ -224,7 +224,22 @@ article.home
         color: $meta-color
 
     &.getting-started
-      width: $content-width
+      float: left
+      width: 4 * ($unit + $gutter) - $gutter
+
+    &.articles
+      clear: none
+      float: left
+      width: 3 * ($unit + $gutter) - $gutter
+      margin-left: $gutter
+      ol li
+        margin: 0 0 $vertical-rhythm
+
+        article
+          h1
+            @include adjust-font-size(1, 0, 0)
+          p.meta
+            margin: 0
 
     &.doc-list
       @include adjust-font-size($base-scale, 0, 0)
