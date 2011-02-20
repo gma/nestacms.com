@@ -211,7 +211,8 @@ article.home
       float: left
       width: $content-width
 
-    &.features
+    &.features,
+    &.users
       clear: right
       float: right
       width: $sidebar-width
@@ -240,6 +241,16 @@ article.home
             @include adjust-font-size(1, 0, 0)
           p.meta
             margin: 0
+
+    &.users
+      & > ul
+        list-style: none
+      blockquote
+        padding: 0
+        @include adjust-font-size($base-scale, 0, 0)
+        cite
+          display: block
+          font-weight: bold
 
     &.doc-list
       @include adjust-font-size($base-scale, 0, 0)

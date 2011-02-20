@@ -64,6 +64,21 @@ Template: home
               %a(href="#{article.abspath}")= article.heading
           = haml :page_meta, :layout => false, :locals => { :page => article }
 
+%section.users
+  %heading
+    %h1 Who's using Nesta?
+  %ul
+    %li
+      %cite
+        Jonathan Penn,
+        = succeed ":" do
+          %a(href="navel-labs.com") navel-labs.com
+      %blockquote
+        navel-labs.com is running 100% Nesta. I was thinking of just using
+        Nesta for the cms and delegating the blog to Tumblr or Posterous,
+        but after I wrapped my head around what Nesta can do, I was a
+        total convert.
+
 %section.doc-list.group
   %heading
     %h1 Documentation
