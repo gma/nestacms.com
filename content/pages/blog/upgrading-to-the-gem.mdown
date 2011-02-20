@@ -81,4 +81,7 @@ CHANGES file to familiarise yourself with what else has changed.
 
 Once you're happy with your site all you need to do is to re-deploy it.
 
-Please [let us know](mailto:nesta@librelist.com) how you got on.
+If your site used was originally deployed from a fork of the `nesta`
+project on GitHub, we'd appreciate it if you'd delete the fork. All
+those forks with web sites in them turned out to be a very good way to
+hide useful patches in a sea of design related commits.
