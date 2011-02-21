@@ -1,3 +1,4 @@
+Template: article
 Date: 18 February 2011
 
 # Nesta 0.9.4 released
