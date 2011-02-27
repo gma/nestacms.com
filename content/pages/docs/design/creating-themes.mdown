@@ -8,8 +8,8 @@ Sass (or Scss), and drop the files into the right directory.
 
 ## Making a simple theme
 
-Let's make a new theme, based on Nesta's default template. We can use
-the `scripts/theme` script to save us a bit of typing. It will create an
+Let's make a new theme, based on an existing theme. We can use the
+`scripts/theme` script to save us a bit of typing. It will create an
 empty `app.rb` file, a `README` file, and a couple of empty directories:
 
     $ nesta theme:create mytheme
