@@ -43,6 +43,11 @@ local copy of the `layout.haml` file. You can easily identify which
 templates are which by searching the Nesta code for "= haml", and
 checking whether they're called with `:layout => false`.
 
+Of course, this means that if the only template that you'd like to edit
+is the layout, you'll also need to copy templates that are rendered with
+`:layout => true` into the same folder, even though you have no
+intention of editing them.
+
 ## Overriding themes
 
 As mentioned above, when Nesta tries to render a template it begins by
