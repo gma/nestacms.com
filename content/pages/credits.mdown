@@ -52,7 +52,7 @@ Why not...
 
 1. Fork this site ([gma/nestacms.com][repo] on GitHub),
 2. Improve it, and
-3. Send a pull request (to [gma][gma])?
+3. Send a pull request (to [gma][gma]).
 
 Then I can rewrite this section and it'll look like I've got some
 mates...
