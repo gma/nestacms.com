@@ -51,7 +51,7 @@ file in the Nesta gem.
 
 Note that all the `get` blocks are inside the `Nesta::App` class
 definition (this bit is important; if you leave it out then your routes
-won't be found.
+won't be found).
 
 You can also copy routes from the `app.rb` file inside the Nesta gem
 into your own `app.rb` file, and tweak them slightly.  Nesta will then
@@ -71,9 +71,10 @@ docs][route-docs]), like this:
       # stuff
     end
 
-Sinatra will use the first route that matches. This means that if you
-add a default route like this to your `app.rb` file, you will also need
-to copy any of Nesta's default routes that you need into your `app.rb`
+Sinatra will use the first route that matches, and the routes in your
+own `app.rb` file are checked first. This means that if you add a
+default route like this to your `app.rb` file, you will also need to
+copy any of Nesta's default routes that you need into your `app.rb`
 file. Make sure that the default route is at the bottom, or it'll gobble
 up every request.
 
