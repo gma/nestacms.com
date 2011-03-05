@@ -33,7 +33,9 @@ traffic][nunney2] too.
  - Glenn Gillen -- publishing articles in the future
  - Wynn Netherland -- public metadata
  - Barry Keenan -- setting default encoding on Heroku ([bug][bug14])
- - Robert Symes -- rendering summaries of arbitrary articles
+ - Robert Syme -- rendering summaries of arbitrary articles
+ - Christopher Lindblom -- fixed page titles for pages whose parent is
+   the home page
  - Your name here?
 
 If you've sent me a fix and I've not listed you, it's just because I
