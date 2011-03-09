@@ -146,8 +146,10 @@ and view your new web site.
 That's it, you're done.
 
 If your site isn't working locally and you can't work out what's gone
-wrong, please send an email to the [mailing list](nesta@librelist.com)
-(send a blank email in order to join).
+wrong, please send an email to the [mailing list][list] (send a blank
+email in order to join).
+
+[list]: mailto:nesta@librelist.com
 
 If you want to get really fancy, why not [install a theme](design/theme)
 and then [deploy your new site](deployment/heroku) to the Internet with
