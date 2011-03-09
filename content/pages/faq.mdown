@@ -81,5 +81,6 @@ The only time an article will re-appear in the feed is if you rename the
 file on disk (i.e. give it a new permalink). You can prevent a renamed
 article from being re-published in the Atom feed by specifying the
 article's Atom ID (setting it to the original value -- see the
-documentation on [creating pages](/articles/creating-pages-in-nesta) for
-details).
+"Atom ID" section of the [metadata reference][ref] for details).
+
+[ref]: /docs/creating-content/metadata-reference
