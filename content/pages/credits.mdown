@@ -28,15 +28,14 @@ traffic][nunney2] too.
 
 ## Patches and bugfixes submitted by...
 
- - Mika Tuupola -- textile support
- - Matt Yoho -- HTTP caching support
- - Glenn Gillen -- publishing articles in the future
- - Wynn Netherland -- public metadata
- - Barry Keenan -- setting default encoding on Heroku ([bug][bug14])
- - Robert Syme -- rendering summaries of arbitrary articles
- - Christopher Lindblom -- fixed page titles for pages whose parent is
-   the home page
- - Your name here?
+ - Mika Tuupola -- Textile support.
+ - Matt Yoho -- A great HTTP caching patch.
+ - Glenn Gillen -- Publishing articles in the future.
+ - Wynn Netherland -- Public metadata.
+ - Barry Keenan -- Setting default encoding on Heroku ([bug][bug14]).
+ - Robert Syme -- Rendering summaries of arbitrary articles.
+ - Christopher Lindblom -- Added the --version option. Fixed page titles
+   for pages whose parent is the home page.
 
 If you've sent me a fix and I've not listed you, it's just because I
 made this list in a rush and haven't dug through all my email history.
