@@ -1,7 +1,7 @@
 Categories: docs/design
-Summary: If you'd like to base the design of your site on an existing theme, but need to modify the HTML or CSS slightly, this page will explain how to do it.
+Summary: Start here if you'd like to base the design of your site on the default templates (or an existing theme).
 
-# Overriding the default templates
+# Editing the default templates
 
 When Nesta serves a web page or CSS file, it will look for templates
 inside a `views` folder in your project. If it can't find the templates
@@ -10,7 +10,9 @@ currently configured theme, and failing that it'll fall back on the
 default templates in the gem.
 
 All you need to do to tweak the defaults slightly is to copy the
-template that you want to change into your project, and edit it.
+template that you want to change into your project, and edit it (if you
+want to make a new design from scratch, see the docs on creating a
+[custom design](custom-designs)).
 
 You can have a look inside the default `views` folder with this command:
 
@@ -20,7 +22,7 @@ Then you could copy one of those templates into your project, like this:
 
     $ cd mysite.com
     $ mkdir -p views
-    $ cp path/to/nesta-gem/views/sidebar.html views/
+    $ cp path/to/nesta-gem/views/sidebar.haml views/
 
 You can also copy Sass files around in just the same way:
 
