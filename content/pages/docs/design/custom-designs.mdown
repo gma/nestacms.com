@@ -5,8 +5,7 @@ Summary: If you need to implement your own design from scratch this is the page 
 
 If you want to create your own design you have two choices:
 
-1. Copy all the templates into your project (in which case you need to
-   copy all the templates to your project &ndash; see the
+1. Copy all the templates into your project &ndash; see the
    [previous page][editing-defaults]), or
 2. Start from scratch.
 
