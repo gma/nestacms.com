@@ -37,6 +37,6 @@ If the theme or templates that you're using don't include comments you
 can insert the relevant code by adding a line like this in your
 template:
 
-    = haml :coments, :layout => false
+    = haml :comments, :layout => false
 
 [disqus]: http://disqus.com
