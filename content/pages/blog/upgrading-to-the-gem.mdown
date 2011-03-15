@@ -39,6 +39,12 @@ straight into the new project:
 
     $ cp path/to/old/project/config/config.yml config/
 
+If you are using Vlad to deploy Nesta, chances are you have modifed 
+your Rakefile and deploy.rb, so let's save those as well:
+
+    $ cp path/to/old/project/config/deploy.rb config/
+    $ cp path/to/old/project/Rakefile .
+
 ## Importing your content
 
 The content folder hasn't changed either, so you can just copy it over
