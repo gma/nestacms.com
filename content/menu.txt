@@ -20,7 +20,7 @@ docs
     docs/design/theme
     docs/design/editing-default-templates
     docs/design/custom-designs
-    docs/design/changing-template-engine
+    docs/design/templating-engines
     docs/design/creating-themes
   docs/deployment
     docs/deployment/heroku
