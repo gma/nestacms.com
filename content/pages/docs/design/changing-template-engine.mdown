@@ -1,0 +1,68 @@
+Categories: docs/design:-1
+Summary: By default Nesta uses Haml for HTML templating, and Sass (in the Sassy format) because -- once you're used to them -- they're just better. If you'd rather change them (e.g. to Erb and the SCSS syntax) you'll need to tell Nesta how to find your templates. You can use any of the templating engines that are supported by Sinatra -- this page shows you how.
+
+# Templating engines
+
+All the template formats supported by Sinatra are supported by Nesta,
+including Haml, Erb, Erubis, Liquid, Sass, Scss and Less. You can even
+write your JavaScript in CoffeeScript if you like, and Nesta will render
+it for you. See Sinatra's [template docs][template-docs] for the full
+list.
+
+To use a different template engine you'll need to modify the routes,
+updating them so that they call the relevant Sinatra method to render
+the output.
+
+Copy the default routes out of the gem's `lib/nesta/app.rb` file and
+paste them into an `app.rb` file in your project's folder. You can find
+the path to the gem's files with this command:
+
+    $ ls -d $(gem environment gemdir)/gems/nesta*
+
+When you paste the routes into your `app.rb` file you need to make sure
+that you're adding them to the `Nesta::App` class. Something like this
+will do the job:
+
+    $ cd mysite.com
+    $ cat app.rb
+    module Nesta
+      class App
+        get '/css/:sheet.css' do
+          content_type 'text/css', :charset => 'utf-8'
+          cache sass(params[:sheet].to_sym)
+        end
+
+        # There are more routes than this,
+        # but you get the idea...
+        get '*' do
+          # stuff
+          cache haml(@page.template, :layout => @page.layout)
+        end
+      end
+    end
+
+## An example: Using Erb
+
+To use Erb instead of Haml you would then change the call to the `haml`
+method on the last line of the `'*'` route and change it so that it
+said:
+
+    cache erb(@page.template, :layout => @page.layout)
+
+To find out which methods to call for your preferred template engine,
+see the [Sinatra template docs][template-docs].
+
+## Using the SCSS format for Sass files
+
+If you'd rather use the SCSS format for Sass, you can also change the
+stylesheet route so that it calls the `scss` method instead of `sass`.
+For example:
+
+    get '/css/:sheet.css' do
+      content_type 'text/css', :charset => 'utf-8'
+      cache scss(params[:sheet].to_sym)
+    end
+
+[sinatra]: http://www.sinatrarb.com
+[template-docs]: http://www.sinatrarb.com/intro.html#Views%20/%20Templates
+[route-docs]: http://www.sinatrarb.com/intro.html#Routes

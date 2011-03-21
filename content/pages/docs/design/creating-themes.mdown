@@ -1,4 +1,4 @@
-Categories: docs/design:-1
+Categories: docs/design:-2
 Summary: Everything you need to know to design and release your own Nesta themes.
 
 # Creating Themes

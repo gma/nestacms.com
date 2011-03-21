@@ -1,5 +1,5 @@
 Categories: docs/design:-1
-Summary: If you need to implement your own design from scratch this is the page for you. It also covers how to use your templating engine of choice.
+Summary: If you need to implement your own design from scratch this is the page for you.
 
 # Creating a new design
 
@@ -11,7 +11,7 @@ If you want to create your own design you have two choices:
 
 [editing-defaults]: editing-default-templates
 
-This page is about starting from scratch.
+**This page is about starting from scratch.**
 
 Make yourself a `views` directory in which to store your templates:
 
@@ -23,6 +23,11 @@ The minimum files that you need are:
  * `views/layout.haml`
  * `views/page.haml`
  * `views/your-stylesheet.sass` (call it whatever you like)
+
+**NOTE:** We're using `.haml` and `.sass` files in this example. If
+you'd rather use different templating engines you can do, but you'll
+need to follow the instructions on [changing the templating
+engine][engines] in order for them to work.
 
 Build up your HTML and CSS as you go. As a rough guide you ought to put
 any content that will appear on every page on your site in
@@ -42,59 +47,10 @@ Link to your stylesheet from within the layout (CSS files are
 automatically created from Sass files when a page is loaded), and are
 served up from `/css/your-stylesheet.css`.
 
-[layout]: https://github.com/gma/nesta/tree/master/views/layout.haml
-[page]: https://github.com/gma/nesta/tree/master/views/page.haml
-
 Drop your static assets (e.g. images) in the `public` folder. If you
 create a folder called `public/images` then its contents will be
 available at URLs like `/images/logo.png`.
 
-## Changing the templating engine
-
-All the template formats supported by Sinatra are supported by Nesta,
-including Haml, Erb, Erubis, Liquid, Sass, Scss and Less. You can even
-write your JavaScript in CoffeeScript if you like, and Nesta will render
-it for you. See Sinatra's [template docs][template-docs] for the full
-list.
-
-To use a different template engine you'll need to modify the routes,
-updating them so that they call the relevant Sinatra method to render
-the output.
-
-Copy the default routes out of the gem's `lib/nesta/app.rb` file and
-paste them into an `app.rb` file in your project's folder. You can find
-the path to the gem's files with this command:
-
-    $ ls -d $(gem environment gemdir)/gems/nesta*
-
-When you paste the routes into your `app.rb` file you need to make sure
-that you're adding them to the `Nesta::App` class. Something like this
-will do the job:
-
-    $ cd mysite.com
-    $ cat app.rb
-    module Nesta
-      class App
-        get '/css/:sheet.css' do
-          content_type 'text/css', :charset => 'utf-8'
-          cache sass(params[:sheet].to_sym)
-        end
-
-        # There are more routes than this,
-        # but you get the idea...
-        get '*' do
-          # stuff
-          cache haml(@page.template, :layout => @page.layout)
-        end
-      end
-    end
-
-Find the call to `haml` on the last line of the `'*'` route and change
-it to the one that works for your preferred templating language (see the
-[Sinatra docs][template-docs] for a list). If you'd rather use the SCSS
-format for Sass, you can also change the stylesheet route so that it
-calls the `scss` method instead of `sass`.
-
-[sinatra]: http://www.sinatrarb.com
-[template-docs]: http://www.sinatrarb.com/intro.html#Views%20/%20Templates
-[route-docs]: http://www.sinatrarb.com/intro.html#Routes
+[layout]: https://github.com/gma/nesta/tree/master/views/layout.haml
+[page]: https://github.com/gma/nesta/tree/master/views/page.haml
+[engines]: changing-template-engine
