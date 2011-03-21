@@ -7,7 +7,7 @@ GEM
     heroku (1.17.14)
       json (~> 1.4.6)
       launchy (~> 0.3.2)
-      rest-client (>= 1.4.0, < 1.7.0)
+      rest-client (< 1.7.0, >= 1.4.0)
     json (1.4.6)
     launchy (0.3.7)
       configuration (>= 0.0.5)
