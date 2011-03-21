@@ -27,6 +27,15 @@ That's it; you've got a new web site in the mysite.com folder that's
 awaiting your content and design changes. Because we specified the
 `--git` option the project is already under version control.
 
+If you use Vlad to deploy Nesta you should also pass the `--vlad` switch
+to the `nesta new` command. Then copy your existing `deploy.rb` file:
+
+    $ nesta new mysite.com --git --vlad
+    $ cp path/to/old/project/config/deploy.rb config/
+
+Also check that Vlad has been configured according to your taste in the
+freshly generated `Rakefile`.
+
 Now we can use bundler to install all Nesta's dependencies.
 
     $ cd mysite.com
