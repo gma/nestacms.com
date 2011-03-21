@@ -45,9 +45,14 @@ Drop me a line and I'll add you in (sorry).
 
 ## Docs and articles from...
 
-Er, just me (Graham Ashton) so far. But I bet you can find some
-documentation on this site that needs fixing or re-wording, or have a
-great idea for an article on what you can do with Nesta.
+ - Nils Landt -- Fixed a typo and pointed out that Vlad config needed
+   documenting on [Upgrading to the Nesta gem][upgrading].
+
+[upgrading]: /blog/upgrading-to-the-gem
+
+I bet you can find some documentation on this site that needs fixing or
+re-wording, or have a great idea for an article on what you can do with
+Nesta.
 
 Why not...
 
