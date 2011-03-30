@@ -182,10 +182,10 @@ your home page or category page. If you don't define a summary the
 entire article will be displayed instead, which for short articles may
 be just what you want.
 
-As blank lines are not allowed within metadata fields you cannot insert
-multiple paragraphs into your summary by inserting blank lines. You can
-however insert the "new line" character (`\n`) which will insert
-paragraph breaks into your summary field.
+As blank lines are not allowed within (or between) metadata fields you
+cannot insert multiple paragraphs into your summary by inserting blank
+lines. You can however insert the "new line" character (`\n`) which will
+insert paragraph breaks into your summary field.
 
 Example:
 
