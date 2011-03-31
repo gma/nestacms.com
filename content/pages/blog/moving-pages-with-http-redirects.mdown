@@ -1,0 +1,58 @@
+Template: article
+Categories: docs/creating-content
+Date: 31 March 2011
+Summary: It's easy to move pages with Nesta; you just move files around on disk and push your changes up to your web server. But what about all the old links to the page? You need to configure some HTTP redirects...
+
+# Re-organise your URLs without losing your visitors
+
+Every now and again I get the urge to re-organise my web sites. As the
+content evolves, so does my understanding of how best to categorise it,
+and I like to update my pages' URLs accordingly. It's easy to move pages
+with Nesta; you just move files around on disk and push your changes up
+to your web server. But what about all the old links to the page?
+
+It's a good idea to ensure that links to the old location still work,
+and that visitors are automatically redirected to the new URL. HTTP
+supports two kinds of redirect; permanent (HTTP code 301) and temporary
+(code 302). If you're re-organising your site you need to setup
+permanent redirects.
+
+## Using Rack::Rewrite
+
+If you've deployed your site to a hosting service such as Heroku the
+only way you can configure redirects is to configure your Ruby app to
+handle them for you. Nesta doesn't support redirects itself, but we can
+configure some Rack middleware that will handle it for us.
+
+Start by adding the `rack-rewrite` gem to your `Gemfile` and use Bundler
+to install it:
+
+    $ echo "gem 'rack-rewrite', '~> 1.0.0'" >> Gemfile
+    $ bundle
+
+To setup the redirects we now just need to use our new middleware. Edit
+the `config.ru` file and insert the following code, just above the line
+that says `run Nesta::App`:
+
+    use Rack::Rewrite do
+      r301 %r{/old-path(\?.*)}, '/new-path$1'
+    end
+
+The `(\?.*)` snippet preserves the query string, (it's stored in the
+`$1` variable). As mentioned in the [rack-rewrite README][README] this
+can be very useful if you're using any analytics software that tracks
+information in the query string.
+
+Add as many `r301` calls as you need, one for each page that gets moved.
+To test it, restart Nesta and visit the old path in your web browser.
+
+[README]: https://github.com/jtrupiano/rack-rewrite/blob/master/README.rdoc
+
+## Using Rack::Rewrite with Nginx
+
+If you're deploying Nesta behind a proxy server (such as Nginx or
+Apache) on your own server you can configure these redirects in the
+proxy server instead. That'll perform marginally better, but there's
+something to be said for keeping the rewrite rules with the rest of your
+web site. You could, for example, move your site to Heroku without
+having to reconfigure your rewrite rules.
