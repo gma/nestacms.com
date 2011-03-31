@@ -3,7 +3,7 @@ Categories: docs/creating-content
 Date: 31 March 2011
 Summary: It's easy to move pages with Nesta; you just move files around on disk and push your changes up to your web server. But what about all the old links to the page? You need to configure some HTTP redirects...
 
-# Re-organise your URLs without losing your visitors
+# Change your URLs without losing your visitors
 
 Every now and again I get the urge to re-organise my web sites. As the
 content evolves, so does my understanding of how best to categorise it,
