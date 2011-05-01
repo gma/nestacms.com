@@ -107,12 +107,6 @@ like this:
       end
     end
 
-Before you distribute your theme, it's a good idea to copy the routes in
-the main `app.rb` file into your theme's `app.rb` file. This will ensure
-that any variables or routes that your theme depends on are available in
-future, even if Nesta's default routes get (significantly) updated. Just
-drop them inside the Nesta::App class in the theme's `app.rb` file.
-
 ## Summary
 
 That's pretty much it; you now know how to make themes for Nesta!
