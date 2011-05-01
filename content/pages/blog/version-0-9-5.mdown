@@ -29,8 +29,8 @@ the relevant section of the [CHANGES][changelog] file:
    (Carl Furrow).
 
 This is the first release for which I didn't write the lion's share of
-the code. It's been really gratifying to get so many pull requests from
-the community. Keep 'em coming!
+the code. It's been really gratifying to get so many contributions. Keep
+'em coming!
 
 [rubygems]: http://rubygems.org/gems/nesta
 [changelog]: https://github.com/gma/nesta/blob/master/CHANGES
