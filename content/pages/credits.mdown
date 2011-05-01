@@ -36,6 +36,10 @@ traffic][nunney2] too.
  - Robert Syme -- Rendering summaries of arbitrary articles.
  - Christopher Lindblom -- Added the --version option. Fixed page titles
    for pages whose parent is the home page.
+ - Andrew Nesbitt - Upgraded Haml and Sass to version 3.1.
+ - Sidharta Surya Kusnanto - Updated Disqus support.
+ - Carl Furrow - Made helper methods available when rendering pages
+   written in Haml.
 
 If you've sent me a fix and I've not listed you, it's just because I
 made this list in a rush and haven't dug through all my email history.
