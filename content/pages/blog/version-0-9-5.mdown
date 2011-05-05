@@ -1,6 +1,7 @@
 Template: article
 Date: 1 May 2011
 Summary: Version 0.9.5 is out, available from RubyGems.org. It contains an impressive list of bug fixes from the community. Upgrading is as simple as updating the version number in `Gemfile` and re-running `bundle`.
+Read more: See what's changed
 
 # Nesta 0.9.5 released
 
