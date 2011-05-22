@@ -69,7 +69,7 @@ keys of the hash are:
   that is generated to hold the menu items.
 - `:levels` -- Controls how deep into a nested menu structure you want
   to go; if it's greater than one (and your `menu.txt` file contains
-  a nested hierarchy) you'll get &lt;ul%gt; tags for your submenus of your
+  a nested hierarchy) you'll get &lt;ul&gt; tags for your submenus of your
   submenus. Defaults to 2.
 
 Take a look at how the [menu.txt][menu.txt] file for nestacms.com was
