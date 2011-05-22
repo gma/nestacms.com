@@ -60,7 +60,7 @@ was rendered by this snippet of Haml:
       - display_menu(Nesta::Menu.for_path('/docs'), :class => "menu", :levels => 3)
 
 The `display_menu` method expects at least one argument; a Ruby object
-that describe the menu hierarchy, as created by `Nesta::Menu.for_path`.
+that describes the menu hierarchy, as created by `Nesta::Menu.for_path`.
 
 The `display_menu` method also takes an optional hash of options. The
 keys of the hash are:
@@ -69,7 +69,7 @@ keys of the hash are:
   that is generated to hold the menu items.
 - `:levels` -- Controls how deep into a nested menu structure you want
   to go; if it's greater than one (and your `menu.txt` file contains
-  a nested hierarchy) you'll get &ltul%gt tags for your submenus of your
+  a nested hierarchy) you'll get &lt;ul%gt; tags for your submenus of your
   submenus. Defaults to 2.
 
 Take a look at how the [menu.txt][menu.txt] file for nestacms.com was
