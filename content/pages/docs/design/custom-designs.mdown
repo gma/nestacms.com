@@ -53,4 +53,4 @@ available at URLs like `/images/logo.png`.
 
 [layout]: https://github.com/gma/nesta/tree/master/views/layout.haml
 [page]: https://github.com/gma/nesta/tree/master/views/page.haml
-[engines]: changing-template-engine
+[engines]: templating-engines
