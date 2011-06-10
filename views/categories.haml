@@ -1,3 +1,4 @@
 - if ! @menu_items.empty?
-  %nav.categories
-    - display_menu(Nesta::Menu.for_path('/docs'), :class => "menu", :levels => 3)
+  %heading
+    %h1 Documentation menu
+  = haml(:docs_index, :layout => false)

@@ -37,3 +37,11 @@ $base-vertical-margin: 1.75em
   -o-transition: $definition
   -webkit-transition: $definition
   transition: $definition
+
+@mixin group
+  &:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden

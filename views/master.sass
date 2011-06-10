@@ -1,19 +1,17 @@
 @import "mixins.sass"
 @import "colours.sass"
 
-// Variables
-
-$columns: 10
-
-$container-width: 54em
-$gutter: 2.107em // from modularscale.com with 16px/864px
-$unit: ($container-width - ($gutter * ($columns - 1))) / $columns
-
-$content-width: 6 * ($unit + $gutter) - $gutter
-$sidebar-width: 3 * ($unit + $gutter) - $gutter
-$sidebar-left: $content-width + ($unit + $gutter) + $gutter
-
 $border-style: 1px dashed $border-color
+
+article, aside, footer, header, nav, section
+  display: block
+
+.group:after
+  content: "."
+  display: block
+  height: 0
+  clear: both
+  visibility: hidden
 
 // Reset
 
@@ -101,44 +99,37 @@ nav.breadcrumb
 
   font-size: 0.909em
 
-// Layout
+article[role=main]
+  ol, ul
+    margin-left: 1.5em
 
-.group:after
-  content: "."
-  display: block
-  height: 0
-  clear: both
-  visibility: hidden
+// Layout
 
 div#container
   position: relative
 
 header[role=banner]
   position: relative
-  hgroup
-    position: absolute
-    left: $sidebar-left
-    top: 0
   nav.primary
-    line-height: $vertical-rhythm * 3
-    ul
+    line-height: $vertical-rhythm
+    ul.menu
+      @include group
+      margin: ($vertical-rhythm / 2) 0
       list-style: none
       li
-        display: inline
-        margin-right: $gutter
-
         @adjust-font-size($base-scale)
         font-weight: 700
-
-        &:last-child
-          margin-right: 0
-
+        width: 48%
+        &:nth-child(odd)
+          float: left
+        &:nth-child(even)
+          float: right
         a
           text-decoration: none
   p.links
     position: absolute
     top: 0.7em
-    left: $sidebar-left + 8em
+    left: 8em
 
     margin: 0
 
@@ -162,121 +153,22 @@ header[role=banner]
         height: 24px
         margin-top: -4px
 
-article, aside, footer, header, nav, section
-  display: block
-
 div#container
-  width: $container-width
+  width: 93%
   margin: 0 auto
   padding: 1em 1em 0 1em
 
   div#content
     position: relative
-    width: $content-width
-    float: left
-    padding: 1px 0
 
-  div#sidebar
-    width: $sidebar-width
-    margin-left: $sidebar-left
-    padding: ($base-vertical-margin * 3) 0 $base-vertical-margin
-  
   footer.branding
     clear: both
     color: $meta-color
     @include adjust-font-size($base-scale)
     p
-      width: $container-width
+      width: auto
       margin: 0
       padding: 1em 0
-
-// Home page layout
-article.home
-  section
-    clear: both
-
-    h1
-      @include adjust-font-size($h2-scale, 1.6, 0.4)
-
-    &.intro
-      heading
-        display: none
-      p
-        @include adjust-font-size($h3-scale, 1, 1, 4/3)
-        color: $meta-color
-        text-align: center
-
-    &.overview
-      clear: both
-      float: left
-      width: $content-width
-
-    &.features,
-    &.users
-      clear: right
-      float: right
-      width: $sidebar-width
-      ul
-        margin-left: 0
-
-    &.overview,
-    &.features
-      em
-        color: $meta-color
-
-    &.getting-started
-      float: left
-      width: 4 * ($unit + $gutter) - $gutter
-
-    &.articles
-      clear: none
-      float: left
-      width: 3 * ($unit + $gutter) - $gutter
-      margin-left: $gutter
-      ol li
-        margin: 0 0 $vertical-rhythm
-
-        article
-          h1
-            @include adjust-font-size(1, 0, 0)
-          p.meta
-            margin: 0
-
-    &.users
-      & > ul
-        list-style: none
-      blockquote
-        padding: 0
-        @include adjust-font-size($base-scale, 0, 0)
-        cite
-          display: block
-          font-weight: bold
-
-    &.doc-list
-      @include adjust-font-size($base-scale, 0, 0)
-      p.overview
-        float: left
-        width: (2 * $unit + $gutter) / $base-scale
-      nav
-        position: relative
-        $doc-list-width: (2 * ($unit + $gutter) - $gutter) / $base-scale
-        ul
-          float: left
-          width: $doc-list-width
-          margin-left: $gutter / $base-scale
-          &.creating-content
-            position: absolute
-            top: $vertical-rhythm * 2
-            left: $doc-list-width
-          &:last-child
-            width: $doc-list-width - 0.1em
-          li
-            list-style: none
-            ul
-              float: none
-              margin-left: 0
-      nav > ul > li:first-child
-        font-weight: bold
 
 // The visuals
 
@@ -377,53 +269,74 @@ section.articles
     footer
       border-top: none
 
-// Documentation menus
-nav.categories
-  h1
-    @include adjust-font-size(1, 2, 0)
+div#sidebar heading h1
+  @include adjust-font-size($h2-scale)
 
-  ul
-    list-style: none
-    &.menu
-      margin: 0
-      & > li:first-child
-        display: none
-      & > li > ul > li
-        margin: 0 0 $vertical-rhythm
-        font-weight: bold
-        & ul
-          font-weight: normal
-        & > ul
-          margin: 0 0 0 1.5em
-          margin-top: -$vertical-rhythm
-          list-style: disc
-
-p.documentation-overview
-  float: left
-  width: 3 * ($unit + $gutter) - $gutter - 0.1em
 nav.documentation
-  float: right
-  width: 6 * ($unit + $gutter) - $gutter
-  margin-bottom: 2em
   ul
     list-style: none
   ul ul
     margin: 0 0 0 1.5em
     list-style: disc
   & > ul
+    margin-left: 0
     & > li:first-child
       font-weight: bold
-    float: left
-    width: 3 * ($unit + $gutter) - $gutter
-    margin-left: $gutter
-    &.quick-start
-      float: none
-    &.quick-start,
-    &.creating-content,
-    &.design
-      margin-left: 0
-    &:last-child
-      width: 3 * ($unit + $gutter) - $gutter - 0.1em
 
 div.feed
   margin: $base-vertical-margin 0
+
+article.home
+  section
+
+    h1
+      @include adjust-font-size($h2-scale, 1.6, 0.4)
+
+    &.intro
+      heading
+        display: none
+      p
+        width: 80%
+        max-width: 23.5em
+        margin: 0 auto
+        color: $meta-color
+
+        @include adjust-font-size($h4-scale, 1, 1, 4/3)
+        text-align: center
+
+    &.overview,
+    &.features
+      ul
+        padding-left: 1.5em
+      em
+        color: $meta-color
+
+    &.articles
+      ol li
+        margin: 0 0 ($vertical-rhythm / 2)
+
+        article
+          h1
+            @include adjust-font-size(1, 0, 0)
+          p.meta
+            margin: 0
+
+    &.users
+      & > ul
+        margin-left: 0
+        padding-left: 0
+        list-style: none
+      blockquote
+        padding: 0
+        @include adjust-font-size($base-scale, 0, 0)
+        cite
+          display: block
+          font-weight: bold
+
+    &.doc-list
+      nav ul li
+        list-style: none
+      nav > ul > li:first-child
+        font-weight: bold
+
+@import "layout.sass"
