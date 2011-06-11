@@ -9,7 +9,7 @@ Sass (or Scss), and drop the files into the right directory.
 ## Making a simple theme
 
 Let's make a new theme, based on an existing theme. We can use the
-`scripts/theme` script to save us a bit of typing. It will create an
+`nesta theme:create` command to save us a bit of typing. It will make an
 empty `app.rb` file, a `README` file, and a couple of empty directories:
 
     $ nesta theme:create mytheme
@@ -75,10 +75,10 @@ middleware -- uncomment this code in the generated `app.rb` file:
       end
     end
 
-If we didn't specify the theme name as a prefix then `Rack::Static` will
-try and serve all your users' assets from the theme's `public` folder.
-This could be fairly bad news for your users if they've dropped a bunch
-of content into the top level `public` directory.
+If we didn't specify the theme name as a prefix then `Rack::Static`
+would try and serve all your users' assets from the theme's `public`
+folder.  This could be fairly bad news for your users if they've dropped
+a bunch of content into the top level `public` directory.
 
 Due to the way the `Rack::Static` middleware works this extra prefix
 does mean that we need to **create an extra directory** named after the
