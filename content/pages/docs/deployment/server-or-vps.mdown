@@ -28,10 +28,11 @@ reason, please get in touch on the [mailing list][list].
 
 Once your stack is up and running you need to push your site to your
 server. I have historically used Vlad in favour of Capistrano, but you
-can do it any way you like. Capistrano has come improved a lot since I
-since I started using Vlad and I suspect I'd use Capistrano myself now
-if configuring a new server. If you want a guide to what to do my
-article on [deploying Sinatra with Vlad][vlad] may come in handy.
+can do it any way you like. Capistrano has improved a lot since I since
+I chose to use Vlad and I suspect I'd use Capistrano myself now if I was
+configuring a new server. If you want a step by step guide to setting up
+a deployment system my article on [deploying Sinatra with Vlad][vlad]
+may come in handy.
 
 [vlad]: http://effectif.com/articles/deploying-sinatra-with-vlad
 
