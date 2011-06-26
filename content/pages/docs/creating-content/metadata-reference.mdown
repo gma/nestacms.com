@@ -223,4 +223,4 @@ Example:
     ...
 
 As you can see, it's also possible to control which layout is used with
-the `Layout` metadata (which is described in it's own section above).
+the `Layout` metadata (which is described in its own section above).
