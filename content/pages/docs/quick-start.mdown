@@ -44,8 +44,9 @@ any content. That's no fun -- let's get something to read.
 
 Nesta comes with a small demo site that you can have a play with to get
 yourself going. It's stored in a Git repository (so you'll need git
-installed). Install it with:
+installed). Install it into your project with:
 
+    $ cd mysite.com
     $ nesta demo:content
 
 The site will be downloaded into the `content-demo` folder.
