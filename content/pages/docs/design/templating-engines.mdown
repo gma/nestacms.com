@@ -57,13 +57,15 @@ see the [Sinatra template docs][template-docs].
 Nesta's default template uses the original Sass syntax, which uses
 indentation rather than CSS's curly braces. Here's an example:
 
-  body
-    width: 92%
-    margin: 0 auto
+    body
+      width: 92%
+      margin: 0 auto
 
 If you'd rather write plain CSS (but still benefit from the power of
-Sass's variables, mixins and functions) you can use the SCSS format.
-Just create a `.scss` file and start writing. 
+Sass's variables, mixins and functions) you can use the SCSS format
+which is a superset of CSS (in other words, it looks identical but adds
+lots of juicy features if you'd like to use it). Just create a `.scss`
+file and get going. 
 
 If you'd like to base your design on the built in template (or a theme)
 that uses the `.sass` format you can convert it with the `sass-convert`
