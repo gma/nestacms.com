@@ -54,14 +54,25 @@ see the [Sinatra template docs][template-docs].
 
 ## Using the SCSS format for Sass files
 
-If you'd rather use the SCSS format for Sass, you can also change the
-stylesheet route so that it calls the `scss` method instead of `sass`.
-For example:
+Nesta's default template uses the original Sass syntax, which uses
+indentation rather than CSS's curly braces. Here's an example:
 
-    get '/css/:sheet.css' do
-      content_type 'text/css', :charset => 'utf-8'
-      cache scss(params[:sheet].to_sym)
-    end
+  body
+    width: 92%
+    margin: 0 auto
+
+If you'd rather write plain CSS (but still benefit from the power of
+Sass's variables, mixins and functions) you can use the SCSS format.
+Just create a `.scss` file and start writing. 
+
+If you'd like to base your design on the built in template (or a theme)
+that uses the `.sass` format you can convert it with the `sass-convert`
+script (which comes with Sass):
+
+    $ sass-convert path/to/mystyles.sass path/to/mystyles.scss
+
+Don't forget to move the `.sass` file out of the way so that Nesta
+doesn't find it and use it in preference to your new `.scss` file.
 
 [sinatra]: http://www.sinatrarb.com
 [template-docs]: http://www.sinatrarb.com/intro.html#Views%20/%20Templates
