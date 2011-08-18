@@ -30,7 +30,9 @@ traffic][nunney2] too.
 
  - Mika Tuupola -- Textile support.
  - Matt Yoho -- A great HTTP caching patch.
- - Glenn Gillen -- Publishing articles in the future.
+ - Glenn Gillen -- Delaying the date/time at which an article is
+   published (i.e. appears in the Atom feed and in your blog's list of
+   recent articles).
  - Wynn Netherland -- Public metadata.
  - Barry Keenan -- Setting default encoding on Heroku ([bug][bug14]).
  - Robert Syme -- Rendering summaries of arbitrary articles.
@@ -40,6 +42,9 @@ traffic][nunney2] too.
  - Sidharta Surya Kusnanto - Updated Disqus support.
  - Carl Furrow - Made helper methods available when rendering pages
    written in Haml.
+ - Isaac Cambron - Added the `stylesheet` helper that renders either
+   Sass or SCSS stylesheets (you previously had to hard code flavour you
+   preferred).
 
 If you've sent me a fix and I've not listed you, it's just because I
 made this list in a rush and haven't dug through all my email history.
