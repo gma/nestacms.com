@@ -43,8 +43,8 @@ traffic][nunney2] too.
  - Carl Furrow - Made helper methods available when rendering pages
    written in Haml.
  - Isaac Cambron - Added the `stylesheet` helper that renders either
-   Sass or SCSS stylesheets (you previously had to hard code flavour you
-   preferred).
+   Sass or SCSS stylesheets (you previously had to hard code the flavour
+   you preferred).
 
 If you've sent me a fix and I've not listed you, it's just because I
 made this list in a rush and haven't dug through all my email history.
