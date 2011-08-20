@@ -18,8 +18,8 @@ are best described as "small, but useful":
 
 2. Menus are rendered as ordered lists. If you wanted to write CSS to
    highlight the menu item corresponding to the current page, you
-   couldn't do it. In 0.9.7 you can; the list item has the class of
-   "current" set on it.
+   couldn't do it. In 0.9.7 you can; the current page's list item has
+   the class of “current”.
 
 You may have noticed that we've skipped version 0.9.6. This release
 should have been numbered 0.9.6, but there was a bug in the version of
@@ -68,9 +68,9 @@ Here's the relevant section of the [CHANGES][changelog] file:
  * Bug fix: Removed trailing whitespace inside &lt;a&gt; tags generated
    by the `display_breadcrumbs()` helper.
 
- * Bug fix: `Nesta::App.root` couldn't be set until after nesta/app was
+ * Bug fix: `Nesta::App.root` couldn't be set until after `nesta/app` was
    required. Odd that, as the only reason to want to change
-   `Nesta::App.root` would be before requiring nesta/app. Fixed by
+   `Nesta::App.root` would be before requiring `nesta/app`. Fixed by
    creating `Nesta::Env` and moving root to there instead.
 
 [rubygems]: http://rubygems.org/gems/nesta
