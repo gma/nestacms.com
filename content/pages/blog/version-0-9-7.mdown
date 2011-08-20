@@ -5,27 +5,40 @@ Read more: See what's changed
 
 # Nesta 0.9.7 released
 
-Version 0.9.7 has been released and is available from rubygems.org. You
-may have noticed that the 0.9.6 version number was never used. There was
-a bug in the gem that got built caused by a bug in the latest Ruby tools
-under Ruby 1.9.2 which meant that I had to remove the gem from
-rubygems.org. We have therefore rebuilt the gem using a new version
-number.
+Version 0.9.7 has been released and is available from rubygems.org. 
 
-There are a handful of bug fixes and support auto
-detection of stylesheets written in either the Sass or SCSS formats
-(previously Nesta had only looked for `.sass` files by default).
+It contains two new features and a handful of bug fixes. The features
+are best described as "small, but useful":
+
+1. There's a new renderer method called `stylesheet` that can convert a
+   Sass or SCSS format stylesheet into a CSS file. Previously you had to
+   choose which format your site or theme would use and stick with it,
+   or override Nesta's behaviour if you didn't like the default format
+   (Sass). The `stylesheet` method was contributed by Isaac Cambron.
+
+2. Menus are rendered as ordered lists. If you wanted to write CSS to
+   highlight the menu item corresponding to the current page, you
+   couldn't do it. In 0.9.7 you can; the list item has the class of
+   "current" set on it.
+
+You may have noticed that we've skipped version 0.9.6. This release
+should have been numbered 0.9.6, but there was a bug in the version of
+Rubygems that I used to build and deploy it and I had to remove the gem
+from rubygems.org. I then had to rebuild the gem using a new version
+number.
 
 ## Upgrading
 
-To upgrade from an earlier version:
+To upgrade an existing site:
 
 1. Update the version of Nesta that is registered in your `Gemfile` and
    re-run `bundle`.
-2. Update your `config.ru` file from the template provided in the gem -- the
-   required format of `config.ru` has changed slightly
+2. Replace your `config.ru` file from the template provided in the gem.
+   There's been a bit of shuffling around and a new library (called
+   `nesta/env`) must now be loaded before `nesta/app` can be required,
+   and this all happens inside your `config.ru` file.
 
-Commands that you could use to do this (in your terminal) look like this:
+In case that's not clear, these commands would have the desired effect:
 
     $ cd path/to/your/site
     $ sed -i -e '/nesta/ s/0.9.[0-9]/0.9.7/' Gemfile
@@ -34,8 +47,7 @@ Commands that you could use to do this (in your terminal) look like this:
 
 ## The changes
 
-There's a good list of improvements; here's the list from the
-[CHANGES][changelog] file:
+Here's the relevant section of the [CHANGES][changelog] file:
 
  * Nesta no longer cares whether you write your Sass stylesheets in the
    original indented Sass format or the default SCSS syntax (which is a
