@@ -1,0 +1,37 @@
+Template: article
+Date: 22 Aug 2011
+Summary: Version 0.9.8 is out. It's a bug fix release, to fix a fairly serious problem with 0.9.7.
+Read more: See what's changed
+
+# Nesta 0.9.8 released
+
+Version 0.9.8 is out. It's a bug fix release, to fix a fairly serious
+problem with 0.9.7. The `./public` folder wasn't accessible when
+deployed to some environments (notably Heroku).
+
+## Upgrading
+
+If you're upgrading from 0.9.7, just update your `Gemfile` and re-run
+`bundle`.
+
+    $ sed -i -e '/nesta/ s/0.9.[0-9]/0.9.8/' Gemfile
+    $ bundle
+
+If you're upgrading from an earlier release you'll also need to get
+yourself a new copy of the `config.ru` file from the template file in the
+gem:
+
+    $ cp $(gem env gemdir)/gems/nesta-0.9.8/templates/config.ru .
+
+## The changes
+
+Here's the CHANGES file describing the bug:
+
+ * Bug fix: The Sinatra app's root directory wasn't set which meant
+   that Nesta couldn't always find the ./public directory (such as when
+   running on Heroku).
+     
+   The modifications made in 0.9.6 to make Nesta easier to mount inside
+   another Rack application moved Nesta::App.root to the (new)
+   Nesta::Env class. In 0.9.6 I forgot to actually set Nesta::App.root
+   as well, which was a big mistake. Whoops.
