@@ -13,7 +13,7 @@ GEM
     maruku (0.6.0)
       syntax (>= 1.0.0)
     mime-types (1.16)
-    nesta (0.9.7)
+    nesta (0.9.8)
       RedCloth (~> 4.2)
       haml (~> 3.1)
       maruku (>= 0.6.0)
@@ -39,5 +39,5 @@ PLATFORMS
 
 DEPENDENCIES
   heroku
-  nesta (= 0.9.7)
+  nesta (= 0.9.8)
   rack-force_domain (= 0.1.1)
