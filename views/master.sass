@@ -328,10 +328,13 @@ article.home
         list-style: none
       blockquote
         padding: 0
-        @include adjust-font-size($base-scale, 0, 0)
-        cite
-          display: block
-          font-weight: bold
+        @include adjust-font-size(1, 0, 1)
+      cite
+        display: block
+        text-align: right
+
+        &:before
+          content: "\2014 "
 
     &.doc-list
       nav ul li
