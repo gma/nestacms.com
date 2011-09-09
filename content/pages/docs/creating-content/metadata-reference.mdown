@@ -121,6 +121,25 @@ for the patch).
 
 [glenn]: http://glenngillen.com/ "Glenn Gillen"
 
+## Flags
+
+The 'Flags' metadata allows you to mark some pages as special, in some way. For example:
+
+    Flags: draft, awesome
+
+You can use any text you like to flag a page. Multiple flags are separated by
+commas. Only the "draft" flag currently has any special meaning in Nesta -- any
+page marked as draft will show up on a development site (e.g. on your own
+computer) but will be hidden on your live web site.
+
+If you add your own flags to a page you can check whether a page has a flag set
+(e.g. in your view) by calling the `flagged_as?` method. Here's an example:
+
+    - if @page.flagged_as?('awesome')
+      %p This page is awesome!
+
+You get the idea...
+
 ## Keywords meta tag
 
 The `Keywords` metadata sets the HTML keywords meta tag for your page.
