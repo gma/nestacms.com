@@ -1,0 +1,48 @@
+Template: article
+Date: 9 Sep 2011
+Summary: Version 0.9.10 has been released. New features include support for extending Nesta with plugins (which are distributed as Ruby gems) and the ability to mark a page as draft (which will hide it on your production site).
+
+# Nesta 0.9.10 released
+
+Version 0.9.10 has been released. New features include support for extending
+Nesta with plugins (which are distributed as Ruby gems) and the ability to mark
+a page as draft (which will hide it on your production site).
+
+See the [plugin documentation][] for information on how to write and share
+plugins.
+
+[plugin documentation]: /docs/plugins
+
+## Upgrading
+
+If you're upgrading from 0.9.7 or later, just update your `Gemfile` and re-run
+`bundle`.
+
+    $ sed -i -e '/nesta/ s/0.9.[0-9]/0.9.10/' Gemfile
+    $ bundle
+
+If you're upgrading from an earlier release you'll also need to get
+yourself a new copy of the `config.ru` file from the template file in the
+gem:
+
+    $ cp $(gem env gemdir)/gems/nesta-0.9.10/templates/config.ru .
+
+## The changes
+
+Here's the CHANGES file with the full list of updates:
+
+ * Load Nesta plugins from gems. Any gem whose name begins with
+   nesta-plugin- can be used in a project by adding it to the project's
+   Gemfile beneath the `gem "nesta"` line. New plugins can be created
+   with the `nesta plugin:create` command.
+
+ * Mark pages as draft by setting a flag. Draft pages won't be shown in
+   production, but will be visible on your local copy of your site (as
+   it's running in production).
+
+ * Upgraded Sinatra to version 1.2.6. Upgraded other dependencies to
+   latest compatible versions.
+
+ * Bug fix: The `stylesheet` helper method assumes that you're using
+   the Sass rendering engine by default, which allows it to find .sass
+   files within the gem if no matching files are found locally.
