@@ -9,9 +9,12 @@ Nesta with plugins (which are distributed as Ruby gems) and the ability to mark
 a page as draft (which will hide it on your production site).
 
 See the [plugin documentation][] for information on how to write and share
-plugins.
+plugins. The draft functionality has been implemented with a new metadata key
+called [flags][], which allows you to add boolean settings to your pages (which
+you can than query in your view).
 
 [plugin documentation]: /docs/plugins
+[flags]: /docs/creating-content/metadata-reference#flags
 
 ## Upgrading
 
