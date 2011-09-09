@@ -3,7 +3,8 @@ Summary: Nesta plugins are distributed as Ruby gems. They're easy to write, easy
 
 # Writing Nesta plugins
 
-Nesta plugins are distributed as Ruby gems. They're easy to create and easy to install.
+Nesta plugins are distributed as Ruby gems. They're easy to create and
+easy to install.
 
 ## Getting started
 
@@ -11,17 +12,21 @@ The `nesta` command can create a new plugin for you:
 
     $ nesta plugin:create my-feature
 
-It will create a new Ruby gem folder called `nesta-plugin-my-feature` with some boilerplate Ruby files for you to add your code to.
+It will create a new Ruby gem folder called `nesta-plugin-my-feature`
+with some boilerplate Ruby files for you to add your code to.
 
 ## Quick tour of the files
 
-There are only three files in the top level of your plugin; `.gemspec`, `Gemfile`, and `Rakefile`.
+There are only three files in the top level of your plugin; `.gemspec`,
+`Gemfile`, and `Rakefile`.
 
     $ ls
     Gemfile                     lib/
     Rakefile                    nesta-plugin-my-feature.gemspec
 
-The `Gemfile` allows you to install your gem's dependencies with Bundler. The `Rakefile` provides a couple of Rake tasks to build and install the gem.
+The `Gemfile` allows you to install your gem's dependencies with
+Bundler. The `Rakefile` provides a couple of Rake tasks to build and
+install the gem.
 
 All the action happens inside the `lib/` folder.
 
@@ -32,7 +37,9 @@ All the action happens inside the `lib/` folder.
     lib/nesta-plugin-my-feature/:
     init.rb     version.rb
 
-When Ruby loads your gem it will automatically require the `lib/nesta-plugin-my-feature.rb` file. You'll also find `init.rb` and `version.rb` files inside the `lib/nesta-plugin-my-feature/` folder.
+When Ruby loads your gem it will automatically require the
+`lib/nesta-plugin-my-feature.rb` file. You'll also find `init.rb` and
+`version.rb` files inside the `lib/nesta-plugin-my-feature/` folder.
 
 `version.rb` is where you specify your gem's version number.
 
@@ -62,9 +69,12 @@ This is what the default `init.rb` file looks like, at the time of writing:
       end
     end
 
-You can add anything you like inside the `App` class (just as you would inside an `app.rb` file in your own site). You can also add new models or modify existing models inside the Nesta module.
+You can add anything you like inside the `App` class (just as you would
+inside an `app.rb` file in your own site). You can also add new models
+or modify existing models inside the Nesta module.
 
-For example, the end of your `init.rb` file could end up looking something like this:
+For example, the end of your `init.rb` file could end up looking
+something like this:
 
       class App
         helpers Nesta::Plugin::My::Feature::Helpers
@@ -75,34 +85,47 @@ For example, the end of your `init.rb` file could end up looking something like 
       end
     end
 
-If your plugin has a lot of code feel free to split it up into separate files and require them from within `init.rb`.
+If your plugin has a lot of code feel free to split it up into separate
+files and require them from within `init.rb`.
 
 ### How plugins get loaded
 
-This section is only here in case you're interested in how it works; you can skip it without losing any sleep.
+This section is only here in case you're interested in how it works; you
+can skip it without losing any sleep.
 
-When Nesta starts up Ruby reads `config.ru`, which tells it to fire up Bundler and read the `Gemfile`. Bundler then requires all the gems in `Gemfile` which loads the `nesta` gem, and then your plugin's gem.
+When Nesta starts up Ruby reads `config.ru`, which tells it to fire up
+Bundler and read the `Gemfile`. Bundler then requires all the gems in
+`Gemfile` which loads the `nesta` gem, and then your plugin's gem.
 
-At this point Nesta hasn't really been loaded fully (that won't happen until Ruby gets a few lines further down in `config.ru`) so it's not a good time for a plugin to try and modify Nesta.
+At this point Nesta hasn't really been loaded fully (that won't happen
+until Ruby gets a few lines further down in `config.ru`) so it's not a
+good time for a plugin to try and modify Nesta.
 
-Instead, plugins just register themselves with Nesta so that Nesta knows that they're there, and can load the plugin's actual code once Nesta is ready. This is why `lib/nesta-plugin-my-feature.rb` only contains:
+Instead, plugins just register themselves with Nesta so that Nesta knows
+that they're there, and can load the plugin's actual code once Nesta is
+ready. This is why `lib/nesta-plugin-my-feature.rb` only contains:
 
     Nesta::Plugin.register(__FILE__)
 
-The final step is when Nesta loads `lib/nesta-plugin-my-feature/init.rb`, at which point you can expect all of Nesta's classes and routes to have been defined.
+The final step is when Nesta loads `lib/nesta-plugin-my-feature/init.rb`,
+at which point you can expect all of Nesta's classes and routes to have
+been defined.
 
 ## Building and testing the gem
 
-Open the `.gemspec` file in a text editor and replace the placeholder summary and description with text that describes your plugin:
+Open the `.gemspec` file in a text editor and replace the placeholder
+summary and description with text that describes your plugin:
 
     $ cd nesta-plugin-my-feature
     $ vi nesta-plugin-my-feature.gemspec
 
-Your `.gemspec` comes preconfigured with Nesta and Rake as dependencies, so let's start by installing the bundle:
+Your `.gemspec` comes preconfigured with Nesta and Rake as dependencies,
+so let's start by installing the bundle:
 
     $ bundle install
 
-Now we can run a Rake task to build the plugin's gem. Your `.gem` file will be created inside a `pkg/` folder.
+Now we can run a Rake task to build the plugin's gem. Your `.gem` file
+will be created inside a `pkg/` folder.
 
     $ rake build
 
@@ -120,7 +143,9 @@ Add your plugin to the site's `Gemfile` and run Bundler:
     $ echo 'gem "nesta-plugin-my-feature"' >> Gemfile
     $ bundle
 
-(You'll need to have installed your plugin locally with `rake install` for this to work, otherwise Bundler will look for your gem on rubygems.org.)
+(You'll need to have installed your plugin locally with `rake install`
+for this to work, otherwise Bundler will look for your gem on
+rubygems.org.)
 
 Fire up your site and see if the plugin works as intended.
 
@@ -128,31 +153,43 @@ If it works...
 
 ### Releasing as a Git repository
 
-Releasing a gem via a git repository is easy. Push your gem to a remote git repository (e.g. on GitHub) and then tell Bundler (in your site's `Gemfile`) to install the gem from a git repository, like so:
+Releasing a gem via a git repository is easy. Push your gem to a remote
+git repository (e.g. on GitHub) and then tell Bundler (in your site's
+`Gemfile`) to install the gem from a git repository, like so:
 
     gem "nesta-plugin-my-feature", 
         :git => "git://github.com/user/nesta-plugin-my-feature.git"
 
 ### Releasing via rubygems.org
 
-If your plugin is only for your own use, and others wouldn't find it particularly useful, **please distribute it as Git repository** rather than via rubygems.org. There are two reasons for this:
+If your plugin is only for your own use, and others wouldn't find it
+particularly useful, **please distribute it as Git repository** rather
+than via rubygems.org. There are two reasons for this:
 
 1. Distributing with Git is easier and quicker for you, and
-2. People who are looking for useful plugins won't have to trawl through a smorgasbord of irrelevant gems in order to find things they can actually use.
+2. People who are looking for useful plugins won't have to trawl through
+   a smorgasbord of irrelevant gems in order to find things they can
+   actually use.
 
-This convention will also mean that we can query Rubygems to see what plugins have been released for general use:
+This convention will also mean that we can query Rubygems to see what
+plugins have been released for general use:
 
     $ gem list -r nesta-plugin
 
-Okay, assuming your plugin is one for sharing, this is how you release it to rubygems.org:
+Okay, assuming your plugin is one for sharing, this is how you release
+it to rubygems.org:
 
-- Set the version number is correct in `version.rb`.
+- Set the correct version number in `version.rb`.
 - Run `bundle` to make sure that everything is up to date.
 - Commit any outstanding changes to your Git repository.
 - Run `rake release`.
 
-You'll need to register an account with rubygems.org if you don't have one already. The Rake task walks you through this process so I won't repeat those instructions here.
+You'll need to register an account with rubygems.org if you don't have
+one already. The Rake task walks you through this process so I won't
+repeat those instructions here.
 
-If you've followed all the above (and it worked), Nesta now has one extra plugin. :-)
+If you've followed all the above (and it worked), Nesta now has one extra
+plugin. :-)
 
-Feedback on the process (and the experience) would be appreciated. Let us know at <nesta@librelist.com>.
+Feedback on the process (and the experience) would be appreciated. Let
+us know at <nesta@librelist.com>.
