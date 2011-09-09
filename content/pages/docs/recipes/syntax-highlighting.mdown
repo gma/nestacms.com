@@ -1,0 +1,85 @@
+Flags: draft
+
+# Adding syntax highlighting to your source code
+
+If you write about software development, it's quite likely that you'll have example source code in your pages. Make it look it pretty by setting up code highlighting. Because Nesta is a Sinatra app (and therefore is built on top of Rack) it's a piece of cake to setup syntax highlighting with the `rack-codehighlighter` gem.
+
+## Installing the gem
+
+Before you can highlight any code, you've got a decision to make. There are several highlighting libraries available to you
+
+Add the `rack-codehighlighter` gem and your preferred highlighting library (I'm using `coderay` in this example) to your `Gemfile` and run bundle:
+
+    $ echo 'gem "coderay"' >> Gemfile
+    $ echo 'gem "rack-codehighlighter", :require => "rack/codehighlighter"' >> Gemfile
+    $ bundle
+
+Now edit your project's `config.ru` file, as outlined in the rack-codehighlighter [README][] file. Because I'm using coderay the bottom of my `config.ru` file now looks like this:
+
+    use Rack::Codehighlighter, :coderay,
+        :element => "pre>code", :markdown => true
+
+    run Nesta::App
+
+The `:element` and `:markdown` options that I've set in this example work well if your content is written in Markdown; if you're using Textile you'll want to tweak the setting (see the [README][]).
+
+[README]: https://github.com/wbzyl/rack-codehighlighter/blob/master/README.md
+
+Now start your app up in development mode, add a block of source code to one of your web pages, and tell the highlighter what syntax it is. Something like this should do it:
+
+    :::ruby
+    def hello
+      puts "Hi!"
+    end
+
+Reload the page. If `:::ruby` has been removed from the HTML then the highlighter is working -- if you look at the source you'll see that your code has been wrapped in span tags.
+
+Now you need some CSS to make it look pretty.
+
+## Adding some colour
+
+If you've decided to use Ultraviolet it looks as though you can choose a theme and tell Rack::Codehighlighter to deal with it for you. I haven't investigated that yet -- see the [README][] for notes on Ultraviolet.
+
+### CSS styles for Coderay
+
+If you're using Coderay you'll need to provide your own CSS. I'm too lazy for that, but luckily some kind souls have shared their CSS with the rest of us. I like the [GitHub styles][] and the [RailsCasts colours][railscast].
+
+#### If you're using a Nesta theme...
+
+Themes load their CSS from their own `views` folder (e.g. `themes/slate/views`), but if you put a stylesheet in your site's `views` folder Nesta will load that instead.
+
+So we're going to pull a neat trick, and get Sass to include our stylesheet at the end of the theme's default CSS. Start by making a copy of the theme's Sass file:
+
+    $ mkdir -p views
+    $ cp themes/slate/views/master.sass views/
+
+Now get your Coderay CSS and store it in a `.scss` file:
+
+    $ curl https://raw.github.com/pie4dan/CodeRay-GitHub-Theme/master/coderay.css \ 
+      > views/coderay-github.scss
+
+Finally, get Sass to import the styles into the main stylesheet:
+
+    $ echo '@import "coderay-github"' >> views/master.sass
+
+You should be all set. Try reloading your page and see if your code is in colour.
+
+#### If you've designed your own site...
+
+Download the source for one and put it in `public/css`:
+
+    $ mkdir -p public/css
+    $ curl https://raw.github.com/pie4dan/CodeRay-GitHub-Theme/master/coderay.css \ 
+      > public/css/coderay-github.css
+
+[GitHub styles]: https://github.com/pie4dan/CodeRay-GitHub-Theme
+
+Edit your layout template and load the CSS with a &lt;link&gt; tag. You should be good to go...
+
+## Resources
+
+* The [rack-codehighlighter gem][gem]
+* [RailsCasts episode 207][railscast] from Ryan Bates
+
+[gem]: https://github.com/wbzyl/rack-codehighlighter
+[railscast]: http://railscasts.com/episodes/207-syntax-highlighting
