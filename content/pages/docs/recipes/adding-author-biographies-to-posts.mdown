@@ -1,0 +1,93 @@
+Flags: draft
+Template: article
+Categories: docs/recipes
+Summary: Imagine for a moment that you run a blog that frequently runs articles from guest bloggers. They provide the content, and in return get some publicity and a link back to their own site from the bottom of their article. What's the best way to do this with Nesta?
+
+# Adding author biographies to articles
+
+Imagine for a moment that multiple people contribute to your site's
+blog. In return for providing you with content, authors expect a bit of
+publicity and a link back to their own site from the bottom of their
+article.
+
+Once a blogger has written a couple of posts for you you'll find
+yourself wanting to re-use their biography, photo and links on each of
+their articles. What's the best way to do this with Nesta?
+
+There are a couple of approaches you can take, but I really like the way
+that Adam and Wynn are doing it on <http://thesassway.com>.
+
+Here's what you do (as Adam explained it to me):
+
+1. Add some custom metadata to each blog post that identifies the
+   author.
+2. Create a Haml template for each author in your `./views` folder that
+   contains the HTML for their bio, link and photo.
+3. Update your page template (e.g. `views/page.haml`) and get it to
+   check whether the page has an author. If an author is defined, render
+   the relevant author's bio.
+
+So your blog post might look this:
+
+    Author: Adam Stacoviak
+    Date: 28 August 2011
+    Categories: adam-stacoviak, projects
+    Summary: Twitter’s “Bootstrap” is a HOT topic…
+
+    # Sass Twitter Bootstrap
+
+    Twitter’s “Bootstrap” is a HOT topic…
+
+Then add the markup for the author's bio to a new template in the `views`
+folder. Give the template a name that can be derived from the author's
+name. I'd recommend converting it to lower case and replacing spaces
+with underscores, to give `views/adam_stacoviak.haml`.
+
+In your `views/page.haml` file add a snippet of Haml like this (insert
+it after the line that calls `@page.to_html(self)`):
+
+    - if @page.metadata('Author')
+      = haml @page.metadata('Author').downcase.gsub(/\W+/, '_')
+
+And you're done. Well, nearly. That `.downcase.gsub` stuff could be
+cleaner. Let's add a custom helper to `app.rb` and call that instead. In
+your `app.rb` file:
+
+    module Nesta
+      class App
+        helpers do
+          def author_biography(name = nil)
+            name ||= @page.metadata('Author')
+            if name
+              haml name.downcase.gsub(/\W+/, '_'), :layout => false
+            end
+          end
+        end
+      end
+    end
+
+And in your `page.haml` template we can replace the previous code with:
+
+    = author_biography
+
+If you're wondering what that optional `name` argument to
+`author_biography` is there for, bear with me...
+
+If you take another look at the metadata for the example post above
+you'll see that the post has been added to the adam-stacoviak category.
+That means that it will automatically be listed on a page at the URL
+`/adam-stacoviak`. Wouldn't it be nice if you include the bio at the top
+of that page? The easiest way to do it would be to create
+`/adam-stacoviak` as a Haml page in `content/pages` and include the
+biography like this:
+
+    Category: authors
+
+    %h1 Adam Stacoviak
+
+    = author_biography('Adam Stacoviak')
+
+Nesta will automatically insert all the pages in the author's category
+for you.
+
+:-)

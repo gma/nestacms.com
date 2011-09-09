@@ -1,0 +1,11 @@
+# Recipes
+
+Each Nesta Recipe shows how to approach a common task in Nesta. They
+include example code that you can use in your own site, or as
+inspiration for how to get the most out of Nesta.
+
+If you've got an idea for a new recipe, we'd love to hear about it (you
+can email your idea to the mailing list at <nesta@librelist.com>, or
+contact [@nestacms][] on Twitter).
+
+[@nestacms]: http://twitter.com/nestacms
