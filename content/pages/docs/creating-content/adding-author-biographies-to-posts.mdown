@@ -1,6 +1,6 @@
 Date: 10 Sep 2011
 Template: article
-Categories: docs/recipes
+Categories: docs/creating-content, docs/recipes
 Summary: Imagine for a moment that you run a blog that frequently runs articles from guest bloggers. They provide the content, and in return get some publicity and a link back to their own site from the bottom of their article. What's the best way to do this with Nesta?
 
 # Adding author biographies to articles
@@ -15,7 +15,9 @@ yourself wanting to re-use their biography, photo and links on each of
 their articles. What's the best way to do this with Nesta?
 
 There are a couple of approaches you can take, but I really like the way
-that Adam and Wynn are doing it on <http://thesassway.com>.
+that Adam and Wynn are doing it on [thesassway.com][].
+
+[thesassway.com]: http://thesassway.com
 
 Here's what you do (as Adam explained it to me):
 

@@ -1,11 +1,16 @@
 # Recipes
 
-Each Nesta Recipe shows how to approach a common task in Nesta. They
-include example code that you can use in your own site, or as
-inspiration for how to get the most out of Nesta.
+Each Nesta Recipe shows how to approach a common task, such as adding
+author biographies or setting up syntax highlighting. They include
+example code that you can use in your own site, or as inspiration for
+how to get the most out of Nesta.
 
 If you've got an idea for a new recipe, we'd love to hear about it (you
 can email your idea to the mailing list at <nesta@librelist.com>, or
 contact [@nestacms][] on Twitter).
 
+Credit for the idea of publishing a list of recipes goes to Adam
+Stakoviac of [The Changelog][] fame.
+
 [@nestacms]: http://twitter.com/nestacms
+[The Changelog]: http://thechangelog.com
