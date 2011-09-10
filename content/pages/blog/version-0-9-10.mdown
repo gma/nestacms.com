@@ -10,8 +10,9 @@ a page as draft (which will hide it on your production site).
 
 See the [plugin documentation][] for information on how to write and share
 plugins. The draft functionality has been implemented with a new metadata key
-called [flags][], which allows you to add boolean settings to your pages (which
-you can than query in your view).
+called [flags][], which allows you to add boolean settings to your
+pages. You can then check a page's flags in your template and modify the
+web page accordingly.
 
 [plugin documentation]: /docs/plugins
 [flags]: /docs/creating-content/metadata-reference#flags
@@ -41,7 +42,7 @@ Here's the CHANGES file with the full list of updates:
 
  * Mark pages as draft by setting a flag. Draft pages won't be shown in
    production, but will be visible on your local copy of your site (as
-   it's running in production).
+   it's running in "development").
 
  * Upgraded Sinatra to version 1.2.6. Upgraded other dependencies to
    latest compatible versions.
