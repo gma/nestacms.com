@@ -1,4 +1,4 @@
-Flags: draft
+Date: 10 Sep 2011
 Template: article
 Categories: docs/recipes
 Summary: Imagine for a moment that you run a blog that frequently runs articles from guest bloggers. They provide the content, and in return get some publicity and a link back to their own site from the bottom of their article. What's the best way to do this with Nesta?
@@ -43,35 +43,31 @@ folder. Give the template a name that can be derived from the author's
 name. I'd recommend converting it to lower case and replacing spaces
 with underscores, to give `views/adam_stacoviak.haml`.
 
-In your `views/page.haml` file add a snippet of Haml like this (insert
-it after the line that calls `@page.to_html(self)`):
-
-    - if @page.metadata('Author')
-      = haml @page.metadata('Author').downcase.gsub(/\W+/, '_')
-
-And you're done. Well, nearly. That `.downcase.gsub` stuff could be
-cleaner. Let's add a custom helper to `app.rb` and call that instead. In
-your `app.rb` file:
+Let's add a custom helper to `app.rb` that will render our author's
+template for us. Define `author_biography` in your `app.rb` file:
 
     module Nesta
       class App
-        helpers do
-          def author_biography(name = nil)
-            name ||= @page.metadata('Author')
-            if name
-              haml name.downcase.gsub(/\W+/, '_'), :layout => false
-            end
+        def author_biography(name = nil)
+          name ||= @page.metadata('author')
+          if name
+            template = name.downcase.gsub(/\W+/, '_').to_sym
+            haml template, :layout => false
           end
         end
       end
     end
 
-And in your `page.haml` template we can replace the previous code with:
+In your `views/page.haml` file add a snippet of Haml where you'd like to
+display the bio (it might make sense to insert it after the line that
+calls `@page.to_html`):
 
     = author_biography
 
 If you're wondering what that optional `name` argument to
-`author_biography` is there for, bear with me...
+`author_biography` is there for, read on...
+
+## Create a page for each author
 
 If you take another look at the metadata for the example post above
 you'll see that the post has been added to the adam-stacoviak category.
@@ -88,6 +84,4 @@ biography like this:
     = author_biography('Adam Stacoviak')
 
 Nesta will automatically insert all the pages in the author's category
-for you.
-
-:-)
+for you, beneath the bio.
