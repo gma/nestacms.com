@@ -1,0 +1,101 @@
+Flags: draft
+Date: 14:00 19 Sep 2011
+Categories: docs/design, docs/recipes
+Summary: When Geoffrey Grosenbach released the new PeepCode blog it made quite a splash. Each article is beautifully presented with its own unique design. When he [wrote about][peepcode] how he'd based his blog on Nesta I got lots of questions asking how to achieve something similar.
+Read more: Do it yourself with the blogazine plugin
+
+# Making an Art Directed blog
+
+When Geoffrey Grosenbach released the new PeepCode blog it made quite a
+splash. Each article is beautifully presented with its own unique
+design. When he [wrote about][peepcode] how he'd based his blog on Nesta
+I got lots of questions asking how to achieve something similar.
+
+Smashing Magazine have also [written about blogazines][smashing],
+showcasing some impressive designs.
+
+It's been fairly easy to achieve something similar with Nesta for a
+while, but it's now easier than ever with the [blogazine plugin][].
+
+## Installing the plugin
+
+Open a terminal and navigate to your site's folder. Then add the
+`nesta-plugin-blogazine` gem to your `Gemfile`:
+
+    $ cd path/to/site
+    $ echo 'gem "nesta-plugin-blogazine"' >> Gemfile
+    $ bundle
+
+The plugin provides a way for us to load a different CSS file for each
+page.
+
+To use it we need to modify your site's layout template.
+
+### Creating your layout template
+
+If you've already customised the design or have installed a theme, skip
+ahead to the next section.
+
+If your site uses Nesta's default theme you'll need to create a copy of
+the themes templates in a local `./views` folder. This will do it:
+
+    $ cd path/to/site
+    $ mkdir -p views
+    $ cp $(gem env gemdir)/gems/nesta-0.9.11/views/* views
+
+Substitute "0.9.11" for the version of Nesta that you're currently
+running (check with `nesta -v`).
+
+### Updating the layout
+
+Open your layout template in an editor (e.g. `views/layout.haml` or
+`themes/slate/views/layout.haml`) and change the line that loads the
+main CSS file, setting the name of the stylesheet to `#{page_design}`:
+
+    %link(href="/css/#{page_design}.css" media="screen" rel="stylesheet")
+
+By default `page_design` will return "master" -- if your site's default
+stylesheet has another name you can specify that instead:
+
+    %link(href="/css/#{page_design('application')}.css" media="screen" rel="stylesheet")
+
+Your site should still be working as before, but is now ready for you to
+start adding your designs...
+
+## Creating a new design
+
+For each new design, add your CSS to a new Sass or SCSS file in the
+`views` folder. I'm going to assume that you've created a new design in
+`views/trees.scss`.
+
+To use your design, open the blog post that you want to apply the design
+to and set the 'Design: trees' metadata at the top of the file:
+
+    Design: trees
+    Date: 10 Sep 2011
+    Categories: blog/nature
+
+    # Deciduous woodland
+
+    Your blog post starts here...
+
+When you reload the page Nesta should serve `trees.css` instead of the
+site's default stylesheet.
+
+**Tip:** You can share common styles between multiple designs using
+Sass's ability to import other Sass files. At the top of `trees.scss`
+you could write:
+
+    @import "master"
+
+    // Styles specific to the trees design go here...
+
+## Useful resources
+
+* [About the PeepCode blog][peepcode] (Geoffrey Grosenbach)
+* [The Death of the Blog Post][smashing] (Smashing Magazine)
+* [The Pros and Cons of Art-Directed Blogs][depot] (Webdesigner Depot)
+
+[peepcode]: http://blog.peepcode.com/tutorials/2010/about-this-blog
+[smashing]: http://www.smashingmagazine.com/the-death-of-the-blog-post/
+[depot]: http://www.webdesignerdepot.com/2011/03/the-pros-and-cons-of-art-directed-blogs/
