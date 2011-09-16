@@ -57,10 +57,12 @@ This is what the default `init.rb` file looks like, at the time of writing:
       module Plugin
         module My::Feature
           module Helpers
-            helpers do
-              # If your plugin needs any helper methods, add them here...
-            end 
+            # If your plugin needs any helper methods,
+            # add them here...
           end
+
+          # Add classes and methods here, within the
+          # My::Feature module.
         end
       end
 
@@ -70,18 +72,22 @@ This is what the default `init.rb` file looks like, at the time of writing:
     end
 
 You can add anything you like inside the `App` class (just as you would
-inside an `app.rb` file in your own site). You can also add new models
-or modify existing models inside the Nesta module.
+inside an `app.rb` file in your own site). You can also add new classes,
+but its best to keep those inside your plugin's own namespace so that
+they can't clash with modules from other plugins.
 
-For example, the end of your `init.rb` file could end up looking
+You can also modify existing models by "monkey patching" Nesta's own
+classes. For example, the end of your `init.rb` file could end up looking
 something like this:
 
       class App
         helpers Nesta::Plugin::My::Feature::Helpers
       end
 
-      class Snippet < FileModel
-        # Add methods for your model here…
+      class Page
+        def awesome?
+          flagged_as?('awesome')
+        end
       end
     end
 
@@ -103,7 +109,8 @@ good time for a plugin to try and modify Nesta.
 
 Instead, plugins just register themselves with Nesta so that Nesta knows
 that they're there, and can load the plugin's actual code once Nesta is
-ready. This is why `lib/nesta-plugin-my-feature.rb` only contains:
+ready. This is why `lib/nesta-plugin-my-feature.rb` only contains this
+line:
 
     Nesta::Plugin.register(__FILE__)
 
@@ -111,7 +118,7 @@ The final step is when Nesta loads `lib/nesta-plugin-my-feature/init.rb`,
 at which point you can expect all of Nesta's classes and routes to have
 been defined.
 
-## Building and testing the gem
+## Building the gem
 
 Open the `.gemspec` file in a text editor and replace the placeholder
 summary and description with text that describes your plugin:
@@ -149,7 +156,30 @@ rubygems.org.)
 
 Fire up your site and see if the plugin works as intended.
 
-If it works...
+There's an alternative to repeatedly running `rake install` in the
+plugin and `bundle` in your app that you might prefer. You can tell
+Bundler to install your plugin from a git repository. Update your test
+site's `Gemfile` to look like this:
+
+    gem "nesta-plugin-my-feature",
+        :git => "file:///path/to/nesta-plugin-my-feature"
+
+When you re-run `bundle` it will build and install the gem from the
+latest version that is committed on the `master` branch (you can change
+the branch with the `:branch` option).
+
+The important thing to remember with this approach is to commit your
+changes to the plugin before re-running `bundle`. If you're making small
+iterative changes the `--amend` option to `git commit` comes in handy.
+
+One last tip; from inside your test site you can ask Bundler to open a
+gem's code in your editor. If something isn't working and you want to
+check what the installed gem really contains, try this:
+
+    $ bundle open nesta-plugin-my-feature
+
+You can even edit the code in the gem, quickly re-test, and then copy
+the code over to the plugin's git repository once you've got it working.
 
 ### Releasing as a Git repository
 
