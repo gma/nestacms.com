@@ -1,0 +1,53 @@
+Date: 21 Sep 2011
+Categories: docs/creating-content, docs/recipes
+Summary: There are a handful of Markdown processing libraries available for Ruby, each with different advantages and features. Since version 0.9.11, Nesta uses Ryan Tomayko's [Tilt][] library to work out which processor to use when rendering a file within your `content` folder, which will try and pick a suitable processor for you. This recipe shows you how to change it.
+
+# Using a different Markdown processor
+
+There are a handful of Markdown processing libraries available for Ruby, each with different advantages and features. Since version 0.9.11, Nesta uses Ryan Tomayko's [Tilt][] library to work out which processor to use when rendering a file within your `content` folder, which will try and pick a suitable processor for you.
+
+At the time of writing, Tilt knows about the following Markdown processors:
+
+* [Redcarpet][]
+* [RDiscount][]
+* [BlueCloth][]
+* [Kramdown][]
+* [Maruku][]
+
+Tilt will try to load a Markdown processor in the order defined above. If it can't find Redcarpet, it'll try RDiscount, then BlueCloth, etc.
+
+RDiscount is used in Nesta by default, as it is the only one that is included automatically as a Nesta dependency (i.e. it is the only one that is likely to be available in your project so Tilt is likely to find it first).
+
+## Installing other processors
+
+To change the default (e.g. to BlueCloth), add your chosen processor's gem to your `Gemfile` and re-run `bundle`:
+
+    $ cd path/to/project
+    $ echo 'gem "bluecloth"' >> Gemfile
+    $ bundle
+
+The other gems that you might want to install are called `redcarpet`, `kramdown` and `maruku` (the `rdiscount` gem is already installed).
+
+### Configuring Tilt
+
+Then tell Tilt that you'd rather it used BlueCloth by adding the following line of Ruby code to the `app.rb` file within your project (if you don't have an `app.rb` file, just create it):
+
+    Tilt.prefer Tilt::BlueClothTemplate
+
+The full list of class names that you might want to use in place of `BlueClothTemplate` is:
+
+* `Tilt::RedcarpetTemplate`
+* `Tilt::RDiscountTemplate`
+* `Tilt::BlueClothTemplate`
+* `Tilt::KramdownTemplate`
+* `Tilt::MarukuTemplate`
+
+This post may go out of date as the Markdown processing support in Ruby evolves. You can always check the list of [class names][tilt.rb] at the bottom of `tilt.rb` to review current options…
+
+[Tilt]: https://github.com/rtomayko/tilt
+[Redcarpet]: https://github.com/tanoku/redcarpet
+[RDiscount]: https://github.com/rtomayko/rdiscount
+[BlueCloth]: http://deveiate.org/projects/BlueCloth
+[Kramdown]: http://kramdown.rubyforge.org/
+[Maruku]: https://github.com/nex3/maruku
+[tilt.rb]: https://github.com/rtomayko/tilt/blob/master/lib/tilt.rb
