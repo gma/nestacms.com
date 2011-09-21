@@ -33,7 +33,7 @@ traffic][nunney2] too.
  - Glenn Gillen -- Delaying the date/time at which an article is
    published (i.e. appears in the Atom feed and in your blog's list of
    recent articles).
- - Wynn Netherland -- Public metadata.
+ - Wynn Netherland -- Public metadata, bug fixes.
  - Barry Keenan -- Setting default encoding on Heroku ([bug][bug14]).
  - Robert Syme -- Rendering summaries of arbitrary articles.
  - Christopher Lindblom -- Added the --version option. Fixed page titles
@@ -45,6 +45,9 @@ traffic][nunney2] too.
  - Isaac Cambron - Added the `stylesheet` helper that renders either
    Sass or SCSS stylesheets (you previously had to hard code the flavour
    you preferred).
+ - Louis Nyffenegger - Fixed bug that allowed any file within content
+   folder to be retrieved if '..' was included in the URL of an
+   attachment.
 
 If you've sent me a fix and I've not listed you, it's just because I
 made this list in a rush and haven't dug through all my email history.
