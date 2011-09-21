@@ -4,7 +4,7 @@ Summary: There are a handful of Markdown processing libraries available for Ruby
 
 # Using a different Markdown processor
 
-There are a handful of Markdown processing libraries available for Ruby, each with different advantages and features. Since version 0.9.11, Nesta uses Ryan Tomayko's [Tilt][] library to work out which processor to use when rendering a file within your `content` folder, which will try and pick a suitable processor for you.
+There are a handful of Markdown processing libraries available for Ruby, each with different advantages and features. Since version 0.9.11, Nesta uses Ryan Tomayko's [Tilt][] library to work out which processor to use when rendering a file within your `content` folder.
 
 At the time of writing, Tilt knows about the following Markdown processors:
 
