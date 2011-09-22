@@ -7,3 +7,5 @@ site has been put together.
 
 Also have a look at `content/menu.txt` to see what the main navigation
 links and documentation links have been created from.
+
+[Nesta]: http://nestacms.com
