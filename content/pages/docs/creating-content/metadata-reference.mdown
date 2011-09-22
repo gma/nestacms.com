@@ -34,6 +34,19 @@ heading:
 
 Without further ado, here's a full list of the Nesta metadata.
 
+## Articles heading
+
+When articles are listed on a category page, Nesta adds a heading above
+the articles based on the category's title (e.g. "Articles on Thing" if
+the category page's main heading is "Thing"). Sometimes prefixing the
+name of a page with "Articles on" just doesn't make sense. If you set
+the 'Articles heading' metadata on the category page, Nesta will allow
+you to override the heading.
+
+Example:
+
+    Articles heading: The blog posts
+
 ## Atom ID
 
 An alternative to RSS, [Atom feeds][atom] can alert your readers to new

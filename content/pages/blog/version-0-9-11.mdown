@@ -4,11 +4,21 @@ Summary: Version 0.9.11 has been released. Nesta now uses Ryan Tomayko's Tilt li
 
 # Nesta 0.9.11 released
 
-Version 0.9.11 has been released. Nesta now uses Ryan Tomayko's Tilt
-library to manage the rendering of Markdown and Textile files inside
-your `content/pages` folder. That means you can choose which Markdown
-processor is used to render your content. The default processor is now
-RDiscount (in previous versions it was Maruku).
+Version 0.9.11 has been released.
+
+Nesta now uses Ryan Tomayko's Tilt library to manage the rendering of
+Markdown and Textile files inside your `content/pages` folder. That
+means you can choose which Markdown processor is used to render your
+content. The default processor is now RDiscount (in previous versions it
+was Maruku).
+
+Trailing slashes are now stripped off all URLs (see [issue 60][60]).
+
+There is also a new metadata key called 'Articles heading' (see the
+[docs][]).
+
+[60]: https://github.com/gma/nesta/issues/60
+[docs]: /docs/creating-content/metadata-reference#articles_heading
 
 ## Upgrading
 
