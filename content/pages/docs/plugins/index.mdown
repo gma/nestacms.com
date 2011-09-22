@@ -1,5 +1,3 @@
-Articles heading: The plugins
-
 # Plugin directory
 
 The core code base of Nesta has been kept fairly lean on purpose. Nesta
@@ -9,8 +7,7 @@ easy to grasp starting point from which your web site can grow.
 We've therefore decided to keep the code base lean and clean, while
 releasing less globally useful features as plugins.
 
-Plugin support was only added in [Nesta 0.9.10][0-9-10] so there aren't
-any plugins to tell you about yet. For now you'll have to make do by
-reading about how to make your own...
+If you'd like to write your own plugin, see [Writing Nesta
+plugins][writing].
 
-[0-9-10]: /blog/version-0-9-10
+[writing]: /docs/plugins/writing-plugins

@@ -1,4 +1,3 @@
-Categories: docs/plugins
 Summary: Nesta plugins are distributed as Ruby gems. They're easy to write, easy to share, and easy to install. If you can sling enough Ruby code to modify your site's behaviour in an `app.rb` file, you can write a plugin. Just read these docs first...
 
 # Writing Nesta plugins

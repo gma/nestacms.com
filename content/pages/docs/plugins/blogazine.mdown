@@ -1,0 +1,24 @@
+Categories: docs/plugins
+Summary: Allows you to use a different design on each page of your site, in the style of the [PeepCode blog](http://blog.peepcode.com).
+
+# Blogazine plugin
+
+Allows you to use a different design on each page of your site, in the
+style of the [PeepCode blog](http://blog.peepcode.com).
+
+The plugin adds a a new metadata key ('Design') that you can set on each
+page in order to specify the name of the stylesheet that should be
+served for that page.
+
+## Installation
+
+    $ cd path/to/site
+    $ echo 'gem "nesta-plugin-blogazine" >> Gemfile'
+    $ bundle
+
+For full instructions, see the [documentation][]. You can browse the
+code on the [GitHub page][].
+
+[peepblog]: http://blog.peepcode.com
+[documentation]: /docs/design/making-an-art-directed-blogazine
+[GitHub page]: https://github.com/gma/nesta-plugin-blogazine
