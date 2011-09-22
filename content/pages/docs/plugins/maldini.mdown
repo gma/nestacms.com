@@ -1,0 +1,27 @@
+Categories: docs/plugins
+Summary: Generates citations and reference lists from BibTeX files.
+
+# Maldini plugin
+
+Allows citations and reference lists to be automatically generated from [BibTeX][bibtex] files.
+
+## Usage
+
+The plugin provides a class, `Maldini::Bibliography`, which can be assigned a link to a BibTeX file, and provides methods to automatically generate citations and reference lists.
+
+## Installation
+
+Maldini is presently in pre-release development. The development version may be installed with:
+
+    $ cd path/to/site
+    $ echo 'gem "nesta-plugin-maldini", :git => "git://github.com/etc/nesta-plugin-maldini.git"' >> Gemfile
+    $ bundle
+
+## Documentation
+
+For more on the idea behind Maldini, see the Maldini [project homepage][maldiniproject]. You can browse the
+code on the [GitHub page][].
+
+[bibtex]: http://www.ctan.org/pkg/bibtex
+[maldiniproject]: http://bweslake.org/research/resources/maldini
+[GitHub page]: https://github.com/etc/nesta-plugin-maldini
