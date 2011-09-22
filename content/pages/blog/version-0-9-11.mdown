@@ -1,12 +1,12 @@
 Template: article
 Date: 21 Sep 2011
-Summary: Version 0.9.11 has been released. The main update is that Ryan Tomayko's Tilt library is used to manage the rendering of Markdown and Textile files inside your `content/pages` folder. That means you can choose which Markdown processor is used to render your content. The default processor is now RDiscount (in previous versions it was Maruku).
+Summary: Version 0.9.11 has been released. Nesta now uses Ryan Tomayko's Tilt library to manage the rendering of Markdown and Textile files inside your `content/pages` folder. That means you can choose which Markdown processor is used to render your content. The default processor is now RDiscount (in previous versions it was Maruku).
 
 # Nesta 0.9.11 released
 
-Version 0.9.11 has been released. The main update is that Ryan Tomayko's
-Tilt library is used to manage the rendering of Markdown and Textile files
-inside your `content/pages` folder. That means you can choose which Markdown
+Version 0.9.11 has been released. Nesta now uses Ryan Tomayko's Tilt
+library to manage the rendering of Markdown and Textile files inside
+your `content/pages` folder. That means you can choose which Markdown
 processor is used to render your content. The default processor is now
 RDiscount (in previous versions it was Maruku).
 
@@ -23,6 +23,11 @@ yourself a new copy of the `config.ru` file from the template file in the
 gem:
 
     $ cp $(gem env gemdir)/gems/nesta-0.9.11/templates/config.ru .
+
+If you'd like to continue to use Maruku to process your Markdown, see
+the documentation on how to [switch back to Maruku][switching].
+
+[switching]: /docs/creating-content/changing-the-markdown-processor
 
 ## The changes
 
