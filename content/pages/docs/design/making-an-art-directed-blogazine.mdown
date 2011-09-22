@@ -1,4 +1,4 @@
-Date: 22 Sep 2011
+Date: 15:00 22 Sep 2011
 Categories: docs/design, docs/recipes
 Summary: When Geoffrey Grosenbach released the new PeepCode blog it made quite a splash. Each article is beautifully presented with its own unique design. When he [wrote about][peepcode] how he'd based his blog on Nesta I got lots of questions asking how to achieve something similar.
 Read more: Do it yourself with the blogazine plugin
