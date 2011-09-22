@@ -1,3 +1,5 @@
+Articles heading: The plugins
+
 # Plugin directory
 
 The core code base of Nesta has been kept fairly lean on purpose. Nesta
