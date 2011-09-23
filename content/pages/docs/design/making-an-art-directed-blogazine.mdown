@@ -89,6 +89,13 @@ you could write:
 
     // Styles specific to the trees design go here...
 
+If your page design is significantly different to the other pages on
+your site and you need to serve different HTML, you can change the
+[template][] and [layout][] that are used on the page.
+
+[template]: /docs/creating-content/metadata-reference#template
+[layout]: /docs/creating-content/metadata-reference#layout
+
 ## Useful resources
 
 * [About the PeepCode blog][peepcode] (Geoffrey Grosenbach)
