@@ -1,0 +1,32 @@
+Categories: docs/plugins
+Summary: Allows you to use numeric (or timestamped) filenames while serving your pages with an optional slug for SEO purposes.
+
+# Sluggable plugin
+
+Allows you to use numeric (or timestamped) filenames while
+serving your pages with an optional slug for SEO purposes. This has a
+few benefits:
+
+* You can change the slug if your headline changes and Nesta will
+  automatically find the new article.
+* You don't have to know your headline and slug when you create your
+  file.
+* Mangled, truncated URLs can still find the way to the latest version
+  of your page.
+
+
+The plugin adds a a new metadata key ('slug') that you can set on each
+page in order to specify the slug to be used in the URL for that page.
+If you do not specify the slug in the metadata, Sluggable will dasherize
+your page heading.
+
+## Installation
+
+    $ cd path/to/site
+    $ echo 'gem "nesta-plugin-sluggable" >> Gemfile'
+    $ bundle
+
+For full instructions, see the README on the [GitHub page][]. You can see the plugin in action on the [developer site][].
+
+[developer site]: http://wynnnetherland.com/linked/2011092203/making-blogazine-with-nesta
+[GitHub page]: https://github.com/pengwynn/nesta-plugin-sluggable
