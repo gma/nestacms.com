@@ -1,0 +1,26 @@
+Categories: docs/plugins
+Summary: Allows you to easily create posts that link to remote URLs.
+
+# Linkable plugin
+
+
+Allows you to easily create posts that link to remote URLs, [Daring
+Fireball][] style.
+
+
+The plugin adds a a new metadata key ('url') that you can set on each
+page in order to specify the URL for the remote article. Nesta's
+`url_for` helper will resolve to the remote URL for easy linking in link
+posts and in your Atom feed.
+
+## Installation
+
+    $ cd path/to/site
+    $ echo 'gem "nesta-plugin-linkable" >> Gemfile'
+    $ bundle
+
+For full instructions, see the README on the [GitHub page][]. You can see the plugin in action on the [developer site][].
+
+[Daring Fireball]: http://daringfireball.net
+[developer site]: http://wynnnetherland.com/linked/2011092203/making-blogazine-with-nesta
+[GitHub page]: https://github.com/pengwynn/nesta-plugin-linkable
