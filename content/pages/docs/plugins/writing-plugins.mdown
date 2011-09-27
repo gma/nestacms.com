@@ -176,9 +176,9 @@ particularly useful, **please distribute it as Git repository** rather
 than via rubygems.org. There are two reasons for this:
 
 1. Distributing with Git is easier and quicker for you, and
-2. People who are looking for useful plugins won't have to trawl through
-   a smorgasbord of irrelevant gems in order to find things they can
-   actually use.
+2. People who are looking for useful plugins won't have to search
+   through a smorgasbord of irrelevant gems in order to find plugins
+   that will be useful to them.
 
 This convention will also mean that we can query Rubygems to see what
 plugins have been released for general use:
@@ -199,6 +199,22 @@ repeat those instructions here.
 
 If you've followed all the above (and it worked), Nesta now has one extra
 plugin. :-)
+
+### Documentation
+
+If you'd like to add your plugin to the [Plugin Directory][directory]
+fork a copy of the [nestacms.com site][site] and add a page in the
+`content/pages/docs/plugins` folder. Describe your plugin briefly,
+linking to your README file if there are any lengthy instructions
+required.
+
+Feel free to include your name and a link to your own site at the end of
+the page.
+
+When you're done, send a pull request to `gma`.
+
+[directory]: /docs/plugins
+[site]: https://github.com/gma/nestacms.com
 
 Feedback on the process (and the experience) would be appreciated. Let
 us know at <nesta@librelist.com>.
