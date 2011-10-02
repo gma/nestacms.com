@@ -10,6 +10,8 @@ The plugin adds a a new metadata key ('Design') that you can set on each
 page in order to specify the name of the stylesheet that should be
 served for that page.
 
+Written by [Graham Ashton][].
+
 ## Installation
 
     $ cd path/to/site
@@ -19,6 +21,6 @@ served for that page.
 For full instructions, see the [documentation][]. You can browse the
 code on the [GitHub page][].
 
-[peepblog]: http://blog.peepcode.com
+[Graham Ashton]: http://effectif.com
 [documentation]: /docs/design/making-an-art-directed-blogazine
 [GitHub page]: https://github.com/gma/nesta-plugin-blogazine

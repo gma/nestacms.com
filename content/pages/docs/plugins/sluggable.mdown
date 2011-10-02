@@ -20,6 +20,8 @@ page in order to specify the slug to be used in the URL for that page.
 If you do not specify the slug in the metadata, Sluggable will dasherize
 your page heading.
 
+Written by [Wynn Netherland][].
+
 ## Installation
 
     $ cd path/to/site
@@ -28,5 +30,6 @@ your page heading.
 
 For full instructions, see the README on the [GitHub page][]. You can see the plugin in action on the [developer site][].
 
+[Wynn Netherland]: http://wynnnetherland.com
 [developer site]: http://wynnnetherland.com/linked/2011092203/making-blogazine-with-nesta
 [GitHub page]: https://github.com/pengwynn/nesta-plugin-sluggable
