@@ -3,7 +3,7 @@ Summary: Generates citations and reference lists from BibTeX files.
 
 # Maldini plugin
 
-Allows citations and reference lists to be automatically generated from [BibTeX][bibtex] files.
+Allows citations and reference lists to be automatically generated from [BibTeX][bibtex] files. Written by [Brad Weslake](http://bweslake.org).
 
 ## Usage
 
