@@ -16,6 +16,7 @@ docs
     docs/config/google-analytics
     docs/config/comments-with-disqus
     docs/config/environment-variables
+    docs/config/robots-dot-txt
   docs/design
     docs/design/theme
     docs/design/editing-default-templates
