@@ -7,44 +7,14 @@ Read more: Read the Nesta FAQ
 ## How can I make a site like the PeepCode blog, with a different design on every page?
 
 Geoffrey Grosenbach customised an earlier version of Nesta, as described
-in his excellent [write up][peepblog] on the PeepCode blog. You can now
-do the same kind of thing with the current version of Nesta.
+in his excellent [write up][peepblog] on the PeepCode blog.
 
-If your different designs require changes to the HTML you can specify
-which template and layout to use for each page (see the Layout and
-Template sections in the [metadata reference][ref]). Make one layout or
-template (whichever makes the most sense in your case) for each design,
-and then tell Nesta to use them on your pages:
-
-    Categories: about
-    Layout: pastel-shades
-    Template: funky-chicken
-
-    # Your page goes here...
-
-Alternatively -- if your designs only require you to serve a different
-stylesheet -- it might make sense to create a new metadata field called
-'Stylesheet' at the top of your page.
-
-Something like this should do it:
-
-    Date: 19 Feb 2011
-    Stylesheet: blue-blobs-of-goo
-
-    # Your blog post goes here...
-
-Then create `views/blue-blobs-of-goo.sass` and put some code like this
-in your layout file:
-
-    - if stylesheet = @page.metadata('stylesheet')
-      %link(href="/css/#{stylesheet}.css" media="screen" rel="stylesheet")
-    - else
-      %link(href="/css/master.css" media="screen" rel="stylesheet")
-
-I've not tested that, but I'm sure you get the idea...
+Nesta now has a blogazine plugin that is designed to help you achieve
+the same thing. It's documented in the [Making an Art Directed
+blog][blogazine] recipe.
 
 [peepblog]: http://blog.peepcode.com/tutorials/2010/about-this-blog
-[ref]: /docs/creating-content/metadata-reference
+[blogazine]: /docs/design/making-an-art-directed-blogazine
 
 ## There are lots of CMS's and blog engines around&nbsp;–&nbsp;why write another?
 
