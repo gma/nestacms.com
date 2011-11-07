@@ -14,4 +14,6 @@ use Rack::Rewrite do
   }
 end
 
+use Rack::ForceDomain, ENV["DOMAIN"]
+
 run Nesta::App
