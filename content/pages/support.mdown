@@ -1,32 +1,35 @@
 # Support
 
+The first place to turn for help is the mailing list.
+
+Subscribe by sending a blank email to <nesta@librelist.com>. You can
+also browse the [list archives][archives].
+
+Please don't ask for help by filing tickets in the GitHub issue tracker.
+Yes, I'll see your ticket, but I'll just ask you to re-post the question
+to the mailing list. There are some sharp people on the list and you'll
+get a quicker response that way. I also prefer to use issue trackers
+for tracking new features and bugs. Sorry.
+
+[archives]: http://librelist.com/browser/nesta
+
+## Twitter
+
 You can follow Nesta on Twitter at [@nestacms][twitter]. New themes
 and plugins, new features, etc. get tweeted.
 
 Feel free to ask questions on Twitter, but bear in mind that 140
 characters isn't the best medium for support! Messages to the [mailing
-list][mailto] are also likely to be read sooner.
+list][mailto] will also be read sooner, and by more people.
 
 [twitter]: http://twitter.com/nestacms
-
-## Mailing list
-
-The first place to turn for help is the mailing list
-([nesta@librelist.com][mailto]). Subscribe by sending a blank email;
-you'll then receive an invitation message. You can also browse the
-[mailing list archives][archives].
-
-If you've got a question about how to put your site together or write
-a plugin, the mailing list is the place to ask.
-
 [mailto]: mailto:nesta@librelist.com
-[archives]: http://librelist.com/browser/nesta
 
 ## IRC channel
 
 There's a #nesta IRC channel on the freenode network; it's not exactly
-busy, but there's a chance that you'll find somebody in there who can
-give you a hand.
+busy, but there's a reasonable chance that you'll find somebody in there
+who can give you a hand.
 
-It's also a good place to meet up to debug people's sites if we can't
-work it out quickly on the mailing list.
+It's also a good place to arrange to meet up to debug people's sites if
+we can't work something out quickly on the mailing list.
