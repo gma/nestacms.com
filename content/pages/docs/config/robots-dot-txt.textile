@@ -1,0 +1,7 @@
+Categories: docs/config
+summary: How to create your own robots.txt file
+
+h1. Configuring a robots.txt file
+
+By default, Nesta will respond with a blank _robots.txt_ file from the root.  If you want to add your own robots.txt instructions create a new robots.txt file and place it in the _public_ directory.  Sinatra/Nesta will serve up that file first if it exists.  Otherwise, Nesta will respond with a default file that is basically blank to the robots.
+
