@@ -1,0 +1,38 @@
+Categories: docs/config
+Summary: Whether you start on nesta or migrate sooner or later you'll need to redirect people.
+
+# Rewrite Rules
+
+Since Nesta is based on Sinatra, which is based on rack, it's fairly
+easy to handle rewriting with [Rack::Rewrite](https://github.com/jtrupiano/rack-rewrite)
+
+The easiest way to do this is to:
+
+Add: `gem 'rack-rewrite', '~> 1.2.1'` to your Gemfile
+
+Change your `config.ru` file to something like:
+
+    require 'rubygems'
+    require 'bundler/setup'
+    require 'rack/rewrite'
+    
+    Bundler.require(:default)
+    
+    use Rack::Rewrite do
+      #rewrite '/wiki/John_Trupiano', '/john'
+      #r301 '/wiki/Yair_Flicker', '/yair'
+      #r302 '/wiki/Greg_Jastrab', '/greg'
+      #r301 %r{/wiki/(\w+)_\w+}, '/$1'
+    end
+    
+    require 'nesta/env'
+    Nesta::Env.root = ::File.expand_path('.', ::File.dirname(__FILE__))
+    
+    require 'nesta/app'
+    run Nesta::App
+    
+## Additional Resources
+
+* [Rack::Rewrite](https://github.com/jtrupiano/rack-rewrite)
+* [Rack::Rewrite + Google Analytics Makes Site Transitions Seamless](http://blog.smartlogicsolutions.com/2009/11/24/rack-rewrite-google-analytics-makes-site-transitions-seamless/)
+* [Using Anemone and Rack::Rewrite for permanent 301 redirections](http://hugofrappier.wordpress.com/2009/11/18/permanent-301-redirections-using-a-rack-middleware-in-rails/)
