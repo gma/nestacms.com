@@ -1,3 +1,4 @@
+Author: Graham Ashton
 Date: 10 Sep 2011
 Template: article
 Categories: docs/creating-content, docs/recipes

@@ -1,5 +1,6 @@
+Author: Graham Ashton
 Date: 21 Sep 2011
-Categories: docs/creating-content, docs/recipes
+Categories: docs/creating-content, docs/recipes, authors/graham-ashton
 Summary: There are a handful of Markdown processing libraries available for Ruby, each with different advantages and features. Since version 0.9.11, Nesta uses Ryan Tomayko's [Tilt][] library to work out which processor to use when rendering a file within your `content` folder, which will try and pick a suitable processor for you. This recipe shows you how to change it.
 
 # Using a different Markdown processor
