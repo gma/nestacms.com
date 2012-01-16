@@ -16,7 +16,7 @@ docs
     docs/config/google-analytics
     docs/config/comments-with-disqus
     docs/config/environment-variables
-    docs/config/custom-error-page
+    docs/config/error-pages
   docs/design
     docs/design/theme
     docs/design/editing-default-templates

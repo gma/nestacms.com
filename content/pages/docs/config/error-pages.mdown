@@ -1,0 +1,52 @@
+Categories: docs/config
+Summary: Because Nesta is written in Sinatra, it's using Sinatra's approach to 404 pages.
+
+# Customising the error pages
+
+Because Nesta is written in Sinatra, errors (such as "404 not found")
+are handled in just the same way that they are in Sinatra. Nesta ships
+with simple messages to explain to your visitors that something went
+wrong, but it never hurts to personalise your error page.
+
+To change your error handler in Sinatra you define a Ruby block that
+returns the HTML of your error page. For a 404 error (404 is the HTTP
+code for page not found) you could write a handler as simple as this:
+
+    not_found do
+      'This is nowhere to be found.'
+    end
+
+To set this up in Nesta you need to create an `app.rb` file in your
+project, and add the `not_found` handler inside the `Nesta::App` class
+(if you don't put it inside the `App` class Nesta won't find it):
+
+    module Nesta
+      class App
+        not_found do
+          'Text of error page'
+        end
+      end
+    end
+
+The block simply returns a string containing your HTML, so if you want
+to render a special template for it, you could put this in the
+`not_found` block instead:
+
+    not_found do
+      cache haml(:my_error_page)
+    end
+
+To get that last example working, create a `views/my_error_page.haml`
+file in your project.
+
+You can also change the HTML that Nesta returns when it encounters a
+problem in your code (which results in the server sending HTTP error
+code 500). To do so, define an `error` block instead:
+
+    error do
+      cache haml(:somethings_broken)
+    end
+
+More info on Sinatra's handlers can be found in the [Sinatra README][].
+
+[Sinatra README]: http://www.sinatrarb.com/intro#Error%20Handling
