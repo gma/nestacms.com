@@ -1,5 +1,5 @@
 Categories: docs/config
-Summary: How to create a robots.txt file
+Summary: How to create a robots.txt file.
 
 # Editing robots.txt
 

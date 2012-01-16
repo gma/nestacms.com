@@ -1,5 +1,5 @@
 Categories: docs/config
-Summary: Because Nesta is written in Sinatra, it's using Sinatra's approach to 404 pages.
+Summary: Because Nesta is written in Sinatra, errors (such as "404 not found") are handled in just the same way that they are in Sinatra. Nesta ships with simple messages to explain to your visitors that something went wrong, but it never hurts to personalise your error page.
 
 # Customising the error pages
 
