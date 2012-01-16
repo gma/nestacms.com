@@ -1,4 +1,4 @@
-Categories: docs/config
+Categories: docs/config:5
 Summary: Comments are easily added to a Nesta site through a third party site like Disqus.
 
 # Comments with Disqus
