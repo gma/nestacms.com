@@ -1,5 +1,5 @@
 Author: Jacopo Notarstefano
-Date: 17 Oct 2011
+Date: 16 Jan 2012
 Template: article
 Categories: docs/recipes, authors/jacopo-notarstefano
 Summary: You might want to use features that are in the development branch of Nesta but were not yet released as a gem, or you might want to use your own version of Nesta. This recipe will explain how.
