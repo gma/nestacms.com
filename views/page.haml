@@ -11,9 +11,11 @@
     - unless @page.articles.empty?
       %section.articles
         %header
-          %h1= "Articles on #{@page.heading}"
+          %h1= articles_heading
         = haml :summaries, :layout => false, :locals => { :pages => @page.articles, :heading => :h3 }
 
     = haml :page_meta, :layout => false, :locals => { :page => @page }
+
+    %section.author-biography.footer= author_biography
 
 = haml :sidebar, :layout => false

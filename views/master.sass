@@ -269,6 +269,9 @@ section.articles
     footer
       border-top: none
 
+section.pages > ol article p.read_more
+  margin-top: 0
+
 div#sidebar heading h1
   @include adjust-font-size($h2-scale)
 
@@ -285,6 +288,28 @@ nav.documentation
 
 div.feed
   margin: $base-vertical-margin 0
+
+section.author-biography
+  img.avatar
+    float: left
+
+    margin-top: $base-vertical-margin / 4
+    margin-right: $base-vertical-margin / 2
+    border: 1px solid #edd
+    padding: 12px
+
+    @include box-shadow(0px, 5px, 10px, desaturate(darken(#edd, 10%), 30%))
+
+    background: white
+
+  p
+    margin-left: 150px
+
+  &.footer
+    border-top: $border-style
+    border-bottom: none
+    padding-top: $base-vertical-margin / 2
+    padding-bottom: 0
 
 article.home
   section

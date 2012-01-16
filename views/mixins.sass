@@ -45,3 +45,8 @@ $base-vertical-margin: 1.75em
     height: 0
     clear: both
     visibility: hidden
+
+@mixin box-shadow($horizontal, $vertical, $blur, $color)
+  -webkit-box-shadow: $horizontal $vertical $blur $color
+  -moz-box-shadow: $horizontal $vertical $blur $color
+  box-shadow: $horizontal $vertical $blur $color
