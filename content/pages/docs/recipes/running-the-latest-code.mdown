@@ -1,3 +1,4 @@
+Author: Jacopo Notarstefano
 Date: 17 Oct 2011
 Template: article
 Categories: docs/recipes
@@ -10,16 +11,16 @@ Let's say that there's a cool new feature of Nesta you want to try, but has not 
 You'll need to replace the line in your Gemfile about Nesta with the following:
 
     gem "nesta", :git => "git://github.com/gma/nesta.git"
-    
+
 And then run: 
 
     bundle install
-    
+
 Voilà, you are now running the latest development version of Nesta. 
-    
+
 Maybe that particular feature you want is in a specific branch other than master. You can specify which branch you want, for example:
 
-    gem "nesta", :git    => "git://github.com/gma/nesta.git", 
+    gem "nesta", :git    => "git://github.com/gma/nesta.git",
                  :branch => "gem-plugins"
 
 In fact, when we pass the :git option only, the master branch is assumed.
@@ -27,13 +28,12 @@ In fact, when we pass the :git option only, the master branch is assumed.
 Note also that this can be used to specify **your own** branch or repository, so that Nesta can have all the features you built. For example:
 
     gem "nesta", :git => "git://github.com/your-name/nesta.git"
-    
+
 Be warned that this requires a *.gemspec* file in your project folder. If you don't have one you should pass a version number to Bundler so that it can resolve dependencies, as in:
 
     gem "nesta", "0.9.11", 
                  :git => "git://github.com/your-name/nesta.git"
-    
-More details and further options can be found at [Gembundler].
 
-[Gembundler]: http://gembundler.com/git.html
+More details and further options can be found on the [Bundler web site].
 
+[Bundler web site]: http://gembundler.com/git.html
