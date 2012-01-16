@@ -1,0 +1,15 @@
+Categories: docs/config
+Summary: How to create a robots.txt file
+
+# Editing robots.txt
+
+Web crawler software (often known as "robots") are continually
+traversing the web and downloading the pages they find. If you'd like to
+keep them out of a part of your site, you can tell them what to avoid by
+setting up a `robots.txt` file.
+
+By default, Nesta will respond with a blank `robots.txt`. If you want
+to add your own `robots.txt` instructions create a new `robots.txt` file
+and place it in the `public` directory.
+
+See <http://robotstxt.org> for details of how to write the file.
