@@ -1,35 +1,45 @@
 Author: Jacopo Notarstefano
 Date: 17 Oct 2011
 Template: article
-Categories: docs/recipes
+Categories: docs/recipes, authors/jacopo-notarstefano
 Summary: You might want to use features that are in the development branch of Nesta but were not yet released as a gem, or you might want to use your own version of Nesta. This recipe will explain how.
 
 # Using an unreleased version of Nesta
 
-Let's say that there's a cool new feature of Nesta you want to try, but has not yet been packaged as a gem. With Bundler there's an easy way to use the bleeding edge version of Nesta for your projects.
+Let's say that there's a cool new feature of Nesta you want to try, that
+was added to Nesta more recently than the last version was released.
+With Bundler there's an easy way to use the bleeding edge version of
+Nesta for your projects.
 
-You'll need to replace the line in your Gemfile about Nesta with the following:
+You'll need to replace the line in your `Gemfile` about Nesta with the
+following:
 
     gem "nesta", :git => "git://github.com/gma/nesta.git"
 
 And then run: 
 
-    bundle install
+    $ bundle install
 
-Voilà, you are now running the latest development version of Nesta. 
+Voilà, you are now running the latest development version of Nesta.
 
-Maybe that particular feature you want is in a specific branch other than master. You can specify which branch you want, for example:
+Maybe that particular feature you want is in a specific branch other
+than master. You can specify which branch you want, for example:
 
     gem "nesta", :git    => "git://github.com/gma/nesta.git",
                  :branch => "gem-plugins"
 
-In fact, when we pass the :git option only, the master branch is assumed.
+In fact, when we pass the `:git` option only, the master branch is
+assumed.
 
-Note also that this can be used to specify **your own** branch or repository, so that Nesta can have all the features you built. For example:
+Note also that this can be used to specify **your own** branch or
+repository, so that Nesta can have all the features you built. For
+example:
 
     gem "nesta", :git => "git://github.com/your-name/nesta.git"
 
-Be warned that this requires a *.gemspec* file in your project folder. If you don't have one you should pass a version number to Bundler so that it can resolve dependencies, as in:
+Be warned that this requires a `.gemspec` file in your project folder.
+If you don't have one you should pass a version number to Bundler so
+that it can resolve dependencies, as in:
 
     gem "nesta", "0.9.11", 
                  :git => "git://github.com/your-name/nesta.git"
