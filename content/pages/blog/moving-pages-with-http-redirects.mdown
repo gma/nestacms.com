@@ -1,5 +1,5 @@
 Template: article
-Categories: docs/creating-content
+Categories: docs/creating-content, docs/config
 Date: 31 March 2011
 Summary: It's easy to move pages with Nesta; you just move files around on disk and push your changes up to your web server. But what about all the old links to the page? You need to configure some HTTP redirects...
 
