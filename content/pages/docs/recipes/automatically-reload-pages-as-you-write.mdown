@@ -1,0 +1,57 @@
+# Live previews as you write
+
+All of Nesta's content is written in a text editor, typically in Markdown or Textile. As a result you don't get to see what your content looks like in your site until you save the file to disk and reload your browser. Wouldn't it be nice if your browser automatically reloaded the page whenever you save it? What about when you're designing a theme. Wouldn't it be good if Nesta's design was automatically updated when you save changes to your Haml, Sass and CSS files?
+
+Well you can do all those things, with the Guard and livereload projects. Livereload can be used to tell your web browser to automatically reload stuff. Guard is a handy tool that monitors files on your filesystem and takes whatever action you like when they're changed; we're going to get it to talk to livereload.
+
+Let's set them up...
+
+## Installing guard
+
+Guard is distributed as a Ruby gem, so we'll add it to our `Gemfile`. We're going to add the readline gem too, as it gives Guard a nice interactive prompt:
+
+    $ cat >> Gemfile
+    group :development do
+      gem 'guard-livereload'
+      gem 'rb-readline'
+    end
+
+Now we just rebuild our Bundle...
+
+    $ bundle
+
+...and create a `Guardfile`:
+
+That's Guard installed. Onto livereload...
+
+## Installing livereload
+
+Livereload comes in two parts; a server that can tell your browsers when they should reload themselves, and a browser plugin that connects to the server and waits to be told reload something. We've already installed the server (it comes with the `guard-livereload` gem).
+
+Head over the [livereload GitHub page][] and follow the instructions for downloading and installing the browser plugin.
+
+## Setting up your Guardfile
+
+Now we just need to create a `Guardfile` that will tell Guard what we want it to do.
+
+This is the Guardfile that I use:
+
+    $ cat > Guardfile
+    guard 'livereload' do
+      watch(%r{content/pages(/.+)\.(mdown|textile|haml)}) { |match| match[1] }
+      watch(%r{public(/.+\.(jpe?g|js|png))}) { |match| match[1] }
+      watch(%r{views/.+\.haml})
+      watch(%r{views/(.+)\.s[ac]ss}) do |match|
+        if match[1] =~ /(mixins|variables)/
+          ["/css/master.css", "/css/layout.css"]
+        else
+          "/css/#{match[1]}.css"
+        end
+      end
+    end
+
+Once you've created `Guardfile`, run Guard in one terminal window, and your local web server in another. Load a web page, then right click in the browser window and select "Enable Livereload".
+
+Any changes that you make to your content, HTML or CSS should now cause your browser to automatically reload.
+
+If you want to see what else Guard can do, Ryan Bates has recorded a Railscast on Guard (livereload is introduced after 6 minutes and 20 seconds).
