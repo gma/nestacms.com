@@ -1,14 +1,21 @@
-# Live previews as you write
+Author: Graham Ashton
+Categories: docs/recipes, docs/creating-content, docs/design
+Date: 15 Feb
+Summary: Most of the pages on a Nesta site are written in a text editor, using Markdown or Textile. You don't get to see what your words look like on a web page you save the file to disk and reload your browser. Wouldn't it be nice if your browser automatically reloaded pages as you saved them? When designing a theme, what if changes to HTML and CSS were reloaded immediately?
 
-All of Nesta's content is written in a text editor, typically in Markdown or Textile. As a result you don't get to see what your content looks like in your site until you save the file to disk and reload your browser. Wouldn't it be nice if your browser automatically reloaded the page whenever you save it? What about when you're designing a theme. Wouldn't it be good if Nesta's design was automatically updated when you save changes to your Haml, Sass and CSS files?
+# Refresh the browser when you save a file
 
-Well you can do all those things, with the Guard and livereload projects. Livereload can be used to tell your web browser to automatically reload stuff. Guard is a handy tool that monitors files on your filesystem and takes whatever action you like when they're changed; we're going to get it to talk to livereload.
+Most of the pages on a Nesta site are written in a text editor, using Markdown or Textile. You don't get to see what your words look like on a web page until you save the file to disk and reload your browser. Wouldn't it be nice if your browser automatically reloaded pages as you saved them? When designing a theme, what if changes to HTML and CSS were reloaded immediately?
 
-Let's set them up...
+With the [livereload][] and [Guard][] projects, it's fairly easy to setup.
+
+**Note:** Since I wrote this article, [Livereload 2][] has been released. It looks as though that's an even easier way to reload your pages, but I haven't had a chance to try it with Nesta yet. These instructions are for Livereload 1.
+
+[Livereload 2]: http://livereload.com
 
 ## Installing guard
 
-Guard is distributed as a Ruby gem, so we'll add it to our `Gemfile`. We're going to add the readline gem too, as it gives Guard a nice interactive prompt:
+Guard is distributed as a Ruby gem. We actually want the `guard-livereload` gem (which will pull in `guard` itself) so we'll add that to our `Gemfile`. We're going to add the `rb-readline` gem too, as it gives Guard a nice interactive prompt:
 
     $ cat >> Gemfile
     group :development do
@@ -16,25 +23,27 @@ Guard is distributed as a Ruby gem, so we'll add it to our `Gemfile`. We're goin
       gem 'rb-readline'
     end
 
-Now we just rebuild our Bundle...
+Now re-build your bundle to install the extra gems...
 
     $ bundle
 
-...and create a `Guardfile`:
+That's Guard installed.
 
-That's Guard installed. Onto livereload...
+## Installing the browser plugin
 
-## Installing livereload
+Head over to the [plugin instructions][] and download and install the browser plugin.
 
-Livereload comes in two parts; a server that can tell your browsers when they should reload themselves, and a browser plugin that connects to the server and waits to be told reload something. We've already installed the server (it comes with the `guard-livereload` gem).
-
-Head over the [livereload GitHub page][] and follow the instructions for downloading and installing the browser plugin.
+[plugin instructions]: https://github.com/mockko/livereload/blob/master/README-old.md
 
 ## Setting up your Guardfile
 
-Now we just need to create a `Guardfile` that will tell Guard what we want it to do.
+Now we just need to create a `Guardfile` that will tell Guard what we want it to do. You can create the default config file like this:
 
-This is the Guardfile that I use:
+    $ guard init livereload
+
+If you have a look at the `Guardfile` you'll see a few `watch` commands that specify paths to files that you'd find in a Rails app. Nesta keeps things in different places to Rails, so we'll be changing the contents of that file.
+
+Mine looks like this:
 
     $ cat > Guardfile
     guard 'livereload' do
@@ -50,8 +59,22 @@ This is the Guardfile that I use:
       end
     end
 
-Once you've created `Guardfile`, run Guard in one terminal window, and your local web server in another. Load a web page, then right click in the browser window and select "Enable Livereload".
+I won't go into too much detail about what's going on there; I think you'll do better by studying the code than you would at reading my attempt to explain it. The only thing I want to point out is that I usually have Sass files called `views/mixins.sass` and `views/variables.sass`. Those two files are never served to the browser; they're just included into `master.sass` and `layout.sass`. That's why when they change, Guard tells the browser to reload `master.css` and `layout.css`.
+
+When you're happy with your config, run Guard like this:
+
+    $ guard
+
+If you make some changes to `Guardfile` while `guard` is running you can prompt Guard to reload its config by typing "reload" at Guard's prompt.
+
+## Try it out
+
+Run `guard` in one terminal window, and your local web server in another. Visit a web page, then right click in the browser window and select "Enable Livereload".
 
 Any changes that you make to your content, HTML or CSS should now cause your browser to automatically reload.
 
-If you want to see what else Guard can do, Ryan Bates has recorded a Railscast on Guard (livereload is introduced after 6 minutes and 20 seconds).
+If you want to see what else Guard can do, Ryan Bates has recorded a [Railscast on Guard][] (livereload is introduced after 6 minutes and 20 seconds).
+
+[livereload]: https://github.com/mockko/livereload
+[Guard]: https://github.com/guard/guard
+[Railscast on Guard]: http://railscasts.com/episodes/264-guard
