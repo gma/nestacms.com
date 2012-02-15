@@ -1,19 +1,8 @@
 Description: Instructions on publishing new articles to your Nesta web site using the Git version control system.
-Summary: This article will show you how to store the contents of your [Nesta](/nesta "Nesta - The SEO CMS") web site in a local [Git](/git "Version Control with Git") repository, and publish changes by running a single git command. It's not relevant if you're deploying to Heroku.
+Summary: This article will show you how to store the contents of your [Nesta](/nesta) web site in a local Git repository, and publish changes by running a single git command. It's not relevant if you're deploying to Heroku.
+Categories: docs/deployment
 
 # Publishing Articles with Git
-
-This article will show you how to store the contents of your
-Nesta web site in a local [Git][git] repository, and publish changes by
-running a single git command.
-
-[git]: http://git-scm.com
-
-This page isn't relevant if you're deploying to Heroku as Heroku
-requires that you check your content into the same repository as your
-copy of Nesta (see the [Heroku deployment docs][heroku-docs]).
-
-[heroku-docs]: /docs/deployment/heroku
 
 If you're deploying to your own server and keep your pages in a Git
 repository, then I definitely recommend working through what follows.
@@ -23,6 +12,12 @@ site, which leads to a smooth workflow.
 We'll setup two repositories; one on your local computer (so you can
 preview your changes locally before making them live) and one on your
 server.
+
+This page isn't relevant if you're deploying to Heroku as Heroku
+requires that you check your content into the same repository as your
+copy of Nesta (see the [Heroku deployment docs][heroku-docs]).
+
+[heroku-docs]: /docs/deployment/heroku
 
 ## Creating a local repository
 
