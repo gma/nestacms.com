@@ -134,6 +134,61 @@ for the patch).
 
 [glenn]: http://glenngillen.com/ "Glenn Gillen"
 
+## Expires
+
+The 'Expires' metadata expresses in seconds amount of time a given version of
+the page version of the page. It is used by the visitors browser to decide
+whether they should query your web server for the page or whether they can use
+a version of the page they downloaded previously. It can also be used by proxy
+servers between the visitors computers and your web server.
+
+For example:
+
+    Expires: 3600
+
+This sets the time validity of the page to 1 hour.
+
+Setting the 'Expires' value to a relatively high number will lead to less
+queries on your web server and a faster response time for visitors since they
+will not have to wait for your web server to respond. On the other hand, if the
+value is too high and you edit the page frequently, they might get an outdated
+version of the page for up to the number of seconds you set or until they flush
+their cache.
+
+*To set this value for all pages, uncomment the `expires:` section in
+`config/config.yml`.*
+
+## Expires Type
+
+The 'Expires Type' metadata specifies whether proxy servers can cache the page
+or whether only browser can. If it is set to 'private', only browsers can cache
+the page. If it is set to 'public', both browsers and proxies can cache the
+page.
+
+For 'Expires Type' to take effect, you **must** set 'Expires' to a value
+greater than 0.
+
+For example:
+
+    Expires Type: private
+
+Setting the 'Expires Type' metadata to 'public' will lead to, on average,
+faster loading times because proxies will be able to serve requests made by
+clients.
+
+If, for example, two visitors share the same ISP and visitor A
+requests the page, the ISP's proxy servers can cache the page and serve it to
+visitor B when he or she requests it. On the other hand, if for any reason
+visitor A and visitor B should get different results (if there is private or
+secret information on the page, for example), you should set this to 'private'.
+
+**Private does not inherently make the page access secure or private. In
+particular, the communication between your website and the clients stays
+unencrypted by default.**
+
+*To set this value for all pages, uncomment the `expires_type:` section in
+`config/config.yml`.*
+
 ## Flags
 
 The 'Flags' metadata allows you to mark some pages as special, in some way. For example:
