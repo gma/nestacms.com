@@ -256,3 +256,21 @@ Example:
 
 As you can see, it's also possible to control which layout is used with
 the `Layout` metadata (which is described in its own section above).
+
+## Defining your own metadata
+
+Nesta's metadata is extensible; you can add your own fields and then
+access them from your templates. For example:
+
+    My own metadata: A value of your choosing
+
+    # Carrots
+
+    ...
+
+In your page template (or your `app.rb` file) you could then write this
+to access the value that was set on the page:
+
+    @page.metadata('my own metadata')
+
+Note that the text passed to the `metadata` method is in lower case.
