@@ -1,0 +1,25 @@
+Categories: docs/plugins
+Summary: Allows you to automatically set the summary of an article to the beginning of the body content (above a "fold")
+
+# Foldable plugin
+
+In Nesta, the summary of an article (what appears on home or category pages) is specified in metadata, independently of the article's body.  That's nice if you want it to be independent, but what if you really do want the summary to be the same as the beginning of the article?  It's annoying to have to repeat it twice, especially if has formatting or more than just a simple paragraph.
+
+This plugin allows you to place a `~~fold~~` in your content, and will set the summary automatically to the body content that comes before it (not including the heading.)  For instance, you could have an article like this:
+
+    Date: February 21, 2012
+    
+    # My Awesome Article
+    
+    This paragraph is included in the summary
+    
+    * So is this
+    * and this
+    
+    <!-- ~~fold ~~ -->
+    
+    But this part is not in the summary.
+
+See the README on the [GitHub page](https://github.com/MicahChalmer/nesta-plugin-foldable).
+
+The plugin is available on rubygems, so just add `gem "nesta-plugin-foldable"` to your Gemfile and enjoy.
