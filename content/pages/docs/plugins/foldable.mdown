@@ -23,3 +23,5 @@ This plugin allows you to place a `~~fold~~` in your content, and will set the s
 See the README on the [GitHub page](https://github.com/MicahChalmer/nesta-plugin-foldable).
 
 The plugin is available on rubygems, so just add `gem "nesta-plugin-foldable"` to your Gemfile and enjoy.
+
+Written by Micah Chalmer
