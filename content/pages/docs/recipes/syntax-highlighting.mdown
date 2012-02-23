@@ -3,7 +3,7 @@ Categories: authors/graham-ashton
 Summary: If you write about software development, it's quite likely that you'll have example source code in your pages. Make it look it pretty by setting up code highlighting. Because Nesta is a Sinatra app (and therefore is built on top of Rack) it's easy to setup syntax highlighting with the `rack-codehighlighter` gem.
 Flags: draft
 
-# Adding syntax highlighting to your source code
+# Adding syntax highlighting with rack-codehighlighter
 
 If you write about software development, it's quite likely that you'll
 have example source code in your pages. Make it look it pretty by
