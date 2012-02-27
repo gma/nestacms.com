@@ -17,6 +17,7 @@
     /[if lt IE 9]
       %script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
     - local_stylesheet_link_tag('local')
+    %link(href="/css/solarized_light.css" media="screen" rel="stylesheet")
     %link(href="/articles.xml" rel="alternate" type="application/atom+xml")
     %script(type="text/javascript" src="http://use.typekit.com/nnr4wgc.js")
     %script(type="text/javascript")
@@ -24,6 +25,9 @@
     = haml :analytics, :layout => false
     %script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
     %script(type="text/javascript" src="/javascripts/application.js")
+    %script(type="text/javascript" src="/javascripts/highlight.pack.js")
+    :javascript
+      hljs.initHighlightingOnLoad();
   %body
     #container
       = haml :header, :layout => false

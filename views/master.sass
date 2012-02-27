@@ -73,7 +73,7 @@ p,
 pre,
 ul
   margin: 0
-  margin-bottom: $base-vertical-margin
+  margin-bottom: $base-vertical-margin / 2
 
 li
   @include adjust-font-size(1, 0, 0)
@@ -86,8 +86,12 @@ blockquote
   color: $base-color + #555
   
 pre
-  padding: ($vertical-rhythm / 2) 1em
+  padding: ($vertical-rhythm / 2) 0
   overflow: auto
+  code
+    @include border-radius(4px)
+    overflow: auto
+    padding-left: 1em
 
 img
   border: none
@@ -208,17 +212,6 @@ article
     max-width: 100%
     margin-bottom: $base-vertical-margin
 
-  code,
-  pre
-    code
-      background: none
-  code
-    padding: 1px 3px
-  pre
-    border-left: $border-style
-    code
-      padding: 0
-
   footer
     border-top: $border-style
     p.meta
@@ -265,7 +258,7 @@ section.articles
         text-decoration: none
     p.read_more
       @include adjust-font-size(1, 0, 0)
-      margin-top: -$base-vertical-margin
+      margin-top: -($base-vertical-margin / 2)
     footer
       border-top: none
 
