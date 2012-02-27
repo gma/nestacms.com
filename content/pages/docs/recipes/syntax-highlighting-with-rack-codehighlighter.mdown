@@ -1,9 +1,9 @@
 Date: 27 Feb 2012
 Author: Graham Ashton
-Categories: docs/design, authors/graham-ashton
+Categories: docs/recipes, docs/design, authors/graham-ashton
 Summary: If you write about software, you can make code look more attractive by adding syntax highlighting to your pages. Nesta is a Sinatra app (and is therefore built on top of Rack), which makes it easy to setup syntax highlighting with the `rack-codehighlighter` gem.
 
-# Syntax highlighting with rack-codehighlighter
+# Setting up rack-codehighlighter
 
 If you write about software, you can make code look more attractive by
 adding syntax highlighting to your pages. Nesta is a Sinatra app (and is
