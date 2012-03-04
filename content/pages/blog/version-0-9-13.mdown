@@ -24,6 +24,11 @@ your templates, and takes a path. For example:
 
     %a{ :href => url(page.path) }= page.heading
 
+If you've copied the `atom.haml` or `sitemap.haml` files from the
+default set into your `views` folder, they'll need updating (if you
+haven't actually changed them just delete them, and Nesta will find them
+in the gem itself).
+
 ## The changes
 
 Here's the [CHANGES][] file with the full list of updates:
