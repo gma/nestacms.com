@@ -26,13 +26,13 @@ traffic][nunney2] too.
 [nunney1]: http://www.wordtracker.com/academy/website-structure
 [nunney2]: http://www.wordtracker.com/academy/site-structure-planning-seo
 
-## Patches and bugfixes submitted by...
+## Contributors to the code
 
  - Mika Tuupola -- Textile support.
  - Matt Yoho -- A great HTTP caching patch.
  - Glenn Gillen -- Delaying the date/time at which an article is
    published (i.e. appears in the Atom feed and in your blog's list of
-   recent articles).
+   recent articles), Erb parsing of config.yml.
  - Wynn Netherland -- Public metadata, bug fixes.
  - Barry Keenan -- Setting default encoding on Heroku ([bug][bug14]).
  - Robert Syme -- Rendering summaries of arbitrary articles.
@@ -48,18 +48,25 @@ traffic][nunney2] too.
  - Louis Nyffenegger - Fixed bug that allowed any file within content
    folder to be retrieved if '..' was included in the URL of an
    attachment.
+ - Max Sadrieh - Serving assets correctly when mounted on a path, Etag
+   support in `config.ru`.
+ - Micah Chalmer - Added the `body_markup` method on the `Page` class to
+   make it simpler for plugins to modify the way pages are parsed.
+ - Chad Ostrowski - Added the `current_item?` helper in the `Navigation`
+   module.
 
-If you've sent me a fix and I've not listed you, it's just because I
-made this list in a rush and haven't dug through all my email history.
-Drop me a line and I'll add you in (sorry).
+If you've contributed and I haven't mentioned you, it's not intentional.
+Drop me an email on GitHub and I'll add you in. If you've sent me a
+patch, you should be on GitHub's [list of contributors][].
 
 [bug14]: https://github.com/gma/nesta/issues#issue/14
+[list of contributors]: https://github.com/gma/nesta/contributors
 
-## Docs and articles from...
+## Documentation contributors
 
- - Nils Landt -- Fixed a typo and pointed out that Vlad config needed
-   documenting on [Upgrading to the Nesta gem][upgrading].
+A [growing list][] have contributed to the documentation.
 
+[growing list]: https://github.com/gma/nestacms.com/contributors
 [upgrading]: /blog/upgrading-to-the-gem
 
 I bet you can find some documentation on this site that needs fixing or
