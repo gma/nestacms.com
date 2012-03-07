@@ -119,8 +119,8 @@ liberable in what it accepts -- all of these examples work:
     Date: 23 July 2008
     Date: July 23 2008
     Date: 14:13, 23 July 2008
-    Date: 23 July 2008 14:13
     Date: 23 July 2008 2:13pm
+    Date: 23 July 2008 14:13
 
 You must set the date on an article if you want it to appear in the Atom
 feed (the most recent 10 articles are included, in reverse chronological
@@ -131,6 +131,24 @@ order of multiple articles that are published on the same day, however.
 If you set the date to some time in the future your article won't be
 published until that time is reached (thanks to [Glenn Gillen ][glenn]
 for the patch).
+
+### Time zones
+
+All times are considered to be in the server's local time zone (for well
+configured servers, this will be UTC) unless you specify the timezone
+yourself. If you want to specify the time zone, be sure to include the
+time. If you omit the time, but include the time zone, Ruby will ignore
+the time zone.
+
+To put that another way, this will publish the article at midnight in
+New York:
+
+    Date: 23 July 2008 00:00 EST
+
+This will publish the article at midnight in London, which probably
+isn't what you wanted.
+
+    Date: 23 July 2008 EST
 
 [glenn]: http://glenngillen.com/ "Glenn Gillen"
 
