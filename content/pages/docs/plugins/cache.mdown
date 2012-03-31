@@ -1,0 +1,32 @@
+Categories: docs/plugins
+Summary: Allows you to set Cache-Control headers globally or on a per-page basis.
+
+# Cache plugin
+
+Allows you to set Cache-Control headers for each page or globally to allow
+clients and proxies to cache your page and to improve performance.
+
+To use, add `expires: 120` and `expires_type: private` (for example) to your
+`config.yml` to set global values and use the `Expires` and `Expires Type`
+metadata on each page for which you wish to set different values. For more
+information about expire types, see the
+[RFC][].
+
+**Warning**: setting very high values for `expires` or the `Expires` metadata
+might lead to unexpected consequences where users get outdated pages. Values
+above 1 hour (`3600`, in seconds) should be approached with extreme caution.
+
+Written by [Max Sadrieh][].
+
+## Installation
+
+    $ cd path/to/site
+    $ echo 'gem "nesta-plugin-cache" >> Gemfile'
+    $ bundle
+
+For full instructions, see the README. You can browse the
+code on the [GitHub page][].
+
+[Max Sadrieh]: https://sadrieh.me/
+[RFC]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.1
+[GitHub page]: https://github.com/ms/nesta-plugin-cache
