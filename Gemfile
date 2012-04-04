@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'heroku'
 gem 'maruku'
 gem 'nesta', '0.9.13'
+gem 'nesta-plugin-cache'
 gem 'rack-force_domain', '0.1.1'
 gem 'rack-rewrite'
 
