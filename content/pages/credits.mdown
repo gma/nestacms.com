@@ -79,8 +79,9 @@ Why not...
 2. Improve it, and
 3. Send a pull request (to [gma][gma]).
 
-Then I can rewrite this section and it'll look like I've got some
-mates...
+If you write an article (e.g. covering how to achieve a specific task
+with Nesta) don't forget to add an [authors page](/authors) for yourself
+too...
 
 [repo]: https://github.com/gma/nestacms.com
 [gma]: https://github.com/gma
