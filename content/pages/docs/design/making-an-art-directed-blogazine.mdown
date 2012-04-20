@@ -41,10 +41,7 @@ the themes templates in a local `./views` folder. This will do it:
 
     $ cd path/to/site
     $ mkdir -p views
-    $ cp $(gem env gemdir)/gems/nesta-0.9.11/views/* views
-
-Substitute "0.9.11" for the version of Nesta that you're currently
-running (check with `nesta -v`).
+    $ cp $(bundle show nesta)/views/* views
 
 ### Updating the layout
 

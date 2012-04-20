@@ -32,7 +32,7 @@ If you're upgrading from an earlier release you'll also need to get
 yourself a new copy of the `config.ru` file from the template file in the
 gem:
 
-    $ cp $(gem env gemdir)/gems/nesta-0.9.11/templates/config.ru .
+    $ cp $(bundle show nesta)/templates/config.ru .
 
 If you'd like to continue to use Maruku to process your Markdown, see
 the documentation on how to [switch back to Maruku][switching].

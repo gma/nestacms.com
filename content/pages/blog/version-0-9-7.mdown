@@ -43,7 +43,7 @@ In case that's not clear, these commands would have the desired effect:
     $ cd path/to/your/site
     $ sed -i -e '/nesta/ s/0.9.[0-9]/0.9.7/' Gemfile
     $ bundle
-    $ cp $(gem env gemdir)/gems/nesta-0.9.7/templates/config.ru .
+    $ cp $(bundle show nesta)/templates/config.ru .
 
 ## The changes
 
