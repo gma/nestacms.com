@@ -21,7 +21,7 @@ sitemap, which you won't need to modify), run these two commands:
 
     $ cd mysite.com
     $ mkdir -p views
-    $ cp $(gem environment gemdir)/gems/nesta-0.9.4/views/* ./views
+    $ cp $(bundle show nesta)/views/* ./views
     $ rm views/feed.haml views/sitemap.haml
 
 **Note:** You'll need to substitute Nesta's current version number into

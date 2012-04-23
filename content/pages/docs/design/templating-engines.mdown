@@ -17,7 +17,7 @@ Copy the default routes out of the gem's `lib/nesta/app.rb` file and
 paste them into an `app.rb` file in your project's folder. You can find
 the path to the gem's files with this command:
 
-    $ ls -d $(gem environment gemdir)/gems/nesta*
+    $ bundle show nesta
 
 When you paste the routes into your `app.rb` file you need to make sure
 that you're adding them to the `Nesta::App` class. Something like this

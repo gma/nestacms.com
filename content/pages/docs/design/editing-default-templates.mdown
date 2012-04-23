@@ -16,7 +16,7 @@ want to make a new design from scratch, see the docs on creating a
 
 You can have a look inside the default `views` folder with this command:
 
-    $ ls $(gem environment gemdir)/gems/nesta*/views
+    $ ls $(bundle show nesta)/views
 
 Then you could copy one of those templates into your project, like this:
 
