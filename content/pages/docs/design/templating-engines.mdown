@@ -29,14 +29,14 @@ will do the job:
       class App
         get '/css/:sheet.css' do
           content_type 'text/css', :charset => 'utf-8'
-          cache sass(params[:sheet].to_sym)
+          sass(params[:sheet].to_sym)
         end
 
         # There are more routes than this,
         # but you get the idea...
         get '*' do
           # stuff
-          cache haml(@page.template, :layout => @page.layout)
+          haml(@page.template, :layout => @page.layout)
         end
       end
     end
@@ -47,7 +47,7 @@ To use Erb instead of Haml you would then change the call to the `haml`
 method on the last line of the `'*'` route and change it so that it
 said:
 
-    cache erb(@page.template, :layout => @page.layout)
+    erb(@page.template, :layout => @page.layout)
 
 To find out which methods to call for your preferred template engine,
 see the [Sinatra template docs][template-docs].

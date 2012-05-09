@@ -36,23 +36,14 @@ may come in handy.
 
 [vlad]: http://effectif.com/articles/deploying-sinatra-with-vlad
 
-## Configuring Nesta
+## Enabling page caching
 
-There are a couple of tweaks to `config/config.yml` that you might
-benefit from. They're not the default settings simply because they don't
-work on Heroku.
+If you'd like to write the HTML and CSS that Nesta generates to disk the
+first time that they're requested, so that your web server (e.g. Nginx
+or Apache) can serve it directly from the disk on subsequent requests,
+see the docs on [setting up page caching][].
 
-If you enable caching in production then a `.html` file is written
-inside the `public` directory whenever a page is requested. Your web
-server (e.g. Nginx) is then able to bypass Nesta completely on
-subsequent requests, which is very fast. Turn caching on in production
-(whilst leaving it off in development) by adding this to the bottom of
-`config.yml`:
-
-    cache: false  # the default, used in development
-    
-    production:
-      cache: true
+[setting up page caching]: /docs/deployment/page-caching
 
 ## Installing themes as Git submodules
 

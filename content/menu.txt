@@ -29,5 +29,6 @@ docs
     docs/deployment/heroku
     docs/deployment/openshift
     docs/deployment/server-or-vps
+    docs/deployment/page-caching
   docs/recipes
   docs/plugins

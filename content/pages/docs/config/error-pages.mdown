@@ -33,7 +33,7 @@ to render a special template for it, you could put this in the
 `not_found` block instead:
 
     not_found do
-      cache haml(:my_error_page)
+      haml(:my_error_page)
     end
 
 To get that last example working, create a `views/my_error_page.haml`
@@ -44,7 +44,7 @@ problem in your code (which results in the server sending HTTP error
 code 500). To do so, define an `error` block instead:
 
     error do
-      cache haml(:somethings_broken)
+      haml(:somethings_broken)
     end
 
 More info on Sinatra's handlers can be found in the [Sinatra README][].

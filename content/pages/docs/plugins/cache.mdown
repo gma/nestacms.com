@@ -4,7 +4,11 @@ Summary: Allows you to set Cache-Control headers globally or on a per-page basis
 # Cache plugin
 
 Allows you to set Cache-Control headers for each page or globally to allow
-clients and proxies to cache your page and to improve performance.
+clients and proxies to cache your page and to improve performance. If
+you're looking for page or fragment caching (where generated HTML is
+written to your local disk) see the docs on [page caching][].
+
+[page caching]: /docs/deployment/page-caching
 
 To use, add `expires: 120` and `expires_type: private` (for example) to your
 `config.yml` to set global values and use the `Expires` and `Expires Type`

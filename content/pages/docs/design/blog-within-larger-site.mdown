@@ -55,7 +55,7 @@ following code (if you find that `Nesta::App` already exists in
       class App
         get '/css/:sheet.css' do
           content_type 'text/css', :charset => 'utf-8'
-          cache scss(params[:sheet].to_sym)
+          scss(params[:sheet].to_sym)
         end
       end
     end

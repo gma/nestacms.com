@@ -1,0 +1,68 @@
+Categories: docs/deployment
+Summary: If you run your Nesta site on a server or VPS (rather than on a platform like Heroku) your site's performance may benefit from page or fragment caching. Nesta no longer provides support for page caching itself; instead we rely on `sinatra-cache` to do it for us.
+
+# Setting up page caching
+
+If you run your Nesta site on a server or VPS (rather than on a platform
+like Heroku) your site's performance may benefit from page or fragment
+caching.
+
+## A bit of history
+
+Prior to version 0.10.0 Nesta shipped with built-in support for page
+caching, and could write any HTML and CSS that it generated to disk.
+These files could then be served by your web server (e.g. Nginx or
+Apache). Nesta's file-based caching used to be configured in the
+`config.yml` file.
+
+The library that Nesta used to implement page caching was borrowed from
+the `sinatra-cache` gem, patched a bit to make it work, and then
+released as part of the Nesta code base.
+
+A lot of work has been done to `sinatra-cache` since then, and it now
+makes more sense to enable page caching by using `sinatra-cache`
+directly. The caching settings in `config.yml` have therefore been
+removed.
+
+## Enabling sinatra-cache
+
+Start by adding the `sinatra-cache` gem to your `Gemfile`:
+
+    $ echo "gem 'sinatra-cache', :require => nil" >> Gemfile
+    $ bundle
+
+Make sure you include `:require => nil`, or `sinatra-cache` will load
+before Sinatra has been properly initialised.
+
+Now create an `app.rb` file in your project (or edit it if you have one
+already), and put this code in it:
+
+    require 'sinatra/cache'
+
+    module Nesta
+      class App
+        register Sinatra::Cache
+
+        set :cache_enabled, true
+        set :cache_output_dir, public_folder
+      end
+    end
+
+You can test your config locally before you deploy your site by starting
+Nesta in the production environment (files aren't cached in the
+development environment).
+
+    $ RACK_ENV=production bundle exec mr-sparkle
+
+If you load a few pages on your local site in a browser you should find
+that your HTML and CSS files are saved to disk, inside a `public` folder
+(that can be found in your project's root folder).
+
+You can find out more about `sinatra-cache` by following the link to the
+latest documentation from the [sinatra-cache rubygems page][].
+
+[sinatra-cache rubygems page]: https://rubygems.org/gems/sinatra-cache
+
+You'll probably need to configure your web server (e.g. Nginx or Apache)
+to check that your cache files exist and to serve them, instead of
+asking Nesta to regenerate them.
