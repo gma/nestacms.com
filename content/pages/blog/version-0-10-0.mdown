@@ -1,0 +1,30 @@
+Template: article
+Summary: Version 0.10.0 has been released. New features include ... ?
+
+# Nesta 0.10.0 released
+
+Micah Chalmer has tidied up the relationship between a page's main
+heading, and the text that is used to link to the page in menus, on
+category pages, and in the breadcrumb. He's added new metadata
+called "Link text" that will be used to link to the page (instead of the
+heading).
+
+We decided that all pages ought to define either a heading, or specify
+their link text. If you have pages on your site that don't define one or
+the other Nesta will raise a `LinkTextNotSet` exception.
+
+## Upgrading
+
+You may need to define the "Link text" metadata for any pages that don't
+have a heading. To check whether you need to take any action upgrade
+your site to 0.10.0, fire it up locally and click around your site. If
+you see any `LinkTextNotSet` exceptions the message will tell you which
+pages need the link text defining.
+
+## The changes
+
+Here's the [CHANGES][] file with the full list of updates:
+
+- TODO
+
+[CHANGES]: https://github.com/gma/nesta/blob/master/CHANGES
