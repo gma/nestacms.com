@@ -22,7 +22,7 @@ web page accordingly.
 If you're upgrading from 0.9.7 or later, just update your `Gemfile` and re-run
 `bundle`.
 
-    $ sed -i -e '/nesta/ s/0.9.[0-9]/0.9.10/' Gemfile
+    $ sed -i '' -e '/nesta/ s/0.9.[0-9]/0.9.10/' Gemfile
     $ bundle
 
 If you're upgrading from an earlier release you'll also need to get

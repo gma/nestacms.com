@@ -25,7 +25,7 @@ There is also a new metadata key called 'Articles heading' (see the
 If you're upgrading from 0.9.7 or later, just update your `Gemfile` and re-run
 `bundle`.
 
-    $ sed -i -e '/nesta/ s/0.9.[0-9]/0.9.11/' Gemfile
+    $ sed -i '' -e '/nesta/ s/0.9.[0-9]/0.9.11/' Gemfile
     $ bundle
 
 If you're upgrading from an earlier release you'll also need to get

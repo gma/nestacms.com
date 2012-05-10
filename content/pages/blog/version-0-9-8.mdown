@@ -14,7 +14,7 @@ deployed to some environments (notably Heroku).
 If you're upgrading from 0.9.7, just update your `Gemfile` and re-run
 `bundle`.
 
-    $ sed -i -e '/nesta/ s/0.9.[0-9]/0.9.8/' Gemfile
+    $ sed -i '' -e '/nesta/ s/0.9.[0-9]/0.9.8/' Gemfile
     $ bundle
 
 If you're upgrading from an earlier release you'll also need to get
