@@ -18,6 +18,7 @@ docs
     docs/config/environment-variables
     docs/config/error-pages
     docs/config/robots-dot-txt
+    docs/config/read-more
   docs/design
     docs/design/theme
     docs/design/editing-default-templates

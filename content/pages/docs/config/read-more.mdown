@@ -1,0 +1,14 @@
+Categories: docs/config:0
+Summary: Customize the default value for the 'Read more' metadata key.
+
+# Read more
+
+When the summary of a page or article is displayed on the home page or a
+category page, there is a link underneath the summary that points to
+the rest of the post. By default this link contains the text 'Continue
+reading', and it can be overridden on a per-page basis by [metadata](/docs/creating-content/metadata-reference#read_more). If you want to change your sitewide default,
+use the `read_more` configuration key.
+
+The text is commented out by default; just uncomment it and add your own:
+
+    read_more: Read more about this stunning topic
