@@ -1,0 +1,84 @@
+Author: Igor Tirador
+Date: 6 Oct 2012
+Template: article
+Categories: docs/recipes, authors/igor-tirador
+Summary: Install Nestacms on Openshift how-to. This recipe will explain how.
+
+# Install Nestacms on Openshift
+
+Before installation NestaCMS, make sure you have the RVM and Ruby 1.9.3
+
+Short version how-to or quick installation NestaCMS
+=============
+Create an account at 
+http://openshift.redhat.com/
+
+Create a ruby-1.9 application
+
+    rhc app create -a appname -t ruby-1.9
+
+Add this upstream nestacms repo
+
+    cd appname
+    git remote add upstream -m master git://github.com/IgorTirador/nestacms-example.git
+    git pull -s recursive -X theirs upstream master
+
+Then push the repo upstream
+
+    git push
+
+That's it, you can now checkout your application at:
+http://yourappname-$yournamespace.rhcloud.com
+
+
+How-to Long version or manual installion NestaCMS
+----------------------------
+Create an account at 
+http://openshift.redhat.com/
+
+Install rhc client tools
+    
+    gem install rhc
+
+Setup rhc
+
+    rhc setup 
+
+
+Create a ruby-1.9 application
+
+    rhc app create -a nestacms -t ruby-1.9
+
+or clone your app git repo
+
+    git clone ssh://appid@yourname-yournamespace.rhcloud.com/~/git/yourapname.git/
+
+Enter to app directory
+
+    cd appname
+
+Remove and commit config.ru for auto merge with OpenShift repo
+    
+    git rm config.ru 
+    git commit -a -m "Delete config.ru
+    git push
+
+Install nesta and bundler gems
+
+    gem install nesta
+    gem install bundler
+    nesta new example.dev --git
+	cd example.dev
+    bundle install
+
+Commit all changes and merge local repo and OpenShift Repo.
+
+    git add .
+	git commit -a -m "Start new life here"
+    git pull ssh://appid@yourname-yournamespace.rhcloud.com/~/git/yourapname.git/
+    git push ssh://appid@yourname-yournamespace.rhcloud.com/~/git/yourapname.git/
+
+
+That's it, you can now checkout your application at:
+http://yourappname-$yournamespace.rhcloud.com
+
