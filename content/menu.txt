@@ -27,6 +27,7 @@ docs
     docs/design/creating-themes
   docs/deployment
     docs/deployment/heroku
+    docs/deployment/openshift
     docs/deployment/server-or-vps
   docs/recipes
   docs/plugins
