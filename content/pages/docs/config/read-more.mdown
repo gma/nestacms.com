@@ -1,14 +1,21 @@
-Categories: docs/config:0
-Summary: Customize the default value for the 'Read more' metadata key.
+Categories: docs/config
+Summary: When the summary of a page or article is displayed on the home page or a category page, there is a link underneath the summary to the full article. By default this link contains the text 'Continue reading', but if you'd like to use a different phrase you can set your own default in the config file.
 
-# Read more
+# Customising the 'Read more' links
 
 When the summary of a page or article is displayed on the home page or a
-category page, there is a link underneath the summary that points to
-the rest of the post. By default this link contains the text 'Continue
-reading', and it can be overridden on a per-page basis by [metadata](/docs/creating-content/metadata-reference#read_more). If you want to change your sitewide default,
-use the `read_more` configuration key.
+category page, there is a link underneath the summary to the full
+article. By default this link contains the text 'Continue reading', but
+if you'd like to use a different phrase you can set your own default in
+the config file.
 
-The text is commented out by default; just uncomment it and add your own:
+If you want to change your sitewide default, use the `read_more`
+configuration key. The setting is commented out in `config.yml`; just
+uncomment it and set the link text:
 
-    read_more: Read more about this stunning topic
+    read_more: Read on
+
+Note that the link text can still be overridden on a per-page basis with
+the ['Read more' metadata][meta].
+
+[meta]: /docs/creating-content/metadata-reference#read_more
