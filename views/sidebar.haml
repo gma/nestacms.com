@@ -1,6 +1,6 @@
 - if viewing_documentation?
   #sidebar= haml :categories, :layout => false
-- if viewing_blog?
+- elsif viewing_blog?
   #sidebar
     %a.twitter-timeline(data-dnt="true" href="https://twitter.com/nestacms" data-widget-id="258193978543972352") Tweets by @nestacms
     :javascript
