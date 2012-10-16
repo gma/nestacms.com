@@ -265,8 +265,20 @@ section.articles
 section.pages > ol article p.read_more
   margin-top: 0
 
-div#sidebar heading h1
-  @include adjust-font-size($h2-scale)
+div#sidebar
+  heading h1,
+  nav.archive h1
+    @include adjust-font-size(1, 0.2, 0)
+    font-weight: bold
+
+  nav.archive ol
+    list-style: none
+
+ol.archive
+  list-style: none
+
+  ol
+    list-style: disc
 
 nav.documentation
   ul

@@ -1,3 +1,4 @@
-- if request.path =~ Regexp.new('^/docs/')
-  #sidebar
-    = haml :categories, :layout => false
+- if viewing_documentation?
+  #sidebar= haml :categories, :layout => false
+- if viewing_blog?
+  #sidebar= haml :years, :layout => false
