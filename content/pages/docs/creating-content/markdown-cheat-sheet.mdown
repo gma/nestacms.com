@@ -88,7 +88,7 @@ items can be nested. This text:
       * Bullet 2b
     * Bullet 3
 
-…produces this list:
+...produces this list:
 
  * Bullet 1
  * Bullet 2
