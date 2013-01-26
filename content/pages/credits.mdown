@@ -33,7 +33,7 @@ traffic][nunney2] too.
  - Glenn Gillen -- Delaying the date/time at which an article is
    published (i.e. appears in the Atom feed and in your blog's list of
    recent articles), Erb parsing of config.yml.
- - Wynn Netherland -- Public metadata, bug fixes.
+ - Wynn Netherland -- Public metadata, bug fixes, upgrading to RSpec 2.
  - Barry Keenan -- Setting default encoding on Heroku ([bug][bug14]).
  - Robert Syme -- Rendering summaries of arbitrary articles.
  - Christopher Lindblom -- Added the --version option. Fixed page titles
