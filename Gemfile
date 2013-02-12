@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'heroku'
 gem 'maruku'
 gem 'nesta', '0.9.13'
 gem 'nesta-plugin-cache'
