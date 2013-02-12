@@ -30,7 +30,7 @@ GEM
     nesta-plugin-cache (0.0.1)
       nesta (~> 0.9.11)
       sinatra (~> 1.2)
-    rack (1.4.1)
+    rack (1.5.2)
     rack-force_domain (0.1.1)
     rack-protection (1.2.0)
       rack
