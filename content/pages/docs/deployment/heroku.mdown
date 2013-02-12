@@ -4,13 +4,18 @@ Summary: Heroku was one of the first "Platform as a Service" cloud based hosting
 # Running on Heroku
 
 Deploying Nesta to Heroku works out of the box. If you haven't already
-done so, [signup for Heroku][heroku-signup] and install the `heroku`
-gem.
+done so, [signup for Heroku][heroku-signup] and install the [heroku
+toolbelt][toolbelt].
 
 [heroku-signup]: http://api.heroku.com/signup
+[toolbelt]: http://toolbelt.heroku.com
 
 Before you can deploy your site you need to get it running properly on
 your own computer. You'll also need to check it into a Git repository.
+If you've already done that you can skip ahead, but just in case we'll
+cover it here quickly with an example.
+
+## Setting up git
 
 When you generate a new Nesta site you can tell Nesta that you want to
 manage it with Git by adding the `--git` switch:
@@ -45,9 +50,13 @@ repository:
     $ git add content
     $ git commit -m "Added an article."
 
+## Running the site locally
+
 Start the server up locally (run `shotgun config.ru`) and make sure you
 can browse to `http://localhost:9393/`. You should be able to see your
 content.
+
+## Deploying to Heroku
 
 There's no need to push these changes to a remote git repository such as
 GitHub -- we're going to cut out the middle man and push your repository
@@ -57,17 +66,17 @@ Make sure that you fill in `config/config.yml` properly (the most
 important thing is to ensure that caching is off, as we can't write to
 Heroku's file system).
 
-    $ heroku create --stack bamboo-mri-1.9.2
+    $ heroku create
     $ git push heroku master
 
 Check whether your deployment worked by visiting your special Heroku URL
 (which you can find in the output of the `heroku info` command). See the
 Heroku documentation for instructions on how to [change this
 URL][renaming-apps] to something more suitable. To run Nesta on your own
-domain you just need to configure the [Heroku DNS addon][zerigo].
+domain you just need to configure [Heroku's custom domains][custom-domains].
 
 [renaming-apps]: http://devcenter.heroku.com/articles/renaming-apps
-[zerigo]: http://devcenter.heroku.com/articles/zerigo
+[custom-domains]: https://devcenter.heroku.com/articles/custom-domains
 
 That's it, you're done. You're now running a free CMS, on a free hosting
 platform. Drop an email to the [mailing list][list] and let us know how
@@ -75,11 +84,11 @@ it went...
 
 [list]: mailto:nesta@librelist.com
 
-**Note:** You may have noticed from the above commands that we're
-running Nesta on Heroku's Ruby 1.9.2 stack. You can also run it on a 
-1.8.x stack if you'd prefer (though I can't think of a particularly good
-reason to do so).
+**A note on caching:** The experienced Heroku users amongst you may be
+wondering whether Nesta automatically enables any HTTP compliant caching
+on Heroku. The answer is "not yet", but it's
+[under&nbsp;discussion][issue-9]. In the meantime, as Nesta is a simple
+Sinatra app you can configure caching just as you would for any other
+Sinatra app.
 
-The experienced Heroku users amongst you may be wondering whether Nesta
-enables any HTTP compliant caching on Heroku. The answer is "not yet",
-but it's [in&nbsp;hand](https://github.com/gma/nesta/issues/9).
+[issue-9]: https://github.com/gma/nesta/issues/9
