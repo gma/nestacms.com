@@ -47,7 +47,7 @@ repository:
     Woohoo!
     ^D  # <- press Ctrl-D
 
-    $ git add content
+    $ git add .
     $ git commit -m "Added an article."
 
 ## Running the site locally
