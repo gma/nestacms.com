@@ -8,6 +8,7 @@ gem 'rack-rewrite'
 
 group :development do
   gem 'guard-livereload'
+  gem 'mr-sparkle'
   gem 'rb-readline'
 end
 
