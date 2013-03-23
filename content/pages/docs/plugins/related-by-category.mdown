@@ -1,0 +1,28 @@
+Categories: docs/plugins
+Summary: Allows you to display a number of category-related articles for the articles in your blog.
+
+# Related by Category plugin
+
+This plugin relies on category metadata to resolve semantic relationships between Nesta articles.
+
+Given an article A, it finds the set of articles that are tagged with the same
+category metadata as A, then sorts these in the order of relevance based on how many
+categories are shared between A and each member of the set.
+
+By default, up to three related articles will be shown but you can specify any number, including
+one that exceeds A's total related articles (the total set will get displayed).
+
+Written by [James Abbott][].
+
+## Installation
+
+    $ cd path/to/site
+    $ echo 'gem "nesta-plugin-related-by-category" >> Gemfile'
+    $ bundle
+
+You can browse the code on the [GitHub page][] (which also has an example HAML file, to use
+on the view).
+
+[James Abbott]: http://jamesabbottdd.com/
+[GitHub page]: https://github.com/abbottjam/nesta-plugin-related-by-category
+
