@@ -1,0 +1,40 @@
+Categories: docs/plugins
+Summary: Creates links to other pages on your site on similar topics to the current page. Determines which pages are most closely related by examining their category metadata.
+
+# Related-by-category plugin
+
+This plugin examines the category metadata that you have assigned to
+your site's pages and uses it to find the pages/articles that relate
+most closely to the page that is currently being served.
+
+You can use it to create links to other pages that your visitors might
+be interested in reading.
+
+By default, up to three related articles will be shown but you can
+specify any number you like.
+
+Written by [James Abbott][].
+
+## Installation
+
+    $ cd path/to/site
+    $ echo 'gem "nesta-plugin-related-by-category" >> Gemfile'
+    $ bundle
+
+The plugin defines a couple of useful helper methods for use in your
+page template. Here's an example (modify as you see fit, and use it in
+your site's template):
+
+    - if has_related_articles?(@page)
+      %section.related-articles
+        %h2 Related articles
+        %ul
+          - related_by_category(@page).each do |article|
+            %li
+              %a{ href: article.abspath }= article.heading
+
+You can browse the code on the [GitHub page][].
+
+[James Abbott]: http://jamesabbottdd.com/
+[GitHub page]: https://github.com/abbottjam/nesta-plugin-related-by-category
+
