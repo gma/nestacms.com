@@ -1,7 +1,7 @@
 Author: Graham Ashton
 Categories: docs/recipes, docs/creating-content
 Date: 15 Feb
-Summary: Most of the pages on a Nesta site are written in a text editor, using Markdown or Textile. You don't get to see what your words look like on a web page you save the file to disk and reload your browser. Wouldn't it be nice if your browser automatically reloaded pages as you saved them? When designing a theme, what if changes to HTML and CSS were reloaded immediately?
+Summary: Out of the box, Nesta doesn't provide a page that lists all your old blog posts. It is however, easy to add one.
 
 # Make a page that lists old articles
 
