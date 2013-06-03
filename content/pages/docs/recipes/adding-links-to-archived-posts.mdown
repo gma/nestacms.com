@@ -1,0 +1,136 @@
+Author: Graham Ashton
+Categories: docs/recipes, docs/creating-content
+Date: 15 Feb
+Summary: Most of the pages on a Nesta site are written in a text editor, using Markdown or Textile. You don't get to see what your words look like on a web page you save the file to disk and reload your browser. Wouldn't it be nice if your browser automatically reloaded pages as you saved them? When designing a theme, what if changes to HTML and CSS were reloaded immediately?
+
+# Make a page that lists old articles
+
+Out of the box, Nesta doesn't provide a page that lists all your old
+blog posts. It is however, easy to add one.
+
+This recipe will walk you through how to add a page to your site at
+/archives that lists all your blog posts, organised by the year in which
+they were written.
+
+## A dash of Ruby
+
+If you don't already have one, create a file called `app.rb` in your
+project's directory, and paste the following code into it (if you do
+have one, just add the code that follows to your `app.rb` file).
+
+    module Nesta
+      class App
+        helpers do
+          def list_articles(articles)
+            haml_tag :ol do
+              articles.each do |article|
+                haml_tag :li do
+                  haml_tag :a, article.heading, :href => url(article.abspath)
+                end
+              end
+            end
+          end
+
+          def article_years
+            articles = Page.find_articles
+            last, first = articles[0].date.year, articles[-1].date.year
+            (first..last).to_a.reverse
+          end
+
+          def archive_by_year
+            article_years.each do |year|
+              haml_tag :li do
+                haml_tag :a, :id => "#{year}"
+                haml_tag :h2, year
+                haml_tag :ol do
+                  articles = Page.find_articles.select { |a| a.date.year == year }
+                  list_articles(articles)
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+
+## Creating an /archives page
+
+We've just defined a new Ruby method called `archive_by_year` that we can
+call from within a page to insert a list of all the articles on the
+site. Let's create a new file called `content/pages/archives.haml` and
+add the following Haml to it:
+
+    %h1 Archives
+
+    %p
+      Here's the full list of all the posts on the blog. I hope you enjoy
+      browsing through them...
+
+    %ol.archive
+      - archive_by_year
+
+In case you haven't used it, Haml is a clean and simple way of writing HTML.
+Nesta will convert Haml to HTML for you when the page is served. Any
+line in a Haml file that starts with a hyphen will be treated as Ruby,
+so our `archive_by_year` method is run and the HTML it produces is
+inserted inside an &lt;ol&gt; tag.
+
+Before we load the page, let's just add a bit of CSS to style our list
+of articles. You can style it however you like, but I tend to use
+something simple like this:
+
+    ol.archive {
+        list-style: none;
+    }
+
+    ol.archive ol {
+        list-style: disc;
+    }
+
+If you've written your own styles for your site you'll no doubt know
+which file to add those styles to. If you're using the standard theme
+you'll be able to add it to a file called `views/local.scss` and it'll
+be loaded automatically.
+
+If you fire up a local web server (e.g. with `shotgun`) you should be
+able to see a list of all your blog posts at /archives.
+
+## Adding navigation links
+
+To make it easier for people to browse your archives you could add a few
+links to the sidebar. I'm assuming you're using the standard theme here;
+you may need to adapt the code that follows so that it works with your
+site's design, but you'll get the idea.
+
+First, create a template that will render a list of links to the years
+in which we've published articles. Put this Haml in `views/years.haml`:
+
+    %nav.archive
+      %h1 Articles by year
+      %ol
+        - article_years.each do |year|
+          %li
+          %a{ :href => "/archives##{year}" }= year
+
+Let's style it with this CSS (add it to `local.scss` again, or wherever
+you put your CSS for styling the /archives page):
+
+    nav.archive ol {
+        list-style: none;
+    }
+
+Now you just need to render the `years.haml` template in a suitable
+place in your sidebar. If you're using a theme that has a `sidebar.haml`
+template you can copy the `sidebar.haml` file to your `views` folder,
+and edit it so it looks something like this:
+
+    #sidebar
+      = haml :categories, :layout => false
+      = haml :years, :layout => false
+
+If you're not sure where to find a sidebar.haml file, these commands may
+help (run them from within your site's folder):
+
+    $ ls `bundle show nesta`/views
+    $ mkdir -p views
+    $ cp `bundle show nesta`/views/sidebar.haml views
