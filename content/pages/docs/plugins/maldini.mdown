@@ -23,5 +23,5 @@ For more on the idea behind Maldini, see the Maldini [project homepage][maldinip
 code on the [GitHub page][].
 
 [bibtex]: http://www.ctan.org/pkg/bibtex
-[maldiniproject]: http://bweslake.org/research/resources/maldini
+[maldiniproject]: http://bweslake.org/resources/maldini
 [GitHub page]: https://github.com/etc/nesta-plugin-maldini
