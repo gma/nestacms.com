@@ -9,7 +9,7 @@ Please don't ask for help by filing tickets in the GitHub issue tracker.
 Yes, I'll see your ticket, but I'll just ask you to re-post the question
 to the mailing list. There are some sharp people on the list and you'll
 get a quicker response that way. I also prefer to use issue trackers
-for tracking new features and bugs. Sorry.
+for tracking new features and bugs, not support.
 
 [archives]: http://librelist.com/browser/nesta
 
