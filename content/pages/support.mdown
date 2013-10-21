@@ -1,6 +1,6 @@
 # Support
 
-The first place to turn for help is the mailing list.
+The first place to turn for help is **always** the mailing list.
 
 Subscribe by sending a blank email to <nesta@librelist.com>. You can
 also browse the [list archives][archives].
@@ -18,18 +18,21 @@ for tracking new features and bugs. Sorry.
 You can follow Nesta on Twitter at [@nestacms][twitter]. New themes
 and plugins, new features, etc. get tweeted.
 
-Feel free to ask questions on Twitter, but bear in mind that 140
-characters isn't the best medium for support! Messages to the [mailing
-list][mailto] will also be read sooner, and by more people.
+Feel free to ask questions on Twitter but bear in mind that 140
+characters isn't the best medium for support, and that you're only able
+to get help from one person (who might not be around anyway).
+
+Messages to the [mailing list][mailto] will also be read sooner, by more
+people, so use that.
 
 [twitter]: http://twitter.com/nestacms
 [mailto]: mailto:nesta@librelist.com
 
 ## IRC channel
 
-There's a #nesta IRC channel on the freenode network; it's not exactly
-busy, but there's a reasonable chance that you'll find somebody in there
-who can give you a hand.
+The #nesta IRC channel on the freenode network is a great place for us
+to chat with you if we think a real time conversation will be the
+fastest way to solve your problem.
 
-It's also a good place to arrange to meet up to debug people's sites if
-we can't work something out quickly on the mailing list.
+If you haven't arranged to meet us in there for a chat, you'll probably
+find it a bit quiet...
