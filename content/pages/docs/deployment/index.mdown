@@ -9,5 +9,5 @@ you want to get it out there for all the world to see.
 Nesta will run on any web server that supports
 [Sinatra](http://www.sinatrarb.com/ "Sinatra"). This gives you plenty of
 choice, but you don't even need your own web server. We're going to look
-at how to deploy Nesta on [Heroku](http://heroku.com/ "Heroku | Ruby
-Cloud Platform as a Service"), or on your own server or slice.
+at how to deploy Nesta on a couple of cloud hosting platforms (Heroku
+and OpenShift), or on your own server or slice.
