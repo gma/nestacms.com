@@ -44,7 +44,7 @@ Making a new site would look something like this:
     $ cd mysite.com
     $ ls
     config.ru    content/
-    $ shotgun config.ru
+    $ mr-sparkle config.ru
 
 And away you go...
 

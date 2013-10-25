@@ -137,10 +137,10 @@ up the server:
 
     $ cp config/config.yml.sample config/config.yml
     $ bundle exec rake setup:sample_content
-    $ bundle exec shotgun config.ru
+    $ bundle exec mr-sparkle config.ru
 
 At this point you should be able to visit
-[http://localhost:9393/](http://localhost:9393/) in your web browser,
+[http://localhost:8080/](http://localhost:8080/) in your web browser,
 and view your new web site.
 
 That's it, you're done.

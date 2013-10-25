@@ -132,7 +132,7 @@ Note the `:path` option which tells Bundler to load the gem from the
 folder on your file system. Using this option means that the changes you
 make to the plugin's source will immediately be reflected when you
 reload pages in your test site (so long as you start your site with
-`shotgun`).
+`mr-sparkle`).
 
 Fire up your site and see if the plugin works as intended.
 

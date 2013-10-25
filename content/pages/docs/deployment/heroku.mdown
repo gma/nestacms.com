@@ -52,8 +52,8 @@ repository:
 
 ## Running the site locally
 
-Start the server up locally (run `shotgun config.ru`) and make sure you
-can browse to `http://localhost:9393/`. You should be able to see your
+Start the server up locally (run `mr-sparkle config.ru`) and make sure you
+can browse to `http://localhost:8080/`. You should be able to see your
 content.
 
 ## Deploying to Heroku

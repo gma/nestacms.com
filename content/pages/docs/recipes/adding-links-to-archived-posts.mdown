@@ -92,7 +92,7 @@ which file to add those styles to. If you're using the standard theme
 you'll be able to add it to a file called `views/local.scss` and it'll
 be loaded automatically.
 
-If you fire up a local web server (e.g. with `shotgun`) you should be
+If you fire up a local web server (e.g. with `mr-sparkle`) you should be
 able to see a list of all your blog posts at /archives.
 
 ## Adding navigation links

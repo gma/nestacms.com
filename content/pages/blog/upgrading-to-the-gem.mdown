@@ -57,9 +57,9 @@ too:
 
 Test it in the browser at this point to see if it starts up properly:
 
-    $ shotgun config.ru
+    $ mr-sparkle config.ru
 
-Visit [http://localhost:9393](http://localhost:9393) to check that it's
+Visit [http://localhost:8080](http://localhost:8080) to check that it's
 working.
 
 ## Migrating your local changes

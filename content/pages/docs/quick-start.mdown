@@ -6,8 +6,8 @@ for Linux. It's easy to install, but if you'd like a bit of extra help
 have a read through our article on [Installing Nesta with RVM][with-rvm].
 
 These instructions have been written for people using Linux or a Mac.
-If you're using Windows you'll need to substitute `shotgun` for `rackup`
-as `shotgun` doesn't run on Windows.
+If you're using Windows you'll need to substitute `mr-sparkle` for `rackup`
+as `mr-sparkle` doesn't run on Windows.
 
 When setting up a typical CMS you install it on your server, then use
 your browser to login via the admin interface in order to start editing
@@ -55,10 +55,10 @@ The site will be downloaded into the `content-demo` folder.
 
 Fire up your web server...
 
-    $ shotgun config.ru
+    $ mr-sparkle config.ru
     
 ...and have a look at your new site:
-[http://localhost:9393/](http://localhost:9393/).
+[http://localhost:8080/](http://localhost:8080/).
 
 ## Now what?
 
