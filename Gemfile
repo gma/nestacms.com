@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'maruku'
-gem 'nesta', '0.9.13'
-gem 'nesta-plugin-cache'
+gem 'nesta', '0.10.0'
+gem 'nesta-plugin-cache', git: 'https://github.com/gma/nesta-plugin-cache.git'
 gem 'rack-force_domain', '0.1.1'
 gem 'rack-rewrite'
 
