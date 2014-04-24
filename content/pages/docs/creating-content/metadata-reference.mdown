@@ -220,6 +220,18 @@ inside the layout. See the [default layout][layout] for an example.
 
 [layout]: https://github.com/gma/nesta/blob/master/views/layout.haml
 
+## Link text
+
+Nesta will generate links to your pages (e.g. in menus and breadcrumbs),
+using page headings in the text of the links. If you'd rather link to
+a page with different text, you can define it like this:
+
+    Link text: Short and snappy
+
+    # Long and wordy title that you don't want in your menu
+
+    ...
+
 ## Read more
 
 When the summary of an article (see below) is displayed on the home
