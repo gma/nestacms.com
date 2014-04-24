@@ -34,7 +34,7 @@ module Nesta
         haml_tag :ol do
           articles.each do |article|
             haml_tag :li do
-              haml_tag :a, article.heading, :href => url(article.abspath)
+              haml_tag :a, article.heading, :href => path_to(article.abspath)
             end
           end
         end
