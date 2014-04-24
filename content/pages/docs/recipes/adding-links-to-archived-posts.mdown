@@ -1,6 +1,6 @@
 Author: Graham Ashton
 Categories: docs/recipes, docs/creating-content
-Date: 15 Feb
+Date: 3 Jun 2013
 Summary: Out of the box, Nesta doesn't provide a page that lists all your old blog posts. It is however, easy to add one.
 
 # Make a page that lists old articles
