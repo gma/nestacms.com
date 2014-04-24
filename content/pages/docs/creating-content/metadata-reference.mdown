@@ -3,13 +3,13 @@ Summary: A full list of the Nesta metadata, which allows you to organise your si
 
 # Metadata reference
 
-As you've probably noticed, Nesta doesn't use a database. There is
-therefore no obvious place to store information *about* a web page, such
+As you've probably noticed, Nesta doesn't use a database. As a result
+there's no obvious place to store information *about* a web page, such
 as the date that it was published.
 
 Nesta solves this problem by allowing you to specify metadata at the top
 of your Markdown file. You just write the name of the metadata field, a
-colon, a space, and then the value of the metadata. 
+colon, a space, and then the value of the metadata.
 
 Here's a contrived example:
 
@@ -31,6 +31,13 @@ heading:
     # Carrots
     
     ...
+
+**Note:** Plenty of file-based blogging platforms use a similar approach, but they
+don't all use the same format. If you're switching to Nesta from a
+system that stores its metadata in Yaml, there's a [plugin for
+that][yaml plugin]!
+
+[yaml plugin]: /docs/plugins/yaml-metadata
 
 Without further ado, here's a full list of the Nesta metadata.
 
