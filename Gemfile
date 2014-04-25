@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
+ruby '2.1.1'
 
 gem 'maruku'
-gem 'nesta', '0.10.0'
+gem 'nesta'
 gem 'nesta-plugin-cache', git: 'https://github.com/gma/nesta-plugin-cache.git'
 gem 'rack-force_domain', '0.1.1'
 gem 'rack-rewrite'
@@ -12,4 +13,4 @@ group :development do
   gem 'rb-readline'
 end
 
-# gem (RUBY_VERSION =~ /^1.9/) ? 'ruby-debug19': 'ruby-debug'
+# gem debugger
