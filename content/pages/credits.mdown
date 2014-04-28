@@ -1,32 +1,16 @@
 Categories: about
-Summary: Nesta (and this web site) was designed and written by [Graham Ashton][gma], with help from you (the users) who have been submitting patches and sending feedback.
-Read more: Who are all these wonderful people?
+Summary: Nesta (and this web site) was designed and written by [Graham Ashton](http://effectif.com), with help from members of the community who have submitted some great patches.
+Read more: Who's contributed?
 
 # Credits
 
-Nesta (and this web site) was designed and written by [Graham
-Ashton][gma], with help from you (the users) who have been submitting
-patches and sending feedback.
+Nesta was designed and written by [Graham Ashton](http://effectif.com),
+with help from members of the community who have submitted some great
+patches.
 
-[gma]: http://effectif.com
+## Contributors
 
-Nesta encourages (but doesn't enforce) a category-oriented approach to
-organising websites. It was taught to me by Mark Nunney of [SEO
-site][ss] while I was working as a freelancer at Wordtracker.
-
-[ss]: http://www.seosite.co.uk/
-
-Categories are a bit like tags in that they allow you to group articles
-and pages together by topic, but (when you write some introductory copy
-for each category) they're better for your visitors. Read Mark's
-article on [website structure][nunney1] for an introduction -- if you
-like the idea you should be able to use categories to [get more
-traffic][nunney2] too.
-
-[nunney1]: http://www.wordtracker.com/academy/website-structure
-[nunney2]: http://www.wordtracker.com/academy/site-structure-planning-seo
-
-## Contributors to the code
+This list is roughly in order of when somebody made their first commit.
 
  - Mika Tuupola -- Textile support.
  - Matt Yoho -- A great HTTP caching patch.
@@ -34,7 +18,7 @@ traffic][nunney2] too.
    published (i.e. appears in the Atom feed and in your blog's list of
    recent articles), Erb parsing of config.yml.
  - Wynn Netherland -- Public metadata, bug fixes, upgrading to RSpec 2.
- - Barry Keenan -- Setting default encoding on Heroku ([bug][bug14]).
+ - Barry Keenan -- Setting default encoding on Heroku.
  - Robert Syme -- Rendering summaries of arbitrary articles.
  - Christopher Lindblom -- Added the --version option. Fixed page titles
    for pages whose parent is the home page.
@@ -51,15 +35,25 @@ traffic][nunney2] too.
  - Max Sadrieh - Serving assets correctly when mounted on a path, Etag
    support in `config.ru`.
  - Micah Chalmer - Added the `body_markup` method on the `Page` class to
-   make it simpler for plugins to modify the way pages are parsed.
+   make it simpler for plugins to modify the way pages are parsed. Added
+   the "Link text" metadata. Refactored Nesta's URL helpers so that it
+   would work nicely in a Rails app (as well as Sinatra).
  - Chad Ostrowski - Added the `current_item?` helper in the `Navigation`
    module.
+ - Pete Gadomski - Made the default text used in the "Read more" link
+   configurable in `config.yml`. Also made it possible to configure the
+   HTML class used for the current page when rendering menus.
+ - Sean Redmond - Added support for arbitrary settings in `config.yml`,
+   so you can now use it to configure any features that you might add to
+   your site.
+ - Jake Rayson - Include useful default templates in new themes.
+ - Sean Schofield - Added Microdata to the breadcrumb to help search
+   engines to categorise your content.
 
 If you've contributed and I haven't mentioned you, it's not intentional.
 Drop me an email on GitHub and I'll add you in. If you've sent me a
 patch, you should be on GitHub's [list of contributors][].
 
-[bug14]: https://github.com/gma/nesta/issues#issue/14
 [list of contributors]: https://github.com/gma/nesta/contributors
 
 ## Documentation contributors
@@ -69,19 +63,14 @@ A [growing list][] have contributed to the documentation.
 [growing list]: https://github.com/gma/nestacms.com/contributors
 [upgrading]: /blog/upgrading-to-the-gem
 
-I bet you can find some documentation on this site that needs fixing or
-re-wording, or have a great idea for an article on what you can do with
-Nesta.
-
-Why not...
+If you'd like to improve the docs or contribute an article, all you need
+to do is:
 
 1. Fork this site ([gma/nestacms.com][repo] on GitHub),
-2. Improve it, and
+2. Add your content.
 3. Send a pull request (to [gma][gma]).
 
-If you write an article (e.g. covering how to achieve a specific task
-with Nesta) don't forget to add an [authors page](/authors) for yourself
-too...
+Cheers!
 
 [repo]: https://github.com/gma/nestacms.com
 [gma]: https://github.com/gma

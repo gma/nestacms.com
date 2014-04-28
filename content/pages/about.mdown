@@ -1,16 +1,20 @@
 # About
 
-Nesta is a lightweight Content Management System, written in Ruby using
-the Sinatra web framework. Nesta has the simplicity of a static
-site generator, but (being a fully fledged [Rack application][rack])
-allows you to serve dynamic content on demand.
+Nesta is a lightweight Content Management System, written in Ruby using the Sinatra web framework. Nesta combines the simplicity of a static site generator with the power of a CMS. Being a fully fledged web app, Nesta is able to serve dynamic content on demand, should you need it.
 
-Content is stored on disk in plain text files. There is no database.
-Edit your content in a text editor and keep it under version control
-(most people use git, but any version control system will do fine).
+## Key features
 
-[Implementing the design](/docs/design) for your site is easy, but Nesta
-also has a small selection of [themes](/docs/design/theme) to choose
-from.
+Content is stored on disk in plain text files (there's no database).
 
-[rack]: http://rack.rubyforge.org
+You edit your content in a text editor, which allows you to keep it in a version control system (e.g. Git, Mercurial or Subversion).
+
+Implementing [your own design](/docs/design) is easy, but Nesta also has a small selection of [themes](/docs/design/theme) to choose from.
+
+Nesta encourages a category-oriented approach to organising websites. Categories are similar to tags, but in addition to grouping your content together by topic, categories encourage you to write some introductory copy at the top of the page.
+
+Introducing your topic makes your site more accessible to your visitors, and helps search engines work out what your page is about. Read Mark Nunney's article on [website structure][nunney1] for a proper introduction to the technique.
+
+If you like the idea you should be able to use categories to [get more traffic][nunney2] too...
+
+[nunney1]: http://www.wordtracker.com/academy/website-structure
+[nunney2]: http://www.wordtracker.com/academy/site-structure-planning-seo
