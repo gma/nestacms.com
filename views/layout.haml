@@ -28,20 +28,6 @@
     %script(type="text/javascript" src="/javascripts/highlight.pack.js")
     :javascript
       hljs.initHighlightingOnLoad();
-    - if Nesta::App.production?
-      :plain
-        <script type="text/javascript" id="inspectletjs">
-          var __insp = __insp || [];
-          __insp.push(['wid', 1962715361]);
-          (function() {
-            function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://www.inspectlet.com/inspect_nojquery/1962715361.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
-            if (window.attachEvent){
-              window.attachEvent('onload', __ldinsp);
-            }else{
-              window.addEventListener('load', __ldinsp, false);
-            }
-          })();
-        </script>
   %body
     #container
       = haml :header, :layout => false
