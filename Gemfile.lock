@@ -36,7 +36,6 @@ GEM
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
     lumberjack (1.0.5)
-    maruku (0.7.1)
     method_source (0.8.2)
     mr-sparkle (0.3.0)
       listen (~> 1.0)
@@ -86,7 +85,6 @@ PLATFORMS
 
 DEPENDENCIES
   guard-livereload (= 1.0.0)
-  maruku
   mr-sparkle
   nesta
   nesta-plugin-cache!
