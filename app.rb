@@ -8,7 +8,7 @@ module Nesta
       end
 
       def viewing_blog?
-        @page.metadata('date') || request.path =~ Regexp.new('^/(archives|blog)')
+        @page && @page.metadata('date') || request.path =~ Regexp.new('^/(archives|blog)')
       end
 
       def author_biography(name = nil)
