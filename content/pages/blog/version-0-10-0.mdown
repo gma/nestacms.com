@@ -1,88 +1,112 @@
 Date: 13:00 29 April 2014
-Summary: It's been a while since the last release of Nesta, and this version has plenty of new features. The most obvious change is the default theme; it has a responsive design and a new font (Roboto Slab).\n\nThere are also some performance improvements, and Micah Chalmer's awesome `mr-sparkle` Unicorn launcher has replaced `shotgun` as the recommended way to run your site on your local computer.
+Summary: It's been a while since the last release of Nesta, and this version has plenty of new features. The most obvious change is the default theme; it has a responsive design and a new font (Roboto Slab).\n\nRuby 2.x is now properly supported (and Ruby 1.8 support has been dropped).
 Read more: Read on to see what's changed
 
 # Nesta 0.10.0 released
 
-It's been a while since the last release of Nesta, and this version has plenty of new features. The most obvious change is the default theme; it has a responsive design and a new font (Roboto Slab).
+It's been a while since the last release of Nesta, and this version has plenty of new features. The most obvious change is the default theme; it has a responsive design and a new font (you can see it in action on the [demo site][]).
 
-There have also been some performance improvements. Micah Chalmer's awesome `mr-sparkle` Unicorn launcher has replaced `shotgun` as the recommended way to run your site on your local computer. You can now put anything you like in the config file, and there's some new metadata for you to play with.
+[demo site]: http://nesta-demo.herokuapp.com
+
+Other notable changes include:
+
+- Support for Ruby 2.x. Support for Ruby 1.8.x has been dropped.
+- It's faster, especially on larger sites.
+- You can define your own config keys in `config.yml`.
+- `shotgun` has been replaced by Micah Chalmer's superb Unicorn launcher as the recommended approach to running Nesta on your local computer.
+- There's some new metadata for you to play with.
 
 ## Upgrading
 
-To install the new version edit your site's `Gemfile` and remove the version number (if it has one) from the end of the line. Then run:
+To install the new version edit your site's `Gemfile` and **remove the version number** (if it has one) from the end of the line, then run:
 
     $ bundle update nesta
 
-The `url` helper (introduced in 0.9.13) has been renamed to `path_to`.
+Depending on when you created your site, you might find that `shotgun`
+is listed in your `Gemfile`. If you do, I recommend you change it to
+`mr-sparkle`, then run:
 
-### Changing your code
+    $ bundle install
+
+We're now using Haml 4.x. If your site has any pages written in Haml that use the `:textile` or `:maruku` inline filters you'll also need to add `haml-contrib` to your Gemfile:
+
+    $ echo "gem 'haml-contrib'" >> Gemfile
+    $ bundle install
+
+If you have any weird errors when you start your server it could be a result of there being some fairly old gems installed. Update the entire `bundle` and try again:
+
+    $ bundle update
+    $ bundle exec mr-sparkle
+
+### Updating your code
+
+The `url` helper (introduced in 0.9.13) has been renamed to `path_to`.
 
 If your project (or theme) contains any templates that use the `url` helper method you'll need to change replace all calls to it with the `path_to` helper. By default it returns a path to a page, but will give you a URL if you really need one (see the [API docs](http://rubydoc.info/gems/nesta/0.10.0/Nesta/View/Helpers:path_to) for more).
 
 [103]: https://github.com/gma/nesta/issues/103
 
+That should cover it, but I recommend you have a skim through the list of changes (below) to familiarise yourself with what's new.
+
 ## What's new?
 
-That should cover it, but I recommend you have a skim through the list of changes to familiarise yourself with what's new.
+- Upgraded the default theme to a responsive design, using Google's Roboto Slab web font. (Graham Ashton)
 
-* Upgraded the default theme to a responsive design, using Google's Roboto Slab web font. (Graham Ashton)
+- Reduced the amount of I/O required to load a page with some judicious in memory caching of filenames. Expect a speed boost! (Graham Ashton)
 
- * Reduced the amount of I/O required to load a page with some judicious in memory caching of filenames. Expect a speed boost! (Graham Ashton)
+- Added 'Link text' metadata. When working out how to link to your pages from the automatically generated menus and breadcrumbs, Nesta uses the page's heading. It still does, but if you want to use different words when linking to the page in breadcrumbs or in the menu you can by defining the "Link text" metadata. (Micah Chalmer)
 
- * Added 'Link text' metadata. When working out how to link to your pages from the automatically generated menus and breadcrumbs, Nesta uses the page's heading. It still does, but if you want to use different words when linking to the page in breadcrumbs or in the menu you can by defining the "Link text" metadata. (Micah Chalmer)
+  NOTE: Some existing sites may have pages that don't define a heading.  Those sites will not work with Nesta 0.10.0 until they've been upgraded; either add an h1 level heading at the top of your pages (preferred) or define the 'Link text' metadata. If you don't want h1 headings to appear at the top of your web pages, hide them with CSS (this is the best approach for accessibility), or define the "Link text" metadata.
 
-   NOTE: Some existing sites may have pages that don't define a heading.  Those sites will not work with Nesta 0.10.0 until they've been upgraded; either add an h1 level heading at the top of your pages (preferred) or define the 'Link text' metadata. If you don't want h1 headings to appear at the top of your web pages, hide them with CSS (this is the best approach for accessibility), or define the "Link text" metadata.
+- The text used in the 'Read more' link is now configurable in config.yml.  The config key is called `read_more`. (Pete Gadomski)
 
- * The text used in the 'Read more' link is now configurable in config.yml.  The config key is called `read_more`. (Pete Gadomski)
+  See the config.yml template (on GitHub) for more details. <https://github.com/gma/nesta/blob/master/templates/config/config.yml>
 
-   See the config.yml template (on GitHub) for more details. <https://github.com/gma/nesta/blob/master/templates/config/config.yml>
+- Added the skip-sitemap flag, to prevent a page from being listed in the XML sitemap. Add `Flags: skip-sitemap` to the top of your page to enable it. Draft pages have also been removed from the sitemap.  (Suggested by Joshua Mervine, implemented by Graham Ashton)
 
- * Added the skip-sitemap flag, to prevent a page from being listed in the XML sitemap. Add 'Flags: skip-sitemap' to the top of your page to enable it. Draft pages have also been removed from the sitemap.  (Suggested by Joshua Mervine, implemented by Graham Ashton)
+- Added support for user-defined config settings in config.yml.  If you've ever wanted to add config settings to config.yml and then access them from within your `app.rb` file or templates, this is for you.
 
- * Added support for user-defined config settings in config.yml.  If you've ever wanted to add config settings to config.yml and then access them from within your app.rb file or templates, this is for you.
+  There's a new `Nesta::Config.fetch` method for reading these settings. It can also read settings from the environment, looking for variables whose names are prefixed with "NESTA_". For example, the value in the `NESTA_MY_SETTING` variable can be returned by calling `Nesta::Config.fetch(:my_setting)`.
 
-   There's a new `Nesta::Config.fetch` method for reading these settings. It can also read settings from the environment, looking for variables whose names are prefixed with "NESTA_". For example, the value in the `NESTA_MY_SETTING` variable can be returned by calling `Nesta::Config.fetch(:my_setting)`.
+  If the setting you're trying to read isn't defined a NotDefined exception (a subclass of KeyError) will be raised. Similarly to Ruby's Hash#fetch method, you can avoid the exception by specifying a second argument (such as nil) that will be returned if the setting isn't defined.
 
-   If the setting you're trying to read isn't defined a NotDefined exception (a subclass of KeyError) will be raised. Similarly to Ruby's Hash#fetch method, you can avoid the exception by specifying a second argument (such as nil) that will be returned if the setting isn't defined.
+  (Sean Redmond, Graham Ashton)
 
-   (Sean Redmond, Graham Ashton)
+- The built-in file caching (where Nesta could write generated HTML for rendered pages to disk) has been removed. If you'd like to cache pages to disk, use the sinatra-cache gem.
 
- * The built-in file caching (where Nesta could write generated HTML for rendered pages to disk) has been removed. If you'd like to cache pages to disk, use the sinatra-cache gem.
+  See <http://nestacms.com/docs/deployment/page-caching> for more details, and instructions for installing and testing sintra-cache.
 
-   See <http://nestacms.com/docs/deployment/page-caching> for more details, and instructions for installing and testing sintra-cache.
+  (Graham Ashton)
 
-   (Graham Ashton)
+- The nesta script's theme:create command now copies default templates into a new theme. (Jake Rayson)
 
- * The nesta script's theme:create command now copies default templates into a new theme. (Jake Rayson)
+- Added the --zsh-completion option to the nesta command, which outputs code that will configure command line completion in Zsh for the nesta command. (Wynn Netherland)
 
- * Added the --zsh-completion option to the nesta command, which outputs code that will configure command line completion in Zsh for the nesta command. (Wynn Netherland)
+- Page titles no longer include the heading from the parent page. Behaviour was a little inconsistent, and it's arguably not a great feature in the first place. Since the Title metadata appeared you can ovverride the page title to something more useful if you need to too.  (Graham Ashton)
 
- * Page titles no longer include the heading from the parent page. Behaviour was a little inconsistent, and it's arguably not a great feature in the first place. Since the Title metadata appeared you can ovverride the page title to something more useful if you need to too.  (Graham Ashton)
+- When commenting via Disqus is configured, comments appeared on every page in earlier versions of Nesta. From now on only pages with a date set (i.e. articles) will display the comment form by default. If you've copied the comments.haml template into your `./views` folder (or into a theme) you'll need to modify it slightly. See the `if` statement in the latest version.
 
- * When commenting via Disqus is configured, comments appeared on every page in earlier versions of Nesta. From now on only pages with a date set (i.e. articles) will display the comment form by default. If you've copied the comments.haml template into your ./views folder (or into a theme) you'll need to modify it slightly. See the `if` statement in the latest version.
+  If you'd actually like comments to appear on every page of your site, redefine the `Page#receives_comments?` method in your `app.rb` file, so that it returns `true`.  
 
-   If you'd actually like comments to appear on every page of your site, redefine the Page#receives_comments? method in your app.rb file, so that it returns `true`.  
-   (Graham Ashton)
+  (Graham Ashton)
 
- * Breadcrumbs include Microdata for use by search engines. See: <http://support.google.com/webmasters/bin/answer.py?hl=en&answer=185417>
-   (Sean Schofield)
+- Breadcrumbs include Microdata for use by search engines. See: <http://support.google.com/webmasters/bin/answer.py?hl=en&answer=185417> (Sean Schofield)
 
- * The menu and breadcrumb helper methods can now generate HTML that identifies the current page. When viewing a page that appears in the menu, its menu item will have the class "current". To change the name of the class, override the Nesta::Navigation::current_menu_item_class method.
+- The menu and breadcrumb helper methods can now generate HTML that identifies the current page. When viewing a page that appears in the menu, its menu item will have the class "current". To change the name of the class, override the `Nesta::Navigation::current_menu_item_class` method.
 
-   The current page doesn't have a class applied by default. If you want to add a class to style it, override the ::current_breadcrumb_class method (also in the Nesta::Navigation module), returning a string.
+  The current page doesn't have a class applied by default. If you want to add a class to style it, override the `current_breadcrumb_class` method (also in the `Nesta::Navigation` module), returning a string.
 
-   (Pete Gadomski)
+  (Pete Gadomski)
 
- * Version 0.9.13 used Sinatra's `url` helper method to generate links to pages on the site. When these pages were cached by proxy servers the hostname in the URL could be set incorrectly, as it would be determined from the HTTP headers (see issue #103 for more details).  
+- Version 0.9.13 used Sinatra's `url` helper method to generate links to pages on the site. When these pages were cached by proxy servers the hostname in the URL could be set incorrectly, as it would be determined from the HTTP headers (see issue #103 for more details).  
 
-   The solution was to link to pages on the current site using an absolute path, rather than a full URL. The `path_to` helper was added,
+  The solution was to link to pages on the current site using an absolute path, rather than a full URL. The `path_to` helper was added,
    and used in place of Sinatra's `url` helper method.
 
-   (Micah Chalmer)
+  (Micah Chalmer)
 
- * Updated the test suite from RSpec 1.3 to RSpec 2.  (Wynn Netherland, Graham Ashton)
+- Updated the test suite from RSpec 1.3 to RSpec 2.  (Wynn Netherland, Graham Ashton)
 
- * Support for Ruby 1.8 has been dropped. Ruby 1.9.3 or above is recommended.
+- Support for Ruby 1.8 has been dropped. Ruby 1.9.3 or above is recommended.
 
- * There were also plenty of small bug fixes that didn't make it into this list. See GitHub for the full list of commits.  <https://github.com/gma/nesta/compare/v0.9.13...v0.10.0>
+- There were also plenty of small bug fixes that didn't make it into this list. See GitHub for the full list of commits.  <https://github.com/gma/nesta/compare/v0.9.13...v0.10.0>
