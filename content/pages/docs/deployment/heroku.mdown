@@ -80,17 +80,12 @@ custom domains][custom-domains].
 [renaming-apps]: http://devcenter.heroku.com/articles/renaming-apps
 [custom-domains]: https://devcenter.heroku.com/articles/custom-domains
 
-That's it, you're done. You're now running a free CMS, on a free hosting
-platform. Drop an email to the [mailing list][list] and let us know how
-it went...
+That's it, you're done.
 
-[list]: mailto:nesta@librelist.com
-
-**A note on caching:** The experienced Heroku users amongst you may be
-wondering whether Nesta automatically enables any HTTP compliant caching
-on Heroku. The answer is "not yet", but it's
-[under&nbsp;discussion][issue-9]. In the meantime, as Nesta is a simple
-Sinatra app you can configure caching just as you would for any other
-Sinatra app.
+**A note on caching:** Experienced Heroku users may be wondering whether
+Nesta automatically enables any HTTP compliant caching on Heroku. The
+answer is "not yet", but it's [under&nbsp;discussion][issue-9]. In the
+meantime, as Nesta is a simple Sinatra app you can configure caching
+just as you would for any other Sinatra app.
 
 [issue-9]: https://github.com/gma/nesta/issues/9
