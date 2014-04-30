@@ -1,3 +1,5 @@
+Articles heading: The Recipes
+
 # Recipes
 
 Each Nesta Recipe shows how to approach a common task, such as adding
