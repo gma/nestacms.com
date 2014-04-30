@@ -2,97 +2,111 @@ Title: Ruby CMS - Nesta
 Template: home
 Link text: Home
 
-%section.intro
-  %heading
-    %h1 Nesta
+%section
   :markdown
-    A Ruby CMS for *developers* and *designers*.
-    With simple code that's easy to follow, Nesta is easily
-    extended using the Sinatra web framework.
+    # There's no database to install &ndash; web sites are created from simple text files
 
-%section.overview
-  %heading
-    %h1 Why use Nesta?
+    Create web pages by writing your copy in text files. Use Markdown or
+    Textile. If you need to get fancy, you can drop into HTML or Haml.
+
+  %img(src="https://nestacms.s3.amazonaws.com/site/screenshots/file-based-cms.png" title="File-based Ruby CMS")
+
+%section
+  %h1 Use your favourite editor
+
   :markdown
-    Do you prefer writing and testing HTML and CSS in a text editor,
-    rather than a browser window? Are you happy writing copy in
-    *Markdown* or *Textile*? If so, Nesta might be for you.
+    There's no user interface to learn. Just open your favourite editor, get
+    writing, and save the file when you're done.
 
-    There's no database to configure &ndash; everything is stored in
-    text files. You can review your changes on a local copy of your web
-    site, and copy the files to your server when you're ready to publish
-    (most people use Git).
+  %img(src="https://nestacms.s3.amazonaws.com/site/screenshots/editing-markdown.png")
 
-    [md]: http://effectif.com/nesta/markdown-cheat-sheet
-    [textile]: http://textism.com/tools/textile/ "Textism: Tools: Textile"
+.testimonial
+  %blockquote
+    %p
+      navel-labs.com is running 100% Nesta. I was thinking of just using
+      Nesta for the cms and delegating the blog to Tumblr or Posterous,
+      but after I wrapped my head around what Nesta can do, I was a
+      total convert.
+  %cite
+    Jonathan Penn, Navel Labs
+    %img.avatar(src="https://nestacms.s3.amazonaws.com/site/testimonials/jonathan-penn.png")
 
-%section.features
-  %heading
-    %h1 Features
+%section
+  %h1 Getting started
+
+  %pre
+    $ gem install nesta
+    $ gem install bundler
+    $ nesta new mysite.com
+    $ cd mysite.com
+    $ bundle install
+    $ nesta demo:content
+    $ mr-sparkle   # <= launches your site!
+
+%section
+  %h1 Choose from several themes...
+
+  %p
+    [Screenshots: mini browser windows with a few different themes]
+
+  %pre
+    $ nesta theme:install &lt;name-of-theme&gt;
+
+
+  %h1 ...or implement your own design
+
+  %p
+    [Screenshot: TextMate with sidebar open showing where files live]
+
+.testimonial
+  %blockquote
+    %p
+      I never realized how completely unacceptable Wordpress
+      templating is until I started to implement the @toutapp blog
+      using @nestacms.
+  %cite
+    Tawheed Kader, Toutapp
+    %img.avatar(src="https://nestacms.s3.amazonaws.com/site/testimonials/tawheed.png")
+
+%section
+  %h1 Preview your work on a copy of your&nbsp;site
+
   :markdown
-    - Semantic *HTML5*.
-    - Clean typography.
-    - Easy to extend or embed.
-    - *Free hosting* on Heroku.
-    - Support for Google Analytics, Atom feeds, comments (via Disqus),
-      XML sitemaps&hellip;
+    If you'd like to see how your site is shaping up, it's easy to run a local
+    copy of Nesta.
 
-%section.getting-started
-  %heading
-    %h1 Getting started
+    This makes it quick to edit your HTML and CSS, and lets you preview your
+    copy as it will appear on the site.
+
+%section
+  %h1 Publish changes by copying files to a web server, or the cloud
+
   :markdown
-        $ gem install nesta
-        $ gem install bundler
-        $ nesta new mysite.com
-        $ cd mysite.com
-        $ bundle install
-        $ nesta demo:content
-        $ mr-sparkle config.ru
+    [Screenshot: terminal, deploying to Heroku with git]
 
-    Then visit [http://localhost:8080](http://localhost:8080)...
+    Publish your changes by copying files to your web server (it's easy if you
+    use FTP or Git).
 
-%section.articles
-  %heading
-    %h1 Recent articles
-  %ol
-    - latest_articles(3).each do |article|
-      %li
-        %article
-          %header
-            %h1
-              %a(href="#{article.abspath}")= article.heading
-          = haml :page_meta, :layout => false, :locals => { :page => article }
+.testimonial
+  %blockquote
+    %p
+      [Nesta] was a great foundation to start from, and I love working
+      with Sinatra.
+  %cite
+    Geoffrey Grosenbach, PeepCode
+    %img.avatar(src="https://nestacms.s3.amazonaws.com/site/testimonials/topfunky.png")
 
-%section.users
-  %heading
-    %h1 Who's using Nesta?
-  %ul
-    %li
-      %blockquote
-        [Nesta] was a great foundation to start from, and I love working
-        with Sinatra.
-      %cite
-        Geoffrey Grosenbach,
-        %a(href="http://peepcode.com") peepcode.com
-    %li
-      %blockquote
-        navel-labs.com is running 100% Nesta. I was thinking of just using
-        Nesta for the cms and delegating the blog to Tumblr or Posterous,
-        but after I wrapped my head around what Nesta can do, I was a
-        total convert.
-      %cite
-        Jonathan Penn,
-        %a(href="http://navel-labs.com") navel-labs.com
-    %li
-      %blockquote
-        I never realized how completely unacceptable Wordpress
-        templating is until I started to implement the @toutapp blog
-        using @nestacms.
-      %cite
-        Tawheed Kader
+%section
+  %h1 Also works with Ruby on Rails
 
-%section.group
-  %heading
-    %h1 Documentation
-  = haml(:docs_overview, :layout => false)
-  = haml(:docs_index, :layout => false)
+  :markdown
+    Would you like to add a blog or sales site to a Rails app?
+    Nesta integrates cleanly with Rails, and can re-use your existing layout
+    and stylesheets.
+
+  %pre
+    $ echo "gem 'nesta-rails' >> Gemfile"
+    $ bundle
+    $ rails generate nesta
+    $ mkdir -p content/pages
+    $ echo "# You have a CMS!" > content/pages/index.mdown

@@ -2,7 +2,7 @@
 # titles.
 #
 title: "Nesta CMS"
-subtitle: "A Ruby CMS. Built with Sinatra."
+subtitle: "A file-based CMS and blogging platform for developers and designers"
 
 # If you want to set the descrition or keywords meta tags on your site's
 # home page, do it here.

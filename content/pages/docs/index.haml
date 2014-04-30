@@ -1,6 +1,15 @@
 Template: wide
 
-%heading
-  %h1 Documentation
-= haml(:docs_overview, :layout => false)
+%h1 Documentation
+
+%p.documentation-overview
+  We recommend familiarising yourself by working through
+  = succeed "," do
+    %a(href="/docs/getting-started") Getting started
+  followed by a quick skim of the
+  %a(href="/docs/creating-content") Writing content
+  and
+  %a(href="/docs/config") Configuration
+  pages.
+
 = haml(:docs_index, :layout => false)

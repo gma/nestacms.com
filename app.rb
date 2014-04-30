@@ -49,9 +49,7 @@ module Nesta
           haml_tag :li do
             haml_tag :a, :id => "#{year}"
             haml_tag :h2, year
-            haml_tag :ol do
-              list_articles(Page.find_articles.select { |a| a.date.year == year })
-            end
+            list_articles(Page.find_articles.select { |a| a.date.year == year })
           end
         end
       end
