@@ -3,7 +3,7 @@ blog
 about
 support
 docs
-  docs/quick-start
+  docs/getting-started
   docs/creating-content
     docs/creating-content/pages
     docs/creating-content/articles

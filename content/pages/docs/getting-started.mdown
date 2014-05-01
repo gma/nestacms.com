@@ -1,4 +1,4 @@
-# Quick start
+# Getting started
 
 Nesta is written in Ruby, and you'll need a copy of Ruby installed in
 order to use it. Ruby comes pre-installed on Apple Macs and is available
