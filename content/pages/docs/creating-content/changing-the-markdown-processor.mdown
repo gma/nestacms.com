@@ -21,11 +21,13 @@ RDiscount is used in Nesta by default, as it is the only one that is included au
 
 ## Installing other processors
 
-To change the default (e.g. to BlueCloth), add your chosen processor's gem to your `Gemfile` and re-run `bundle`:
+To change -- the default (e.g. to BlueCloth), add your chosen processor's gem to your `Gemfile` and re-run `bundle`:
 
-    $ cd path/to/project
-    $ echo 'gem "bluecloth"' >> Gemfile
-    $ bundle
+``` bash
+$ cd path/to/project
+$ echo 'gem "bluecloth"' >> Gemfile
+$ bundle
+```
 
 The other gems that you might want to install are called `redcarpet`, `kramdown` and `maruku` (the `rdiscount` gem is already installed).
 
@@ -33,7 +35,9 @@ The other gems that you might want to install are called `redcarpet`, `kramdown`
 
 Then tell Tilt that you'd rather it used BlueCloth by adding the following line of Ruby code to the `app.rb` file within your project (if you don't have an `app.rb` file, just create it):
 
-    Tilt.prefer Tilt::BlueClothTemplate
+``` ruby
+Tilt.prefer Tilt::BlueClothTemplate
+```
 
 The full list of class names that you might want to use in place of `BlueClothTemplate` is:
 

@@ -1,6 +1,24 @@
 Encoding.default_external = 'utf-8'
 
+Tilt.prefer Tilt::RedcarpetTemplate
+
+require 'rouge'
+require 'rouge/plugins/redcarpet'
+
+Redcarpet::Render::HTML.send :include, Rouge::Plugins::Redcarpet
+
 module Nesta
+  class FileModel
+    def template_options(format)
+      {
+        mdown: {
+          fenced_code_blocks: true,
+          smartypants: true
+        }
+      }.fetch(format, {})
+    end
+  end
+
   class App
     helpers do
       def viewing_documentation?
