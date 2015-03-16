@@ -60,7 +60,7 @@ These notes are pulled straight out of the [CHANGES file][].
 - Relax restrictions on how Nesta can be configured. Previously Nesta
   would only read if `config.yml` file if there weren't any environment
   variables set. This restriction is historic, and unhelpful.
-  See https://github.com/gma/nesta/commit/bac50974 for details.
+  See <https://github.com/gma/nesta/commit/bac50974> for details.
   (Glenn Gillen)
 
 - Plugins are distributed as gems. We've previously relied upon Bundler
