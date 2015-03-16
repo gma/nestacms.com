@@ -6,7 +6,7 @@ Read more: Read on to see what's changed
 
 You can find the full list of updates in the [CHANGES file][].
 
-Thanks to all who've contributed to this release, particularly Jake Owens who worked his way through a bunch of outstanding bugs late last year.
+Thanks to all who've contributed to this release, particularly Jordan Owens who worked his way through a bunch of outstanding bugs late last year.
 
 ## Upgrading
 
@@ -33,13 +33,13 @@ These notes are pulled straight out of the [CHANGES file][].
 
 - Allow Haml pages to use the built-in Markdown filter again, by
   including the haml-contrib gem.
-  (Jake Owens)
+  (Jordan Owens)
 
 - When building the breadcrumb (e.g. "Home > Category > Page") for a
   page whose URL is at the top level of a site, include a page's first
   category in the breadcrumb.
   See <https://github.com/gma/nesta/issues/147> for an example.
-  (Jake Owens)
+  (Jordan Owens)
 
 - Print an error message when one of Nesta's command line tools calls
   an external process (e.g. `git`), but the command doesn't return
@@ -48,7 +48,7 @@ These notes are pulled straight out of the [CHANGES file][].
 - When the menu.txt pointed to a page that didn't exist, Nesta would
   silently stop generating the menu, and links to pages further down
   the file would be ignored. This is now fixed; the missing page is
-  ignored and the rest of the menu is generated. (Jake Owens)
+  ignored and the rest of the menu is generated. (Jordan Owens)
 
 - Nesta previously expected all Markdown files to be named with a
   `.mdown` extension. The (commonly used) `.md` extension is now
@@ -68,7 +68,7 @@ These notes are pulled straight out of the [CHANGES file][].
   of its generated gems they no longer worked with Nesta. Nesta now
   generates gems from scratch (from a template), which removes our
   dependency on a third party tool.
-  (Jake Owens, Glenn Gillen, Graham Ashton)
+  (Jordan Owens, Glenn Gillen, Graham Ashton)
 
 - Support for Ruby&nbsp;2.2. (Graham Ashton)
 

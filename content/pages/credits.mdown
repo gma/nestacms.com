@@ -49,7 +49,7 @@ This list is roughly in order of when somebody made their first commit.
  - Jake Rayson - Include useful default templates in new themes.
  - Sean Schofield - Added Microdata to the breadcrumb to help search
    engines to categorise your content.
- - Jake Owens - Multiple bug fixes and improvements.
+ - Jordan Owens - Multiple bug fixes and improvements.
  - Phillip Miller - Support for writing Markdown in files with a `.md` extension.
 
 If you've contributed and I haven't mentioned you, it's not intentional.
