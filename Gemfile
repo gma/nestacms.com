@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby '2.1.1'
+ruby '2.2.1'
 
 gem 'nesta'
 gem 'nesta-plugin-cache', git: 'https://github.com/gma/nesta-plugin-cache.git'
