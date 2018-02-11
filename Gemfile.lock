@@ -97,3 +97,9 @@ DEPENDENCIES
   rack-force_domain (= 0.1.1)
   rack-rewrite
   rb-readline
+
+RUBY VERSION
+   ruby 2.2.1p85
+
+BUNDLED WITH
+   1.16.1
