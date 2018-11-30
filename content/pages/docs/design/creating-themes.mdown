@@ -51,7 +51,7 @@ Now enable the theme:
 To see if it worked, start a local copy of Nesta and check your local
 site in your browser:
 
-    $ mr-sparkle config.ru
+    $ bundle exec mr-sparkle config.ru
 
 The background colour on headings should have changed to green. It
 should look something like this:

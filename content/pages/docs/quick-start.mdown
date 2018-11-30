@@ -55,7 +55,7 @@ The site will be downloaded into the `content-demo` folder.
 
 Fire up your web server...
 
-    $ mr-sparkle config.ru
+    $ bundle exec mr-sparkle config.ru
     
 ...and have a look at your new site:
 [http://localhost:8080/](http://localhost:8080/).

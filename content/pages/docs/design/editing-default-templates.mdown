@@ -28,8 +28,8 @@ You can also copy Sass files around in just the same way:
 
     $ cp path/to/nesta-gem/views/master.sass views/
 
-Fire up your site with `mr-sparkle config.ru`, and you'll be able to see
-your changes in action.
+Fire up your site with `bundle exec mr-sparkle config.ru`, and you'll be able
+to see your changes in action.
 
 There's just one gotcha. If the template you're redefining is rendered
 with a layout (i.e. it's a top level template such as `page.haml`) then
