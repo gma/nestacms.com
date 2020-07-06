@@ -2,7 +2,7 @@ Date: 17:00 30 June 2020
 Summary: Nesta 0.12.0 is out, bringing major upgrades to both Sinatra and Rack. Multiple security vulnerabilities have been addressed as a result.
 Read more: Read on for more details
 
-# Nesta 0.11.0 released
+# Nesta 0.12.0 released
 
 You can find the full list of updates in the [CHANGES file][].
 
