@@ -1,40 +1,26 @@
 # Support
 
-The first place to turn for help is **always** the mailing list.
+If you've got questions or run into a problem, feel free to drop me (Graham
+Ashton) an email at <support@nestacms.com>.
 
-## Mailing list
+If you're confident you've found a bug you could also [create an issue] on
+GitHub.
 
-Subscribe by sending a blank email to <nesta@librelist.com>. You can
-also browse the [list archives][archives].
-
-Please don't ask for help by filing tickets in the GitHub issue tracker.
-Yes, I'll see your ticket, but I'll just ask you to re-post the question
-to the mailing list. There are some sharp people on the list and you'll
-get a quicker response that way. I also prefer to use issue trackers
-for tracking new features and bugs, not support.
-
-[archives]: http://librelist.com/browser/nesta
+[create an issue]: https://github.com/gma/nesta/issues
 
 ## Twitter
 
 You can follow Nesta on Twitter at [@nestacms][twitter]. New themes
 and plugins, new features, etc. get tweeted.
 
-Feel free to ask questions on Twitter but bear in mind that 140
-characters isn't the best medium for support, and that you're only able
-to get help from one person (who might not be around anyway).
-
-Messages to the [mailing list][mailto] will also be read sooner, by more
-people, so use that.
+Feel free to ask questions on Twitter but bear in mind that I'll see an email
+to the support address sooner.
 
 [twitter]: http://twitter.com/nestacms
-[mailto]: mailto:nesta@librelist.com
 
 ## IRC channel
 
-The #nesta IRC channel on the freenode network is a great place for us
-to chat with you if we think a real time conversation will be the
-fastest way to solve your problem.
+The #nesta IRC channel on the freenode network is useful for real-time chat if
+we think a real time conversation will be the fastest way to solve your problem.
 
-If you haven't arranged to meet us in there for a chat, you'll probably
-find it a bit quiet...
+It's normally very quiet in there though.

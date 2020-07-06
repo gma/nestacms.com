@@ -217,4 +217,4 @@ When you're done, send a pull request to `gma`.
 [site]: https://github.com/gma/nestacms.com
 
 Feedback on the process (and the experience) would be appreciated. Let
-us know at <nesta@librelist.com>.
+us know at <support@nestacms.com>.

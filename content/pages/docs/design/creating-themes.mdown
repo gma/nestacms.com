@@ -111,8 +111,8 @@ like this:
 
 That's pretty much it; you now know how to make themes for Nesta!
 
-Please do contribute awesome designs back to the community by creating a
-public repo containing your theme on GitHub. Announce them on the
-[mailing list](mailto:nesta@librelist.com) too. I'm planning on putting
-together a themes section, with screenshots and links to the best
-themes. We need some more good themes first though, so get to it!
+Please do contribute awesome designs back to the community by creating a public
+repo containing your theme on GitHub.
+
+I'm planning on putting together a themes section, with screenshots and links
+to the best themes. We need some more good themes first though, so get to it!

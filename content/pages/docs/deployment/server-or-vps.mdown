@@ -21,10 +21,7 @@ you can use Apache just as easily.
 
 I'm not going to go into details on setting up a production Ruby web
 stack here, as there's every chance that you already know what you're
-doing. If you don't, you get stuck, and you can't use Heroku for some
-reason, please get in touch on the [mailing list][list].
-
-[list]: mailto:nesta@librelist.com
+doing.
 
 Once your stack is up and running you need to push your site to your
 server. I have historically used Vlad in favour of Capistrano, but you
