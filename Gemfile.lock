@@ -57,9 +57,12 @@ GEM
       sassc (>= 2.2)
       sinatra (~> 2.0)
       tilt (~> 2.0)
+    nio4r (2.5.8)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    puma (5.6.4)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-force_domain (0.1.1)
     rack-protection (2.2.0)
@@ -96,6 +99,7 @@ DEPENDENCIES
   mr-sparkle
   nesta
   nesta-plugin-cache!
+  puma
   rack-force_domain (= 0.1.1)
   rack-rewrite
   rb-readline
