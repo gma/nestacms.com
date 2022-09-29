@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby File.read('.ruby-version').chomp
+ruby '3.1.2'
 
 gem 'nesta'
 gem 'nesta-plugin-cache', git: 'https://github.com/gma/nesta-plugin-cache.git'
