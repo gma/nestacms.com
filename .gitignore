@@ -3,4 +3,5 @@
 .bundle
 .DS_Store
 .sass-cache
+dist
 views/*.css
