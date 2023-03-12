@@ -2,7 +2,7 @@ $columns: 12
 
 $container-width: 60em
 $gutter: 2.107em // from modularscale.com with 16px/864px
-$unit: ($container-width - ($gutter * ($columns - 1))) / $columns
+$unit: calc(($container-width - ($gutter * ($columns - 1))) / $columns)
 
 @function grid-width($cols)
   @return ($cols * $unit) + (($cols - 1) * $gutter)
@@ -81,7 +81,7 @@ $sidebar-left: grid-left(9)
 
       &.intro
         p
-          @include adjust-font-size($h3-scale, 1, 1, 4/3)
+          @include adjust-font-size($h3-scale, 1, 1, calc(4 / 3))
 
       &.overview
         clear: both

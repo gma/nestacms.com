@@ -15,11 +15,11 @@ $vertical-rhythm: 1.6em
 $base-vertical-margin: 1.6em
 
 @mixin adjust-font-size($scale, $top-weight: 1, $bottom-weight: 1, $cadence: 1)
-  $average-margin: $base-vertical-margin / $scale
+  $average-margin: calc($base-vertical-margin / $scale)
   margin-top: $average-margin * $top-weight
   margin-bottom: $average-margin * $bottom-weight
   
-  $line-height: $vertical-rhythm / $scale * $cadence
+  $line-height: calc($vertical-rhythm / $scale) * $cadence
   @if $line-height < 1
     line-height: $line-height * 2
   @else

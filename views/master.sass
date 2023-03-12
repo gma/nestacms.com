@@ -72,7 +72,7 @@ p,
 pre,
 ul
   margin: 0
-  margin-bottom: $base-vertical-margin / 2
+  margin-bottom: calc($base-vertical-margin / 2)
 
 li
   @include adjust-font-size(1, 0, 0)
@@ -85,7 +85,7 @@ blockquote
   color: lighten($base-color, 20%)
   
 pre
-  padding: ($vertical-rhythm / 2) 0
+  padding: calc($vertical-rhythm / 2) 0
   overflow: auto
   code
     @include border-radius(4px)
@@ -117,7 +117,7 @@ header[role=banner]
     line-height: $vertical-rhythm
     ul.menu
       @include group
-      margin: ($vertical-rhythm / 2) 0
+      margin: calc($vertical-rhythm / 2) 0
       list-style: none
       li
         @adjust-font-size($base-scale)
@@ -257,7 +257,7 @@ section.articles
         text-decoration: none
     p.read_more
       @include adjust-font-size(1, 0, 0)
-      margin-top: -($base-vertical-margin / 2)
+      margin-top: - calc($base-vertical-margin / 2)
     footer
       border-top: none
 
@@ -299,8 +299,8 @@ section.author-biography
   img.avatar
     float: left
 
-    margin-top: $base-vertical-margin / 4
-    margin-right: $base-vertical-margin / 2
+    margin-top: calc($base-vertical-margin / 4)
+    margin-right: calc($base-vertical-margin / 2)
     border: 1px solid #edd
     padding: 12px
 
@@ -315,7 +315,7 @@ section.author-biography
   &.footer
     border-top: $border-style
     border-bottom: none
-    padding-top: $base-vertical-margin / 2
+    padding-top: calc($base-vertical-margin / 2)
     padding-bottom: 0
 
 article.home
@@ -333,7 +333,7 @@ article.home
         margin: 0 auto
         color: $meta-color
 
-        @include adjust-font-size($h4-scale, 1, 1, 4/3)
+        @include adjust-font-size($h4-scale, 1, 1, calc(4 / 3))
         text-align: center
 
     &.overview,
@@ -345,7 +345,7 @@ article.home
 
     &.articles
       ol li
-        margin: 0 0 ($vertical-rhythm / 2)
+        margin: 0 0 calc($vertical-rhythm / 2)
 
         article
           h1
