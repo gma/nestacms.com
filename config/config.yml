@@ -34,14 +34,6 @@ subtitle: "A Ruby CMS. Built with Sinatra."
 #
 disqus_short_name: nestacms
 
-# cache
-#     Set it to true if you'd like Nesta to cache your pages in ./public.
-#     Useful if you're deploying Nesta with a proxy server such as Nginx,
-#     but not in the least bit helpful if your pages are dynamic, or you're
-#     deploying Nesta to Heroku.
-#
-cache: false
-
 # content
 #     The root directory where nesta will look for your article files.
 #     Should contain "pages" and "attachments" subdirectories that contain
