@@ -59,9 +59,7 @@ google_analytics_code: "UA-4055128-8"
 #
 # Don't forget to uncomment the "production:" line too...
 
-production:
-  expires: 3600
-  expires_type: public
+# production:
 #   cache: true    
 #   content: /var/apps/nesta/shared/content
 #   google_analytics_code: "UA-???????-?"

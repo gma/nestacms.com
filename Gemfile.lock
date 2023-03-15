@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/gma/nesta-plugin-cache.git
-  revision: b0f2441d41673d00a6ac4788653ba546b94c27fd
-  specs:
-    nesta-plugin-cache (0.0.1)
-      nesta (>= 0.9.11)
-      sinatra (>= 1.2)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -98,7 +90,6 @@ DEPENDENCIES
   guard-livereload (= 1.0.0)
   mr-sparkle
   nesta
-  nesta-plugin-cache!
   puma
   rack-force_domain (= 0.1.1)
   rack-rewrite
