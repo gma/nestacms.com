@@ -3,7 +3,6 @@ File.read('.ruby-version').chomp
 
 gem 'nesta', git: 'https://github.com/gma/nesta.git', branch: 'static-site-generator'
 gem 'puma'
-gem 'rack-force_domain', '0.1.1'
 gem 'rack-rewrite'
 
 group :development do
