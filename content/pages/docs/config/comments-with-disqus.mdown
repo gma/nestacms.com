@@ -39,4 +39,4 @@ template:
 
     = haml :comments, :layout => false
 
-[disqus]: http://disqus.com
+[disqus]: https://disqus.com
