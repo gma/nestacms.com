@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby '3.1.2'
+File.read('.ruby-version').chomp
 
 gem 'nesta'
 gem 'puma'
