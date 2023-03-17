@@ -7,6 +7,6 @@ if workers_count > 1
   workers workers_count
 end
 
-rackup      DefaultRackup
+rackup      Puma::Configuration::DEFAULTS[:rackup]
 port        ENV['PORT']     || 5000
 environment ENV['RACK_ENV'] || 'development'
