@@ -10,7 +10,7 @@ Atom feeds support the specification of contact details for the
 person/organisation that is responsible for the articles in the feed.
 You can set your name contact details by setting the `author` details.
 The text is commented out by default; just uncomment it and enter your
-own information. Note that `name`, `uri` and `email` should be intended
+own information. Note that `name`, `uri` and `email` should be indented
 two characters:
 
     author:
