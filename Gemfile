@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 File.read('.ruby-version').chomp
 
-gem 'nesta', git: 'https://github.com/gma/nesta.git', branch: 'static-site-generator'
+gem 'nesta', '0.14.0'
 gem 'puma'
 gem 'rack-rewrite'
 
