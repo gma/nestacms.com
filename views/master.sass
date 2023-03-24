@@ -27,9 +27,6 @@ article, aside, footer, header, nav, section
 @mixin body-font
   font-family: "Roboto Slab", Georgia, serif
 
-@mixin text-shadow($color: #DCDBD1)
-  text-shadow: 0 2px 5px $color
-
 body
   font-size: $base-font * 1.15
   line-height: $vertical-rhythm
@@ -45,7 +42,6 @@ header[role=banner]
     font-weight: 700
     font-style: italic
     letter-spacing: -1px
-    @include text-shadow
   h2
     color: $meta-color
     font-size: 1em * $base-scale
@@ -220,9 +216,6 @@ article
 
 // Pages of content
 article[role="main"]
-  h1, h2
-    @include text-shadow
-
   div#disqus_thread
     img
       max-width: none
@@ -252,7 +245,6 @@ section.articles
   article
     h1
       font-weight: normal
-      text-shadow: none
       a
         text-decoration: none
     p.read_more
