@@ -39,9 +39,7 @@ module Nesta
       end
 
       def article_years
-        articles = Page.find_articles
-        last, first = articles[0].date.year, articles[-1].date.year
-        (first..last).to_a.reverse
+        Page.find_articles.map { |a| a.date.year }.sort.uniq.reverse
       end
 
       def archive_by_year
