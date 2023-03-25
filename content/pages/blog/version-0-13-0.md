@@ -33,4 +33,4 @@ This new version of Nesta is backwards compatible, and doesn't require you to ma
 However, if you've added Ruby code (e.g. in your site's `app.rb` file) that references Ruby code in some of Nesta's dependencies, you may need to make some changes to support any API changes made by those libraries (e.g. Sinatra, Rack or Sass). You'll know if this applies to you!
 
 [Haml changelog]: https://github.com/haml/haml/blob/main/CHANGELOG.md#600
-[CHANGES file]: https://github.com/gma/nesta/blob/master/CHANGES
+[CHANGES file]: https://github.com/gma/nesta/blob/v0.13.0/CHANGES

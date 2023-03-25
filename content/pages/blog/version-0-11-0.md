@@ -72,4 +72,4 @@ These notes are pulled straight out of the [CHANGES file][].
 
 - Support for Ruby&nbsp;2.2. (Graham Ashton)
 
-[CHANGES file]: https://github.com/gma/nesta/blob/master/CHANGES
+[CHANGES file]: https://github.com/gma/nesta/blob/v0.11.0/CHANGES

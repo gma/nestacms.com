@@ -41,5 +41,5 @@ However, if you've added Ruby code (e.g. in your site's `app.rb` file) that refe
 
 All dependencies have been updated, which has also fixed several CVEs in the `nokogiri` gem.
 
-[CHANGES file]: https://github.com/gma/nesta/blob/master/CHANGES
+[CHANGES file]: https://github.com/gma/nesta/blob/v0.12.0/CHANGES
 [CVE-2020-8184]: https://github.com/advisories/GHSA-j6w9-fv6q-3q52

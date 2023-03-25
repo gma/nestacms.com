@@ -93,4 +93,4 @@ Here's the [CHANGES][] file with the full list of updates:
 I really hope I haven't forgotten anybody. Let me know if I have and
 I'll update the post/CHANGES file...
 
-[CHANGES]: https://github.com/gma/nesta/blob/master/CHANGES
+[CHANGES]: https://github.com/gma/nesta/blob/v0.13.0/CHANGES

@@ -35,5 +35,5 @@ the code. It's been really gratifying to get so many contributions. Keep
 'em coming!
 
 [rubygems]: http://rubygems.org/gems/nesta
-[changelog]: https://github.com/gma/nesta/blob/master/CHANGES
+[changelog]: https://github.com/gma/nesta/blob/v0.9.5/CHANGES
 [18]: https://github.com/gma/nesta/pull/18
