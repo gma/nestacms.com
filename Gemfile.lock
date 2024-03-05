@@ -94,7 +94,7 @@ PLATFORMS
 DEPENDENCIES
   guard-livereload (= 1.0.0)
   mr-sparkle
-  nesta (= 0.15.0)
+  nesta
   puma
   rack-rewrite
   rb-readline
