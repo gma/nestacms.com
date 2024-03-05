@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 File.read('.ruby-version').chomp
 
-gem 'nesta', '0.14.0'
+gem 'nesta', '0.15.0'
 gem 'puma'
 gem 'rack-rewrite'
 
