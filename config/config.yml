@@ -50,7 +50,7 @@ content: content
 #     scroll down a bit to set it in production even if you're not deploying
 #     to your own server.
 #
-google_analytics_code: "UA-4055128-8"
+google_analytics_code: "G-YGQH0H1LN4"
 
 # Overriding "cache" and "content" in production is recommended if you're
 # deploying Nesta to your own server (but see the deployment documentation
