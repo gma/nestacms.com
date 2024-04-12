@@ -11,35 +11,33 @@ At the time of writing, Tilt knows about the following Markdown processors:
 
 * [Redcarpet][]
 * [RDiscount][]
-* [BlueCloth][]
 * [Kramdown][]
 * [Maruku][]
 
-Tilt will try to load a Markdown processor in the order defined above. If it can't find Redcarpet, it'll try RDiscount, then BlueCloth, etc.
+Tilt will try to load a Markdown processor in the order defined above. If it can't find Redcarpet, it'll try RDiscount, then Kramdown etc.
 
 RDiscount is used in Nesta by default, as it is the only one that is included automatically as a Nesta dependency (i.e. it is the only one that is likely to be available in your project so Tilt is likely to find it first).
 
 ## Installing other processors
 
-To change the default (e.g. to BlueCloth), add your chosen processor's gem to your `Gemfile` and re-run `bundle`:
+To change the default (e.g. to Maruku), add your chosen processor's gem to your `Gemfile` and re-run `bundle`:
 
     $ cd path/to/project
-    $ echo 'gem "bluecloth"' >> Gemfile
+    $ echo 'gem "maruku"' >> Gemfile
     $ bundle
 
-The other gems that you might want to install are called `redcarpet`, `kramdown` and `maruku` (the `rdiscount` gem is already installed).
+The other gems that you might want to install are called `redcarpet` and `kramdown` (the `rdiscount` gem is already installed).
 
 ### Configuring Tilt
 
-Then tell Tilt that you'd rather it used BlueCloth by adding the following line of Ruby code to the `app.rb` file within your project (if you don't have an `app.rb` file, just create it):
+Then tell Tilt that you'd rather it used Maruku by adding the following line of Ruby code to the `app.rb` file within your project (if you don't have an `app.rb` file, just create it):
 
-    Tilt.register Tilt::BlueClothTemplate, 'md'
+    Tilt.register Tilt::MarukuTemplate, 'md'
 
-The full list of class names that you might want to use in place of `BlueClothTemplate` is:
+The full list of class names that you might want to use in place of `MarukuTemplate` is:
 
 * `Tilt::RedcarpetTemplate`
 * `Tilt::RDiscountTemplate`
-* `Tilt::BlueClothTemplate`
 * `Tilt::KramdownTemplate`
 * `Tilt::MarukuTemplate`
 
