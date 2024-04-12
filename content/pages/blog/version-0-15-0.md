@@ -1,7 +1,7 @@
 Date: 12:00 11 July 2023
 Summary: Nesta 0.15.0 has been released, with support for Sinatra 3 and Tilt 2.2. There's no pressing need to upgrade unless you need compatibility with recent versions of either of these libraries.
 Tilt
-Link text: Nesta 0.14.0 released
+Link text: Nesta 0.15.0 released
 
 # Nesta 0.15.0 released (upgrades to Sinatra and Tilt)
 
