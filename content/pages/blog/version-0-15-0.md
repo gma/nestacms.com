@@ -17,7 +17,8 @@ Here's a summary of the changes, taken from the [CHANGELOG file][]:
 
  * Remove support for the BlueCloth markdown library. Nesta uses Tilt
    for rendering Markdown, and BlueCloth support has been removed in
-   Tilt 2.2.0. See rtomayko/tilt#382 for details. (Graham Ashton)
+   Tilt 2.2.0. See [rtomayko/tilt#382][deprecated in Tilt] for details.
+   (Graham Ashton)
 
    If your site uses BlueCloth, remove your call to `Tilt.prefer`,
    and Nesta will use its default Markdown processor. See Nesta's docs
@@ -43,4 +44,11 @@ If you have any weird errors when you start your server it could be a result of 
 
 ### Updating your code
 
+If your site uses the default Markdown processing library (a gem known as RDiscount, which works "out of the box"), you don't have any changes to make.
+
+If you changed the Markdown processor to BlueCloth, you'll need to switch to another processor. BlueCloth has been [deprecated in Tilt][], which Nesta uses to convert all sorts of templates into rendered markup.
+
+See Nesta's docs on [configuring the Markdown processor] for more details.
+
+[deprecated in Tilt]: https://github.com/rtomayko/tilt/issues/382
 [CHANGELOG file]: https://github.com/gma/nesta/blob/v0.15.0/CHANGELOG.md
