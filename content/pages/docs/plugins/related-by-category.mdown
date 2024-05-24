@@ -13,7 +13,7 @@ be interested in reading.
 By default, up to three related articles will be shown but you can
 specify any number you like.
 
-Written by [James Abbott][].
+Written by James Abbott.
 
 ## Installation
 
@@ -35,6 +35,5 @@ your site's template):
 
 You can browse the code on the [GitHub page][].
 
-[James Abbott]: http://jamesabbottdd.com/
 [GitHub page]: https://github.com/abbottjam/nesta-plugin-related-by-category
 

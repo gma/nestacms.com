@@ -18,7 +18,7 @@ their articles. What's the best way to do this with Nesta?
 There are a couple of approaches you can take, but I really like the way
 that Adam and Wynn are doing it on [thesassway.com][].
 
-[thesassway.com]: http://thesassway.com
+[thesassway.com]: https://thesassway.com
 
 Here's what you do (as Adam explained it to me):
 

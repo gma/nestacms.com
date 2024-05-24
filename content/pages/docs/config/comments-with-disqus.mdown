@@ -9,14 +9,13 @@ with a small snippet of JavaScript code. You moderate the comments by
 logging into your Disqus account.
 
 While Disqus isn't the only service that you can use to serve comments
-on your site (see [Intense Debate][intdeb] and [CoComment][coco]),
-Disqus is currently the only one that is supported out of the box. Once
-you've created a Disqus account and added your web site to it, all you
-need to do is to tell Nesta what your site's Disqus key is (which Disqus
-refer to as your "short name").
+on your site (see [Intense Debate][intdeb]), Disqus is currently the
+only one that is supported out of the box. Once you've created a Disqus
+account and added your web site to it, all you need to do is to tell
+Nesta what your site's Disqus key is (which Disqus refer to as your
+"short name").
 
-[intdeb]: http://intensedebate.com/
-[coco]: http://www.cocomment.com/
+[intdeb]: https://intensedebate.com/
 
 ## Configuring config.yml
 

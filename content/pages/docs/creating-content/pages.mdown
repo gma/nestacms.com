@@ -35,7 +35,7 @@ look at how you can format your text.
 The page's URL will be created from the name of the file; if you save
 the page to a file called `apple-pie.mdown` inside the
 `content/pages/pudding/` directory, it will be served from
-`http://mysite.com/pudding/apple-pie`.
+`https://mysite.com/pudding/apple-pie`.
 
 If your page needs more than one word in the URL we recommend that you
 separate those words with hyphens. Some people prefer underscores, but

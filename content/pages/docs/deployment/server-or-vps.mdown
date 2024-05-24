@@ -17,7 +17,7 @@ Passenger][passenger] and [Unicorn][unicorn] running behind Nginx, but
 you can use Apache just as easily.
 
 [passenger]: http://www.modrails.com/install.html
-[unicorn]: http://unicorn.bogomips.org/
+[unicorn]: https://unicorn.bogomips.org/
 
 I'm not going to go into details on setting up a production Ruby web
 stack here, as there's every chance that you already know what you're
@@ -31,7 +31,7 @@ configuring a new server. If you want a step by step guide to setting up
 a deployment system my article on [deploying Sinatra with Vlad][vlad]
 may come in handy.
 
-[vlad]: http://effectif.com/articles/deploying-sinatra-with-vlad
+[vlad]: https://effectif.com/articles/deploying-sinatra-with-vlad
 
 ## Enabling page caching
 
@@ -77,4 +77,4 @@ maintain, and Gerhard Lazu has suggested [giternal][giternal] as a
 suitable replacement. I've not had a chance to try giternal yet, but
 wonder if it'll also work on Heroku...
 
-[giternal]: http://www.rubyinside.com/giternal-easy-git-external-dependency-management-1322.html "Easy Git External Dependency Management with Giternal"
+[giternal]: https://www.rubyinside.com/giternal-easy-git-external-dependency-management-1322.html "Easy Git External Dependency Management with Giternal"

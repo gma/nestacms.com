@@ -3,4 +3,6 @@
 If you need help getting your site setup, please head over to the
 [support](/support) page.
 
-If, on the other hand, you're looking for somebody to build you a web site with Nesta you'll find contact details for my freelancing company on [effectif.com](http://effectif.com).
+If, on the other hand, you're looking for somebody to build you a web
+site with Nesta you'll find contact details for my freelancing company
+on [effectif.com](https://effectif.com).

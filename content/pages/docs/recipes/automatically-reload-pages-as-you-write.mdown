@@ -9,9 +9,9 @@ Most of the pages on a Nesta site are written in a text editor, using Markdown o
 
 With the [livereload][] and [Guard][] projects, it's fairly easy to setup.
 
-**Note:** Since I wrote this article, [Livereload 2][] has been released. It looks as though that's an even easier way to reload your pages, but I haven't had a chance to try it with Nesta yet. These instructions are for Livereload 1.
+**Note:** Since I wrote this article, multiple [new versions of livereload] have been released. It looks as though that's an even easier way to reload your pages, but I haven't had a chance to try it with Nesta yet. These instructions are for Livereload 1.
 
-[Livereload 2]: http://livereload.com
+[new versions of livereload]: https://github.com/livereload/
 
 ## Installing guard
 

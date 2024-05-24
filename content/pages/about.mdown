@@ -16,5 +16,5 @@ Introducing your topic makes your site more accessible to your visitors, and hel
 
 If you like the idea you should be able to use categories to [get more traffic][nunney2] too...
 
-[nunney1]: http://www.wordtracker.com/academy/website-structure
-[nunney2]: http://www.wordtracker.com/academy/site-structure-planning-seo
+[nunney1]: https://www.wordtracker.com/academy/website-structure
+[nunney2]: https://www.wordtracker.com/academy/site-structure-planning-seo

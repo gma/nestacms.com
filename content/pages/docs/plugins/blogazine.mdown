@@ -1,12 +1,12 @@
 Categories: docs/plugins
-Summary: Allows you to use a different design on each page of your site, in the style of the [PeepCode blog](http://blog.peepcode.com).
+Summary: Allows you to use a different design on each page of your site, in the style of the (sadly no longer active) PeepCode blog.
 
 # Blogazine plugin
 
 Allows you to use a different design on each page of your site, in the
-style of the [PeepCode blog](http://blog.peepcode.com).
+style of the (sadly no longer active) PeepCode blog.
 
-The plugin adds a a new metadata key ('Design') that you can set on each
+The plugin adds a new metadata key ('Design') that you can set on each
 page in order to specify the name of the stylesheet that should be
 served for that page.
 

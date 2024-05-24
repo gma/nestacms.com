@@ -30,6 +30,6 @@ Written by [Wynn Netherland][].
 
 For full instructions, see the README on the [GitHub page][]. You can see the plugin in action on the [developer site][].
 
-[Wynn Netherland]: http://wynnnetherland.com
-[developer site]: http://wynnnetherland.com/linked/2011092203/making-blogazine-with-nesta
+[Wynn Netherland]: https://wynnnetherland.com
+[developer site]: https://wynnnetherland.com/linked/2011092203/making-blogazine-with-nesta
 [GitHub page]: https://github.com/pengwynn/nesta-plugin-sluggable

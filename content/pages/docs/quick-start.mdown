@@ -76,4 +76,4 @@ Why not:
    (it takes less than 5 minutes)
 
 [with-rvm]: /docs/running-nesta-with-rvm
-[bundler]: http://gembundler.com
+[bundler]: https://bundler.io

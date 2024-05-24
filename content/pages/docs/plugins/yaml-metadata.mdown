@@ -36,6 +36,6 @@ Written by [Graham Ashton][].
 
 You can browse the code on the [GitHub page][].
 
-[Graham Ashton]: http://effectif.com
+[Graham Ashton]: https://effectif.com
 [GitHub page]: https://github.com/gma/nesta-plugin-yaml-metadata
-[YAML]: http://yaml.org/start.html
+[YAML]: https://yaml.org/

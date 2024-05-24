@@ -49,4 +49,4 @@ code 500). To do so, define an `error` block instead:
 
 More info on Sinatra's handlers can be found in the [Sinatra README][].
 
-[Sinatra README]: http://www.sinatrarb.com/intro#Error%20Handling
+[Sinatra README]: https://www.sinatrarb.com/intro#Error%20Handling

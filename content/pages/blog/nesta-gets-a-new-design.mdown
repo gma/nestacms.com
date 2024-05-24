@@ -26,7 +26,7 @@ with a clever technique to maintain [vertical rhythm][rhythm] (courtesy
 of Richard Rutter).
 
 [hierarchy]: http://www.markboulton.co.uk/journal/comments/five-simple-steps-to-better-typography-part-4
-[rhythm]: http://24ways.org/2006/compose-to-a-vertical-rhythm
+[rhythm]: https://24ways.org/2006/compose-to-a-vertical-rhythm
 
 All this cleverness is wrapped up in some re-usable [Sass
 code][sass] (think "programmable CSS") that takes care of the
@@ -79,7 +79,7 @@ you could make:
    You would just need to update the references to Helvetica in
    `views/master.sass`.
 
-[font-stack]: http://24ways.org/2007/increase-your-font-stacks-with-font-matrix
+[font-stack]: https://24ways.org/2007/increase-your-font-stacks-with-font-matrix
 
 ## Re-installing the old theme
 

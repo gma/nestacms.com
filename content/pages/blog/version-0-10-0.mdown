@@ -6,7 +6,7 @@ Read more: Read on to see what's changed
 
 It's been a while since the last release of Nesta, and this version has plenty of new features. The most obvious change is the default theme; it has a responsive design and a new font (you can see it in action on the [demo site][]).
 
-[demo site]: http://nesta-demo.herokuapp.com
+[demo site]: https://demo.nestacms.com
 
 Other notable changes include:
 
@@ -42,7 +42,7 @@ If you have any weird errors when you start your server it could be a result of 
 
 The `url` helper (introduced in 0.9.13) has been renamed to `path_to`.
 
-If your project (or theme) contains any templates that use the `url` helper method you'll need to change replace all calls to it with the `path_to` helper. By default it returns a path to a page, but will give you a URL if you really need one (see the [API docs](http://rubydoc.info/gems/nesta/0.10.0/Nesta/View/Helpers:path_to) for more).
+If your project (or theme) contains any templates that use the `url` helper method you'll need to change replace all calls to it with the `path_to` helper. By default it returns a path to a page, but will give you a URL if you really need one (see the [API docs](https://rubydoc.info/gems/nesta/0.10.0/Nesta/View/Helpers:path_to) for more).
 
 [103]: https://github.com/gma/nesta/issues/103
 
@@ -74,7 +74,7 @@ That should cover it, but I recommend you have a skim through the list of change
 
 - The built-in file caching (where Nesta could write generated HTML for rendered pages to disk) has been removed. If you'd like to cache pages to disk, use the sinatra-cache gem.
 
-  See <http://nestacms.com/docs/deployment/page-caching> for more details, and instructions for installing and testing sintra-cache.
+  See <https://nestacms.com/docs/deployment/page-caching> for more details, and instructions for installing and testing sintra-cache.
 
   (Graham Ashton)
 
@@ -90,7 +90,7 @@ That should cover it, but I recommend you have a skim through the list of change
 
   (Graham Ashton)
 
-- Breadcrumbs include Microdata for use by search engines. See: <http://support.google.com/webmasters/bin/answer.py?hl=en&answer=185417> (Sean Schofield)
+- Breadcrumbs include Microdata for use by search engines. See: <https://support.google.com/webmasters/bin/answer.py?hl=en&answer=185417> (Sean Schofield)
 
 - The menu and breadcrumb helper methods can now generate HTML that identifies the current page. When viewing a page that appears in the menu, its menu item will have the class "current". To change the name of the class, override the `Nesta::Navigation::current_menu_item_class` method.
 

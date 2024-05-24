@@ -1,10 +1,11 @@
 Categories: about
-Summary: Nesta (and this web site) was designed and written by [Graham Ashton](http://effectif.com), with help from members of the community who have submitted some great patches.
+Summary: Nesta (and this web site) was designed and written by [Graham
+Ashton](https://effectif.com), with help from members of the community who have submitted some great patches.
 Read more: Who's contributed?
 
 # Credits
 
-Nesta was designed and written by [Graham Ashton](http://effectif.com),
+Nesta was designed and written by [Graham Ashton](https://effectif.com),
 with help from members of the community who have submitted some great
 patches.
 

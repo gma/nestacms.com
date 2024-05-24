@@ -76,6 +76,6 @@ script (which comes with Sass):
 Don't forget to move the `.sass` file out of the way so that Nesta
 doesn't find it and use it in preference to your new `.scss` file.
 
-[sinatra]: http://www.sinatrarb.com
-[template-docs]: http://www.sinatrarb.com/intro.html#Views%20/%20Templates
-[route-docs]: http://www.sinatrarb.com/intro.html#Routes
+[sinatra]: https://www.sinatrarb.com
+[template-docs]: https://www.sinatrarb.com/intro.html#Views%20/%20Templates
+[route-docs]: https://www.sinatrarb.com/intro.html#Routes

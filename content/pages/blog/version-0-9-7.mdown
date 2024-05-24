@@ -73,5 +73,5 @@ Here's the relevant section of the [CHANGES][changelog] file:
    `Nesta::App.root` would be before requiring `nesta/app`. Fixed by
    creating `Nesta::Env` and moving root to there instead.
 
-[rubygems]: http://rubygems.org/gems/nesta
+[rubygems]: https://rubygems.org/gems/nesta
 [changelog]: https://github.com/gma/nesta/blob/v0.9.7/CHANGES

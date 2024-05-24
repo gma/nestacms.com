@@ -30,4 +30,4 @@ layout template:
 
     = haml :analytics, :layout => false
 
-[analytics]: http://www.google.com/analytics
+[analytics]: https://www.google.com/analytics

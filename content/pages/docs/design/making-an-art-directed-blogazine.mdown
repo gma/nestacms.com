@@ -100,6 +100,6 @@ your site and you need to serve different HTML, you can change the
 * [The Death of the Blog Post][smashing] (Smashing Magazine)
 * [The Pros and Cons of Art-Directed Blogs][depot] (Webdesigner Depot)
 
-[peepcode]: http://blog.peepcode.com/tutorials/2010/about-this-blog
-[smashing]: http://www.smashingmagazine.com/the-death-of-the-blog-post/
-[depot]: http://www.webdesignerdepot.com/2011/03/the-pros-and-cons-of-art-directed-blogs/
+[peepcode]: https://web.archive.org/web/20110830183724/http://blog.peepcode.com/tutorials/2010/about-this-blog
+[smashing]: https://www.smashingmagazine.com/the-death-of-the-blog-post/
+[depot]: https://www.webdesignerdepot.com/2011/03/the-pros-and-cons-of-art-directed-blogs/

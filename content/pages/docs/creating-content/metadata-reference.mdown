@@ -62,10 +62,10 @@ be assigned a globally unique identifier, which allows feed reader
 software to determine whether or not an article has already been read by
 the user.
 
-[atom]: http://en.wikipedia.org/wiki/Atom_(standard)
+[atom]: https://en.wikipedia.org/wiki/Atom_(standard)
 
 Nesta determines Atom IDs for new articles automatically ([using these
-guidelines](http://diveintomark.org/archives/2004/05/28/howto-atom-id)),
+guidelines](https://diveintomark.org/archives/2004/05/28/howto-atom-id)),
 so you don't normally need to choose the Atom ID yourself.
 
 It is useful to set the Atom ID if you are:
@@ -157,7 +157,7 @@ isn't what you wanted.
 
     Date: 23 July 2008 EST
 
-[glenn]: http://glenngillen.com/ "Glenn Gillen"
+[glenn]: https://glenngillen.com/ "Glenn Gillen"
 
 ## Flags
 

@@ -15,7 +15,7 @@ two characters:
 
     author:
       name: Your Name
-      uri: http://yourhomepage.com
+      uri: https://yourhomepage.com
       email: you@yourdomain.com
 
 

@@ -46,4 +46,4 @@ that it can resolve dependencies, as in:
 
 More details and further options can be found on the [Bundler web site].
 
-[Bundler web site]: http://gembundler.com/git.html
+[Bundler web site]: https://bundler.io

@@ -46,7 +46,7 @@ This post may go out of date as the Markdown processing support in Ruby evolves.
 [Tilt]: https://github.com/rtomayko/tilt
 [Redcarpet]: https://github.com/tanoku/redcarpet
 [RDiscount]: https://github.com/rtomayko/rdiscount
-[BlueCloth]: http://deveiate.org/projects/BlueCloth
-[Kramdown]: http://kramdown.rubyforge.org/
+[BlueCloth]: http://github.com/ged/BlueCloth
+[Kramdown]: https://kramdown.rubyforge.org/
 [Maruku]: https://github.com/nex3/maruku
 [tilt.rb]: https://github.com/rtomayko/tilt/blob/master/lib/tilt.rb

@@ -12,11 +12,11 @@ to:
  1. Write articles that would be published in an XML feed, and
  2. Collect my articles on topic specific category pages that would
     introduce each topic and link to relevant articles (see my [Ruby on
-    Rails](http://effectif.com/ruby-on-rails) page for an example).
+    Rails](https://effectif.com/ruby-on-rails) page for an example).
 
 Articles and categories are a great way to organise a blog; they're user
 friendly and [search engines love
-them](http://www.wordtracker.com/academy/website-structure "Website
+them](https://www.wordtracker.com/academy/website-structure "Website
 Structure"). So nothing's changed there; I still want articles and
 categories. However, I've been using Nesta on e-commerce sites recently
 and have been finding that Nesta, as a general purpose CMS, didn't quite

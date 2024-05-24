@@ -2,19 +2,19 @@ Categories: docs/creating-content:-10
 Keywords: markdown, markdown cheat sheet, maruku
 Description: A brief summary of the most common Markdown syntax.
 Read more: Find out how to create a web page with Markdown
-Summary: Markdown is a wonderfully simple approach to creating web pages, written by John Gruber of [Daring Fireball](http://daringfireball.net/projects/markdown/ "Daring Fireball: Markdown"). You get on with the business of writing (without any fancy code) and Markdown takes care of producing clean, web standards compliant HTML.
+Summary: Markdown is a wonderfully simple approach to creating web pages, written by John Gruber of [Daring Fireball](https://daringfireball.net/projects/markdown/ "Daring Fireball: Markdown"). You get on with the business of writing (without any fancy code) and Markdown takes care of producing clean, web standards compliant HTML.
 
 # Markdown Cheat Sheet
 
 Markdown is a wonderfully simple approach to creating web pages, written
 by John Gruber of [Daring
-Fireball](http://daringfireball.net/projects/markdown/ "Daring Fireball:
+Fireball](https://daringfireball.net/projects/markdown/ "Daring Fireball:
 Markdown"). You get on with the business of writing (without any fancy
 code) and Markdown takes care of producing clean, web standards
 compliant HTML.
 
 The Daring Fireball site provides [full documentation for
-Markdown](http://daringfireball.net/projects/markdown/syntax "Daring
+Markdown](https://daringfireball.net/projects/markdown/syntax "Daring
 Fireball: Markdown Syntax Documentation"), but the following examples
 should get you started.
 
@@ -67,12 +67,12 @@ You can also use underscores if you prefer:
 Create simple links by wrapping square brackets around the link text and
 round brackets around the URL:
 
-    [Nesta CMS](http://effectif.com/nesta)
+    [Nesta CMS](https://nestacms.com)
 
 If you want to give your readers an extra about the link that they're
 about to follow you can set a link title:
 
-    [Nesta CMS](http://effectif.com/nesta "Nesta is a superb CMS")
+    [Nesta CMS](https://nestacms.com "Nesta is a nice CMS")
 
 Titles usually appear as a tooltip when you hover over the link, and
 help search engines work out what a page is about.

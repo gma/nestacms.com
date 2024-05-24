@@ -17,7 +17,7 @@ installation instructions are for you.
 
 We're going to take things slowly in this article, and will only be
 making one assumption; that your computer already has a version of
-[Ruby](http://www.ruby-lang.org/) installed.
+[Ruby](https://www.ruby-lang.org/) installed.
 
 To test whether Ruby is installed, try typing this in a new terminal
 window (the `$` character represents the terminal's prompt and shouldn't
@@ -29,7 +29,7 @@ You should see the word "hello" printed on a line of it's own.
 
 If Ruby isn't already installed you'll see an error message that claims
 that `ruby` wasn't found. This is easily fixed &ndash; head over to the
-[Ruby downloads](http://www.ruby-lang.org/en/downloads/) page and
+[Ruby downloads](https://www.ruby-lang.org/en/downloads/) page and
 download Ruby for your operating system. Follow the Ruby installation
 instructions, and then return to this article.
 
@@ -104,11 +104,11 @@ below):
     $ which git
     $
 
-If you don't have it, head over to [http://git-scm.com/][git-scm] and
+If you don't have it, head over to [https://git-scm.com/][git-scm] and
 download the latest version. Follow the installation instructions that
 come with it, then return to these instructions.
 
-[git-scm]: http://git-scm.com/
+[git-scm]: https://git-scm.com/
 
 ## Installing Nesta
 
@@ -125,9 +125,8 @@ use `git` to grab the latest version of Nesta:
     $ git clone git://github.com/gma/nesta.git
 
 Nesta's dependencies can all be installed with a rather nifty dependency
-manager named [Bundler](http://gembundler.com/ "Bundler: The best way to
-manage Ruby applications"), so we'll install that and then use it to
-setup the required Ruby libraries:
+manager named [Bundler](https://bundler.io), so we'll install that and
+then use it to setup the required Ruby libraries:
 
     $ gem install bundler
     $ bundle install

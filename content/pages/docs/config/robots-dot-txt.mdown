@@ -12,4 +12,4 @@ By default, Nesta will respond with a blank `robots.txt`. If you want
 to add your own `robots.txt` instructions create a new `robots.txt` file
 and place it in the `public` directory.
 
-See <http://robotstxt.org> for details of how to write the file.
+See <https://robotstxt.org> for details of how to write the file.
