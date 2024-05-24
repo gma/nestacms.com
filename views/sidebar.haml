@@ -2,8 +2,4 @@
   #sidebar= haml :categories, :layout => false
 - elsif viewing_blog?
   #sidebar
-    %a.twitter-timeline(data-dnt="true" href="https://twitter.com/nestacms" data-widget-id="258193978543972352") Tweets by @nestacms
-    :javascript
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-
     = haml :years, :layout => false
