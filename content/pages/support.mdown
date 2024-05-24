@@ -1,26 +1,15 @@
 # Support
 
-If you've got questions or run into a problem, feel free to drop me (Graham
-Ashton) an email at <support@nestacms.com>.
+If you've got questions about using Nesta, or run into a problem, feel
+free to send an email to <support@nestacms.com>. We usually respond to
+new messages within 24 hours.
 
-If you're confident you've found a bug you could also [create an issue] on
-GitHub.
+If you're confident you've found a bug you could also [create an issue]
+on GitHub.
 
 [create an issue]: https://github.com/gma/nesta/issues
 
-## Twitter
+## Social media
 
-You can follow Nesta on Twitter at [@nestacms][twitter]. New themes
-and plugins, new features, etc. get tweeted.
-
-Feel free to ask questions on Twitter but bear in mind that I'll see an email
-to the support address sooner.
-
-[twitter]: http://twitter.com/nestacms
-
-## IRC channel
-
-The #nesta IRC channel on the freenode network is useful for real-time chat if
-we think a real time conversation will be the fastest way to solve your problem.
-
-It's normally very quiet in there though.
+Since Twitter became X, the @nestacms account is no longer used. Please
+just drop an email to support@nestacms.com instead.
