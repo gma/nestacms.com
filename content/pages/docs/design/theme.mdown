@@ -13,7 +13,7 @@ distributed in Git repositories; the easiest way to install them is to
 find the URL of the repository (check the theme's GitHub page) and then
 ask Nesta to install it for you:
 
-    $ nesta theme:install git://github.com/gma/nesta-theme-slate
+    $ nesta theme:install https://github.com/gma/nesta-theme-slate
 
 You'll need to run the command from within your site's top level
 directory. Other than that, you're done.

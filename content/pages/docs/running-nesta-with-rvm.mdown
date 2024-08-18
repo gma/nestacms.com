@@ -122,7 +122,7 @@ use `git` to grab the latest version of Nesta:
 
     $ mkdir ~/code
     $ cd ~/code
-    $ git clone git://github.com/gma/nesta.git
+    $ git clone https://github.com/gma/nesta.git
 
 Nesta's dependencies can all be installed with a rather nifty dependency
 manager named [Bundler](https://bundler.io), so we'll install that and

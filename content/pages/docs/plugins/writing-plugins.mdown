@@ -167,7 +167,7 @@ git repository (e.g. on GitHub) and then tell Bundler (in your site's
 `Gemfile`) to install the gem from a git repository, like so:
 
     gem "nesta-plugin-my-feature", 
-        :git => "git://github.com/user/nesta-plugin-my-feature.git"
+        :git => "https://github.com/user/nesta-plugin-my-feature.git"
 
 ### Releasing via rubygems.org
 

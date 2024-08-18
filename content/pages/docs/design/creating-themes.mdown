@@ -19,7 +19,7 @@ empty `app.rb` file, a `README` file, and a couple of empty directories:
 For the purposes of this example, let's give ourselves a head start by
 basing our work on the Slate theme.
 
-    $ nesta theme:install git://github.com/gma/nesta-theme-slate.git
+    $ nesta theme:install https://github.com/gma/nesta-theme-slate.git
     $ cp themes/slate/views/* themes/mytheme/views/
 
 Now open `themes/mytheme/views/master.sass` in your editor and find the

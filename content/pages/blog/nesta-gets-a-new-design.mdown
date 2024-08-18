@@ -86,7 +86,7 @@ you could make:
 If for some reason you'd rather keep things looking as they were, you
 can re-install the old theme:
 
-    $ ./scripts/theme install git://github.com/gma/nesta-theme-original.git
+    $ ./scripts/theme install https://github.com/gma/nesta-theme-original.git
     Enabling original theme in config/config.yml
 
 Commit any changes, [deploy it](/docs/deployment) and you're done!

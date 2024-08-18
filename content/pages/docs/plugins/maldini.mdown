@@ -15,7 +15,7 @@ The plugin provides a class, `Maldini::Bibliography`, which can be assigned a li
 Maldini is presently in pre-release development. The development version may be installed with:
 
     $ cd path/to/site
-    $ echo 'gem "nesta-plugin-maldini", :git => "git://github.com/etc/nesta-plugin-maldini.git"' >> Gemfile
+    $ echo 'gem "nesta-plugin-maldini", :git => "https://github.com/etc/nesta-plugin-maldini.git"' >> Gemfile
     $ bundle
 
 ## Documentation
