@@ -28,18 +28,13 @@ lines 160-161, but it may shift about a bit as `master.sass` gets
 updated):
 
     h2
-      background: $background-tint - #111
-      background: rgba($background-tint - #222, 0.4) url(/slate/images/lines.png) repeat
+      background: adjust-color($background-tint, $red: 1, $green: 1, $blue: 1)
+      background: adjust-color($background-tint, $red: -2, $green: -2, $blue: -2, $alpha: 0.4)
 
-You'll see that the background is set twice; first to a solid background
-color, and then again to a combination of a translucent colour and the
-`lines.png` file (the second rule will be ignored by browsers that don't
-support `rgba` alpha transparency). Change the background rules to this:
+Let's change the colour. Replace the background rules with:
 
     h2
-      $h2-tint: #8AE32A
-      background: $h2-tint + #204
-      background: rgba($h2-tint, 0.5) url(/mytheme/images/lines.png) repeat
+      background-color: adjust-color(#8CE32E, $alpha: 0.5)
 
 Have a quick look through master.sass for other references to `/slate`
 and change them to `/mytheme` (there should be at least one).
