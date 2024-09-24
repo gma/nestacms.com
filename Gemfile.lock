@@ -10,7 +10,7 @@ GEM
     eventmachine (1.2.7)
     ffi (1.15.5)
     formatador (1.1.0)
-    google-protobuf (3.25.3)
+    google-protobuf (3.25.5)
     guard (1.8.3)
       formatador (>= 0.2.4)
       listen (~> 1.3)
