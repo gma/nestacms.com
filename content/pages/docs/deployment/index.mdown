@@ -3,10 +3,16 @@ Read more: Find out how to roll your site out
 
 # Deployment
 
-Once you've designed your site and written your first page of content
-you want to get it out there for all the world to see.
+Once you've designed your site and written your first page of content you want to get it out there for all the world to see.
 
-Nesta will run on any web server that supports
-[Sinatra](https://www.sinatrarb.com/ "Sinatra"). This gives you plenty of
-choice, but you don't even need your own web server. We're going to look
-at how to deploy Nesta on the Heroku platform and on your own server.
+Nesta sites can be served dynamically (with pages rendered in real-time on the server) with any web server that supports recent versions of [Sinatra] and [Rack]. There are plenty of good options, but we'd recommend [Puma].
+
+In the docs below we're going to look at how to deploy Nesta on the Heroku platform, and on your own hardware (or a VPS).
+
+Also note that since Nesta 0.14.0, you can also deploy a static build of Nesta to a service like [Netlify] if you'd prefer. Dedicated docs on that haven't been written yet, but it's very easy. You can find out how to go about it in the [blog post that announced] Nesta's support for static builds.
+
+[Sinatra]: https://www.sinatrarb.com/ "Sinatra"
+[Rack]: https://github.com/rack/rack "Rack"
+[Puma]: https://puma.io/ "Puma web server"
+[Netlify]: https://www.netlify.com/
+[blog post that announced]: /blog/version-0-14-0
