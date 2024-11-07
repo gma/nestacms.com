@@ -39,7 +39,7 @@ If you have any weird errors when you start your server it could be a result of 
 
 ### Updating your code
 
-Sass and SCSS files are now rendered with Dart Sass (the main implementation of Sass). We had been using the (now deprecated) libsass library.
+Sass and SCSS files are now rendered with Dart Sass (the main implementation of Sass). We had been using the (now deprecated) [libsass library].
 
 Sass has changed a bit since libsass was current, so you may need to make some small changes to your stylesheets. See the Sass [Breaking Changes] docs for full details of what's changed.
 
@@ -48,13 +48,14 @@ If that seems like a lot to read, you can do what I did to see if you've got any
 - Fire up a local copy of your site (e.g. `bundle exec mr-sparkle`) and visit a few pages.
 - If Sass thinks you've got some work to do it'll print deprecation warnings in the server logs, including links to pages documenting any changes you need to make. Easy!
 
+[libsass library]: https://github.com/sass/libsass
 [Breaking Changes]: https://sass-lang.com/documentation/breaking-changes
 
 ## Building a static site
 
 There's a new command to build your sites, and a couple of new settings in `config.yml` to help you configure your build.
 
-I'll be writing more expansive docs on this, but if you'd like to try it, these tips should get you going:
+See the [Netlify deployment docs] for more, but this will give you a feel for how it works:
 
     $ cd mysite.com
     $ bundle exec nesta build  # builds in ./dist by default
@@ -63,25 +64,8 @@ If you'd like to build the output in another directory, specify it on the comman
 
     $ bundle exec nesta build _site  # builds in ./_site
 
-Checkout the bottom of the [default config file] for an example of how to use the new config settings.
+There are also two new config settings at the bottom of the [default config file], that you'll want to setup.
 
-I've not written docs on deploying to any static site hosting services yet, but if you fancy giving Netlify a shot (which is easy, and free) you can configure it by adding a `netlify.toml` file to your project. It should contain the following lines:
-
-```toml
-[build]
-  command = "bundle exec nesta build"
-  publish = "dist"
-```
-
-You'll also want a `.ruby-version` to tell Netlify what version of Ruby you'd like them to use. At the time of writing, Ruby 3.2.1 is the latest release.
-
-```
-$ cat .ruby-version
-3.2.1
-```
-
-If you then give Netlify access to your Git repository, it should be able to build and deploy your site! Let me know how you get on...
-
+[Netlify deployment docs]: /docs/deployment/netlify
 [default config file]: https://github.com/gma/nesta/blob/v0.14.0/templates/config/config.yml
-
 [CHANGES file]: https://github.com/gma/nesta/blob/v0.14.0/CHANGES

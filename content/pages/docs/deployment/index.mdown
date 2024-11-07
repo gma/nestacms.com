@@ -7,9 +7,12 @@ Once you've designed your site and written your first page of content you want t
 
 Nesta sites can be served dynamically (with pages rendered in real-time on the server) with any web server that supports recent versions of [Sinatra] and [Rack]. There are plenty of good options, but we'd recommend [Puma].
 
-In the docs below we're going to look at how to deploy Nesta on the Heroku platform, and on your own hardware (or a VPS).
+In the pages below we're going to look at how to deploy Nesta:
 
-Also note that since Nesta 0.14.0, you can also deploy a static build of Nesta to a service like [Netlify] if you'd prefer. Dedicated docs on that haven't been written yet, but it's very easy. You can find out how to go about it in the [blog post that announced] Nesta's support for static builds.
+- with pre-rendered static HTML (on Netlify) and
+- with server-side rendering, either on Heroku, on a VPS, or on your own hardware
+
+These aren't the only hosting platforms you could deploy Nesta to &mdash; it'll work anywhere that runs Ruby.
 
 [Sinatra]: https://www.sinatrarb.com/ "Sinatra"
 [Rack]: https://github.com/rack/rack "Rack"
