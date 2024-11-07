@@ -26,6 +26,7 @@ docs
     docs/design/templating-engines
     docs/design/creating-themes
   docs/deployment
+    docs/deployment/netlify
     docs/deployment/heroku
     docs/deployment/server-or-vps
     docs/deployment/page-caching
