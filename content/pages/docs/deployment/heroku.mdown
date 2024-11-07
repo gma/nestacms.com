@@ -1,7 +1,7 @@
 Categories: docs/deployment:10
 Summary: Heroku was one of the first "Platform as a Service" cloud based hosting platforms. Running Nesta on Heroku is easy, and it's probably fair to say that most Nesta sites are deployed on Heroku.
 
-# Running on Heroku
+# Deploying to Heroku
 
 Deploying Nesta to Heroku works out of the box. If you haven't already
 done so, [signup for Heroku][heroku-signup] and install the [heroku
