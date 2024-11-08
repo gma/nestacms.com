@@ -40,7 +40,7 @@ build:
     - /css/master.css
 ```
 
-nestacms.com has multiple `.sass` files, but they're used to produce just one CSS file that's loaded via a `<link rel="stylesheet" ...>` tag.
+nestacms.com has multiple `.sass` files, but they're used to produce just one CSS file that's loaded via a `<link rel="stylesheet" ...>` tag. Those are the kind of files that we need to make sure we include in the build.
 
 If you run `bundle exec nesta build` again, you'll see that any CSS files that you've listed in `templated_assets` are included in the build.
 
