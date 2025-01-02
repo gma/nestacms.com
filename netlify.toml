@@ -1,3 +1,7 @@
 [build]
   command = "bundle exec nesta build"
   publish = "dist"
+
+[[edge_functions]]
+function = "block-bots"
+path = "/*"
